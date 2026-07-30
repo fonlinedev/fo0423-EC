@@ -1,80 +1,202 @@
-# FOnline Engine - Server & Development Kit
+# 📦 FOnline Engine - Server & Development Kit
 
-Welcome to the project repository! This repository contains the source code, scripts, maps, tools, and client runtime files for our custom FOnline server project.
-
----
-
-## 📁 Repository Structure
-
-├── Server/      # Server core, AngelScript code (.fos), dialogs (.fodlg), and database files
-├── Client/      # Client application, graphics, UI configs, and localized assets
-├── Mapper/      # Map editor tools, graphic sets, and map configuration files
-└── Tools/       # Utility scripts, SDK compilers, batch helpers, and development utilities
-
-### Breakdown of Directories
-
-* **`Server/`**: Holds all server logic, game mechanics, and world state configuration.
-  * `Server/scripts/`: Raw AngelScript source code (`.fos`).
-  * `Server/dialogs/`: Dialogue trees and NPC interaction files (`.fodlg`).
-  * `Server/maps/`: Raw map files (`.fomap`).
-* **`Client/`**: The executable client environment used by players to connect to the server.
-* **`Mapper/`**: The official map editor used for level design and editing game spaces.
-* **`Tools/`**: External tools for asset compilation, script validation, and server deployment.
+Welcome to the project repository! This repository contains the source code, scripts, maps, tools, and client runtime files for the custom FOnline server project.
 
 ---
 
-## ⚙️ Client Setup & Original Fallout Assets
+# 📁 Repository Structure
 
-### Required Game Archives (`fallout.dat` / `fallout2.dat`)
+```text
+.
+├── Server/      # Server core, AngelScript, dialogs, maps, databases
+├── Client/      # Game client, assets, UI, configuration
+├── Mapper/      # Map editor and mapping resources
+└── Tools/       # SDK utilities and development tools
+```
 
-Depending on the specific graphic assets, animations, and sound effects used by the server modules:
+## Directory Overview
 
-* **When is it required?**
-  If your client build uses original engine graphics, critters, wall tiles, or sound effects directly from *Fallout 1* or *Fallout 2* rather than custom packed `.zip`/`.dat` archives, you **must** copy the original data files into the client directory.
-  
-* **Setup Instructions:**
-  1. Locate your original legal installation of *Fallout 1* or *Fallout 2*.
-  2. Copy `fallout.dat` (and/or `fallout2.dat`) into your root `Client/` folder:
-     ```
-     Client/fallout.dat
-     Client/fallout2.dat
-     ```
-  3. Ensure `Client/FOnline.cfg` references the DAT paths properly under the data section if required by your build.
+### `Server/`
 
-### Client Configuration (`FOnline.cfg`)
+Contains all server-side logic, game mechanics, scripts, and world data.
 
-Client settings are stored in `Client/FOnline.cfg`. Key options to review:
+**Important directories:**
 
+| Directory | Description |
+|-----------|-------------|
+| `Server/scripts/` | AngelScript source files (`.fos`) |
+| `Server/dialogs/` | NPC dialogue files (`.fodlg`) |
+| `Server/maps/` | Map source files (`.fomap`) |
+
+---
+
+### `Client/`
+
+Contains the game client used by players, including:
+
+- Executables
+- Graphics and animations
+- UI assets
+- Configuration files
+- Localization resources
+
+---
+
+### `Mapper/`
+
+The official FOnline map editor used for:
+
+- Creating maps
+- Editing existing locations
+- Managing scenery and objects
+
+---
+
+### `Tools/`
+
+Development utilities including:
+
+- Asset compilers
+- Script validation tools
+- Batch helpers
+- Deployment utilities
+
+---
+
+# ⚙️ Client Setup
+
+## Original Fallout Assets
+
+### Required Game Archives
+
+Depending on your server module, the client may require the original Fallout game archives:
+
+- `fallout.dat`
+- `fallout2.dat`
+
+### When are they required?
+
+If your client uses original Fallout graphics, critters, wall tiles, or sounds instead of custom packed archives, you **must** provide the original data files.
+
+### Installation
+
+1. Locate your legal installation of **Fallout 1** or **Fallout 2**.
+2. Copy the required archive(s) into the `Client/` directory.
+
+```text
+Client/
+├── fallout.dat
+└── fallout2.dat
+```
+
+3. Verify that `Client/FOnline.cfg` references the correct data archives if required by your SDK build.
+
+---
+
+## Client Configuration
+
+Client settings are stored in:
+
+```text
+Client/FOnline.cfg
+```
+
+Example:
+
+```ini
 [Game Options]
 ServerHost = 127.0.0.1
 ServerPort = 2238
 
 [Language]
 Language = engl
+```
 
-🚀 Getting Started (Developers)
-1. Prerequisites
-Windows OS / Wine on Linux
+---
 
-C++ Runtime Dependencies (Visual Studio C++ Redistributables)
+# 🚀 Getting Started
 
-Git
+## Prerequisites
 
-2. Building & Running the Server
-Launch the server via Server/FOnlineServer.exe (or your platform's startup script).
+Before running the project, install:
 
-On first run, AngelScript files (.fos) will compile automatically into .fosb bytecode.
+- Windows (or Wine on Linux)
+- Visual Studio C++ Redistributables
+- Git
 
-Open Client/FOnline.exe to connect locally (127.0.0.1:2238).
+---
 
-3. Editing Maps
-Launch Mapper/Mapper.exe to inspect or modify existing .fomap files.
+## Running the Server
 
-Do not commit generated binary map files (.fomapb).
+Launch the server executable:
 
-📝 Scripting & Quest Development
-Game logic is written in AngelScript (.fos).
+```text
+Server/FOnlineServer.exe
+```
 
-NPC Dialogues are modified using the FOnline Dialog Editor (.fodlg).
+or use your platform's startup script.
 
-Always clear test parameters or use the in-game debug commands (e.g., ~set_var, ~check_vars) when verifying new quest state loops.
+> **Note**
+>
+> On the first launch, all AngelScript (`.fos`) files are automatically compiled into `.fosb` bytecode.
+
+---
+
+## Connecting the Client
+
+Launch:
+
+```text
+Client/FOnline.exe
+```
+
+By default, it connects to:
+
+- **Host:** `127.0.0.1`
+- **Port:** `2238`
+
+---
+
+## Editing Maps
+
+Launch the mapper:
+
+```text
+Mapper/Mapper.exe
+```
+
+Use it to inspect or modify existing `.fomap` files.
+
+> **Important**
+>
+> Do **not** commit generated binary map files (`.fomapb`) to source control.
+
+---
+
+# 📝 Scripting & Quest Development
+
+## AngelScript
+
+All gameplay logic is written in **AngelScript** using `.fos` files located under:
+
+```text
+Server/scripts/
+```
+
+---
+
+## NPC Dialogues
+
+NPC conversations are authored with the **FOnline Dialog Editor** using `.fodlg` files.
+
+---
+
+## Testing Tips
+
+When testing quests and game logic:
+
+- Clear temporary test variables before retesting.
+- Use in-game debug commands such as:
+  - `~set_var`
+  - `~check_vars`
+- Verify quest state transitions before committing changes.
