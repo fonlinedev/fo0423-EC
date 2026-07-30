@@ -92,3 +92,5 @@ save/*
 Client/data/base.zip
 Client/data/faction.zip
 Client/fallout.dat
+*.log
+*.cache
