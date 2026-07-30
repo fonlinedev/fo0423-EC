@@ -6,7 +6,6 @@ Welcome to the project repository! This repository contains the source code, scr
 
 ## 📁 Repository Structure
 
-```text
 ├── Server/      # Server core, AngelScript code (.fos), dialogs (.fodlg), and database files
 ├── Client/      # Client application, graphics, UI configs, and localized assets
 ├── Mapper/      # Map editor tools, graphic sets, and map configuration files
@@ -46,7 +45,6 @@ Depending on the specific graphic assets, animations, and sound effects used by 
 
 Client settings are stored in `Client/FOnline.cfg`. Key options to review:
 
-```ini
 [Game Options]
 ServerHost = 127.0.0.1
 ServerPort = 2238
