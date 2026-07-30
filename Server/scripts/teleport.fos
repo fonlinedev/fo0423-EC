@@ -1,0 +1,32 @@
+#include "_macros.fos"
+#include "_defines.fos"
+
+// Command handler for ~teleport [hexX] [hexY]
+bool pr_teleport(Critter& player, string@ command, int hexX, int hexY, int)
+{
+    // Verify privilege tier before executing
+    if(player.GetAccess() < ACCESS_ADMIN)
+    {
+        player.Say(SAY_NETMSG, "Access denied. Teleportation requires GM or Admin privilege.");
+        return true;
+    }
+
+    Map@ map = player.GetMap();
+    if(@map == null)
+    {
+        player.Say(SAY_NETMSG, "Cannot teleport while on the Global Map.");
+        return true;
+    }
+
+    // Validate coordinates on map
+    if(hexX <= 0 || hexY <= 0 || hexX >= map.GetWidth() || hexY >= map.GetHeight())
+    {
+        player.Say(SAY_NETMSG, "Invalid target coordinates.");
+        return true;
+    }
+
+    // Perform hex transit
+    player.TransitToHex(hexX, hexY, player.Dir);
+    player.Say(SAY_NETMSG, "Teleported to (" + hexX + ", " + hexY + ").");
+    return true;
+}

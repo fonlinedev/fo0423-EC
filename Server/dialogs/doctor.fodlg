@@ -1,0 +1,23 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 0 #
+3 1010 @
+3 2000 None 0 #
+0 2010 R _script npc_doctor@r_HealPlayer 0 #
+0 2020 &
+
+[engl]
+{100}{}{Doctor}
+{200}{}{You see a doctor.}
+{1000}{}{Predialogue installations}
+{1010}{}{Answer text}
+{2000}{}{Hello there. Do you need medical attention?}
+{2010}{}{Yes, please patch me up.}
+{2020}{}{No, I am fine. Bye.}
+

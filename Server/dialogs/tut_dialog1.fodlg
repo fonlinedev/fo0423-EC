@@ -1,0 +1,22 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+200 1010 D _param p ST_INTELLECT } 4 #
+201 1020 D _param p ST_INTELLECT < 4 D _var n name_mem_npc_player = 0 @
+202 2000 None 0 #
+0 2010 &
+
+[engl]
+{100}{}{none}
+{1000}{}{Predialogue installations}
+{1010}{}{I dont know you}
+{1020}{}{I dont know you stupid}
+{2000}{}{Bye.}
+{2010}{}{OK!}
+

@@ -1,0 +1,28 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 0 #
+3 1010 @
+3 2000 None 0 #
+3 2010 D _script tanner@d_HasGeckoPelt 0 R _script tanner@r_SellGeckoPelt 0 #
+3 2020 D _script tanner@d_HasGoldenGeckoPelt 0 R _script tanner@r_SellGoldenGeckoPelt 0 #
+3 2030 D _script tanner@d_Has5GeckoPelts 0 R _script tanner@r_ExchangePeltsForBrahminSkin 0 #
+3 2040 D _script tanner@d_Has12Ropes 0 R _script tanner@r_TurnInRopesForXP 0 #
+0 2050 &
+
+[engl]
+{100}{}{Tanner}
+{200}{}{You see a Tanner working with animal hides.}
+{1000}{}{Predialogue installations}
+{1010}{}{Answer text}
+{2000}{}{Welcome, traveller! Looking to trade pelts or ropes?}
+{2010}{}{I want to sell 1 Gecko Pelt (100 caps).}
+{2020}{}{I want to sell 1 Golden Gecko Pelt (200 caps).}
+{2030}{}{I want to trade 5 Gecko Pelts for a Brahmin Skin.}
+{2040}{}{Here are 12 Ropes for trade.}
+{2050}{}{Goodbye.}

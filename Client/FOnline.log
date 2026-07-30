@@ -1,0 +1,69 @@
+Starting FOnline (version 0423-EC)...
+Engine initialization...
+Sprite manager initialization...
+GraphicLoader::LoadEffect - Unable to compile effect, effect<Primitive_Default.fx>, errors<
+error X3539: ps_1_x is no longer supported; use /Gec in fxc to automatically upgrade to ps_2_0
+error X3539: Alternately, fxc's /LD option allows use of the old compiler DLL
+
+C:\Games\FOnlineServer\fo0423-EC\Client\memory(31,19): ID3DXEffectCompiler::CompileEffect: There was an error compiling expression
+ID3DXEffectCompiler: Compilation failed
+>.
+Sprite manager initialization complete.
+Sound manager initialization...
+Sound manager initialization complete.
+Loaded<143> critter types.
+Load scripts...
+Bind reserved functions...
+Bind reserved functions complete.
+Script::Bind - Function<void changedParam_UnspentTag(CritterCl&,uint,int)> in module<parameters> not found.
+FOClient::SScriptFunc::Global_SetParameterChangeBehaviour : Script error: Function not found. : config : void InitializeGame() : 204, 2 : FOClient::ReloadScripts : Game.
+Signature<InvHead> not found.
+Load scripts complete.
+Interface initialization.
+Load data.
+Load sprites.
+Interface initialization complete.
+Item manager initialization...
+Item manager initialization complete.
+Hex field initialization...
+Hex field initialization complete.
+Engine initialization complete.
+Network init...
+Connecting to server<localhost:2238>.
+Connecting successful.
+Network init successful.
+Loaded<143> critter types.
+Load scripts...
+Bind reserved functions...
+Bind reserved functions complete.
+Script::Bind - Function<void changedParam_UnspentTag(CritterCl&,uint,int)> in module<parameters> not found.
+FOClient::SScriptFunc::Global_SetParameterChangeBehaviour : Script error: Function not found. : config : void InitializeGame() : 204, 2 : FOClient::ReloadScripts : Game.
+Load scripts complete.
+Interface initialization.
+Load data.
+Load sprites.
+Interface initialization complete.
+Auntification success.
+Change map...
+Get hash of map, pid<224>...complete.
+Load map...Load map success.
+Local map loaded.
+Chosen parameters...complete.
+Quests...Complete.
+Disconnect.
+Traffic: send<4618>, receive<735460>, whole<740078>, receive real<2465283>.
+Disconnect success.
+Engine finish...
+Disconnect.
+Traffic: send<4618>, receive<735460>, whole<740078>, receive real<2465283>.
+Disconnect success.
+Resource manager finish...
+Resource manager finish complete.
+Hex field finish...
+Hex field finish complete.
+Sprite manager finish...
+Sprite manager finish complete.
+Sound manager finish.
+Sound manager finish complete.
+Engine finish complete.
+FOnline finished.

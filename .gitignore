@@ -1,0 +1,89 @@
+# ==========================================
+# FOnline Engine  SDK - Compiled Binaries & Executables
+# ==========================================
+.exe
+.dll
+.so
+.dylib
+.pdb
+.exp
+.lib
+
+# ==========================================
+# Compiled AngelScript Files & Caches
+# ==========================================
+# Ignore compiled script cache outputs
+.fbc
+.fsp
+.asbin
+.fo
+.client
+Serverscriptscache
+Serverscriptsbin
+Clientcache
+
+# ==========================================
+# Server Runtime Data, Logs & Saved State
+# ==========================================
+# Logs & Dump files
+.log
+.dmp
+.crash
+Serverlogs
+Logs
+
+# Database  Player  World State saves (Uncomment if you don't want server save data in git)
+Serversave
+Serverdatasave
+Serverdatacache
+
+# ==========================================
+# IDEs, Build Tools & Editors
+# ==========================================
+# Visual Studio  MSVC
+.vs
+.suo
+.user
+.userosv
+.sln.docstates
+Debug
+Release
+x64
+x86
+
+# JetBrains  VS Code
+.vscode
+.idea
+
+# OS-generated files
+Thumbs.db
+[Dd]esktop.ini
+.DS_Store
+
+# Temporary files
+.tmp
+.bak
+.swp
+~
+backup/
+
+/Server/save/*
+/Server/data/save/*
+save/*
+
+# Ignore contents of save folders
+# Keep .gitkeep files if you want Git to track empty save directories
+!**/save/.gitkeep
+
+
+# Ignore all log files and contents of /logs folders
+/logs/*
+/Server/logs/*
+/Logs/*
+
+# Ignore log files wherever they appear
+*.log
+
+Client/data/base.zip
+Client/data/faction.zip
+Client/fallout.dat

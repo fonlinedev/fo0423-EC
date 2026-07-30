@@ -1,0 +1,947 @@
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+
+enum HelmetLight
+{
+	(722)=722,
+	(728)=728,
+	(729)=729,
+	(730)=730,
+	(731)=731
+};
+
+enum HelmetMetal
+{
+	(732)=732,
+	(733)=733,
+	(734)=734
+};
+enum HelmetCombat
+{
+	(725)=725,
+	(726)=726,
+	(727)=727,
+	(738)=738,
+	(739)=739,
+	(740)=740,
+	(741)=741
+};
+
+enum HelmetHeavy
+{
+	(721)=721,
+	(735)=735,
+	(736)=736,
+	(737)=737
+};    
+
+enum ArmorCloth
+{
+	(753)=753,
+	(754)=754,
+	(755)=755,
+	(756)=756,
+	(757)=757,
+	(758)=758,
+	(759)=759,
+	(760)=760,
+	(761)=761,
+	(762)=762,
+	(763)=763,
+	(764)=764,
+	(765)=765,
+	(766)=766,
+	(767)=767,
+	(768)=768,
+	(769)=769,
+	(770)=770,
+	(771)=771,
+	(772)=772,
+	(773)=773,
+	(774)=774,
+	(775)=775,
+	(776)=776,
+	(777)=777
+};    
+
+enum ArmorRobe
+{
+	(113)=113,
+	(524)=524,
+	(750)=750
+};
+
+enum ArmorLight
+{
+	(1)=1,
+	(74)=74,
+	(379)=379,
+	(265)=265
+};
+
+enum ArmorMetal
+{
+	(2)=2,
+	(240)=240,
+	(380)=380
+};
+
+enum ArmorCombat
+{
+	(17)=17,
+	(239)=239,
+	(381)=381,
+	(751)=751,
+	(752)=752,
+	(9654)=9654
+};
+
+enum ArmorHeavy
+{
+	(3)=3,
+	(232)=232,
+	(348)=348,
+	(349)=349
+};            
+
+enum WeaponPistol
+{
+	(8)=8,
+	(18)=18,
+	(22)=22,
+	(122)=122,
+	(241)=241,
+	(300)=300,
+	(313)=313,
+	(398)=398,
+	(388)=388,
+	(394)=394,
+	(404)=404
+};
+
+enum WeaponRifle
+{
+	(10)=10,
+	(23)=23,
+	(143)=143,
+	(161)=161,
+	(162)=162,
+	(261)=261,
+	(287)=287,
+	(299)=299,
+	(351)=351,
+	(353)=353,
+	(392)=392,
+	(403)=403,
+	(405)=405,
+	(500)=500
+};
+
+enum WeaponShotgun
+{
+	(94)=94,
+	(242)=242,
+	(268)=268,
+	(354)=354,
+	(385)=385
+};
+
+enum WeaponSubmachine
+{
+	(9)=9,
+	(283)=283,
+	(296)=296,
+	(332)=332,
+	(352)=352,
+	(391)=391
+};
+
+enum WeaponFlamer
+{
+	(11)=11,
+	(400)=400
+};
+
+enum WeaponMinigun
+{
+	(12)=12,
+	(389)=389,
+	(395)=395,
+	(355)=355,
+	(387)=387
+};
+
+enum WeaponBigMisc
+{
+	(350)=350,
+	(13)=13
+};
+
+enum WeaponLaser
+{
+	(16)=16,
+	(28)=28,
+	(118)=118,
+	(120)=120,
+	(390)=390,
+	(401)=401,
+	(402)=402,
+	(9659)=9659
+};
+
+enum WeaponPlasma
+{
+	(15)=15,
+	(24)=24,
+	(233)=233,
+	(406)=406
+};
+
+enum WeaponPulse
+{
+	(396)=396,
+	(397)=397
+};
+
+enum WeaponGrenade
+{
+	(25)=25,
+	(26)=26,
+	(27)=27
+};
+
+enum WeaponGrenadeFake
+{
+	(9674)=9674,
+	(9675)=9675
+};
+
+enum WeaponFlare
+{
+	(79)=79,
+	(9721)=9721,
+	(9723)=9723,
+	(9725)=9725
+};
+
+enum WeaponFlareActive
+{
+	(205)=205,
+	(9722)=9722,
+	(9724)=9724,
+	(9726)=9726
+};
+
+enum WeaponThrowMisc
+{
+	(19)=19,
+	(45)=45,
+	(159)=159,
+	(365)=365,
+	(572)=423,
+	(426)=426,
+	(486)=486,
+	(1834)=1834,
+	(9676)=9676,
+	(9916)=9916,
+	(9917)=9917
+	(573)=573,
+};
+
+enum WeaponCut
+{
+	(4)=4,
+	(236)=236,
+	(319)=319,
+	(383)=383,
+	(517)=517,
+	(522)=522
+};
+
+enum WeaponPrick
+{
+	(7)=7,
+	(280)=280,
+	(320)=320
+};
+
+enum WeaponShock
+{
+	(5)=5,
+	(6)=6,
+	(20)=20,
+	(115)=115,
+	(384)=384,
+	(386)=386
+};
+
+enum WeaponElectric
+{
+	(116)=116,
+	(160)=160,
+	(399)=399
+};
+
+enum WeaponPlasmaMelee
+{
+	(610)=610
+};
+
+enum WeaponUnarmed
+{
+	(21)=21,
+	(234)=234,
+	(235)=235,
+	(292)=292,
+	(293)=293,
+	(407)=407,
+	(496)=496,
+	(497)=497
+};
+
+enum WeaponSpecial
+{
+	(270)=270,
+	(290)=290,
+	(291)=291,
+	(371)=371,
+	(372)=372,
+	(393)=393,
+	(421)=421,
+	(427)=427,
+	(489)=489,
+	(498)=498,
+	(518)=518,
+	(520)=520,
+	(530)=530,
+	(531)=531
+};    
+
+enum AmmunitionBullet
+{
+	(29)=29,
+	(30)=30,
+	(31)=31,
+	(33)=33,
+	(34)=34,
+	(35)=35,
+	(36)=36,
+	(95)=95,
+	(111)=111,
+	(121)=121,
+	(359)=359,
+	(357)=357,
+	(358)=358,
+	(360)=360,
+	(363)=363,
+	(574)=574,
+	(575)=575,
+	(576)=576,
+	(621)=621,
+	(850)=850
+	
+};
+
+enum AmmunitionCartridge
+{
+	(361)=361,
+	(362)=362
+};
+
+enum AmmunitionFuel
+{
+	(32)=32,
+	(382)=382
+};
+
+enum AmmunitionRocket
+{
+	(14)=14,
+	(37)=37
+};
+
+enum AmmunitionMisc
+{
+	(38)=38,
+	(39)=39,
+	(163)=163
+};
+
+enum AmunitionSpecial
+{
+	(274)=274
+};    
+
+enum ConsumableMedicine
+{
+	(40)=40,
+	(48)=48,
+	(49)=49,
+	(109)=109,
+	(144)=144,
+	(260)=260,
+	(273)=273,
+	(525)=525,
+	(9655)=9655
+};
+
+enum ConsumableAlcohol
+{
+	(106)=106,
+	(124)=124,
+	(125)=125,
+	(310)=310,
+	(311)=311,
+	(469)=469
+};
+
+enum ConsumableDrug
+{
+	(53)=53,
+	(87)=87,
+	(110)=110,
+	(259)=259
+};
+
+enum ConsumableFood
+{
+	(71)=71,
+	(81)=81,
+	(103)=103,
+	(378)=378
+};
+
+enum ConsumableSpecial
+{
+	(334)=334,
+	(424)=424,
+	(473)=473,
+	(480)=480,
+	(481)=481,
+	(482)=482
+};    
+
+enum ContainerPot
+{
+	(243)=243,
+	(244)=244,
+	(245)=245,
+	(248)=248,
+	(249)=249
+};
+
+enum ContainerIceChest
+{
+	(43)=43,
+	(44)=44
+};
+
+enum ContainerAmmoCrate
+{
+	(367)=367,
+	(368)=368,
+	(369)=369,
+	(370)=370
+};
+
+enum ContainerFootlocker
+{
+	(128)=128,
+	(129)=129,
+	(130)=130,
+	(131)=131
+};
+
+enum ContainerLocker
+{
+	(132)=132,
+	(133)=133,
+	(134)=134,
+	(135)=135,
+	(136)=136,
+	(137)=137,
+	(138)=138,
+	(139)=139,
+	(188)=188,
+	(189)=189
+};
+
+enum ContainerBookcase
+{
+	(60)=60,
+	(61)=61,
+	(62)=62,
+	(63)=63,
+	(64)=64,
+	(65)=65,
+	(246)=246,
+	(247)=247,
+};
+
+enum ContainerSafe
+{
+	(501)=501,
+	(502)=502,
+};
+
+enum ContainerDesk
+{
+	(66)=66,
+	(67)=67,
+	(181)=181,
+	(182)=182,
+	(183)=183,
+	(184)=184,
+	(185)=185,
+	(186)=186,
+	(187)=187,
+	(214)=214,
+};
+
+enum ContainerDresser
+{
+	(68)=68,
+	(69)=69,
+	(70)=70,
+};
+
+enum ContainerWorkbench
+{
+	(157)=157,
+	(158)=158,
+	(9914)=9914
+};
+
+enum ContainerBookshelf
+{
+	(145)=145,
+	(146)=146,
+	(147)=147,
+	(149)=149,
+	(151)=151,
+	(152)=152,
+	(153)=153,
+	(155)=155,
+};
+
+enum ContainerBox
+{
+	(197)=197,
+	(198)=198,
+	(199)=199,
+	(200)=200,
+	(201)=201,
+	(202)=202,
+	(203)=203,
+	(204)=204,
+};
+
+enum ContainerTable
+{
+	(166)=166,
+	(167)=167,
+};
+
+enum ContainerTableStuff
+{
+	(168)=168,
+	(169)=169,
+	(170)=170,
+	(171)=171,
+	(172)=172,
+	(173)=173,
+	(174)=174,
+	(175)=175,
+	(176)=176,
+	(177)=177,
+	(178)=178,
+	(179)=179,
+};
+
+enum ContainerPoolTable
+{
+	(510)=510,
+	(511)=511,
+	(512)=512,
+	(513)=513,
+	(514)=514,
+	(515)=515,
+};
+
+enum ContainerGrave
+{
+	PID_GRAVESITE_1=344,
+	PID_GRAVESITE_2=345,
+	PID_GRAVESITE_3=346,
+	PID_GRAVESITE_4=347,
+	PID_LF_GRAVESITE_1=374,
+	PID_LF_GRAVESITE_2=375,
+	PID_LF_GRAVESITE_3=376,
+};
+
+enum ContainerBackpack
+{
+	(46)=46,
+	(90)=90,
+	(93)=93
+};
+
+enum ContainerBody
+{
+	(107)=107,
+	(108)=108,
+	(211)=211,
+	(213)=213,
+	(250)=250,
+	(526)=526,
+	(527)=527,
+	(528)=528,
+};
+
+enum ContainerWagon
+{
+	(434)=434,
+	(435)=435,
+};
+
+enum ContainerCarBag
+{
+	(455)=455,
+	(603)=603,
+	(604)=604,
+	(801)=801,
+	(809)=809,
+	(817)=817,
+	(818)=818,
+	(819)=819,
+	(823)=823,
+	(9747)=9747,
+	(9926)=9926,
+	(9928)=9928,
+	(9930)=9930,
+	(9933)=9933,
+};
+
+enum ContainerMisc
+{
+	(42)=42,
+	(165)=165,
+	(180)=180,
+	(330)=330,
+	(425)=425,
+	(467)=467,
+	(521)=521,
+	(529)=529,
+	(9636)=9636,
+	(9913)=9913
+};    
+
+enum MiscKey
+{       
+	
+};
+
+enum MiscMoney
+{    
+	
+};      
+
+import string PidToName(uint pid)from"itempid";
+import uint NameToPid(string&name)from"itempid";
+
+import string PidToGroupName(uint pid)from"itempid";
+import uint GroupNameToPids(string&name,array<uint>&pids)from"itempid";
+import uint GroupNameToNames(string&name,array<string>&pidNames)from"itempid"; 
+
+import bool PidIsHelmet(uint pid)from"itempid";
+import uint PidList_Helmets(array<uint>&pids)from"itempid"; 
+
+import bool PidIsLightHelmet(uint pid)from"itempid";
+import uint PidList_LightHelmets(array<uint>&pids)from"itempid";
+
+import bool PidIsMetalHelmet(uint pid)from"itempid";
+import uint PidList_MetalHelmets(array<uint>&pids)from"itempid";
+
+import bool PidIsCombatHelmet(uint pid)from"itempid";
+import uint PidList_CombatHelmets(array<uint>&pids)from"itempid";
+
+import bool PidIsHeavyHelmet(uint pid)from"itempid";
+import uint PidList_HeavyHelmets(array<uint>&pids)from"itempid"; 
+
+import bool PidIsArmor(uint pid)from"itempid";
+import uint PidList_Armors(array<uint>&pids)from"itempid"; 
+
+import bool PidIsCloth(uint pid)from"itempid";
+import uint PidList_Clothes(array<uint>&pids)from"itempid";
+
+import bool PidIsRobe(uint pid)from"itempid";
+import uint PidList_Robes(array<uint>&pids)from"itempid";
+
+import bool PidIsLightArmor(uint pid)from"itempid";
+import uint PidList_LightArmors(array<uint>&pids)from"itempid";
+
+import bool PidIsMetalArmor(uint pid)from"itempid";
+import uint PidList_MetalArmors(array<uint>&pids)from"itempid";
+
+import bool PidIsCombatArmor(uint pid)from"itempid";
+import uint PidList_CombatArmors(array<uint>&pids)from"itempid";
+
+import bool PidIsHeavyArmor(uint pid)from"itempid";
+import uint PidList_HeavyArmors(array<uint>&pids)from"itempid"; 
+
+import bool PidIsWeapon(uint pid)from"itempid";
+import uint PidList_Weapons(array<uint>&pids)from"itempid"; 
+
+import bool PidIsSpecialWeapon(uint pid)from"itempid";
+import uint PidList_SpecialWeapons(array<uint>&pids)from"itempid"; 
+
+import bool PidIsSmallGun(uint pid)from"itempid";
+import uint PidList_SmallGuns(array<uint>&pids)from"itempid"; 
+
+import bool PidIsPistol(uint pid)from"itempid";
+import uint PidList_Pistols(array<uint>&pids)from"itempid";
+
+import bool PidIsShotgun(uint pid)from"itempid";
+import uint PidList_Shotguns(array<uint>&pids)from"itempid";
+
+import bool PidIsRifle(uint pid)from"itempid";
+import uint PidList_Rifles(array<uint>&pids)from"itempid";
+
+import bool PidIsSubmachine(uint pid)from"itempid";
+import uint PidList_Submachines(array<uint>&pids)from"itempid"; 
+
+import bool PidIsBigGun(uint pid)from"itempid";
+import uint PidList_BigGuns(array<uint>&pids)from"itempid"; 
+
+import bool PidIsFlamer(uint pid)from"itempid";
+import uint PidList_Flamers(array<uint>&pids)from"itempid";
+
+import bool PidIsMinigun(uint pid)from"itempid";
+import uint PidList_Miniguns(array<uint>&pids)from"itempid";
+
+import bool PidIsBigGunMisc(uint pid)from"itempid";
+import uint PidList_BigGunsMisc(array<uint>&pids)from"itempid"; 
+
+import bool PidIsEnergyWeapon(uint pid)from"itempid";
+import uint PidList_EnergyWeapons(array<uint>&pids)from"itempid"; 
+
+import bool PidIsLaserWeapon(uint pid)from"itempid";
+import uint PidList_LaserWeapons(array<uint>&pids)from"itempid";
+
+import bool PidIsPlasmaWeapon(uint pid)from"itempid";
+import uint PidList_PlasmaWeapons(array<uint>&pids)from"itempid";
+
+import bool PidIsPulseWeapon(uint pid)from"itempid";
+import uint PidList_PulseWeapons(array<uint>&pids)from"itempid"; 
+
+import bool PidIsThrowingWeapon(uint pid)from"itempid";
+import uint PidList_ThrowingWeapons(array<uint>&pids)from"itempid"; 
+
+import bool PidIsThrowingMisc(uint pid)from"itempid";
+import uint PidList_ThrowingMisc(array<uint>&pids)from"itempid"; 
+
+import bool PidIsGrenade(uint pid)from"itempid";
+import uint PidList_Grenades(array<uint>&pids)from"itempid"; 
+
+import bool PidIsRealGrenade(uint pid)from"itempid";
+import uint PidList_RealGrenades(array<uint>&pids)from"itempid";
+
+import bool PidIsFakeGrenade(uint pid)from"itempid";
+import uint PidList_FakeGrenades(array<uint>&pids)from"itempid"; 
+
+import bool PidIsFlare(uint pid)from"itempid";
+import uint PidList_Flares(array<uint>&pids)from"itempid"; 
+
+import bool PidIsInactiveFlare(uint pid)from"itempid";
+import uint PidList_InactiveFlares(array<uint>&pids)from"itempid";
+
+import bool PidIsActiveFlare(uint pid)from"itempid";
+import uint PidList_ActiveFlares(array<uint>&pids)from"itempid"; 
+
+import bool PidIsMeleeWeapon(uint pid)from"itempid";
+import uint PidList_MeleeWeapons(array<uint>&pids)from"itempid"; 
+
+import bool PidIsCuttingWeapon(uint pid)from"itempid";
+import uint PidList_CuttingWeapons(array<uint>&pids)from"itempid";
+
+import bool PidIsPrickingWeapon(uint pid)from"itempid";
+import uint PidList_PrickingWeapons(array<uint>&pids)from"itempid";
+
+import bool PidIsShockingWeapon(uint pid)from"itempid";
+import uint PidList_ShockingWeapons(array<uint>&pids)from"itempid";
+
+import bool PidIsElectricWeapon(uint pid)from"itempid";
+import uint PidList_ElectricWeapons(array<uint>&pids)from"itempid";
+
+import bool PidIsMeleePlasmaWeapon(uint pid)from"itempid";
+import uint PidList_MeleePlasmaWeapons(array<uint>&pids)from"itempid"; 
+
+import bool PidIsUnarmedWeapon(uint pid)from"itempid";
+import uint PidList_UnarmedWeapons(array<uint>&pids)from"itempid"; 
+
+import bool PidIsAmmunition(uint pid)from"itempid";
+import uint PidList_Ammunition(array<uint>&pids)from"itempid"; 
+
+import bool PidIsSpecialAmmunition(uint pid)from"itempid";
+import uint PidList_SpecialAmmunition(array<uint>&pids)from"itempid"; 
+
+import bool PidIsBullet(uint pid)from"itempid";
+import uint PidList_Bullets(array<uint>&pids)from"itempid";
+
+import bool PidIsCartridge(uint pid)from"itempid";
+import uint PidList_Cartridges(array<uint>&pids)from"itempid";
+
+import bool PidIsWeaponFulel(uint pid)from"itempid";
+import uint PidList_WeaponFuel(array<uint>&pids)from"itempid";
+
+import bool PidIsRocket(uint pid)from"itempid";
+import uint PidList_Rockets(array<uint>&pids)from"itempid";
+
+import bool PidIsAmmunitionMisc(uint pid)from"itempid";
+import uint PidList_AmmunitionMisc(array<uint>&pids)from"itempid"; 
+
+import bool PidIsConsumable(uint pid)from"itempid";
+import uint PidList_Consumables(array<uint>&pids)from"itempid"; 
+
+import bool PidIsSpecialConsumable(uint pid)from"itempid";
+import uint PidList_SpecialConsumables(array<uint>&pids)from"itempid"; 
+
+import bool PidIsMedicine(uint pid)from"itempid";
+import uint PidList_Medicines(array<uint>&pids)from"itempid";
+
+import bool PidIsAlcohol(uint pid)from"itempid";
+import uint PidList_Alcohol(array<uint>&pids)from"itempid";
+
+import bool PidIsDrug(uint pid)from"itempid";
+import uint PidList_Drugs(array<uint>&pids)from"itempid";
+
+import bool PidIsFood(uint pid)from"itempid";
+import uint PidList_Food(array<uint>&pids)from"itempid"; 
+
+import bool PidIsContainer(uint pid)from"itempid";
+import uint PidList_Containers(array<uint>&pids)from"itempid"; 
+
+import bool PidIsPot(uint pid)from"itempid";
+import uint PidList_Pots(array<uint>&pids)from"itempid";
+
+import bool PidIsIceChest(uint pid)from"itempid";
+import uint PidList_IceChests(array<uint>&pids)from"itempid";
+
+import bool PidIsAmmoCrate(uint pid)from"itempid";
+import uint PidList_AmmoCrates(array<uint>&pids)from"itempid";
+
+import bool PidIsFootlocker(uint pid)from"itempid";
+import uint PidList_Footlockers(array<uint>&pids)from"itempid";
+
+import bool PidIsLocker(uint pid)from"itempid";
+import uint PidList_Lockers(array<uint>&pids)from"itempid";
+
+import bool PidIsBookcase(uint pid)from"itempid";
+import uint PidList_Bookcases(array<uint>&pids)from"itempid";
+
+import bool PidIsSafe(uint pid)from"itempid";
+import uint PidList_Safes(array<uint>&pids)from"itempid";
+
+import bool PidIsDesk(uint pid)from"itempid";
+import uint PidList_Desks(array<uint>&pids)from"itempid";
+
+import bool PidIsWorkbench(uint pid)from"itempid";
+import uint PidList_Workbenches(array<uint>&pids)from"itempid";
+
+import bool PidIsBookshelf(uint pid)from"itempid";
+import uint PidList_Bookshelves(array<uint>&pids)from"itempid";
+
+import bool PidIsBox(uint pid)from"itempid";
+import uint PidList_Boxes(array<uint>&pids)from"itempid";
+
+import bool PidIsTable(uint pid)from"itempid";
+import uint PidList_Tables(array<uint>&pids)from"itempid";
+
+import bool PidIsTableStuff(uint pid)from"itempid";
+import uint PidList_TablesStuff(array<uint>&pids)from"itempid";
+
+import bool PidIsPoolTable(uint pid)from"itempid";
+import uint PidList_PoolTables(array<uint>&pids)from"itempid";
+
+import bool PidIsGrave(uint pid)from"itempid";
+import uint PidList_Graves(array<uint>&pids)from"itempid";
+
+import bool PidIsBackpack(uint pid)from"itempid";
+import uint PidList_Backpacks(array<uint>&pids)from"itempid";
+
+import bool PidIsBody(uint pid)from"itempid";
+import uint PidList_Bodies(array<uint>&pids)from"itempid";
+
+import bool PidIsWagon(uint pid)from"itempid";
+import uint PidList_Wagons(array<uint>&pids)from"itempid";
+
+import bool PidIsCarBag(uint pid)from"itempid";
+import uint PidList_CarBags(array<uint>&pids)from"itempid";
+
+import bool PidIsContainerMisc(uint pid)from"itempid";
+import uint PidList_ContainersMisc(array<uint>&pids)from"itempid"; 
+
+import bool PidIsKey(uint pid)from"itempid";
+import uint PidList_Keys(array<uint>&pids)from"itempid"; 
+
+import bool PidIsMoney(uint pid)from"itempid";
+import uint PidList_Moneys(array<uint>&pids)from"itempid";         
+
+void _InitRespawnContainer(Item&container,bool firstTime)
+{ 
+	
+	CreateTimeEvent((((60*60))*__TimeMultiplier),"e_RespawnLoot",container.Id,true); 
+	
+	if(firstTime)
+	{
+		FillContainerWithRandomLoot(container);
+	}
+} 
+
+uint e_RespawnLoot(uint[]@values)
+{
+	uint containerId=values[0];
+	Item@container=GetItem(containerId); 
+	
+	if((@container!=null))
+	{
+		
+		ClearContainer(container); 
+		
+		FillContainerWithRandomLoot(container);
+	} 
+	
+	return(60*60);
+} 
+
+void FillContainerWithRandomLoot(Item&container)
+{
+	
+	int roll=Random(1,100);
+	
+	if(roll<=50)
+	{
+		container.AddItem((40),Random(1,3),0);
+		container.AddItem((29),Random(10,30),0);
+	}
+	else if(roll<=85)
+	{
+		container.AddItem((8),1,0);
+		container.AddItem((87),1,0);
+	}
+	else
+	{
+		container.AddItem((18),1,0);
+		container.AddItem((31),20,0);
+		container.AddItem((144),1,0);
+	}
+} 
+
+void ClearContainer(Item&container)
+{
+	Item@[]items;
+	uint count=container.GetItems(0,items);
+	for(uint i=0;i<count;i++)
+	{
+		DeleteItem(items[i]);
+	}
+}

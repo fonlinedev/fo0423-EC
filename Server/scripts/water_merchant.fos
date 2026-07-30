@@ -1,0 +1,240 @@
+#include "_macros.fos"
+#include "_defines.fos"
+#include "_vars.fos"
+
+// ==========================================
+// DIRECT PARAMETER GET/SET HELPERS
+// ==========================================
+
+int GetQuestVar(Critter& player, uint varId)
+{
+    return player.Param[varId];
+}
+
+void SetQuestVar(Critter& player, uint varId, int value)
+{
+    player.ParamBase[varId] = value;
+}
+
+// ==========================================
+// FORMULA HELPERS
+// ==========================================
+
+uint GetXPRequiredForLevel(uint level)
+{
+    if(level <= 1) return 0;
+    return (level * (level - 1) / 2) * 1000;
+}
+
+uint GetXPForNextLevel(uint level)
+{
+    uint currentLevelXP = GetXPRequiredForLevel(level);
+    uint nextLevelXP    = GetXPRequiredForLevel(level + 1);
+    return nextLevelXP - currentLevelXP;
+}
+
+void GrantDeliveryXP(Critter& player)
+{
+    uint level = player.Stat[ST_LEVEL];
+    uint xpRequired = GetXPForNextLevel(level);
+    uint xpReward = 0;
+
+    if(level < 30)
+    {
+        xpReward = xpRequired / 10;
+    }
+    else if(level < 40)
+    {
+        xpReward = xpRequired / 20;
+    }
+    else
+    {
+        xpReward = xpRequired / 100;
+    }
+
+    if(xpReward < 50) xpReward = 50;
+    player.StatBase[ST_EXPERIENCE] += xpReward;
+}
+
+void CheckQuestProgress(Critter& player)
+{
+    if(GetQuestVar(player, LVAR_water_den_done) == 1 && 
+       GetQuestVar(player, LVAR_water_bh_done) == 1 && 
+       GetQuestVar(player, LVAR_water_sf_done) == 1)
+    {
+        SetQuestVar(player, LVAR_water_quest_state, 2); // Ready to claim final reward
+    }
+}
+
+// ==========================================
+// QUEST GIVER DEMANDS & RESULTS
+// ==========================================
+
+bool d_QuestNotStarted(Critter& player, Critter@ npc)
+{
+    int state = GetQuestVar(player, LVAR_water_quest_state);
+    return (state == 0);
+}
+
+bool d_QuestInProgress(Critter& player, Critter@ npc)
+{
+    return (GetQuestVar(player, LVAR_water_quest_state) == 1);
+}
+
+bool d_QuestReadyToComplete(Critter& player, Critter@ npc)
+{
+    return (GetQuestVar(player, LVAR_water_quest_state) == 2);
+}
+
+// Restored so the dialog engine binding succeeds!
+bool d_QuestCompleted(Critter& player, Critter@ npc)
+{
+    return (GetQuestVar(player, LVAR_water_quest_state) == 3);
+}
+
+void r_StartQuest(Critter& player, Critter@ npc)
+{
+    SetQuestVar(player, LVAR_water_quest_state, 1);
+    SetQuestVar(player, LVAR_water_den_done, 0);
+    SetQuestVar(player, LVAR_water_bh_done, 0);
+    SetQuestVar(player, LVAR_water_sf_done, 0);
+}
+
+void r_CompleteQuest(Critter& player, Critter@ npc)
+{
+    if(GetQuestVar(player, LVAR_water_quest_state) != 2) return;
+
+    uint level = player.Stat[ST_LEVEL];
+    uint xpRequired = GetXPForNextLevel(level);
+    uint xpReward = 0;
+    uint capsReward = 0;
+
+    if(level < 30)
+    {
+        xpReward = xpRequired / 10;
+        capsReward = 3000;
+    }
+    else if(level < 40)
+    {
+        xpReward = xpRequired / 20;
+        capsReward = 2500;
+    }
+    else
+    {
+        xpReward = xpRequired / 100;
+        capsReward = 2000;
+    }
+
+    if(xpReward < 100) xpReward = 100;
+
+    player.StatBase[ST_EXPERIENCE] += xpReward;
+    player.AddItem(PID_BOTTLE_CAPS, capsReward);
+
+    // Reset quest state and sub-vars back to 0 so the route can be accepted again
+    SetQuestVar(player, LVAR_water_quest_state, 0);
+    SetQuestVar(player, LVAR_water_den_done, 0);
+    SetQuestVar(player, LVAR_water_bh_done, 0);
+    SetQuestVar(player, LVAR_water_sf_done, 0);
+
+    if(@npc != null)
+    {
+        npc.Say(SAY_NORM_ON_HEAD, "Excellent work! Here is your pay. Come back whenever you're ready for another trip.");
+    }
+}
+
+// ==========================================
+// DELIVERY TARGET DEMANDS & RESULTS
+// ==========================================
+
+bool d_CanDeliverDen(Critter& player, Critter@ npc)
+{
+    return (GetQuestVar(player, LVAR_water_quest_state) == 1 && GetQuestVar(player, LVAR_water_den_done) == 0);
+}
+
+void r_DeliverDen(Critter& player, Critter@ npc)
+{
+    if(!d_CanDeliverDen(player, npc)) return;
+
+    SetQuestVar(player, LVAR_water_den_done, 1);
+    GrantDeliveryXP(player);
+    CheckQuestProgress(player);
+}
+
+bool d_CanDeliverBH(Critter& player, Critter@ npc)
+{
+    return (GetQuestVar(player, LVAR_water_quest_state) == 1 && GetQuestVar(player, LVAR_water_bh_done) == 0);
+}
+
+void r_DeliverBH(Critter& player, Critter@ npc)
+{
+    if(!d_CanDeliverBH(player, npc)) return;
+
+    SetQuestVar(player, LVAR_water_bh_done, 1);
+    GrantDeliveryXP(player);
+    CheckQuestProgress(player);
+}
+
+bool d_CanDeliverSF(Critter& player, Critter@ npc)
+{
+    return (GetQuestVar(player, LVAR_water_quest_state) == 1 && GetQuestVar(player, LVAR_water_sf_done) == 0);
+}
+
+void r_DeliverSF(Critter& player, Critter@ npc)
+{
+    if(!d_CanDeliverSF(player, npc)) return;
+
+    SetQuestVar(player, LVAR_water_sf_done, 1);
+    GrantDeliveryXP(player);
+    CheckQuestProgress(player);
+}
+
+// ==========================================
+// DEBUG / TESTING FUNCTIONS
+// ==========================================
+
+void set_var(Critter& player, int target, int value, int param2)
+{
+    switch(target)
+    {
+        case 0:
+            SetQuestVar(player, LVAR_water_quest_state, value);
+            player.Say(SAY_NETMSG, "LVAR_water_quest_state set to " + value);
+            break;
+        case 1:
+            SetQuestVar(player, LVAR_water_den_done, value);
+            player.Say(SAY_NETMSG, "LVAR_water_den_done set to " + value);
+            break;
+        case 2:
+            SetQuestVar(player, LVAR_water_bh_done, value);
+            player.Say(SAY_NETMSG, "LVAR_water_bh_done set to " + value);
+            break;
+        case 3:
+            SetQuestVar(player, LVAR_water_sf_done, value);
+            player.Say(SAY_NETMSG, "LVAR_water_sf_done set to " + value);
+            break;
+        default:
+            player.Say(SAY_NETMSG, "Invalid target. 0: State, 1: Den, 2: BH, 3: SF");
+            return;
+    }
+
+    CheckQuestProgress(player);
+}
+
+void check_vars(Critter& player, int param0, int param1, int param2)
+{
+    player.Say(SAY_NETMSG, "--- WATER QUEST VARS ---");
+    player.Say(SAY_NETMSG, "Quest State: " + GetQuestVar(player, LVAR_water_quest_state));
+    player.Say(SAY_NETMSG, "Den Done: "    + GetQuestVar(player, LVAR_water_den_done));
+    player.Say(SAY_NETMSG, "BH Done: "     + GetQuestVar(player, LVAR_water_bh_done));
+    player.Say(SAY_NETMSG, "SF Done: "     + GetQuestVar(player, LVAR_water_sf_done));
+}
+
+void reset_vars(Critter& player, int param0, int param1, int param2)
+{
+    SetQuestVar(player, LVAR_water_quest_state, 0);
+    SetQuestVar(player, LVAR_water_den_done, 0);
+    SetQuestVar(player, LVAR_water_bh_done, 0);
+    SetQuestVar(player, LVAR_water_sf_done, 0);
+
+    player.Say(SAY_NETMSG, "Water quest variables reset to 0.");
+}

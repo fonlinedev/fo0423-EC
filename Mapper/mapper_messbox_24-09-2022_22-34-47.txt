@@ -1,0 +1,7 @@
+22:32:51 • Welcome to FOnline: 2238 Mapper.
+22:32:51 • Maps not created in this mapper must be converted with the #PortMap command.
+22:32:51 • Autowall (WIP) registered.
+22:32:51 • Crtypes registered.
+22:32:51 • Press Alt+C to display critter's available basetypes.
+22:32:51 • Tile presets overlay loaded, type #mapper_tilemap@toggle to activate or deactivate it.
+22:32:51 • Grid plugin (WIP) registered. Press G to switch grid mode.

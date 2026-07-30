@@ -1,0 +1,593 @@
+18:24:41 • Welcome to FOnline: Reloaded! Check out our forum for news and announcements. www.fonline-reloaded.net. Thanks and have fun!
+18:24:44 • Connecting to server.
+18:24:44 • Connection established, authentication...
+18:24:46 • Welcome to FOnline: Reloaded! Check out our forum for news and announcements. www.fonline-reloaded.net. Thanks and have fun!
+18:24:46 • Authentication successful, loading map.
+18:24:58 • Access changed. Welcome back, Default.
+18:25:05 • You see Wall.
+18:29:22 • Teleported to World Map.
+18:29:22 • Run script success.
+18:29:30 • Teleported to World Map.
+18:29:30 • Run script success.
+18:29:39 • Entered worldmap.
+18:30:00 • Teleported to World Map.
+18:30:00 • Run script success.
+18:30:23 • Removed from: 20, 18
+18:30:23 • Left worldmap.
+18:30:23 • Teleported to Map 1 (100, 100)
+18:30:23 • Run script success.
+18:31:41 • You see nothing out of the ordinary.
+18:31:42 • You see Wall.
+18:31:51 • God Mode enabled.
+18:31:51 • Run script success.
+18:32:40 • Invalid arguments. Example: <~runscript module func param0 param1 param2>.
+18:32:45 • Teleported to Map 1 (1, 1)
+18:32:45 • Run script success.
+18:32:50 • Teleported to Map 3 (1, 1)
+18:32:50 • Run script success.
+18:32:59 • Teleported to Map 3 (100, 100)
+18:32:59 • Run script success.
+18:33:02 • Teleported to Map 3 (100, 10)
+18:33:02 • Run script success.
+18:33:06 • Teleported to Map 3 (10, 10)
+18:33:06 • Run script success.
+18:33:11 • Teleported to Map 3 (100, 10)
+18:33:11 • Run script success.
+18:33:23 • Teleported to Map 25 (100, 10)
+18:33:23 • Run script success.
+18:33:26 • Teleported to Map 25 (100, 100)
+18:33:26 • Run script success.
+18:33:31 • Teleported to Map 5 (100, 100)
+18:33:31 • Run script success.
+18:33:31 • You see Cave Wall.
+18:33:34 • You see Cave Wall.
+18:33:38 • Teleported to Map 2 (100, 100)
+18:33:38 • Run script success.
+18:33:39 • You see Cave Wall.
+18:33:50 • You see Door.
+18:33:58 • You see Chair.
+18:36:22 • A very nice looking chair.
+18:36:24 • You see Table.
+18:36:25 • You see Table.
+18:36:28 • Teleported to Map 2 (10, 10)
+18:36:28 • Run script success.
+18:36:34 • You see Door.
+18:36:40 • Teleported to Map 2 (0, 0)
+18:36:40 • Run script success.
+18:36:41 • You see Wall.
+18:36:47 • Teleported to Map 2 (10, 0)
+18:36:47 • Run script success.
+18:36:48 • You see Doorway.
+18:36:52 • You see Computer Console.
+18:36:56 • You see nothing out of the ordinary.
+18:42:05 • You see Wall.
+18:42:08 • Teleported to Map 25 (10, 0)
+18:42:08 • Run script success.
+18:42:10 • You see Box.
+18:42:14 • Teleported to Map 5 (10, 0)
+18:42:14 • Run script success.
+18:42:24 • Teleported to Map 5 (100, 0)
+18:42:24 • Run script success.
+18:42:27 • Teleported to Map 50 (100, 0)
+18:42:27 • Run script success.
+18:42:45 • Teleported to Map 4 (100, 0)
+18:42:45 • Run script success.
+18:42:59 • Teleported to Map 14 (100, 0)
+18:42:59 • Run script success.
+18:42:59 • You see Fence.
+18:43:16 • A mutated cornstalk. This one is sick.
+18:43:17 • A mutated cornstalk. This one is sick.
+18:43:20 • You see nothing out of the ordinary.
+18:43:41 • You see Wooden Wall.
+18:43:51 • Teleported to World Map.
+18:43:51 • Run script success.
+18:44:07 • Teleported to World Map.
+18:44:07 • Run script success.
+18:44:08 • Teleported to World Map.
+18:44:08 • Run script success.
+18:44:13 • Teleported to World Map.
+18:44:13 • Run script success.
+18:44:21 • You see nothing out of the ordinary.
+18:45:05 • Teleported to Map 10 (100, 100)
+18:45:05 • Run script success.
+18:45:11 • You see Steel Wall.
+18:45:12 • You see Steel Wall.
+18:45:18 • You see Steel Wall.
+18:45:25 • Teleported to Map 10 (0, 0)
+18:45:25 • Run script success.
+18:45:30 • Teleported to Map 10 (10, 10)
+18:45:30 • Run script success.
+18:45:34 • Teleported to Map 11 (10, 10)
+18:45:34 • Run script success.
+18:46:05 • Teleported to Map 18 (100, 100)
+18:46:05 • Run script success.
+18:46:13 • Teleported to Map 17 (100, 100)
+18:46:13 • Run script success.
+18:46:19 • You see Ladder.
+18:46:22 • You see nothing out of the ordinary.
+18:46:59 • Teleported to Map 17 (100, 100)
+18:46:59 • Run script success.
+18:47:05 • Teleported to Map 17 (10, 10)
+18:47:05 • Run script success.
+18:47:08 • You see Wall.
+18:47:10 • You see nothing out of the ordinary.
+18:47:13 • Teleported to Map 1 (10, 10)
+18:47:13 • Run script success.
+18:47:21 • Teleported to Map 1 (100, 100)
+18:47:21 • Run script success.
+18:47:25 • Teleported to Map 3 (100, 100)
+18:47:25 • Run script success.
+18:47:53 • You see Plant.
+18:48:12 • Teleported to Map 4 (100, 100)
+18:48:12 • Run script success.
+18:48:26 • You see nothing out of the ordinary.
+18:48:27 • You see Exit Grid.
+18:48:27 • You see nothing out of the ordinary.
+18:48:28 • You see nothing out of the ordinary.
+18:50:54 • Teleported to Map 5 (100, 100)
+18:50:54 • Run script success.
+18:50:55 • You see Cave Wall.
+18:51:08 • Teleported to Map 6 (100, 100)
+18:51:08 • Run script success.
+18:51:16 • You see Ladder.
+18:51:18 • You see Cave Wall.
+18:51:20 • You see Cave Wall.
+18:51:29 • You see Wood Support.
+18:51:54 • You see Rocks.
+18:52:00 • You see Door.
+18:52:05 • You see Shelf.
+18:52:07 • You see Ladder.
+18:52:09 • You see Cave Wall.
+18:52:11 • You see Wall.
+18:52:13 • You see Manhole.
+18:52:15 • You see a rat.
+18:52:21 • You see Wall.
+18:52:24 • You see Wall.
+18:52:28 • You see Wall.
+18:52:29 • You see Wall.
+18:52:32 • Teleported to Map 8 (100, 100)
+18:52:32 • Run script success.
+18:53:09 • Entered worldmap.
+18:53:59 • Removed from: 20, 5
+18:53:59 • Left worldmap.
+18:53:59 • Teleported to Map 5 (100, 100)
+18:53:59 • Run script success.
+18:54:04 • Teleported to Map 6 (100, 100)
+18:54:04 • Run script success.
+18:54:08 • Teleported to Map 7 (100, 100)
+18:54:08 • Run script success.
+18:54:17 • Teleported to Map 9 (100, 100)
+18:54:17 • Run script success.
+18:54:42 • Teleported to Map 9 (100, 10)
+18:54:42 • Run script success.
+18:54:47 • Teleported to Map 9 (10, 10)
+18:54:47 • Run script success.
+18:54:50 • Teleported to Map 9 (10, 10)
+18:54:50 • Run script success.
+18:54:57 • Teleported to Map 9 (100, 10)
+18:54:57 • Run script success.
+18:55:04 • Teleported to Map 9 (100, 100)
+18:55:04 • Run script success.
+18:55:33 • Teleported to Map 10 (100, 100)
+18:55:33 • Run script success.
+18:55:39 • Teleported to Map 10 (10, 100)
+18:55:39 • Run script success.
+18:55:43 • Teleported to Map 10 (10, 10)
+18:55:43 • Run script success.
+18:55:48 • Teleported to Map 10 (10, 20)
+18:55:48 • Run script success.
+18:55:51 • Teleported to Map 11 (10, 20)
+18:55:51 • Run script success.
+18:56:00 • Teleported to Map 11 (10, 200)
+18:56:00 • Run script success.
+18:56:04 • Teleported to Map 10 (10, 200)
+18:56:04 • Run script success.
+18:56:08 • Teleported to Map 12 (10, 200)
+18:56:08 • Run script success.
+18:56:11 • Teleported to Map 12 (100, 200)
+18:56:11 • Run script success.
+18:56:14 • Teleported to Map 13 (100, 200)
+18:56:14 • Run script success.
+18:56:37 • Teleported to Map 1 (100, 100)
+18:56:37 • Run script success.
+18:56:37 • You see Wall.
+18:56:42 • Teleported to Map 11 (100, 100)
+18:56:42 • Run script success.
+18:56:47 • You see Box.
+18:56:49 • You see Steel Wall.
+18:56:52 • Teleported to Map 11 (10, 100)
+18:56:52 • Run script success.
+18:56:53 • You see Steel Wall.
+18:56:58 • Teleported to Map 11 (100, 100)
+18:56:58 • Run script success.
+18:56:59 • You see Steel Wall.
+18:57:00 • You see Steel Wall.
+18:57:04 • Teleported to Map 11 (100, 10)
+18:57:04 • Run script success.
+18:57:11 • Teleported to Map 11 (100, 80)
+18:57:11 • Run script success.
+18:57:43 • You see Door.
+18:57:44 • You see Steel Wall.
+18:57:48 • A military-style shower. Not to be used by modest people.
+18:57:52 • You see Door.
+18:57:53 • You see Steel Wall.
+18:57:56 • You see Locker.
+18:58:00 • You see Box.
+18:58:08 • You see Elevator Door.
+18:58:15 • You see Computer.
+18:58:18 • You see a Guard.
+18:58:20 • You see a Guard. They never seem to like you. He looks: Unhurt.
+18:58:27 • You see the Resident Medical Assistant, Phyllis.
+18:58:30 • You see a thin young woman. She smells faintly of antiseptic. She looks: Unhurt.
+18:58:33 • You see Dr. Troy. He looks: Unhurt.
+18:58:33 • You see a middle-aged man wearing lab coat. He seems to be busy.
+18:58:42 • You see Steel Wall.
+18:59:00 • You see Door.
+18:59:06 • You see Computer.
+18:59:07 • That does nothing.
+18:59:11 • You see Computer.
+18:59:13 • That does nothing.
+18:59:15 • You see Computer.
+18:59:17 • That does nothing.
+18:59:17 • You see narg.
+18:59:33 • You see Steel Wall.
+18:59:33 • You see Steel Wall Corner.
+18:59:37 • Teleported to Map 10 (100, 80)
+18:59:37 • Run script success.
+18:59:37 • You see Steel Wall.
+18:59:41 • You see a Guard.
+18:59:42 • You see a Guard. They never seem to like you. He looks: Unhurt.
+19:00:06 • Teleported to Map 10 (100, 80)
+19:00:06 • Run script success.
+19:00:10 • Teleported to Map 11 (100, 80)
+19:00:10 • Run script success.
+19:00:30 • Teleported to Map 12 (100, 80)
+19:00:30 • Run script success.
+19:00:55 • Teleported to Map 13 (100, 80)
+19:00:55 • Run script success.
+19:00:57 • You see Cave Wall.
+19:01:03 • You see a Guard. They never seem to like you. He looks: Unhurt.
+19:01:03 • You see a Guard.
+19:01:05 • You see Powerplant Machinery.
+19:01:09 • You see a Guard.
+19:01:12 • You see Cave Wall.
+19:01:16 • You see a Guard.
+19:01:17 • You see Steel Wall.
+19:01:18 • You see a Guard.
+19:01:22 • You see a Guard. They never seem to like you. He looks: Unhurt.
+19:01:26 • You see Steel Wall.
+19:01:27 • You see nothing out of the ordinary.
+19:02:08 • Teleported to Map 13 (50, 80)
+19:02:08 • Run script success.
+19:02:12 • You see: Auto-Cannon.
+19:02:20 • You see Steel T-Wall.
+19:02:21 • You see Locker.
+19:02:22 • You see a Guard.
+19:02:27 • You see a Guard.
+19:02:29 • You see a Guard. They never seem to like you. He looks: Unhurt.
+19:02:34 • You see Steel Wall.
+19:02:39 • You see Powerplant Machinery.
+19:02:43 • Teleported to Map 14 (50, 80)
+19:02:43 • Run script success.
+19:03:22 • Teleported to Map 15 (50, 80)
+19:03:22 • Run script success.
+19:03:24 • You see Wall.
+19:03:28 • You see Wall.
+19:03:46 • Teleported to Map 16 (50, 80)
+19:03:46 • Run script success.
+19:03:55 • Teleported to Map 16 (100, 80)
+19:03:55 • Run script success.
+19:03:58 • Teleported to Map 16 (100, 180)
+19:03:58 • Run script success.
+19:04:08 • Teleported to Map 16 (100, 100)
+19:04:08 • Run script success.
+19:04:13 • Teleported to Map 17 (100, 100)
+19:04:13 • Run script success.
+19:04:21 • Teleported to Map 17 (10, 100)
+19:04:21 • Run script success.
+19:04:32 • Teleported to Map 17 (50, 100)
+19:04:32 • Run script success.
+19:04:37 • Teleported to Map 17 (0, 100)
+19:04:37 • Run script success.
+19:04:41 • Teleported to Map 17 (40, 100)
+19:04:41 • Run script success.
+19:04:47 • Teleported to Map 17 (40, 50)
+19:04:47 • Run script success.
+19:04:48 • You see Wall.
+19:05:01 • Teleported to Map 17 (50, 50)
+19:05:01 • Run script success.
+19:05:05 • Teleported to Map 17 (50, 60)
+19:05:05 • Run script success.
+19:05:31 • You see nothing out of the ordinary.
+19:05:32 • You see Wall.
+19:05:32 • You see nothing out of the ordinary.
+19:05:33 • You see Ladder.
+19:05:34 • You see Bookcase.
+19:05:35 • Steve missed.
+19:05:35 • Steve was hit for 8 hit points.
+19:05:35 • You see Advanced Workbench.
+19:05:37 • You see Door.
+19:05:38 • Caravan Master was hit for no damage.
+19:05:39 • Steve was hit for 36 hit points.
+19:05:41 • Caravan Master was hit in the eyes for no damage.
+19:05:44 • Caravan Master was hit for no damage.
+19:05:45 • Steve was hit for 58 hit points.
+19:05:48 • You see Doorway.
+19:05:49 • Caravan Master was hit for no damage.
+19:05:49 • Caravan Master missed.
+19:05:51 • Teleported to Map 18 (50, 60)
+19:05:51 • Run script success.
+19:05:57 • You see Egg Shell.
+19:05:58 • You see a Deathclaw.
+19:06:03 • Teleported to Map 19 (50, 60)
+19:06:03 • Run script success.
+19:06:19 • You see Cave Wall.
+19:06:24 • You see Cave Wall.
+19:06:26 • You see Cave Wall.
+19:06:29 • You see Cave Wall.
+19:06:35 • You see Cave Wall.
+19:06:36 • Teleported to Map 20 (50, 60)
+19:06:36 • Run script success.
+19:06:36 • You see Wall.
+19:06:46 • You see Casino Door.
+19:07:07 • You see Wall.
+19:07:08 • You see Casino Door.
+19:07:13 • Teleported to Map 20 (60, 60)
+19:07:13 • Run script success.
+19:07:17 • You see a pimp.
+19:07:28 • Teleported to Map 21 (60, 60)
+19:07:28 • Run script success.
+19:07:30 • You see Wall.
+19:07:37 • You see Wall.
+19:07:41 • You see Craps Table.
+19:08:08 • Teleported to Map 22 (60, 60)
+19:08:08 • Run script success.
+19:08:08 • You see Wall.
+19:08:29 • You see Fence Door.
+19:08:31 • You see Renesco the Rocketman.
+19:08:53 • Teleported to Map 23 (60, 60)
+19:08:53 • Run script success.
+19:08:59 • You see Wall.
+19:09:09 • You see Door.
+19:09:13 • You see Chris Wright.
+19:09:14 • You see one of the Wright's sons.
+19:09:18 • You see Cover.
+19:09:40 • Teleported to Map 24 (60, 60)
+19:09:40 • Run script success.
+19:09:43 • You see Truck.
+19:10:17 • Teleported to Map 24 (50, 60)
+19:10:17 • Run script success.
+19:10:22 • Teleported to Map 24 (50, 30)
+19:10:22 • Run script success.
+19:10:27 • Teleported to Map 24 (30, 30)
+19:10:27 • Run script success.
+19:10:32 • Teleported to Map 24 (100, 30)
+19:10:32 • Run script success.
+19:10:37 • Teleported to Map 24 (100, 50)
+19:10:37 • Run script success.
+19:11:01 • Teleported to Map 25 (100, 50)
+19:11:01 • Run script success.
+19:11:10 • Teleported to Map 25 (100, 100)
+19:11:10 • Run script success.
+19:11:14 • Teleported to Map 26 (100, 100)
+19:11:14 • Run script success.
+19:11:31 • Teleported to Map 26 (50, 50)
+19:11:31 • Run script success.
+19:11:37 • Teleported to Map 26 (10, 50)
+19:11:37 • Run script success.
+19:11:47 • You see Wall.
+19:11:50 • Teleported to Map 26 (100, 50)
+19:11:50 • Run script success.
+19:11:54 • Teleported to Map 26 (150, 50)
+19:11:54 • Run script success.
+19:12:02 • Teleported to Map 26 (15, 50)
+19:12:02 • Run script success.
+19:12:06 • Teleported to Map 26 (15, 10)
+19:12:06 • Run script success.
+19:12:09 • You see Wall.
+19:12:16 • Teleported to Map 27 (10, 100)
+19:12:16 • Run script success.
+19:12:24 • Teleported to Map 27 (100, 100)
+19:12:24 • Run script success.
+19:12:30 • Teleported to Map 27 (50, 50)
+19:12:30 • Run script success.
+19:12:38 • Invalid arguments. Example: <~runscript module func param0 param1 param2>.
+19:12:44 • Teleported to Map 28 (50, 50)
+19:12:44 • Run script success.
+19:12:46 • You see Wall.
+19:12:50 • You see Big Jesus Mordino.
+19:12:51 • You see Big Jesus Mordino. He is covered in sweat and is breathing heavily. He looks: Unhurt.
+19:13:02 • You see: Mordino Men 2.
+19:13:04 • You see: Mordino Men 3.
+19:13:05 • You see: Mordino Men 3. He looks: Unhurt.
+19:13:11 • Teleported to Map 29 (50, 50)
+19:13:11 • Run script success.
+19:13:13 • You see Howitzer.
+19:13:23 • You see Staircase.
+19:13:24 • You see narg.
+19:13:28 • You see Shelves.
+19:13:54 • You see narg.
+19:13:56 • You see Boxes.
+19:13:59 • You see Stuff.
+19:14:05 • You see Stuff.
+19:14:06 • You see Howitzer.
+19:14:08 • This strange-looking cannon looks like a relic from the pre-War days. You wonder how it ended up here.
+19:14:09 • This strange-looking cannon looks like a relic from the pre-War days. You wonder how it ended up here.
+19:14:09 • This strange-looking cannon looks like a relic from the pre-War days. You wonder how it ended up here.
+19:14:33 • You see Staircase.
+19:14:35 • You see Junk.
+19:14:37 • You see Staircase.
+19:14:42 • You see Fence.
+19:14:44 • You see Eldridge.
+19:14:57 • You see Door.
+19:15:00 • You see nothing out of the ordinary.
+19:15:00 • You see Doorway.
+19:15:02 • You see Bookcase.
+19:15:06 • You see nothing out of the ordinary.
+19:15:10 • You see Dresser.
+19:15:14 • You see Door.
+19:15:14 • You see Dresser.
+19:15:16 • You see Fence.
+19:15:20 • Teleported to Map 30 (50, 50)
+19:15:20 • Run script success.
+19:15:21 • You see Wall.
+19:15:22 • You see Wall.
+19:15:37 • Teleported to Map 31 (50, 50)
+19:15:37 • Run script success.
+19:15:44 • You see Staircase.
+19:15:45 • You see Doorway.
+19:15:47 • You see Desk.
+19:15:48 • You see one of the Wright's sons.
+19:16:06 • You see one of the Wright's sons.
+19:16:08 • You see Table.
+19:16:12 • Teleported to Map 32 (50, 50)
+19:16:12 • Run script success.
+19:16:24 • Teleported to Map 33 (50, 50)
+19:16:24 • Run script success.
+19:16:37 • You see Truck.
+19:16:40 • Teleported to Map 33 (50, 55)
+19:16:40 • Run script success.
+19:16:41 • You see Wall.
+19:16:53 • You see a turret.
+19:16:57 • You see Machine.
+19:17:00 • You see a turret.
+19:17:04 • You see Building.
+19:17:26 • You see Wall.
+19:17:27 • You see Wall.
+19:17:29 • Teleported to Map 34 (50, 55)
+19:17:29 • Run script success.
+19:17:34 • You see Metal Barrel.
+19:17:35 • You see Wall.
+19:17:40 • Teleported to Map 35 (50, 55)
+19:17:40 • Run script success.
+19:17:45 • You see Forcefield Emitter.
+19:17:47 • You see Wall.
+19:17:54 • Teleported to Map 36 (50, 55)
+19:17:54 • Run script success.
+19:18:01 • You see Wall.
+19:18:02 • You see Pipe.
+19:18:07 • Teleported to Map 37 (50, 55)
+19:18:07 • Run script success.
+19:18:15 • Teleported to Map 38 (50, 55)
+19:18:15 • Run script success.
+19:18:16 • You see Chair.
+19:18:21 • Teleported to Map 39 (50, 55)
+19:18:21 • Run script success.
+19:18:32 • You see Ladder.
+19:18:34 • You see Doorway.
+19:18:43 • You see nothing out of the ordinary.
+19:18:43 • You see nothing out of the ordinary.
+19:18:44 • You see Ladder.
+19:18:44 • You see narg.
+19:19:01 • Entered worldmap.
+19:19:30 • Removed from: 39, 27
+19:19:30 • Left worldmap.
+19:19:30 • Teleported to Map 40 (50, 55)
+19:19:30 • Run script success.
+19:19:30 • You see Wall.
+19:19:36 • Teleported to Map 41 (50, 55)
+19:19:36 • Run script success.
+19:19:37 • You see Doorway.
+19:19:41 • You see a Slag member.
+19:19:44 • You see Wall.
+19:19:48 • You see Monitors.
+19:19:49 • You see Wall.
+19:19:52 • You see Wall.
+19:19:54 • You see Elevator Shaft.
+19:19:57 • Teleported to Map 42 (50, 55)
+19:19:57 • Run script success.
+19:19:59 • You see Wall.
+19:20:03 • You have entered Shady Sands, the capital of the New California Republic. Its streets are busy and filled with traders and travelers of various kind.
+19:20:03 • You have gained 150 experience points.
+19:20:03 • Teleported to Map 43 (50, 55)
+19:20:03 • Run script success.
+19:20:05 • You see Wall.
+19:20:32 • You see a sharp-dressed guy hawking lizard kebabs.
+19:20:55 • You see a man in the uniform of the NCR police.
+19:20:56 • Entered worldmap.
+19:21:18 • Removed from: 34, 27
+19:21:18 • Left worldmap.
+19:21:18 • Teleported to Map 44 (50, 55)
+19:21:18 • Run script success.
+19:21:28 • You see Bath House Sign.
+19:21:30 • You see nothing out of the ordinary.
+19:21:30 • You see nothing out of the ordinary.
+19:21:45 • Teleported to Map 45 (50, 55)
+19:21:45 • Run script success.
+19:21:46 • You see Wall.
+19:22:06 • You see Computer Console.
+19:22:08 • You see nothing out of the ordinary.
+19:22:12 • This terminal seems to be inactive
+19:22:12 • That does nothing.
+19:22:16 • You see Door.
+19:22:19 • You see Table.
+19:22:20 • You see Locker.
+19:22:21 • You see narg.
+19:22:23 • You see nothing out of the ordinary.
+19:22:24 • You see Locker.
+19:22:27 • You see Locker.
+19:22:30 • You see Box.
+19:22:37 • You see Door.
+19:22:40 • You see Door.
+19:22:47 • You see Computer Console.
+19:22:49 • You see Wall.
+19:22:49 • That does nothing.
+19:22:55 • You see Terminal.
+19:23:00 • You see a computer monitor. It is made from Brotherhood technology.
+19:23:01 • You see Wall.
+19:23:03 • Teleported to Map 46 (50, 55)
+19:23:03 • Run script success.
+19:23:32 • Teleported to Map 47 (50, 55)
+19:23:32 • Run script success.
+19:23:40 • Teleported to Map 48 (50, 55)
+19:23:40 • Run script success.
+19:23:42 • You see Wall.
+19:23:45 • You see Wall.
+19:23:46 • You see Wall.
+19:23:47 • You see Door.
+19:23:59 • Teleported to Map 4 (50, 55)
+19:23:59 • Run script success.
+19:23:59 • You see Tree.
+19:24:41 • Teleported to Map 48 (50, 55)
+19:24:41 • Run script success.
+19:24:41 • You see Ground.
+19:24:47 • Teleported to Map 49 (50, 55)
+19:24:47 • Run script success.
+19:24:48 • You see Ground.
+19:25:03 • Teleported to Map 49 (55, 55)
+19:25:03 • Run script success.
+19:25:08 • Teleported to Map 49 (45, 55)
+19:25:08 • Run script success.
+19:25:16 • Teleported to Map 49 (50, 58)
+19:25:16 • Run script success.
+19:25:19 • Teleported to Map 49 (50, 68)
+19:25:19 • Run script success.
+19:25:25 • Teleported to Map 49 (50, 48)
+19:25:25 • Run script success.
+19:25:31 • Teleported to Map 49 (30, 48)
+19:25:31 • Run script success.
+19:25:34 • Teleported to Map 49 (80, 48)
+19:25:34 • Run script success.
+19:25:38 • Teleported to Map 49 (60, 48)
+19:25:38 • Run script success.
+19:25:41 • Teleported to Map 49 (60, 58)
+19:25:41 • Run script success.
+19:25:44 • Teleported to Map 49 (60, 55)
+19:25:44 • Run script success.
+19:25:47 • Teleported to Map 49 (60, 35)
+19:25:47 • Run script success.
+19:25:50 • Teleported to Map 49 (60, 25)
+19:25:50 • Run script success.
+19:25:54 • Teleported to Map 49 (60, 75)
+19:25:54 • Run script success.
+19:26:00 • You see Door.
+19:26:01 • You see Wall.
+19:26:04 • Need key.
+19:26:10 • Need key.
+19:26:13 • You see Ground.
+19:26:16 • You see Door.
+19:26:17 • Need key.
+19:26:20 • You fail to pick the lock.
+19:26:25 • You see Wall.
+19:26:58 • You see nothing out of the ordinary.
+19:27:04 • You see nothing out of the ordinary.

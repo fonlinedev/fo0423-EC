@@ -1,0 +1,226 @@
+Application
+	Name        FOnlineServer
+	Version     0506
+	OS          6.2.9200 ()
+	Timestamp   2026.07.27 18:22:09
+
+Thread 'GUI' (4648, current)
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	USER32, AddClipboardFormatListener + 75
+	USER32, GetClassLongW + 2106
+	USER32, DispatchMessageW + 1248
+	USER32, DispatchMessageW + 16
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Thread 'Unknown' (2052)
+	ntdll, ZwWaitForMultipleObjects + 12
+	combase, CoGetTreatAsClass + 7011
+	combase, CoGetTreatAsClass + 6631
+	combase, CoSetProxyBlanket + 1919
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Thread 'Unknown' (7440)
+	ntdll, ZwWaitForWorkViaWorkerFactory + 12
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Thread 'GUIUpdate' (12412)
+	ntdll, ZwDelayExecution + 12
+	KERNELBASE, Sleep + 15
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Thread 'Main' (3048)
+	ntdll, ZwDelayExecution + 12
+	KERNELBASE, Sleep + 15
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Thread 'ScriptTimeout' (12708)
+	ntdll, ZwDelayExecution + 12
+	KERNELBASE, Sleep + 15
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Thread 'NetListen' (11132)
+	ntdll, NtWaitForSingleObject + 12
+	mswsock, sethostname + 16658
+	WS2_32, WSAAccept + 143
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Thread 'NetWork0' (13832)
+	ntdll, NtRemoveIoCompletion + 12
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Thread 'NetWork1' (12952)
+	ntdll, NtRemoveIoCompletion + 12
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Thread 'NetWork2' (10600)
+	ntdll, NtRemoveIoCompletion + 12
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Thread 'NetWork3' (11992)
+	ntdll, NtRemoveIoCompletion + 12
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Thread 'WorldSaveManager' (13500)
+	ntdll, NtWaitForSingleObject + 12
+	KERNELBASE, WaitForSingleObject + 18
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Thread 'Logic' (1956)
+	ntdll, RtlLeaveCriticalSection + 42
+	???, (function-name not available) + 0
+
+Thread 'Unknown' (8512)
+	ntdll, ZwWaitForWorkViaWorkerFactory + 12
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Loaded modules
+	C:\Games\FOnlineServer\FOnlineReloadedServer\Server\FOnlineServer.exe (00400000)
+	C:\WINDOWS\SYSTEM32\ntdll.dll (77CD0000)
+	C:\WINDOWS\System32\KERNEL32.DLL (775C0000)
+	C:\WINDOWS\System32\KERNELBASE.dll (765B0000)
+	C:\WINDOWS\System32\USER32.dll (77410000)
+	C:\WINDOWS\System32\win32u.dll (769C0000)
+	C:\WINDOWS\System32\GDI32.dll (77380000)
+	C:\WINDOWS\System32\gdi32full.dll (75F40000)
+	C:\WINDOWS\System32\msvcp_win.dll (771D0000)
+	C:\WINDOWS\System32\ucrtbase.dll (76490000)
+	C:\WINDOWS\System32\ADVAPI32.dll (77250000)
+	C:\WINDOWS\System32\msvcrt.dll (76200000)
+	C:\WINDOWS\System32\sechost.dll (77300000)
+	C:\WINDOWS\System32\RPCRT4.dll (76B50000)
+	C:\WINDOWS\System32\bcrypt.dll (77C90000)
+	C:\WINDOWS\System32\WS2_32.dll (76A80000)
+	C:\WINDOWS\System32\PSAPI.DLL (77CB0000)
+	C:\WINDOWS\System32\COMDLG32.dll (767F0000)
+	C:\WINDOWS\System32\combase.dll (75CC0000)
+	C:\WINDOWS\System32\shcore.dll (770B0000)
+	C:\WINDOWS\System32\SHLWAPI.dll (773C0000)
+	C:\WINDOWS\System32\SHELL32.dll (776B0000)
+	C:\WINDOWS\System32\ole32.dll (76030000)
+	C:\WINDOWS\SYSTEM32\WINMM.dll (75AA0000)
+	C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.19041.6280_none_c0dab36c38bfeda0\COMCTL32.dll (73890000)
+	C:\WINDOWS\SYSTEM32\dbghelp.dll (728A0000)
+	C:\WINDOWS\SYSTEM32\dbgcore.DLL (712A0000)
+	C:\WINDOWS\System32\IMM32.DLL (772D0000)
+	C:\WINDOWS\system32\uxtheme.dll (74800000)
+	C:\WINDOWS\System32\MSCTF.dll (76120000)
+	C:\WINDOWS\System32\OLEAUT32.dll (769E0000)
+	C:\WINDOWS\SYSTEM32\kernel.appcore.dll (75AF0000)
+	C:\WINDOWS\System32\bcryptPrimitives.dll (77050000)
+	C:\WINDOWS\SYSTEM32\textinputframework.dll (70630000)
+	C:\WINDOWS\System32\CoreMessaging.dll (70FC0000)
+	C:\WINDOWS\System32\CoreUIComponents.dll (70D40000)
+	C:\WINDOWS\SYSTEM32\ntmarta.dll (75B00000)
+	C:\WINDOWS\SYSTEM32\wintypes.dll (71060000)
+	C:\WINDOWS\System32\clbcatq.dll (76900000)
+	C:\WINDOWS\system32\dataexchange.dll (705F0000)
+	C:\WINDOWS\system32\d3d11.dll (70410000)
+	C:\WINDOWS\system32\dcomp.dll (702A0000)
+	C:\WINDOWS\system32\dxgi.dll (721E0000)
+	C:\WINDOWS\system32\twinapi.appcore.dll (70100000)
+	C:\WINDOWS\system32\msimtf.dll (73430000)
+	C:\WINDOWS\SYSTEM32\TextShaping.dll (6E350000)
+	C:\Games\FOnlineServer\FOnlineReloadedServer\Server\scripts\parameters.dll (71250000)
+	C:\Games\FOnlineServer\FOnlineReloadedServer\Server\scripts\backend.dll (70CE0000)
+	C:\Games\FOnlineServer\FOnlineReloadedServer\Server\LIBMYSQL.dll (10000000)
+	C:\WINDOWS\SYSTEM32\WSOCK32.dll (73340000)
+	C:\WINDOWS\system32\napinsp.dll (74BF0000)
+	C:\WINDOWS\system32\pnrpnsp.dll (74BD0000)
+	C:\WINDOWS\system32\wshbth.dll (74BB0000)
+	C:\WINDOWS\system32\NLAapi.dll (74B90000)
+	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL (756D0000)
+	C:\WINDOWS\System32\mswsock.dll (75590000)
+	C:\WINDOWS\SYSTEM32\DNSAPI.dll (75410000)
+	C:\WINDOWS\System32\NSI.dll (773B0000)
+	C:\WINDOWS\System32\winrnr.dll (74B80000)
+	C:\Windows\System32\rasadhlp.dll (75400000)
+	C:\WINDOWS\System32\fwpuclnt.dll (70980000)
+	C:\Games\FOnlineServer\FOnlineReloadedServer\Server\scripts\utils.dll (70C90000)
+	C:\Games\FOnlineServer\FOnlineReloadedServer\Server\scripts\check_look.dll (70C40000)
+	C:\Games\FOnlineServer\FOnlineReloadedServer\Server\scripts\online_stats.dll (70BF0000)
+	C:\WINDOWS\SYSTEM32\edputil.dll (6B5D0000)

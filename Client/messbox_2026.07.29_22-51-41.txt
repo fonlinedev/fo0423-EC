@@ -1,0 +1,23 @@
+22:49:32 • Welcome to FOnline: Reloaded! Check out our forum for news and announcements. www.fonline-reloaded.net. Thanks and have fun!
+22:49:34 • Connecting to server.
+22:49:34 • Connection established, authentication...
+22:49:34 • Authentication successful, loading map.
+22:49:35 • You see Wall.
+22:49:43 • Access changed. Welcome back, Default.
+22:49:46 • You see Wall.
+22:49:49 • You see Door.
+22:49:58 • You see Desk.
+22:49:59 • Teleported to Map 1 (100, 100)
+22:49:59 • Run script success.
+22:50:01 • You see Wall.
+22:50:03 • You see Tree.
+22:50:24 • You see nothing out of the ordinary.
+22:50:33 • You see Door.
+22:50:38 • You see Frankie, owner of The Hole.
+22:50:44 • You see Wooden Table.
+22:50:46 • A simple desk with a computer.
+22:50:49 • You have gained 400 experience points.
+22:51:12 • That does nothing.
+22:51:29 • Teleported to Map 2 (100, 100)
+22:51:29 • Run script success.
+22:51:35 • You see Table.

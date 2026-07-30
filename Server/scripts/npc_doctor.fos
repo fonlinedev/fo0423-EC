@@ -1,0 +1,32 @@
+#include "_macros.fos"
+#include "_defines.fos"
+
+// Exact two-parameter signature requested by your engine build
+void r_HealPlayer(Critter& player, Critter@ npc)
+{
+    // Safety check: Ensure the NPC exists
+    if(@npc == null) return;
+    
+    // Check if the player actually needs healing or limb repairs
+    if(player.Stat[ST_CURRENT_HP] >= player.Stat[ST_MAX_LIFE] && 
+       player.Damage[DAMAGE_EYE] == 0 && player.Damage[DAMAGE_RIGHT_ARM] == 0 &&
+       player.Damage[DAMAGE_LEFT_ARM] == 0 && player.Damage[DAMAGE_RIGHT_LEG] == 0 && 
+       player.Damage[DAMAGE_LEFT_LEG] == 0)
+    {
+        npc.Say(SAY_DIALOG, "You look perfectly healthy to me.");
+        return;
+    }
+
+    // Fully heal Hit Points
+    player.StatBase[ST_CURRENT_HP] = player.Stat[ST_MAX_LIFE];
+
+    // Heal all crippled limbs
+    if(player.Damage[DAMAGE_EYE] != 0) player.DamageBase[DAMAGE_EYE] = 0;
+    if(player.Damage[DAMAGE_RIGHT_ARM] != 0) player.DamageBase[DAMAGE_RIGHT_ARM] = 0;
+    if(player.Damage[DAMAGE_LEFT_ARM] != 0) player.DamageBase[DAMAGE_LEFT_ARM] = 0;
+    if(player.Damage[DAMAGE_RIGHT_LEG] != 0) player.DamageBase[DAMAGE_RIGHT_LEG] = 0;
+    if(player.Damage[DAMAGE_LEFT_LEG] != 0) player.DamageBase[DAMAGE_LEFT_LEG] = 0;
+
+    // Send a message to the player
+    npc.Say(SAY_DIALOG, "There you go. All patched up!");
+}

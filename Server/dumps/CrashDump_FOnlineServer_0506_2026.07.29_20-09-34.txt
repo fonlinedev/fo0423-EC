@@ -1,0 +1,166 @@
+Application
+	Name        FOnlineServer
+	Version     0506
+	OS          6.2.9200 ()
+	Timestamp   2026.07.29 20:09:34
+
+Exception
+	Code      EXCEPTION_ACCESS_VIOLATION
+	Address   0x004FBF30
+	Flags     0x0
+
+Thread 'Main' (9920, current)
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Thread 'GUI' (15288)
+	win32u, NtUserMsgWaitForMultipleObjectsEx + 12
+	USER32, MsgWaitForMultipleObjectsEx + 76
+	USER32, MsgWaitForMultipleObjects + 31
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Thread 'Unknown' (13396)
+	ntdll, ZwWaitForWorkViaWorkerFactory + 12
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Thread 'Unknown' (3368)
+	ntdll, ZwWaitForWorkViaWorkerFactory + 12
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Thread 'Unknown' (10932)
+	ntdll, ZwWaitForWorkViaWorkerFactory + 12
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Thread 'Unknown' (3820)
+	ntdll, ZwWaitForMultipleObjects + 12
+	combase, CoGetTreatAsClass + 7011
+	combase, CoIncrementMTAUsage + 537
+	combase, CoGetTreatAsClass + 6696
+	combase, CoSetProxyBlanket + 1919
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Thread 'Unknown' (9532)
+	ntdll, ZwWaitForWorkViaWorkerFactory + 12
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Thread 'Unknown' (12704)
+	ntdll, ZwWaitForWorkViaWorkerFactory + 12
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Thread 'GUIUpdate' (1568)
+	ntdll, ZwDelayExecution + 12
+	KERNELBASE, Sleep + 15
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Thread 'ScriptTimeout' (8444)
+	ntdll, ZwDelayExecution + 12
+	KERNELBASE, Sleep + 15
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	FOnlineServer, (function-name not available) + 0
+	KERNEL32, BaseThreadInitThunk + 25
+	ntdll, RtlGetAppContainerNamedObjectPath + 286
+	ntdll, RtlGetAppContainerNamedObjectPath + 238
+
+Loaded modules
+	C:\Games\FOnlineServer\fo0423-EC\FOnlineReloadedServer\Server\FOnlineServer.exe (00400000)
+	C:\WINDOWS\SYSTEM32\ntdll.dll (76E80000)
+	C:\WINDOWS\System32\KERNEL32.DLL (76C10000)
+	C:\WINDOWS\System32\KERNELBASE.dll (75AC0000)
+	C:\WINDOWS\System32\USER32.dll (74F20000)
+	C:\WINDOWS\System32\win32u.dll (75900000)
+	C:\WINDOWS\System32\GDI32.dll (76D00000)
+	C:\WINDOWS\System32\gdi32full.dll (75260000)
+	C:\WINDOWS\System32\msvcp_win.dll (76A00000)
+	C:\WINDOWS\System32\ucrtbase.dll (76AF0000)
+	C:\WINDOWS\System32\ADVAPI32.dll (75940000)
+	C:\WINDOWS\System32\msvcrt.dll (75350000)
+	C:\WINDOWS\System32\sechost.dll (75440000)
+	C:\WINDOWS\System32\RPCRT4.dll (76360000)
+	C:\WINDOWS\System32\bcrypt.dll (75860000)
+	C:\WINDOWS\System32\WS2_32.dll (76A80000)
+	C:\WINDOWS\System32\PSAPI.DLL (75240000)
+	C:\WINDOWS\System32\COMDLG32.dll (74CF0000)
+	C:\WINDOWS\System32\combase.dll (75520000)
+	C:\WINDOWS\System32\shcore.dll (74E90000)
+	C:\WINDOWS\System32\SHLWAPI.dll (751F0000)
+	C:\WINDOWS\System32\SHELL32.dll (76420000)
+	C:\WINDOWS\System32\ole32.dll (74DA0000)
+	C:\WINDOWS\SYSTEM32\WINMM.dll (74C50000)
+	C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.19041.6280_none_c0dab36c38bfeda0\COMCTL32.dll (72CD0000)
+	C:\WINDOWS\SYSTEM32\dbghelp.dll (71A10000)
+	C:\WINDOWS\SYSTEM32\dbgcore.DLL (6FD00000)
+	C:\WINDOWS\System32\IMM32.DLL (75410000)
+	C:\WINDOWS\system32\uxtheme.dll (72550000)
+	C:\WINDOWS\System32\MSCTF.dll (76D30000)
+	C:\WINDOWS\System32\OLEAUT32.dll (750C0000)
+	C:\WINDOWS\SYSTEM32\kernel.appcore.dll (74CA0000)
+	C:\WINDOWS\System32\bcryptPrimitives.dll (76140000)
+	C:\WINDOWS\SYSTEM32\textinputframework.dll (68380000)
+	C:\WINDOWS\System32\CoreMessaging.dll (70680000)
+	C:\WINDOWS\System32\CoreUIComponents.dll (70400000)
+	C:\WINDOWS\SYSTEM32\wintypes.dll (70720000)
+	C:\WINDOWS\SYSTEM32\ntmarta.dll (74CB0000)
+	C:\WINDOWS\System32\clbcatq.dll (75880000)
+	C:\WINDOWS\system32\dataexchange.dll (68AB0000)
+	C:\WINDOWS\system32\d3d11.dll (68760000)
+	C:\WINDOWS\system32\dcomp.dll (68940000)
+	C:\WINDOWS\system32\dxgi.dll (70CF0000)
+	C:\WINDOWS\system32\twinapi.appcore.dll (685C0000)
+	C:\WINDOWS\system32\msimtf.dll (71BD0000)
+	C:\WINDOWS\SYSTEM32\TextShaping.dll (68AF0000)
+	C:\Games\FOnlineServer\fo0423-EC\FOnlineReloadedServer\Server\scripts\parameters.dll (6B180000)
+	C:\Games\FOnlineServer\fo0423-EC\FOnlineReloadedServer\Server\scripts\backend.dll (6B120000)
+	C:\Games\FOnlineServer\fo0423-EC\FOnlineReloadedServer\Server\LIBMYSQL.dll (10000000)
+	C:\WINDOWS\SYSTEM32\WSOCK32.dll (6B110000)
+	C:\WINDOWS\system32\napinsp.dll (74150000)
+	C:\WINDOWS\system32\pnrpnsp.dll (74130000)
+	C:\WINDOWS\system32\wshbth.dll (74110000)
+	C:\WINDOWS\system32\NLAapi.dll (740F0000)
+	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL (74880000)
+	C:\WINDOWS\System32\mswsock.dll (74740000)
+	C:\WINDOWS\SYSTEM32\DNSAPI.dll (745C0000)
+	C:\WINDOWS\System32\NSI.dll (76350000)
+	C:\WINDOWS\System32\winrnr.dll (740E0000)
+	C:\Windows\System32\rasadhlp.dll (745B0000)
+	C:\WINDOWS\System32\fwpuclnt.dll (71570000)
+	C:\Games\FOnlineServer\fo0423-EC\FOnlineReloadedServer\Server\scripts\utils.dll (6B0C0000)
+	C:\Games\FOnlineServer\fo0423-EC\FOnlineReloadedServer\Server\scripts\check_look.dll (6B070000)
+	C:\Games\FOnlineServer\fo0423-EC\FOnlineReloadedServer\Server\scripts\online_stats.dll (6B020000)

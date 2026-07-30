@@ -1,0 +1,128 @@
+#include "_macros.fos"
+#include "_defines.fos"
+
+// Custom Item PIDs defined in your server
+#define PID_FIREGECKO_PELT      (9630)
+#define PID_GECKO_PELT           (276)
+#define PID_GOLDEN_GECKO_PELT    (277)
+#define PID_BRAHMIN_SKIN         (449)
+#define PID_ROPE                 (127)
+
+// Dynamic XP requirements table up to level 30 (FOnline standard formula context)
+// Formula: (Level * (Level - 1) / 2) * 1000
+uint GetXPRequiredForLevel(uint level)
+{
+    if(level <= 1) return 0;
+    return (level * (level - 1) / 2) * 1000;
+}
+
+// Calculates exact XP required between current level and the next level
+uint GetXPForNextLevel(uint level)
+{
+    uint currentLevelXP = GetXPRequiredForLevel(level);
+    uint nextLevelXP    = GetXPRequiredForLevel(level + 1);
+    return nextLevelXP - currentLevelXP;
+}
+
+// ==========================================
+// DEMAND / CONDITION FUNCTIONS (d_*)
+// Use these in your dialog node conditions
+// ==========================================
+
+// Checks if player has at least 1 Regular Gecko Pelt
+bool d_HasGeckoPelt(Critter& player, Critter@ npc)
+{
+    return player.CountItem(PID_GECKO_PELT) >= 1;
+}
+
+// Checks if player has at least 1 Golden Gecko Pelt
+bool d_HasGoldenGeckoPelt(Critter& player, Critter@ npc)
+{
+    return player.CountItem(PID_GOLDEN_GECKO_PELT) >= 1;
+}
+
+// Checks if player has at least 5 Gecko Pelts for Brahmin Skin exchange
+bool d_Has5GeckoPelts(Critter& player, Critter@ npc)
+{
+    return player.CountItem(PID_GECKO_PELT) >= 5;
+}
+
+// Checks if player has at least 12 Ropes
+bool d_Has12Ropes(Critter& player, Critter@ npc)
+{
+    return player.CountItem(PID_ROPE) >= 12;
+}
+
+// ==========================================
+// RESULT / REWARD FUNCTIONS (r_*)
+// Call these from your dialog node results
+// ==========================================
+
+// Sell 1 Regular Gecko Pelt for 100 Bottle Caps
+void r_SellGeckoPelt(Critter& player, Critter@ npc)
+{
+    if(player.CountItem(PID_GECKO_PELT) < 1) return;
+
+    player.DeleteItem(PID_GECKO_PELT, 1);
+    player.AddItem(PID_BOTTLE_CAPS, 100);
+}
+
+// Sell 1 Golden Gecko Pelt for 200 Bottle Caps
+void r_SellGoldenGeckoPelt(Critter& player, Critter@ npc)
+{
+    if(player.CountItem(PID_GOLDEN_GECKO_PELT) < 1) return;
+
+    player.DeleteItem(PID_GOLDEN_GECKO_PELT, 1);
+    player.AddItem(PID_BOTTLE_CAPS, 200);
+}
+
+// Exchange 5 Regular Gecko Pelts for 1 Brahmin Skin
+void r_ExchangePeltsForBrahminSkin(Critter& player, Critter@ npc)
+{
+    if(player.CountItem(PID_GECKO_PELT) < 5) return;
+
+    player.DeleteItem(PID_GECKO_PELT, 5);
+    player.AddItem(PID_BRAHMIN_SKIN, 1);
+}
+
+// Turn in 12 Ropes for dynamic XP (10% < lvl 10, 5% > lvl 20)
+void r_TurnInRopesForXP(Critter& player, Critter@ npc)
+{
+    if(player.CountItem(PID_ROPE) < 12) return;
+
+    // Delete the 12 ropes
+    player.DeleteItem(PID_ROPE, 12);
+
+    uint currentLevel = player.Stat[ST_LEVEL];
+    uint xpRequired = GetXPForNextLevel(currentLevel);
+    uint xpReward = 0;
+
+    if(currentLevel < 10)
+    {
+        // 10% of total level XP threshold
+        xpReward = xpRequired / 10;
+    }
+    else if(currentLevel > 20)
+    {
+        // 5% of total level XP threshold
+        xpReward = xpRequired / 20;
+    }
+    else
+    {
+        // Intermediate levels (10 to 20): scaled linearly between 10% and 5%
+        // lvl 10 = 10%, lvl 20 = 5%
+        uint percentage = 10 - ((currentLevel - 10) / 2); // Drops ~0.5% per level
+        xpReward = (xpRequired * percentage) / 100;
+    }
+
+    // Minimum fallback to prevent 0 XP edge cases
+    if(xpReward < 100) xpReward = 100;
+
+    // Grant Experience
+    player.StatBase[ST_EXPERIENCE] += xpReward;
+
+    if(@npc != null)
+    {
+        npc.Say(SAY_DIALOG, "Good ropes! Here is your experience.");
+    }
+}

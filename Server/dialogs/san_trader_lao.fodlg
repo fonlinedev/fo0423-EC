@@ -1,0 +1,43 @@
+[comment]
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 0 #
+2 1010 #
+4 1020 D _param p ST_CHARISMA > 99 @
+2 2000 None 0 #
+3 2010 #
+65506 2020 #
+5 2040 D _script water_merchant@d_CanDeliverSF 0 #
+0 2030 @
+3 3000 None 0 #
+65506 3010 #
+0 3020 @
+4 4000 None 0 @
+5 5000 None 0 #
+3 5010 R _script water_merchant@r_DeliverSF 0 #
+0 5020 R _script water_merchant@r_DeliverSF 0 &
+
+[engl]
+{100}{}{Lao Chou}
+{200}{}{You see a man who looks like a shopkeeper.}
+{210}{}{You see Lao Chou, the shopkeeper.}
+{210}{}{You see a man in functional, comfortable clothing.}
+{1000}{}{error}
+{1010}{}{default}
+{1020}{}{ugly}
+{2000}{}{Welcome to my shop, Western Star. What can I do for you?}
+{2010}{}{Who are you?}
+{2020}{}{I'm looking for some equipment.}
+{2030}{}{Bye.}
+{2040}{}{[Deliver Water] Here is your purified water delivery from the Water Merchants.}
+{3000}{}{I'm Lao Chou. I run this establishment, Western Star, a general store.}
+{3010}{}{I see. I'd like some equipment.}
+{3020}{}{Okay, bye.}
+{4000}{}{I am asking you to leave. Politely.@@Get out, freak.@@I'm just a store owner. I want no trouble, foreigner.}
+{5000}{}{Ah, excellent! Fresh purified water is always in high demand here in San Francisco. Thank you for making the long trip.}
+{5010}{}{Glad to help. Let me ask you something else.}
+{5020}{}{You're welcome. Goodbye.}

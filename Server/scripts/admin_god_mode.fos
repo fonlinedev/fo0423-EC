@@ -1,0 +1,45 @@
+#include "_macros.fos"
+#include "_defines.fos"
+
+// Flag definition for internal God Mode tracking
+#define ST_GOD_MODE               (ST_VAR9) // Dedicated variable slot for God Mode state [cite: 2]
+
+// Command Handler Hook
+bool pr_godmode(Critter& player, string@ command, int p0, int p1, int p2)
+{
+    if(player.GetAccess() < ACCESS_ADMIN)
+    {
+        player.Say(SAY_NETMSG, "Access denied. High-tier administrative privilege required.");
+        return true;
+    }
+
+    if(player.Param[ST_GOD_MODE] == 0)
+    {
+        player.ParamBase[ST_GOD_MODE] = 1;
+        player.StatBase[ST_MAX_LIFE] += 9999;
+        player.StatBase[ST_CURRENT_HP] += 9999;
+        player.Say(SAY_NETMSG, "GOD MODE ACTIVATED. Invulnerability online.");
+    }
+    else
+    {
+        player.ParamBase[ST_GOD_MODE] = 0;
+        player.StatBase[ST_MAX_LIFE] -= 9999;
+        if(player.Stat[ST_CURRENT_HP] > player.Stat[ST_MAX_LIFE])
+            player.StatBase[ST_CURRENT_HP] = player.Stat[ST_MAX_LIFE];
+            
+        player.Say(SAY_NETMSG, "GOD MODE DEACTIVATED. Standard mortality restored.");
+    }
+
+    return true;
+}
+
+// Damage Calculation Override Hook
+void god_OnAttacked(Critter& target, Critter& attacker, uint damage)
+{
+    if(target.Param[ST_GOD_MODE] == 1)
+    {
+        // Negate all damage completely
+        damage = 0;
+        target.StatBase[ST_CURRENT_HP] = target.Stat[ST_MAX_LIFE];
+    }
+}
