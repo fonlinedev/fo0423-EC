@@ -18,6 +18,11 @@
 .asbin
 .fo
 .client
+# FOnline Compiled Script Bytecode & Preprocessed Files
+*.fosb
+*.fosp
+# FOnline Compiled Map Binaries
+*.fomapb
 Serverscriptscache
 Serverscriptsbin
 Clientcache
