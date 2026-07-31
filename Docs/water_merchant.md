@@ -47,6 +47,29 @@ Assign these script calls to your quest giver NPC dialogue nodes:
 * **Check Ready to Complete:** `D _script water_merchant@d_QuestReadyToComplete 0`
 * **Claim Final Reward:** `R _script water_merchant@r_CompleteQuest 0`
 
+### C. Test it
+
+Requires Admin Access
+
+
+In-game, set your quest state to in-progress:
+`~runscript water_merchant set_var 0 1 0
+
+Mark the first two locations done:
+
+`~runscript water_merchant set_var 1 1 0
+
+`~runscript water_merchant set_var 2 1 0
+
+Mark the final location done:
+
+`~runscript water_merchant set_var 3 1 0
+
+Run 
+`~runscript water_merchant check_vars 0 0 0
+State will automatically show as 2 (Ready to claim final reward)!
+
+
 ---
 
 ## Full Source Code

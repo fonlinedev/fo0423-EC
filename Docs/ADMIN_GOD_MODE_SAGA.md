@@ -194,7 +194,11 @@ void god_OnAttacked(Critter& target, Critter& attacker, uint damage)
 ```
 
 # Useful scripts
+| Command | Map |
+| :--- | :--- |
+`~runscript cheats tp_map 100 100 100` | The Hub
 `~runscript cheats tp_map 1 100 100` | Den
+`~runscript cheats tp_map 63 120 265` | San Francisco Vendor
 `~runscript cheats tp_map 8 100 100` | Modoc
 `~runscript cheats tp_map 9 100 100` | Vault City Inner
 `~runscript cheats tp_map 12 100 80` | Vault City Vault 3rd floor
@@ -222,14 +226,12 @@ void god_OnAttacked(Critter& target, Critter& attacker, uint damage)
 `~runscript cheats tp_map 55 70 55` | Mariposa base entrance
 `~runscript cheats tp_map 60 70 55` | Redding
 `~runscript cheats tp_map 63 80 55` | San Francisco Oil tanker
-`~runscript cheats tp_map 63 120 265` | San Francisco Vendor
 `~runscript cheats tp_map 67 100 100` | Navarro entrance
 `~runscript cheats tp_map 70 100 100` | Junktown
 `~runscript cheats tp_map 72 100 100` | BOS Broken Hills entrance
 `~runscript cheats tp_map 78 100 100` | The Glow
 `~runscript cheats tp_map 93 100 100` | Necropolis
 98 | Necropolis vault entrance
-`~runscript cheats tp_map 100 100 100` | The Hub
 103 | Water merchants
 104 | Falcon Maltese basement
 105 | Theft guild

@@ -3576,3 +3576,34 @@ void spawnjunk(Critter& cr, int, int, int)
     Item@ junk = cr.GetMap().AddItem(cr.HexX, cr.HexY, PID_PUMP_PARTS, 1);
     junk.SetScript("prod_barrel_junk@_Junk");
 }
+
+void unsafe_SetLevel(Critter& player, int param0, int param1, int param2, string@ param3, array<int>@ param4)
+{
+    if (player.GetAccess() < ACCESS_ADMIN)
+    {
+        player.Say(SAY_NETMSG, "Access denied.");
+        return;
+    }
+
+    int targetLevel = param0;
+    if (targetLevel < 1) targetLevel = 1;
+    if (targetLevel > 100) targetLevel = 100;
+
+    int currentLevel = player.Stat[ST_LEVEL];
+
+    if (targetLevel > currentLevel)
+    {
+        // Add huge lump-sum EXP to force the parameters.fos level-up loop
+        for (int i = currentLevel; i < targetLevel; i++)
+        {
+            player.StatBase[ST_EXPERIENCE] += (i * 1000); 
+        }
+
+        player.Say(SAY_NETMSG, "Level set to " + player.Stat[ST_LEVEL] + "!");
+    }
+    else
+    {
+        player.StatBase[ST_LEVEL] = targetLevel;
+        player.Say(SAY_NETMSG, "Level adjusted to " + targetLevel + ".");
+    }
+}
