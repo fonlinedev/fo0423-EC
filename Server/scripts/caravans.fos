@@ -831,3 +831,48 @@ bool        _GlobalProcessDriver(Critter& cr, int type, Item@ car, float& x, flo
     }
     return true;
 }
+
+bool d_CheckAllCaravans(Critter& player, Critter@ npc, int val)
+{
+    string report = "";
+    uint activeCount = 0;
+
+    for(uint i = 1; i <= 7; i++)
+    {
+        // Safely check if the caravan object exists first
+        ICaravan@ caravan = GetCaravan(i);
+        if(!valid(caravan)) 
+            continue;
+
+        string caravanName = caravan.GetName();
+        string destName = caravan.GetNextDestinationName();
+        
+        // Use the module's built-in safe text generation logic to avoid coordinate index crashes
+        Critter@ wmNpc = GetCritter(caravan.GetWMLeaderId());
+        Critter@ townNpc = GetCritter(caravan.GetLeaderId());
+
+        if(valid(townNpc))
+        {
+            report += "\n- " + caravanName + ": Resting in town. Destination: " + destName;
+            activeCount++;
+        }
+        else if(valid(wmNpc) && !wmNpc.IsDead())
+        {
+            uint16 x = wmNpc.WorldX;
+            uint16 y = wmNpc.WorldY;
+            report += "\n- " + caravanName + ": On the move at (" + x + ", " + y + "). Destination: " + destName;
+            activeCount++;
+        }
+    }
+
+    if(activeCount == 0)
+    {
+        player.Say(SAY_NETMSG, "No caravans are currently active on the wasteland routes.");
+    }
+    else
+    {
+        player.Say(SAY_NETMSG, "Active Caravans:" + report);
+    }
+
+    return true;
+}
