@@ -421,14 +421,6 @@
 #define GVAR_redding_score                      (61006)
 
 
-// ==========================================
-// Water Merchant Quest Variables
-// ==========================================
-#define LVAR_water_quest_state   (750)
-#define LVAR_water_den_done      (751)
-#define LVAR_water_bh_done       (752)
-#define LVAR_water_sf_done       (753)
-
 /*************************************************************************************
         Id	Type	Name		Start	Min	Max	Flags
 **************************************************************************************

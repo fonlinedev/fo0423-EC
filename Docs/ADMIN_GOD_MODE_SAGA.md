@@ -143,58 +143,14 @@ When activated via `~godmode`, the administrator is granted absolute control ove
 
 ---
 
-## Script Interface (`scripts/admin_god_mode.fos`)
-
-```cpp
-#include "_macros.fos"
-#include "_defines.fos"
-
-// Flag definition for internal God Mode tracking
-#define ST_GOD_MODE               (ST_VAR9) // Dedicated variable slot for God Mode state [cite: 2]
-
-// Command Handler Hook
-bool pr_godmode(Critter& player, string@ command, int p0, int p1, int p2)
-{
-    if(player.GetAccess() < ACCESS_ADMIN)
-    {
-        player.Say(SAY_NETMSG, "Access denied. High-tier administrative privilege required.");
-        return true;
-    }
-
-    if(player.Param[ST_GOD_MODE] == 0)
-    {
-        player.ParamBase[ST_GOD_MODE] = 1;
-        player.StatBase[ST_MAX_LIFE] += 9999;
-        player.StatBase[ST_CURRENT_HP] += 9999;
-        player.Say(SAY_NETMSG, "GOD MODE ACTIVATED. Invulnerability online.");
-    }
-    else
-    {
-        player.ParamBase[ST_GOD_MODE] = 0;
-        player.StatBase[ST_MAX_LIFE] -= 9999;
-        if(player.Stat[ST_CURRENT_HP] > player.Stat[ST_MAX_LIFE])
-            player.StatBase[ST_CURRENT_HP] = player.Stat[ST_MAX_LIFE];
-            
-        player.Say(SAY_NETMSG, "GOD MODE DEACTIVATED. Standard mortality restored.");
-    }
-
-    return true;
-}
-
-// Damage Calculation Override Hook
-void god_OnAttacked(Critter& target, Critter& attacker, uint damage)
-{
-    if(target.Param[ST_GOD_MODE] == 1)
-    {
-        // Negate all damage completely
-        damage = 0;
-        target.StatBase[ST_CURRENT_HP] = target.Stat[ST_MAX_LIFE];
-    }
-}
-```
-
 # Useful scripts
+| Command | Map |
+| :--- | :--- |
+`~runscript cheats tp_map 100 100 100` | The Hub
+103 | Water merchants
 `~runscript cheats tp_map 1 100 100` | Den
+`~runscript cheats tp_map 63 120 265` | San Francisco Vendor
+`~runscript cheats tp_map 16 220 155` | BrokenHills Marcus
 `~runscript cheats tp_map 8 100 100` | Modoc
 `~runscript cheats tp_map 9 100 100` | Vault City Inner
 `~runscript cheats tp_map 12 100 80` | Vault City Vault 3rd floor
@@ -203,7 +159,6 @@ void god_OnAttacked(Critter& target, Critter& attacker, uint damage)
 `~runscript cheats tp_map 13 100 80` | Navarro
 `~runscript cheats tp_map 14 50 80` | Gecko Junkyard
 `~runscript cheats tp_map 15 50 80` | Gecko Powerplant
-`~runscript cheats tp_map 16 220 155` | BrokenHills Marcus
 `~runscript cheats tp_map 17 50 60` | BrokenHills Basement
 `~runscript cheats tp_map 20 50 60` | New Reno
 `~runscript cheats tp_map 21 60 60` | New Reno Shark Club
@@ -222,15 +177,12 @@ void god_OnAttacked(Critter& target, Critter& attacker, uint damage)
 `~runscript cheats tp_map 55 70 55` | Mariposa base entrance
 `~runscript cheats tp_map 60 70 55` | Redding
 `~runscript cheats tp_map 63 80 55` | San Francisco Oil tanker
-`~runscript cheats tp_map 63 120 265` | San Francisco Vendor
 `~runscript cheats tp_map 67 100 100` | Navarro entrance
 `~runscript cheats tp_map 70 100 100` | Junktown
 `~runscript cheats tp_map 72 100 100` | BOS Broken Hills entrance
 `~runscript cheats tp_map 78 100 100` | The Glow
 `~runscript cheats tp_map 93 100 100` | Necropolis
 98 | Necropolis vault entrance
-`~runscript cheats tp_map 100 100 100` | The Hub
-103 | Water merchants
 104 | Falcon Maltese basement
 105 | Theft guild
 107 | New Adytum

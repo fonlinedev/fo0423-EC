@@ -3,6 +3,15 @@
 #include "_vars.fos"
 
 // ==========================================
+// Water Merchant Quest Parameters
+// (Mapped to the custom range defined in _defines.fos: 943-946)
+// ==========================================
+#define LVAR_water_quest_state   ST_WATER_QUEST_STATE
+#define LVAR_water_den_done      ST_WATER_DEN_DONE
+#define LVAR_water_bh_done       ST_WATER_BH_DONE
+#define LVAR_water_sf_done       ST_WATER_SF_DONE
+
+// ==========================================
 // DIRECT PARAMETER GET/SET HELPERS
 // ==========================================
 
@@ -53,6 +62,8 @@ void GrantDeliveryXP(Critter& player)
     }
 
     if(xpReward < 50) xpReward = 50;
+    
+    // Grant experience
     player.StatBase[ST_EXPERIENCE] += xpReward;
 }
 
@@ -86,7 +97,6 @@ bool d_QuestReadyToComplete(Critter& player, Critter@ npc)
     return (GetQuestVar(player, LVAR_water_quest_state) == 2);
 }
 
-// Restored so the dialog engine binding succeeds!
 bool d_QuestCompleted(Critter& player, Critter@ npc)
 {
     return (GetQuestVar(player, LVAR_water_quest_state) == 3);
@@ -130,7 +140,7 @@ void r_CompleteQuest(Critter& player, Critter@ npc)
     player.StatBase[ST_EXPERIENCE] += xpReward;
     player.AddItem(PID_BOTTLE_CAPS, capsReward);
 
-    // Reset quest state and sub-vars back to 0 so the route can be accepted again
+    // Reset quest state back to 0 so route can be accepted again
     SetQuestVar(player, LVAR_water_quest_state, 0);
     SetQuestVar(player, LVAR_water_den_done, 0);
     SetQuestVar(player, LVAR_water_bh_done, 0);
@@ -145,47 +155,77 @@ void r_CompleteQuest(Critter& player, Critter@ npc)
 // ==========================================
 // DELIVERY TARGET DEMANDS & RESULTS
 // ==========================================
-
 bool d_CanDeliverDen(Critter& player, Critter@ npc)
 {
-    return (GetQuestVar(player, LVAR_water_quest_state) == 1 && GetQuestVar(player, LVAR_water_den_done) == 0);
+    int state = GetQuestVar(player, LVAR_water_quest_state);
+    int denDone = GetQuestVar(player, LVAR_water_den_done);
+    bool result = (state == 1 && denDone == 0);
+    Log("d_CanDeliverDen evaluated | State: " + state + " | DenDone: " + denDone + " | Returns: " + (result ? "true" : "false"));
+    return result;
 }
 
 void r_DeliverDen(Critter& player, Critter@ npc)
 {
-    if(!d_CanDeliverDen(player, npc)) return;
+    Log("r_DeliverDen called | Current DenDone: " + GetQuestVar(player, LVAR_water_den_done));
+    if(GetQuestVar(player, LVAR_water_den_done) == 1) 
+    {
+        Log("r_DeliverDen exited early: DenDone was already 1.");
+        return;
+    }
 
     SetQuestVar(player, LVAR_water_den_done, 1);
     GrantDeliveryXP(player);
     CheckQuestProgress(player);
+
+    player.Say(SAY_NETMSG, "You delivered the water to Frankie in The Den.");
+    Log("r_DeliverDen completed successfully | New DenDone: " + GetQuestVar(player, LVAR_water_den_done));
 }
 
 bool d_CanDeliverBH(Critter& player, Critter@ npc)
 {
-    return (GetQuestVar(player, LVAR_water_quest_state) == 1 && GetQuestVar(player, LVAR_water_bh_done) == 0);
+    int state = GetQuestVar(player, LVAR_water_quest_state);
+    int bhDone = GetQuestVar(player, LVAR_water_bh_done);
+    bool result = (state == 1 && bhDone == 0);
+    Log("d_CanDeliverBH evaluated | State: " + state + " | BHDone: " + bhDone + " | Returns: " + (result ? "true" : "false"));
+    return result;
 }
 
 void r_DeliverBH(Critter& player, Critter@ npc)
 {
-    if(!d_CanDeliverBH(player, npc)) return;
+    Log("r_DeliverBH called | Current BHDone: " + GetQuestVar(player, LVAR_water_bh_done));
+    if(GetQuestVar(player, LVAR_water_bh_done) == 1) 
+    {
+        Log("r_DeliverBH exited early: BHDone was already 1.");
+        return;
+    }
 
     SetQuestVar(player, LVAR_water_bh_done, 1);
     GrantDeliveryXP(player);
     CheckQuestProgress(player);
+
+    player.Say(SAY_NETMSG, "You delivered the water in Broken Hills.");
+    Log("r_DeliverBH completed successfully | New BHDone: " + GetQuestVar(player, LVAR_water_bh_done));
 }
 
 bool d_CanDeliverSF(Critter& player, Critter@ npc)
 {
-    return (GetQuestVar(player, LVAR_water_quest_state) == 1 && GetQuestVar(player, LVAR_water_sf_done) == 0);
+    int state = GetQuestVar(player, LVAR_water_quest_state);
+    int sfDone = GetQuestVar(player, LVAR_water_sf_done);
+    bool result = (state == 1 && sfDone == 0);
+    Log("d_CanDeliverSF evaluated | State: " + state + " | SFDone: " + sfDone + " | Returns: " + (result ? "true" : "false"));
+    return result;
 }
 
 void r_DeliverSF(Critter& player, Critter@ npc)
 {
-    if(!d_CanDeliverSF(player, npc)) return;
+    Log("r_DeliverSF called | Current SFDone: " + GetQuestVar(player, LVAR_water_sf_done));
+    if(GetQuestVar(player, LVAR_water_sf_done) == 1) return;
 
     SetQuestVar(player, LVAR_water_sf_done, 1);
     GrantDeliveryXP(player);
     CheckQuestProgress(player);
+
+    player.Say(SAY_NETMSG, "You delivered the water in San Francisco.");
 }
 
 // ==========================================
@@ -198,19 +238,19 @@ void set_var(Critter& player, int target, int value, int param2)
     {
         case 0:
             SetQuestVar(player, LVAR_water_quest_state, value);
-            player.Say(SAY_NETMSG, "LVAR_water_quest_state set to " + value);
+            player.Say(SAY_NETMSG, "ST_WATER_QUEST_STATE set to " + value);
             break;
         case 1:
             SetQuestVar(player, LVAR_water_den_done, value);
-            player.Say(SAY_NETMSG, "LVAR_water_den_done set to " + value);
+            player.Say(SAY_NETMSG, "ST_WATER_DEN_DONE set to " + value);
             break;
         case 2:
             SetQuestVar(player, LVAR_water_bh_done, value);
-            player.Say(SAY_NETMSG, "LVAR_water_bh_done set to " + value);
+            player.Say(SAY_NETMSG, "ST_WATER_BH_DONE set to " + value);
             break;
         case 3:
             SetQuestVar(player, LVAR_water_sf_done, value);
-            player.Say(SAY_NETMSG, "LVAR_water_sf_done set to " + value);
+            player.Say(SAY_NETMSG, "ST_WATER_SF_DONE set to " + value);
             break;
         default:
             player.Say(SAY_NETMSG, "Invalid target. 0: State, 1: Den, 2: BH, 3: SF");

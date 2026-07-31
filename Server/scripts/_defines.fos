@@ -1006,10 +1006,18 @@
 #define FV_FLAG_FLED_BATTLE                      (0x2) // Has fled battle and is waiting on worldmap.
 
 //
+// Custom Quest / Player Variables (943 - 998 available)
+//
+#define ST_WATER_QUEST_STATE                     (943)
+#define ST_WATER_DEN_DONE                        (944)
+#define ST_WATER_BH_DONE                         (945)
+#define ST_WATER_SF_DONE                         (946)
+
+//
 // 943..999
 //
 #define ST_EX_IDX                                (999)
-#define PARAMS_COUNT                             (1000)
+#define PARAMS_COUNT                             (2001)
 
 // Planes types
 #define AI_PLANE_MISC                            (0)
@@ -1648,6 +1656,13 @@
 # pragma crdata "GoodEvilList 700 899"
 # pragma crdata "Followers 900 924"
 # pragma crdata "FollowerVar 925 942"
+# pragma crdata "CustomVars 943 998"
+
+// === REGISTER YOUR NEW VARIABLE RANGES HERE ===
+# pragma crdata "CustomVars 151 179"
+
+// Or if expanded past 1000:
+// # pragma crdata "ExtendedCustomVars 1000 2000"
 
 # ifdef __SERVER
 #  pragma bindfield "uint Critter::GlobalMapMoveCounter -> 0"
