@@ -295,3 +295,23 @@ bool ModifyStat(Critter& player, Critter@ target, const string& stat, int val)
     }
     return true;
 }
+
+// Unique function name to avoid conflicts with existing cheats module functions
+void r_ModifyCharStat(Critter& player, int p0, int p1, int p2, string@ param, int[]@ paramValues)
+{
+    string statStr = "";
+    switch(p0)
+    {
+        case 1: statStr = "st"; break;
+        case 2: statStr = "pe"; break;
+        case 3: statStr = "en"; break;
+        case 4: statStr = "ch"; break;
+        case 5: statStr = "in"; break;
+        case 6: statStr = "ag"; break;
+        case 7: statStr = "lk"; break;
+        default: 
+            player.Say(SAY_NETMSG, "Invalid stat index (1-7)");
+            return;
+    }
+    ModifyStat(player, player, statStr, p1);
+}
