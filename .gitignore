@@ -94,3 +94,6 @@ Client/data/faction.zip
 Client/fallout.dat
 *.log
 *.cache
+Server/dumps/*
+Client/data/cache/*
+Client/FOnline.log
