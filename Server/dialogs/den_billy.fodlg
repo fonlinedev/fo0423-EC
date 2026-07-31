@@ -6,15 +6,15 @@ lang=engl
 [dialog]
 &
 1 1000 None 0 #
-10 1010 D _param p KARMA_SLAVER > 0 #
-11 1020 D _param p ST_CHARISMA > 99 #
-2 1030 @
+18 1010 D _script water_merchant@d_CanDeliverDen 0 #
+10 1020 D _param p KARMA_SLAVER > 0 #
+11 1030 D _param p ST_CHARISMA > 99 #
+2 1040 @
 2 2000 None 0 #
+12 2050 D _var p q_klam_bob_thehole = 1 #
 3 2010 #
 3 2020 #
 4 2030 #
-17 2060 D _script water_merchant@d_CanDeliverDen 0 #
-12 2050 D _var p q_klam_bob_thehole = 1 #
 0 2040 @
 3 3000 None 0 #
 5 3010 #
@@ -44,7 +44,7 @@ lang=engl
 0 9010 #
 0 9020 @
 10 10000 None 0 #
-17 10030 D _script water_merchant@d_CanDeliverDen 0 #
+18 10015 D _script water_merchant@d_CanDeliverDen 0 #
 3 10010 #
 0 10020 @
 11 11000 None 0 @
@@ -59,8 +59,10 @@ lang=engl
 16 16000 None 0 #
 0 16010 R _var p q_klam_bob_thehole = 2 @
 17 17000 None 0 #
-3 17010 R _script water_merchant@r_DeliverDen 0 #
-0 17020 R _script water_merchant@r_DeliverDen 0 &
+0 17010 @
+18 18000 None 0 #
+17 18010 R _script water_merchant@r_DeliverDen 0 #
+2 18020 &
 
 [engl]
 {100}{}{Frankie}
@@ -69,16 +71,16 @@ lang=engl
 {210}{}{This is Frankie. He owns this joint.}
 {210}{}{This appears to be the owner of this place.}
 {1000}{}{Predialogue installations}
-{1010}{}{Slaver}
-{1020}{}{Ugly}
-{1030}{}{normal}
+{1010}{}{Can Deliver Den}
+{1020}{}{Slaver}
+{1030}{}{Ugly}
+{1040}{}{normal}
 {2000}{}{I’m Frankie and yer standing in 'The Hole.' Best damn bar for a hundred miles! Everyone crawls into The Hole when it's time to let loose. Now don't you be causing too much trouble, y’hear?}
 {2010}{}{I hear ya.}
 {2020}{}{Yeah, okay. Whatever.}
 {2030}{}{I see why you call this place "The Hole."}
 {2040}{}{Nothing today, bye.}
 {2050}{}{Whiskey Bob sent me. I've got a message for you.}
-{2060}{}{[Deliver Water] Here is your water delivery from the Water Merchants.}
 {3000}{}{What’s yer pleasure?}
 {3010}{}{Whiskey.}
 {3020}{}{Sex.}
@@ -86,7 +88,7 @@ lang=engl
 {3040}{}{Nothing today, bye.}
 {4000}{}{Hey! You better shut your hole!}
 {4010}{}{Just do your job and get me a drink.}
-{4020}{}{I’ll just leave instead.}
+{4020}{}{I’’ll just leave instead.}
 {5000}{}{Whiskey is $10 a shot.}
 {5010}{}{Here’s your money.}
 {5020}{}{Can't afford it. Can I get something else?}
@@ -109,7 +111,6 @@ lang=engl
 {10000}{}{Good day, slaver.}
 {10010}{}{Right.}
 {10020}{}{Sure is. I'm going to go enjoy it. Bye.}
-{10030}{}{[Deliver Water] Here is your water delivery from the Water Merchants.}
 {11000}{}{Get lost, you ugly sonovbitch.@@You're scaring off all my business.@@I don't care if you got the money, get the hell out.}
 {12000}{}{Oh yeah? What's that old bastard want?}
 {12010}{}{Uh, he wanted me to tell you the next batch of hooch is ready.}
@@ -118,9 +119,11 @@ lang=engl
 {14000}{}{There was? What?}
 {14010}{}{He's, uh, charging double this time.}
 {15000}{}{(Frankie's face reddens) That stingy piece of shit! He tries this every goddamn time. I give that old fucker the most business he's ever had and he... shit. I need a drink.}
-{15010}{}{Can I go now? Is that it? }
+{15010}{}{Can I go now? Is that it?}
 {16000}{}{No! Not it ain't! Not by a long shot. You get back to Bob, tell him I'll be picking up, but at the goddamn rate we agreed on! (He sighs) Here's a couple bucks for your trouble. Don't keep me waiting.}
 {16010}{}{Alright, sure thing Frankie.}
 {17000}{}{Finally! We were running low on fresh water around here. Thanks, pal.}
-{17010}{}{Glad to help. I had a few other questions.}
-{17020}{}{No problem. Goodbye.}
+{17010}{}{You're welcome. Goodbye.}
+{18000}{}{What do you want, human?}
+{18010}{}{[Deliver Water] Here is your water delivery from the Water Merchants.}
+{18020}{}{I wanted to talk about something else.}

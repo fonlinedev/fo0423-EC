@@ -6,8 +6,9 @@ lang=engl
 [dialog]
 &
 1 1000 None 0 #
-2 1010 D _param p ST_INTELLECT < 4 #
-4 1020 @
+35 1010 D _script water_merchant@d_CanDeliverBH 0 #
+2 1020 D _param p ST_INTELLECT < 4 #
+4 1030 @
 2 2000 None 0 #
 3 2010 @
 3 3000 None 0 #
@@ -22,7 +23,6 @@ lang=engl
 50 4070 D _script town@d_CanRecruitMilitia 0 #
 120 4080 D _script town@d_IsControllingTown 1 1 #
 500 4090 D _script town@d_CanChangeLaws 0 #
-34 4110 D _script water_merchant@d_CanDeliverBH 0 R _script water_merchant@r_DeliverBH 0 #
 0 4100 @
 5 5000 None 0 #
 7 5010 #
@@ -108,8 +108,10 @@ lang=engl
 0 32010 @
 330 33000 None 0 @
 34 34000 None 0 #
-4 34010 #
-0 34020 &
+0 34010 @
+35 35000 None 0 #
+34 35010 R _script water_merchant@r_DeliverBH 0 #
+4 35020 &
 
 [engl]
 {100}{}{Marcus}
@@ -118,8 +120,9 @@ lang=engl
 {210}{}{You see the sheriff of Broken Hills.}
 {210}{}{You see a burly old mutant with a weary cast to his face. He still looks vigorous and tough.}
 {1000}{}{Predialogue installations}
-{1010}{}{Dumb}
-{1020}{}{Normal}
+{1010}{}{Can Deliver BH}
+{1020}{}{Dumb}
+{1030}{}{Normal}
 {2000}{}{What do you want, human?}
 {2010}{}{Uggie.}
 {3000}{}{Yeah, I'm an ugly mutant. I also run this place. You got a problem with that?}
@@ -135,7 +138,6 @@ lang=engl
 {4080}{}{Where is our cut of the profits?}
 {4090}{}{Let's discuss the law in this place.}
 {4100}{}{Bye.}
-{4110}{}{[Deliver Water] Here is your water delivery shipment from the Water Merchants.}
 {5000}{}{I'm Marcus, helped build the place. Now I'm sheriff.}
 {5010}{}{You helped build this place? That must have been a long time ago...}
 {5020}{}{Bullshit. How could you have been around that long?}
@@ -223,5 +225,8 @@ Attacking criminals on sight: @lex attackflagged@}
 {32010}{}{Uh, sure!}
 {33000}{}{Guards, get those retards!}
 {34000}{}{Good work. Fresh water is hard to come by out here in Broken Hills. We appreciate the shipment, human.}
-{34010}{}{Happy to help, Marcus. I had a few other questions.}
-{34020}{}{No problem. Stay safe out here.}
+{34010}{}{You're welcome. Goodbye.}
+{35000}{}{What do you want, human?}
+{35010}{}{[Deliver Water] Here is your water delivery shipment from the Water Merchants.}
+{35020}{}{I wanted to talk about something else.}
+
