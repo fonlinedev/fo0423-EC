@@ -637,6 +637,31 @@ class CZone : IZone
 		if(sum > MAX_ENCO_CHANCE) sum = MAX_ENCO_CHANCE; // ograniczenie szansy na encountera
         return sum;
     }
+	
+	/**
+     * Chance (to be tested as percentage) of the encounter in given zone, depending on the groups and their quantities, and the current time.
+     * Modified to only change/apply day/night modifiers when the player is in a caravan.
+     */
+    uint GetChance(bool isCaravan) 
+    {
+        uint sum = 0;
+        for(uint i = 0, j = Groups.length(); i < j; i++)
+        {
+            if(isCaravan)
+            {
+                // Apply day/night modified quantities only when in a caravan
+                sum += EncounterGroups[Groups[i]].GetModifiedQuantity(Quantities[i]);
+            }
+            else
+            {
+                // Use base quantities when not in a caravan
+                sum += Quantities[i];
+            }
+        }
+        if(sum > MAX_ENCO_CHANCE) sum = MAX_ENCO_CHANCE; // encounter chance cap
+        return sum;
+    }
+	
     /**
      * Retrieves the value for that zone.
      */
@@ -2055,7 +2080,6 @@ int CheckSpecialEncounter(Critter@ leader, CZone@ zone)
 }
 
 
-
 void FindEncounter(array<Critter@>& group, Item@ car, uint x, uint y, uint& encounterDescriptor, bool& waitForAnswer, bool empty)
 {
     //if(group[0].IsPlayer()) Log("FindEncounter: START.");
@@ -2081,6 +2105,9 @@ void FindEncounter(array<Critter@>& group, Item@ car, uint x, uint y, uint& enco
     }
     Critter@         leader = group[0];
     Critter@         guide = GetMostSkilled(group, SK_OUTDOORSMAN);
+
+    // Declare caravan early so it is available for all checks below
+    bool             caravan = IsCaravanLeader(leader);
 
     uint             seLocPid = CheckSpecialEncounter(leader, zone);
 
@@ -2112,7 +2139,7 @@ void FindEncounter(array<Critter@>& group, Item@ car, uint x, uint y, uint& enco
         y = newY + float(int(y) - newY) * (rad / dist);
     }
 
-    if(!empty && seLocPid > 0 && int(zone.GetChance())>0) //Cubik 30.03.2014 : poprawka wyłączająca pojawianie się SE w kratkach z zielonymi kropami (kratki te nie zawieraja żadncyh enco i GetChance=0 w nich)
+    if(!empty && seLocPid > 0 && int(zone.GetChance(caravan)) > 0)
     {
         CEncounter@ enc = CEncounter();
         enc.LocationPid = seLocPid;
@@ -2126,106 +2153,69 @@ void FindEncounter(array<Critter@>& group, Item@ car, uint x, uint y, uint& enco
     }
 
     bool giveReward = false; // reward for averting encounter
-    bool caravan = IsCaravanLeader(leader);
-	
 	
     // Check chance
-    DPlayerLog(leader, "Zone' chance: " + zone.GetChance());
+    DPlayerLog(leader, "Zone' chance: " + zone.GetChance(caravan));
 	
     int roll = Random(1, 100);
 	for(uint i = 0, j = group.length(); i < j; i++)
 	{
-		_AdminLog(group[i], "Zone [" + zx + "," + zy + "] chance/roll: " + zone.GetChance() + " / " + roll);
+		_AdminLog(group[i], "Zone [" + zx + "," + zy + "] chance/roll: " + zone.GetChance(caravan) + " / " + roll);
 	}
 	
-    if((roll <= 5 || roll <= int(zone.GetChance()) / (empty ? 2 : 1)) && roll < 95)        // smaller chance with force-entering
-	//if((roll <= 5 || roll <= int(4*zone.GetChance()) / (empty ? 2 : 1)) && roll < 95)        // smaller chance with force-entering // TYLKO DO TESTOW!!!!!!!!!!!!!!!!!!!!!!
+    if((roll <= 5 || roll <= int(zone.GetChance(caravan)) / (empty ? 2 : 1)) && roll < 95)
     {
         // Try find already founded encounter	
-		//Log("Try find already founded encounter... ");
         CFoundedEncounter@ feAlready = GetNearFoundedEncounter(group, x, y, ZONE_LENGTH / 2);
 		
 		if(valid(feAlready) && !(caravan && feAlready.TurnBased))		
         {
-			//Log("valid(feAlready): ");
-			/*
-			uint sredni_lvl_grupy;
-			uint suma_lvl=0;
-			for(uint i = 0, j = group.length(); i < j; i++)
-				if(group[i].IsPlayer())
-				{
-					suma_lvl += group[i].Stat[ST_LEVEL];					
-				}
-			
-			if (group.length()>0)
-				sredni_lvl_grupy= suma_lvl / group.length();
-			*/
-
-			
 			Critter@ owner_player = GetCritter(feAlready.OwnerId);
 			int owner_level = owner_player.Stat[ST_LEVEL];
 			int noob_protection_chance = 100-10*owner_level;
 			noob_protection_chance=CLAMP(noob_protection_chance, 0, 100);
 			if (noob_protection_chance<Random(1,100))
-			//if(
-			//	(owner_player.IsPlayer() && owner_player.Stat[ST_LEVEL]>NOOB_FRIENDLY_LEVEL && leader.Stat[ST_LEVEL] > NOOB_FRIENDLY_LEVEL) ||
-			//	(owner_player.IsPlayer() && owner_player.Stat[ST_LEVEL]>NOOB_FRIENDLY_LEVEL && (leader.Stat[ST_LEVEL] <= NOOB_FRIENDLY_LEVEL && group.length()>4 && sredni_lvl_grupy > NOOB_FRIENDLY_LEVEL)))				
 			{
-				//Log("FindEncounter: Istniejace enco, z zaawansowanym graczem lvl > 15.");
 				int outdoorsman = guide.Skill[SK_OUTDOORSMAN] - zone.Difficulty;
 				outdoorsman = CLAMP(outdoorsman, 5, 95);
 				
-				//outdoorsman = 80; // ZAKOMENTOWAC TO, UZYWANE TYLKO DO TESTÓW !!!!
-				//if(!caravan && outdoorsman >= Random(1, 100))
-				//{
-					uint8 say = feAlready.TurnBased ? SAY_ENCOUNTER_TB : SAY_ENCOUNTER_RT;	
+				uint8 say = feAlready.TurnBased ? SAY_ENCOUNTER_TB : SAY_ENCOUNTER_RT;	
 
-					if(valid(feAlready.Encounter))
+				if(valid(feAlready.Encounter))
+				{
+					if(!feAlready.TurnBased)
 					{
-						//Log("valid(feAlready.Encounter)");
-						
-						//feAlready.Encounter.Ask(say, leader);
-						if(!feAlready.TurnBased)
+						if(!caravan && outdoorsman >= Random(1, 100))
 						{
-							if(!caravan && outdoorsman >= Random(1, 100))
-							{
-								//Log("istniejace enco i wywolanie okna dialogowego Ask() w trybie RT");
-								feAlready.Encounter.Ask(say, leader, false);
-							}
-						}
-						else
-						{
-							//Log("istniejace enco i wywolanie okna dialogowego Ask() w trybie TB");
-							feAlready.Encounter.Ask(say, leader, true);
-						}						
-					}
-					else
-					{	
-						if(!feAlready.TurnBased)
-						{
-							if(!caravan && outdoorsman >= Random(1, 100))
-							{
-								//Log("istniejace enco i wywolanie okna dialogowego SayMsg() w trybie RT");
-								leader.SayMsg(say, TEXTMSG_GM, feAlready.OwnerGroup ? STR_QUESTION_ONLY_PLAYERS : STR_QUESTION_ONLY_PLAYER, "$player" + "|0xffff0000 " + GetSafePlayerName(feAlready.OwnerId));
-							}
-						}
-						else
-						{
-							//Log("istniejace enco i wywolanie okna dialogowego SayMsg() w trybie TB");
-							leader.SayMsg(say, TEXTMSG_GM, feAlready.OwnerGroup ? STR_QUESTION_ONLY_PLAYERS_IN_TB : STR_QUESTION_ONLY_PLAYER_IN_TB, "$player" + "|0xffff0000 " + GetSafePlayerName(feAlready.OwnerId) + "$str1" + "\n\n" + "$str2"  + "|0xffff5500 " + "Encounter is in TURN-BASED mode.");							
+							feAlready.Encounter.Ask(say, leader, false);
 						}
 					}
-					
-					waitForAnswer = true;
-					if(guide.Skill[SK_OUTDOORSMAN] <= 95)
-						GuideReward(leader, guide, 100 - guide.Skill[SK_OUTDOORSMAN] + zone.Difficulty);
 					else
-						GuideReward(leader, guide, 5 + zone.Difficulty);
-				//}
+					{
+						feAlready.Encounter.Ask(say, leader, true);
+					}						
+				}
+				else
+				{	
+					if(!feAlready.TurnBased)
+					{
+						if(!caravan && outdoorsman >= Random(1, 100))
+						{
+							leader.SayMsg(say, TEXTMSG_GM, feAlready.OwnerGroup ? STR_QUESTION_ONLY_PLAYERS : STR_QUESTION_ONLY_PLAYER, "$player" + "|0xffff0000 " + GetSafePlayerName(feAlready.OwnerId));
+						}
+					}
+					else
+					{
+						leader.SayMsg(say, TEXTMSG_GM, feAlready.OwnerGroup ? STR_QUESTION_ONLY_PLAYERS_IN_TB : STR_QUESTION_ONLY_PLAYER_IN_TB, "$player" + "|0xffff0000 " + GetSafePlayerName(feAlready.OwnerId) + "$str1" + "\n\n" + "$str2"  + "|0xffff5500 " + "Encounter is in TURN-BASED mode.");							
+					}
+				}
+				
+				waitForAnswer = true;
+				if(guide.Skill[SK_OUTDOORSMAN] <= 95)
+					GuideReward(leader, guide, 100 - guide.Skill[SK_OUTDOORSMAN] + zone.Difficulty);
+				else
+					GuideReward(leader, guide, 5 + zone.Difficulty);
 
-				
-				
-				
 				for(uint i = 0, j = group.length(); i < j; i++)
 					if(group[i].IsPlayer())
 					{
@@ -2235,23 +2225,12 @@ void FindEncounter(array<Critter@>& group, Item@ car, uint x, uint y, uint& enco
 				encounterDescriptor = feAlready.Index;
 				return;
 			}
-			//else
-			//{
-			//	encounterDescriptor = 0;
-			//	return;
-			//}
         }
 
-
-        //
         // Try find new encounter
-        // Creates new encounters on the fly
-        //
         DPlayerLog(leader, "Creating new encounters on the fly...");
-		//Log("Try find new encounter:");
 
         CEncounter@ enc = CEncounter();
-        // count number of players/mercs within group
         uint        len = 0;
         int         followers = 0;
         for(uint i = 0, j = group.length(); i < j; i++)
@@ -2260,7 +2239,7 @@ void FindEncounter(array<Critter@>& group, Item@ car, uint x, uint y, uint& enco
             {
                 if(_CritHasExtMode(group[i], MODE_EXT_SLAVE))
                     continue;
-                else                 // if(_CritHasExtMode(group[i], MODE_EXT_FOLLOWER))
+                else                 
                     followers++;
             }
             else
@@ -2273,8 +2252,6 @@ void FindEncounter(array<Critter@>& group, Item@ car, uint x, uint y, uint& enco
         enc.Ratio = MAX(1, len / 2);
         enc.Difficulty = zone.Difficulty;
 
-		
-		//05-02-2014 Cubik: obliczenie liczby graczy w grupie enco
 		uint players_count=0;
 		int max_level_gracza=0;
 		int min_level_gracza=9999;
@@ -2292,43 +2269,13 @@ void FindEncounter(array<Critter@>& group, Item@ car, uint x, uint y, uint& enco
 			}
 		}		
 		
-		
-        //zone.ChooseGroups(leader, enc);
-
-		//05-02-2014 Cubik: jesli karawana jest bez gracza to nie bedzie wpadac w enco
 		if(players_count>0) 
 		{
-			//Log("=====START ChooseGroups======");
-			//Log("players_count: " + players_count);
-			//Log("min_level_gracza: " + min_level_gracza);
-			//Log("max_level_gracza: " + max_level_gracza);
-			//Log("caravan: " + caravan);
-			//Log("len: " + len);
-			//Log("followers: " + followers);
-			//Log("Wielkosc grupy (enc.Groups.length()): " + enc.Groups.length() );
-			//Log("ChooseGroups2()");
-			//zone.ChooseGroups(leader, enc);
 			zone.ChooseGroups2(leader, enc, max_level_gracza, caravan, players_count, min_level_gracza);
-			//Log("Wielkosc grupy (enc.Groups.length()) po ChooseGroups2(): " + enc.Groups.length() );
-			//Log("=====END ChooseGroups======");
 		}
-		else
-		{
-			//Log("=====START bez wyboru grupy======");
-			//Log("PUSTA KARAWANA,  players_count: " + players_count);
-			//Log("players_count: " + players_count);
-			//Log("len: " + len);
-			//Log("followers: " + followers);
-			//Log("Wielkosc grupy (enc.Groups.length()): " + enc.Groups.length() );
-			//Log("=====END bez wyboru grupy======");
-		}
-		
 
-		
-        // found something
         if(enc.Groups.length() > 0)
         {
-			//Log("Creating FoundedEncounter...");
 			DPlayerLog(leader, "Creating FoundedEncounter...");
             CFoundedEncounter@ fe = CreateFoundedEncounter(x, y, @enc, zone, leader.Id, group.length() > 1);
 
@@ -2339,55 +2286,22 @@ void FindEncounter(array<Critter@>& group, Item@ car, uint x, uint y, uint& enco
 
             if(valid(car))
             {
-                //if(95 >= Random(1, 100))
-                //{
-                    //if(GetLvar(leader, LVAR_wm_idle) == 0)
-					//if(!fe.TurnBased)
-					//{
-						if(95 >= Random(1, 100))
-						{
-							enc.Ask(SAY_ENCOUNTER_ANY, leader, false);
-							waitForAnswer = true;
-						}
-					//}
-					//else
-					//{
-					//	enc.Ask(SAY_ENCOUNTER_ANY, leader, true);
-					//	waitForAnswer = true;
-					//}
-                    
-                //}
+				if(95 >= Random(1, 100))
+				{
+					enc.Ask(SAY_ENCOUNTER_ANY, leader, false);
+					waitForAnswer = true;
+				}
             }
             else
             {
                 int outdoorsman = guide.Skill[SK_OUTDOORSMAN] - zone.Difficulty;
                 outdoorsman = CLAMP(outdoorsman, 6, 95);
-                //if(!IsCaravanLeader(leader) && outdoorsman >= Random(1, 100))
-                //{
-				   // if(GetLvar(leader, LVAR_wm_idle) == 0)
-					//if(!fe.TurnBased)
-					//{
-						////Log("!fe.TurnBased= " + fe.TurnBased);
-						if(!IsCaravanLeader(leader) && outdoorsman >= Random(1, 100))
-						{
-							enc.Ask(SAY_ENCOUNTER_ANY, leader, false);
-							waitForAnswer = true;
-							giveReward = true;
-						}
-					//}
-					//else
-					//{
-						////Log("fe.TurnBased= " + fe.TurnBased);
-						//if(!IsCaravanLeader(leader))
-						//{
-						//	enc.Ask(SAY_ENCOUNTER_ANY, leader, true);
-						//	waitForAnswer = true;
-						//}
-					//}
-						
-                    //waitForAnswer = true;
-                    
-                //}
+				if(!IsCaravanLeader(leader) && outdoorsman >= Random(1, 100))
+				{
+					enc.Ask(SAY_ENCOUNTER_ANY, leader, false);
+					waitForAnswer = true;
+					giveReward = true;
+				}
             }
 
             for(uint i = 0, j = group.length(); i < j; i++)
@@ -2397,7 +2311,6 @@ void FindEncounter(array<Critter@>& group, Item@ car, uint x, uint y, uint& enco
 			}
 			
             encounterDescriptor = fe.Index;
-			//Log("FoundedEncounter DONE...");
         }
 		else
 		{
@@ -2406,8 +2319,6 @@ void FindEncounter(array<Critter@>& group, Item@ car, uint x, uint y, uint& enco
 				_AdminLog(group[i], "NOT Creating FoundedEncounter...!   players_count= " + players_count);
 			}		
 		}
-		
-		
     }
 	
     if(empty && encounterDescriptor == 0)
@@ -2420,7 +2331,7 @@ void FindEncounter(array<Critter@>& group, Item@ car, uint x, uint y, uint& enco
         return;
     }
 	
-    if(giveReward)       // here, because creation of encounter might fail
+    if(giveReward)       
     {
         if(guide.Skill[SK_OUTDOORSMAN] <= 95)
             GuideReward(leader, guide, 100 - guide.Skill[SK_OUTDOORSMAN] + zone.Difficulty);
@@ -2429,8 +2340,8 @@ void FindEncounter(array<Critter@>& group, Item@ car, uint x, uint y, uint& enco
     }
     uint t = GetTick() - start;
     _AdminLog(leader, "FindEncounter: " + t + "ms.");
-	//if(group[0].IsPlayer()) Log("FindEncounter: END.");
 }
+
 
 
 void InviteToEncounter(array<Critter@>& group, Item@ car, uint encounterDescriptor, int combatMode, uint& mapId, uint16& hexX, uint16& hexY, uint8& dir)
