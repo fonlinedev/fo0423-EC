@@ -10956,5 +10956,24 @@ void r_CheckHealingStatus(Critter& player, int param0, int param1, int param2)
     // Index 526 = MODE_NO_HEAL
     player.Say(SAY_NETMSG, "MODE_NO_HEAL (Index 526): " + player.Mode[526]);
 }
+
+// Corrected cheat function for setting faction reputation
+// Call via engine runscript command: ~runscript cheats set_reputation <repId> <value> 0
+void set_reputation(Critter& player, int p0, int p1, int p2)
+{
+    
+    // Directly set the reputation value using the engine function
+    // Syntax typically looks like: target.SetReputation(repId, value);
+    player.ReputationBase[p0] = p1;
+    
+    player.Say(SAY_NETMSG, "Successfully set reputation ID " + p0 + " to " + p1);
+}
+
+void reset_cooldown(Critter& player, int p0, int p1, int p2)
+{
+    
+    DropTimeouts(player);
+    player.Say(SAY_NETMSG, "Lockpick and skill cooldowns have been reset.");
+}
 #endif
 /*@}*/
