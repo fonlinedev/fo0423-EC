@@ -24,21 +24,18 @@ lang=engl
 9 4030 #
 0 4040 @
 5 5000 caravans@dlg_CaravanName 0 #
-6 5010 D _param p ST_LEVEL < 9 #
-4 5020 D _param p ST_LEVEL } 9 #
+4 5010 #
 7 5030 #
 8 5040 #
 0 5050 @
 6 6000 None 0 #
 0 6010 @
 7 7000 None 0 #
-6 7010 D _param p ST_LEVEL { 9 #
-4 7020 D _param p ST_LEVEL > 9 #
+4 7020 #
 8 7030 #
 0 7040 @
 8 8000 None 0 #
-6 8010 D _param p ST_LEVEL { 9 #
-4 8020 D _param p ST_LEVEL > 9 #
+4 8020 #
 0 8030 @
 9 9000 caravans@dlg_CaravanPayment 0 #
 11 9010 D _script caravans@d_IsPreparing 0  #

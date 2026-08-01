@@ -1,0 +1,29 @@
+[comment]
+Caravan Informant - All Caravans Overview
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 0 #
+2 1010 @
+2 2000 None 0 #
+3 2010 D _script caravans@d_CheckAllCaravans 1 0 #
+0 2020 @
+3 3000 None 0 #
+2 3010 #
+0 3020 &
+
+[engl]
+{100}{}{Caravan Dispatcher}
+{200}{}{You see a busy clerk managing trade routes.}
+{1000}{}{Predialogue installations}
+{1010}{}{Initial}
+{2000}{}{Welcome to the dispatch office. I monitor all active trade shipments across the region. What do you need?}
+{2010}{}{Can you give me a full status report on all active caravans right now?}
+{2020}{}{Just passing through. Bye.}
+{3000}{}{Let me check the telegraph log... Here is the status of all active runs right now:@lex caravan_info@}
+{3010}{}{I had another question.}
+{3020}{}{That's all I needed. Thanks.}
+

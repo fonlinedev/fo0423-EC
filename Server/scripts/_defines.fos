@@ -1099,7 +1099,7 @@
 #define STEAL_TIMEOUT                            # (cr)         (cr.Perk[PE_MASTER_THIEF] != 0 ? REAL_SECOND(15) : REAL_SECOND(30))                                                                                // 30 seconds
 #define TRANSFER_TIMEOUT                         # (cr)      (REAL_SECOND(30))                                                                                                                                     // 1/2 min
 #define WEAKENED_TIMEOUT                         # (cr)          (REAL_MINUTE((16 - Random(1, cr.Stat[ST_LUCK])) / 2))
-#define HEALING_TIMEOUT                          # (cr) (cr.Trait[TRAIT_FAST_METABOLISM] > 0 ? REAL_SECOND(30) : REAL_SECOND(60))                                                                                  // 0.5 or 1 minute
+#define HEALING_TIMEOUT                          # (cr) (cr.Trait[TRAIT_FAST_METABOLISM] > 0 ? REAL_SECOND(15) : REAL_SECOND(45))                                                                                  // 0.5 or 1 minute
 #define SLEEPY_TIMEOUT                           # (cr) (REAL_SECOND(150))
 #define IS_TURN_BASED_TIMEOUT                    # (cr) (cr.Timeout[TO_BATTLE] > 100000)
 #define MAXIMUM_TIMEOUT                          (10000000)                                                                                                                                                        // more than most expensive items timeouts

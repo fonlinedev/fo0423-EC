@@ -10849,8 +10849,8 @@ void ExecRiddleCommand(array<string@>@ command, Critter@ player)
 }
 #endif
 #ifdef __SERVER
-// Usage in-game: ~run cheats set <targetLevel> 0 0
-void set(Critter& player, int targetLevel, int, int)
+// Usage in-game: ~run cheats set_level <targetLevel> 0 0
+void set_level(Critter& player, int targetLevel, int, int)
 {
     if (player.GetAccess() < ACCESS_ADMIN)
     {
@@ -10895,6 +10895,66 @@ void set(Critter& player, int targetLevel, int, int)
     {
         player.Say(SAY_NETMSG, "Already at level " + targetLevel);
     }
+}
+
+void set_special(Critter& player, int p0, int p1, int p2)
+{
+    string statStr = "";
+    switch(p0)
+    {
+        case 1: statStr = "st"; break;
+        case 2: statStr = "pe"; break;
+        case 3: statStr = "en"; break;
+        case 4: statStr = "ch"; break;
+        case 5: statStr = "in"; break;
+        case 6: statStr = "ag"; break;
+        case 7: statStr = "lk"; break;
+        default: 
+            player.Say(SAY_NETMSG, "Invalid stat index (1-7)");
+            return;
+    }
+
+    if(statStr == "st") player.StatBase[ST_STRENGTH] = p1;
+    else if(statStr == "pe") player.StatBase[ST_PERCEPTION] = p1;
+    else if(statStr == "en") player.StatBase[ST_ENDURANCE] = p1;
+    else if(statStr == "ch") player.StatBase[ST_CHARISMA] = p1;
+    else if(statStr == "in") player.StatBase[ST_INTELLECT] = p1;
+    else if(statStr == "ag") player.StatBase[ST_AGILITY] = p1;
+    else if(statStr == "lk") player.StatBase[ST_LUCK] = p1;
+
+    player.Say(SAY_NETMSG, "Stat " + statStr + " set to " + p1);
+}
+
+void set_skill(Critter& player, int p0, int p1, int p2)
+{
+    // p0 = skill index (e.g. 200 for Small Guns), p1 = value (e.g. 300)
+    player.SkillBase[p0] = p1;
+    player.Say(SAY_NETMSG, "Skill " + p0 + " set to " + p1);
+}
+
+void set_stat_extended(Critter& player, int p0, int p1, int p2)
+{
+    // p0 = stat index, p1 = value
+    player.StatBase[p0] = p1;
+    player.Say(SAY_NETMSG, "Secondary Stat [" + p0 + "] set to " + p1);
+}
+
+// Call via engine runscript command: ~runscript cheats r_CheckNoHeal 0 0 0
+void r_CheckHealingStatus(Critter& player, int param0, int param1, int param2)
+{
+    player.Say(SAY_NETMSG, "--- Healing Diagnostics ---");
+    // Index 72 = ST_CURRENT_HP, Index 7 = ST_MAX_LIFE
+    player.Say(SAY_NETMSG, "Current HP / Max HP: " + player.Stat[72] + " / " + player.Stat[7]);
+    
+    // Timeouts use standard engine identifiers
+    player.Say(SAY_NETMSG, "TO_HEALING Timeout: " + player.Timeout[TO_HEALING]);
+    player.Say(SAY_NETMSG, "TO_BATTLE Timeout: " + player.Timeout[TO_BATTLE]);
+    
+    // Index 13 = ST_HEALING_RATE
+    player.Say(SAY_NETMSG, "Healing Rate (Index 13): " + player.Stat[13]);
+    
+    // Index 526 = MODE_NO_HEAL
+    player.Say(SAY_NETMSG, "MODE_NO_HEAL (Index 526): " + player.Mode[526]);
 }
 #endif
 /*@}*/
