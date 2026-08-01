@@ -57,3 +57,41 @@ Active / Passive Utility Skills:
 216 — Gambling (if present)
 
 217 — Outdoorsman
+
+# Other abilities
+set MAX hp to 500
+~runscript cheats set_stat_extended 7 500 0
+
+set current HP to 500
+~runscript cheats set_stat_extended 72 500 0
+
+set healing rate to 50
+~runscript cheats set_stat_extended 13 50 0
+
+# Others
+
+ST_LOCOMOTION_TYPE          (68)
+ST_DAMAGE_TYPE              (69)
+ST_AGE                      (70) 
+ST_GENDER                   (71) 
+ST_CURRENT_HP               (72) 
+ST_POISONING_LEVEL          (73) 
+ST_RADIATION_LEVEL          (74) 
+ST_CURRENT_AP               (75) 
+ST_EXPERIENCE               (76) 
+ST_LEVEL                    (77) 
+ST_UNSPENT_SKILL_POINTS     (78) 
+ST_UNSPENT_PERKS            (79) 
+ST_KARMA                    (80) 
+ST_FOLLOW_CRIT              (81) 
+ST_REPLICATION_MONEY        (82) 
+ST_REPLICATION_COUNT        (83) 
+ST_REPLICATION_TIME         (84) 
+ST_REPLICATION_COST         (85) 
+ST_TURN_BASED_AC            (86) 
+ST_MAX_MOVE_AP              (87) 
+ST_MOVE_AP                  (88) 
+ST_NPC_ROLE                 (89) 
+
+# set level
+~run cheats set_level <targetLevel> 0 0
