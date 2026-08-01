@@ -10975,5 +10975,44 @@ void reset_cooldown(Critter& player, int p0, int p1, int p2)
     DropTimeouts(player);
     player.Say(SAY_NETMSG, "Lockpick and skill cooldowns have been reset.");
 }
+
+void add_faction(Critter& player, int p0, int p1, int p2)
+{
+    // Check if the player is already a member
+    if(IsMember(p0, player))
+    {
+        player.Say(SAY_NETMSG, "You are already a member of faction ID: " + p0);
+        return;
+    }
+    
+    // If they belong to another faction already, resign first to avoid conflicts
+    if(d_IsMemberOfSomeFaction(player))
+    {
+        _Resign(player.Id);
+    }
+    
+    // Add player to the requested faction ID
+    int res = AddMember(p0, player.Id);
+    if(res != 0)
+    {
+        player.Say(SAY_NETMSG, "ERR: " + FD_Result2String(res));
+        Log("ERR: " + FD_Result2String(res));
+    }
+    else
+    {
+        player.Say(SAY_NETMSG, "Successfully added to faction ID: " + p0);
+        AddFactionNews(p0, player.Id, 0, 1);
+    }
+}
+
+bool d_IsMemberOfSomeFaction(Critter& player)
+{
+    uint faction = _GroupIndex(player);
+    // assert
+    if(faction == FACTION_UNKNOWN)
+        Log("Assert: player's faction shouldn't be UNKNOWN");
+    return GetGroupIndex(player) != FACTION_NONE;
+}
+
 #endif
 /*@}*/

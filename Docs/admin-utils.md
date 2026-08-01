@@ -1,6 +1,7 @@
 # Admin
 
-~getaccess admin 123456
+gain admin `~getaccess admin 123456
+clean all timeouts `~runscript cheats reset_cooldown 0 0 0
 
 # Set special
 
@@ -164,6 +165,7 @@ Complete list of maps is at _maps.fos
 # List of factions by index
 
 `~runscript cheats set_reputation <faction id> <value> 0
+add to any factions `~runscript cheats add_faction <factionid> 0
 
 0   |   ---Factions/Groups--- |
 | :--- | :--- |
