@@ -22,41 +22,25 @@ Increase small guns to 300.
 ## Combat Skills:
 
 200 — Small Guns
-
 201 — Big Guns
-
 202 — Energy Weapons
-
 203 — Close Combat / Unarmed
-
 204 — Melee Weapons (varies by exact server fork, sometimes grouped)
-
 205 — Throwing
 
-Active / Passive Utility Skills:
+## Active / Passive Utility Skills:
 
 206 — First Aid
-
 207 — Doctor
-
 208 — Sneak
-
 209 — Lockpick (or equivalent engineering/robbery depending on version)
-
 210 — Steal (Robbery)
-
 211 — Traps
-
 212 — Science
-
 213 — Repair
-
 214 — Speech
-
 215 — Barter
-
 216 — Gambling (if present)
-
 217 — Outdoorsman
 
 # Other abilities

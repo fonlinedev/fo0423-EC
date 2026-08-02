@@ -18,6 +18,7 @@
 #include "npc_common_h.fos"
 #include "npc_roles_h.fos"
 #include "world_common_h.fos"
+#include "_vars.fos"
 
 /**
  * \~english @defgroup DialogFuncs Dialog module
@@ -1398,5 +1399,24 @@ void r_Outfitter(Critter& player, Critter@npc, int outfitId)
 bool d_CheckMinReputation(Critter& player, Critter@ npc, int faction, int reputation)
 {
     return player.ReputationBase[faction] >= reputation;
+}
+
+void r_RevealAllLocations(Critter& player, Critter@ npc)
+{
+    // Grant perk and experience
+    player.PerkBase[PE_EXPLORER] = 1;
+    player.StatBase[ST_EXPERIENCE] += 250;
+
+    // Loop through location PIDs and mark them as known
+    for(uint locId = 1; locId <= 200; locId++)
+    {
+        Location@ loc = GetLocationByPid(locId, 0);
+        if(valid(loc))
+        {
+            player.SetKnownLoc(false, locId);
+        }
+    }
+
+    player.Say(SAY_NETMSG, "All worldmap locations have been marked on your PIP-Boy.");
 }
 #endif // __DIALOG__ //

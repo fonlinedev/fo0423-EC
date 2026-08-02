@@ -10939,6 +10939,34 @@ void set_stat_extended(Critter& player, int p0, int p1, int p2)
     player.Say(SAY_NETMSG, "Secondary Stat [" + p0 + "] set to " + p1);
 }
 
+// Call via engine runscript command: ~runscript cheats set_perk <perk_id> <game_var_id> <value> 0
+// List of perks at Perks.txt, game variables at _vars.fo
+void set_perk(Critter& player, int p0, int p1, int p2)
+{
+    // 1. Update local GameVar (p1)
+    if (p1 > 0)
+    {
+        GameVar@ var = GetLocalVar(p1, player.Id);
+        if (valid(var))
+        {
+            var = p2;
+            player.Say(SAY_NETMSG, "GameVar [" + p1 + "] set to " + p2);
+        }
+        else
+        {
+            player.Say(SAY_NETMSG, "Error: GameVar [" + p1 + "] not found.");
+        }
+    }
+
+    // 2. Sync Perk level (p0) based on quest step (p2)
+    if (p0 > 0)
+    {
+        int perkLevel = (p2 >= 2) ? 1 : 0; // Level 1 if step 2+, otherwise 0
+        player.PerkBase[p0] = perkLevel;
+        player.Say(SAY_NETMSG, "Perk [" + p0 + "] set to level " + perkLevel);
+    }
+}
+
 // Call via engine runscript command: ~runscript cheats r_CheckNoHeal 0 0 0
 void r_CheckHealingStatus(Critter& player, int param0, int param1, int param2)
 {
