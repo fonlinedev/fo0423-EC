@@ -61,27 +61,25 @@ void _OnMessage(Critter& npc, Critter& player, int num, int val)
     case MSG_BOS_PLAYER_NEAR_HQ:
         if(GetGroupIndex(player) == FACTION_ENCLAVE && !HasFactionUniform(player, FACTION_BOS, UNIFORM_BODY_ONLY))
             player.SendMessage(MSG_ATTACK_ME, 0, MESSAGE_TO_VISIBLE_ME);
-        else if((GetGroupIndex(player) == FACTION_BOS || HasFactionUniform(player, FACTION_BOS, UNIFORM_BODY_ONLY)) && npc.Stat[ST_NPC_ROLE] == ROLE_BOS_ENTRANCE_GUARD)
+        else if((GetGroupIndex(player) == FACTION_BOS || HasFactionUniform(player, FACTION_BOS, UNIFORM_BODY_ONLY)) &&  player.ReputationBase[FACTION_BOS] >= 800 && npc.Stat[ST_NPC_ROLE] == ROLE_BOS_ENTRANCE_GUARD)
             npc.SayMsg(SAY_NORM_ON_HEAD, TEXTMSG_DLG, DLGSTR(DIALOG_ID, STR_HQ_WELCOME));
         else if(npc.Stat[ST_NPC_ROLE] == ROLE_BOS_ENTRANCE_GUARD)
             npc.SayMsg(SAY_NORM_ON_HEAD, TEXTMSG_DLG, DLGSTR(DIALOG_ID, STR_HQ_NOT_ALLOWED));
         break;
 
     case MSG_BOS_PLAYER_LAST_WARNING:
-        if(GetGroupIndex(player) != FACTION_BOS && !HasFactionUniform(player, FACTION_BOS, UNIFORM_BODY_ONLY) && npc.Stat[ST_NPC_ROLE] == ROLE_BOS_ENTRANCE_GUARD)
+        if((!IsBoSMember(player) || player.ReputationBase[FACTION_BOS] < 800) && npc.Stat[ST_NPC_ROLE] == ROLE_BOS_ENTRANCE_GUARD)
             npc.SayMsg(SAY_NORM_ON_HEAD, TEXTMSG_DLG, DLGSTR(DIALOG_ID, STR_HQ_LAST_WARNING));
         break;
 
     case MSG_BOS_PLAYER_AT_HQ:
-        if(GetGroupIndex(player) != FACTION_BOS && !HasFactionUniform(player, FACTION_BOS, UNIFORM_BODY_ONLY) && npc.Stat[ST_NPC_ROLE] == ROLE_BOS_ENTRANCE_GUARD)
+        if(!IsBoSMember(player) || player.ReputationBase[FACTION_BOS] < 800)
         {
             player.SendMessage(MSG_ATTACK_ME, 0, MESSAGE_TO_VISIBLE_ME);
-            npc.SayMsg(SAY_NORM_ON_HEAD, TEXTMSG_DLG, DLGSTR(DIALOG_ID, STR_COMBAT_TAUNT));
+            if(npc.Stat[ST_NPC_ROLE] == ROLE_BOS_ENTRANCE_GUARD)
+                npc.SayMsg(SAY_NORM_ON_HEAD, TEXTMSG_DLG, DLGSTR(DIALOG_ID, STR_COMBAT_TAUNT));
         }
-        else if(GetGroupIndex(player) != FACTION_BOS && !HasFactionUniform(player, FACTION_BOS, UNIFORM_BODY_ONLY))
-        {
-            player.SendMessage(MSG_ATTACK_ME, 0, MESSAGE_TO_VISIBLE_ME);
-        }
+        break;
 
     // =========================================
     case MSG_BOS_PLAYER_NEAR_STORAGE:
