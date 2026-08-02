@@ -30,8 +30,9 @@ void _OutpostLocker(Item& item, bool firstTime)
 
 void OutpostIssueWarning(Item& item)
 {
+	uint faction = item.Val0;
     array<Critter@> crits;
-    uint            n = GetNearFactionGuards(GetMap(item.MapId), item.HexX, item.HexY, 10, FACTION_BOS, crits);
+    uint            n = GetNearFactionGuards(GetMap(item.MapId), item.HexX, item.HexY, 10, faction, crits);
     for(uint i = 0; i < n; i++)
         if(crits[i].Stat[ST_NPC_ROLE] == ROLE_BOS_OUTPOST_GUARD)
             crits[i].Say(SAY_NORM_ON_HEAD, "Stop right there!");
@@ -39,8 +40,9 @@ void OutpostIssueWarning(Item& item)
 
 void OutpostAttack(Item& item, Critter& crit)
 {
+	uint faction = item.Val0;
     array<Critter@> crits;
-    uint            n = GetNearFactionGuards(GetMap(item.MapId), item.HexX, item.HexY, 10, FACTION_BOS, crits);
+    uint            n = GetNearFactionGuards(GetMap(item.MapId), item.HexX, item.HexY, 10, faction, crits);
     for(uint i = 0; i < n; i++)
         if(crits[i].Stat[ST_NPC_ROLE] == ROLE_BOS_OUTPOST_GUARD)
             AttackCritter(crits[i], crit);
@@ -51,7 +53,7 @@ bool _OutpostLockerUseOnMe(Item& item, Critter& crit, Item@ usedItem)
 	uint faction = item.Val0;
     uint category = item.Val1;
 	uint reputation = item.Val2;
-	Log("FactionID: "+ faction +", Category: "+category+ ", reputation: "+ reputation);
+	
     if(crit.Stat[ST_TEAM_ID] == faction)
     {
         return false;
@@ -137,8 +139,7 @@ void FillContainerWithRandomLoot(Item& container)
     uint faction = container.Val0;
     uint category = container.Val1;    
     if(faction == FACTION_BOS) 
-    {
-		Log("Faction locker FACTION_BOS. Processing category: " + category);
+    {	
         if(category == CAT_BOOKS_DRUGS)
         {
             if(Random(1, 100) <= 75) container.AddItem(40, Random(1, 10), 0);   // Stimpak
@@ -210,7 +211,7 @@ void FillContainerWithRandomLoot(Item& container)
             if(Random(1, 100) <= 35) container.AddItem(9629, Random(1, 10), 0); // Chemicals
         }
     } else {
-		Log("WARNING: Faction mismatch! Container Val0 is " + faction + ", expected FACTION_BOS (" + FACTION_BOS + ").");
+		Log("WARNING: Faction not defined! Container Val0 is " + faction + ", container is empty.");
 	}
 }
 

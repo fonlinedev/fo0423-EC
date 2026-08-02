@@ -6,8 +6,6 @@
 #include "factions_h.fos"
 #include "messages_h.fos"
 
-#define MSG_RESTRICTED_ACCESS (5)
-
 void item_init(Item& item, bool firstTime)
 {
     // Bind the walk event dynamically using the pattern found in your working scripts
@@ -22,10 +20,9 @@ void _Walk(Item& item, Critter& critter, bool enter, uint8 dir)
     // Read parameters directly from the mapper's Value0 and Value1 fields
     int factionId = item.Val0;
     int minReputation = item.Val1;
-	critter.ReputationBase[factionId]);
-
+	
     if(critter.ReputationBase[factionId] < minReputation)
     {    
-        critter.SendMessage(MSG_RESTRICTED_ACCESS, factionId, MESSAGE_TO_VISIBLE_ME);
+		critter.SendMessage(MSG_ATTACK_ME, 0, MESSAGE_TO_VISIBLE_ME);        
     }
 }

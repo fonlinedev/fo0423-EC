@@ -5,13 +5,13 @@ clean all timeouts `~runscript cheats reset_cooldown 0 0 0
 
 # Set special
 
-ST ~runscript cheats set_special 1 10 0
-PE ~runscript cheats set_special 2 10 0
-EN ~runscript cheats set_special 3 10 0
-CH ~runscript cheats set_special 4 10 0
-IN ~runscript cheats set_special 5 10 0
-AG ~runscript cheats set_special 6 10 0
-LK ~runscript cheats set_special 7 10 0 
+ST `~runscript cheats set_special 1 10 0
+PE `~runscript cheats set_special 2 10 0
+EN `~runscript cheats set_special 3 10 0
+CH `~runscript cheats set_special 4 10 0
+IN `~runscript cheats set_special 5 10 0
+AG `~runscript cheats set_special 6 10 0
+LK `~runscript cheats set_special 7 10 0 
 
 # Skills
 
@@ -61,13 +61,13 @@ Active / Passive Utility Skills:
 
 # Other abilities
 set MAX hp to 500
-~runscript cheats set_stat_extended 7 500 0
+`~runscript cheats set_stat_extended 7 500 0
 
 set current HP to 500
-~runscript cheats set_stat_extended 72 500 0
+`~runscript cheats set_stat_extended 72 500 0
 
 set healing rate to 50
-~runscript cheats set_stat_extended 13 50 0
+`~runscript cheats set_stat_extended 13 50 0
 
 # Others
 
@@ -130,6 +130,10 @@ Complete list of maps is at _maps.fos
 
 `~runscript cheats tp_map 45 50 55` | BOS NCR Entrance
 `~runscript cheats tp_map 72 100 100` | BOS Lost Hills entrance
+`~runscript cheats tp_map 73 100 100` | BOS Lost Hills 1st floor
+`~runscript cheats tp_map 74 100 100` | BOS Lost Hills 2nd floor
+`~runscript cheats tp_map 75 100 100` | BOS Lost Hills 3rd floor
+`~runscript cheats tp_map 75 100 100` | BOS Lost Hills 4rd floor
 
 `~runscript cheats tp_map 46 50 55` | Chatedral Entrance
 `~runscript cheats tp_map 49 60 75` | Chatedral 2nd floor

@@ -15273,7 +15273,7 @@ ProtoId              369
 MapX                 110
 MapY                 73
 Dir                  3
-ScriptName           bos_lh_guardg
+ScriptName           bos_lh_guard
 FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0

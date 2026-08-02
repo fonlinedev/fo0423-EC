@@ -35,5 +35,5 @@ lang=engl
 {4000}{}{Lower levels require proven loyalty and higher standing within the Brotherhood. If you attempt to access a floor your reputation does not permit, the guards will attack you on sight without any warning.}
 {4010}{}{Understood. Tell me the specific reputation thresholds for each level.}
 {4020}{}{Good to know. I'm leaving.}
-{5000}{}{Level 1 requires basic initiation standing. Level 2 requires seasoned trust. Level 3 is strictly restricted to high-ranking senior members and commanders. Earn your keep, raise your reputation, or suffer the consequences.}
+{5000}{}{Level 2 requires a Brotherhood reputation of at least 1200. Level 3 requires 1800. Level 4 requires 2600. Earn your keep, raise your standing, or suffer the consequences.}
 {5010}{}{Thank you for the briefing, instructor.}
