@@ -127,7 +127,10 @@ Complete list of maps is at _maps.fos
 `~runscript cheats tp_map 33 50 55` | Sierra Army Depot
 `~runscript cheats tp_map 39 50 55` | Vault 15 entrance
 `~runscript cheats tp_map 43 50 55` | NCR Entrance
+
 `~runscript cheats tp_map 45 50 55` | BOS NCR Entrance
+`~runscript cheats tp_map 72 100 100` | BOS Lost Hills entrance
+
 `~runscript cheats tp_map 46 50 55` | Chatedral Entrance
 `~runscript cheats tp_map 49 60 75` | Chatedral 2nd floor
 `~runscript cheats tp_map 51 104 105` | Chatedral Basement
@@ -137,7 +140,6 @@ Complete list of maps is at _maps.fos
 `~runscript cheats tp_map 63 80 55` | San Francisco Oil tanker
 `~runscript cheats tp_map 67 100 100` | Navarro entrance
 `~runscript cheats tp_map 70 100 100` | Junktown
-`~runscript cheats tp_map 72 100 100` | BOS Broken Hills entrance
 `~runscript cheats tp_map 78 100 100` | The Glow
 `~runscript cheats tp_map 93 100 100` | Necropolis
 98 | Necropolis vault entrance
