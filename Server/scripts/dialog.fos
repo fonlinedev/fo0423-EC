@@ -1394,4 +1394,9 @@ void r_Outfitter(Critter& player, Critter@npc, int outfitId)
     GameVar@ outfitted = GetLocalVar(LVAR_event_outfitted, player.Id);
     outfitted = 1;
 }
+
+bool d_CheckMinReputation(Critter& player, Critter@ npc, int faction, int reputation)
+{
+    return player.ReputationBase[faction] >= reputation;
+}
 #endif // __DIALOG__ //

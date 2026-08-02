@@ -589,6 +589,7 @@ $	1814	bos_lh_mathia
 $	1815	bos_lh_maxson
 $	1820	bos_quartermaster
 $	1821	bos_town_doorguard
+$	1822	bos_instructor
 
 $	2000	q_bos_bunker_computer
 $	2001	q_bos_bunker_terminal

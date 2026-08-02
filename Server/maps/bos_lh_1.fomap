@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              161
 MaxHexY              147
-WorkHexX             0
-WorkHexY             0
+WorkHexX             127
+WorkHexY             75
 ScriptModule         map_bos_lh
 ScriptFunc           map_init
 NoLogOut             0
@@ -15727,5 +15727,78 @@ MapObjType           1
 ProtoId              2152
 MapX                 78
 MapY                 57
+
+MapObjType           0
+ProtoId              279
+MapX                 118
+MapY                 71
+Dir                  3
+ScriptName           bos_instructor
+FuncName             critter_init
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  1822
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  14
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  278
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  2
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  5
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  1
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  84
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           2
+ProtoId              3852
+MapX                 119
+MapY                 71
+ScriptName           map_bos_lh
+FuncName             t_NearElevator
+
+MapObjType           2
+ProtoId              3852
+MapX                 120
+MapY                 70
+ScriptName           map_bos_lh
+FuncName             t_NearElevator
+
+MapObjType           2
+ProtoId              3852
+MapX                 121
+MapY                 71
+ScriptName           map_bos_lh
+FuncName             t_NearElevator
+
+MapObjType           2
+ProtoId              3852
+MapX                 122
+MapY                 71
+ScriptName           map_bos_lh
+FuncName             t_NearElevator
+
+MapObjType           2
+ProtoId              3852
+MapX                 123
+MapY                 71
+ScriptName           map_bos_lh
+FuncName             t_NearElevator
+
+MapObjType           2
+ProtoId              3852
+MapX                 118
+MapY                 70
+ScriptName           map_bos_lh
+FuncName             t_NearElevator
 
 

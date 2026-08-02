@@ -165,7 +165,7 @@ Complete list of maps is at _maps.fos
 # List of factions by index
 
 `~runscript cheats set_reputation <faction id> <value> 0
-add to any factions `~runscript cheats add_faction <factionid> 0
+add to any factions `~runscript cheats add_faction <factionid> 0 0
 
 0   |   ---Factions/Groups--- |
 | :--- | :--- |

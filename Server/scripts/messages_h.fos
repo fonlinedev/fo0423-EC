@@ -48,6 +48,7 @@
 #define MSG_BOS_PLAYER_STORAGE_ENTER         (5)
 #define MSG_BOS_PLAYER_NEAR_COMPUTER         (6)
 #define MSG_BOS_PLAYER_COMPUTER_ENTER        (7)
+#define MSG_BOS_PLAYER_NEAR_ELEVATOR		 (8)
 
 // Navarro
 #define MSG_NAV_TRESPASSER                   (0)
