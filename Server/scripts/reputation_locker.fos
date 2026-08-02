@@ -44,8 +44,7 @@ void OutpostAttack(Item& item, Critter& crit)
     array<Critter@> crits;
     uint            n = GetNearFactionGuards(GetMap(item.MapId), item.HexX, item.HexY, 10, faction, crits);
     for(uint i = 0; i < n; i++)
-        if(crits[i].Stat[ST_NPC_ROLE] == ROLE_BOS_OUTPOST_GUARD)
-            AttackCritter(crits[i], crit);
+        AttackCritter(crits[i], crit);
 }
 
 bool _OutpostLockerUseOnMe(Item& item, Critter& crit, Item@ usedItem)
