@@ -11041,6 +11041,42 @@ bool d_IsMemberOfSomeFaction(Critter& player)
         Log("Assert: player's faction shouldn't be UNKNOWN");
     return GetGroupIndex(player) != FACTION_NONE;
 }
+// ~runscript cheats give_item 92 10 0
+void give_item(Critter& player, int p0, int p1, int p2)
+{
+    player.AddItem(uint16(p0), p1);
+}
+
+// Inside your cheats module
+//~runscript cheats get_var <var> 0 0
+void get_var(Critter& cr, int p0, int p1, int p2)
+{
+    // Retrieve local variable by index for the player
+    GameVar@ var = GetLocalVar(p0, cr.Id);
+    if(!valid(var))
+    {
+        cr.Say(SAY_NETMSG, "Invalid variable index or variable does not exist.");
+        return;
+    }
+    
+    int val = var.GetValue();
+    cr.Say(SAY_NETMSG, "Variable index " + p0 + " value: " + val);
+}
+
+void set_var(Critter& cr, int p0, int p1, int p2)
+{
+    // Modify local variable by index for the player
+    GameVar@ var = GetLocalVar(p0, cr.Id);
+    if(!valid(var))
+    {
+        cr.Say(SAY_NETMSG, "Invalid variable index or variable does not exist.");
+        return;
+    }
+    
+    int oldValue = var.GetValue();
+    var = p1;
+    cr.Say(SAY_NETMSG, "Variable index " + p0 + " changed from " + oldValue + " to " + p1);
+}
 
 #endif
 /*@}*/
