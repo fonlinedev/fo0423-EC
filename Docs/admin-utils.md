@@ -3,6 +3,10 @@
 gain admin `~getaccess admin 123456
 clean all timeouts `~runscript cheats reset_cooldown 0 0 0
 
+# Create any item
+~runscript cheats give_item <pid> <count> 0
+See ItemNames.lst for the pids.
+
 # Set special
 
 ST `~runscript cheats set_special 1 10 0

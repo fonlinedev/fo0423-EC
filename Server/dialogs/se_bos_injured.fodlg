@@ -12,7 +12,8 @@ lang=engl
 10 1030 D _var p q_bos_injured = 3 D _item p PID_SUPER_STIMPAK } 1 #
 12 1040 D _var p q_bos_injured = 3 D _item p PID_SUPER_STIMPAK = 0 #
 9 1050 D _var p q_bos_injured = 1 #
-2 1060 D _var p q_bos_initiatequest_start = 21 D _script dialog@d_IsLocationOwner 0  D _var p q_bos_injured = 0 @
+2 1060 D _var p q_bos_initiatequest_start = 21 D _script dialog@d_IsLocationOwner 0  D _var p q_bos_injured = 0 #
+2 1061 D _var p q_bos_initiatequest_start = 22 D _script dialog@d_IsLocationOwner 0  D _var p q_bos_injured = 0 @
 2 2000 None 0 #
 3 2010 @
 3 3000 None 0 #
@@ -51,6 +52,7 @@ lang=engl
 {1040}{}{Stims not found}
 {1050}{}{Fixed the leg.}
 {1060}{}{Default}
+{1061}{}{Default}
 {2000}{}{W-who are you?}
 {2010}{}{I was sent by the Brotherhood. What happened out here?}
 {3000}{}{I am Apprentice Snyder. We were ambushed by some mutants. I was the only one who survived the attack. I got all of them but one, and he started to run at me. I tried to shoot him but my gun jammed right as he swung at my leg. I must have unjammed it when I hit the ground, because his head wasn't there anymore.}
@@ -77,4 +79,3 @@ lang=engl
 {12010}{}{No, I'm still looking.}
 {13000}{}{Let's get out of here before we start talking.}
 {14000}{}{This...aahhh....doesn't concern you.}
-
