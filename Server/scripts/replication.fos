@@ -160,7 +160,7 @@ void SetStartLocation(Critter& cr)   // Export
     cr.SetFog(zoneX, zoneY + 1, FOG_FULL);
     cr.SetFog(zoneX + 1, zoneY + 1, FOG_FULL);
 
-    cr.TransitToMap(map.Id, 0);
+    cr.TransitToMap(map.Id, 73, 40, 2);
 
     zoneX = cr.WorldX / __GlobalMapZoneLength;
     zoneY = cr.WorldY / __GlobalMapZoneLength;

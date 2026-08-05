@@ -2860,7 +2860,7 @@ void tp_map(Critter& cr, int mapId, int hexX, int hexY)
 {
     if(!valid(cr)) return;
 
-    Map@ map = GetMap(mapId);
+	Map@ map = GetMapByPid(mapId, 0);
     if(!valid(map))
     {
         cr.Say(SAY_NETMSG, "Map ID " + mapId + " does not exist.");
@@ -2870,6 +2870,29 @@ void tp_map(Critter& cr, int mapId, int hexX, int hexY)
     // Teleport player directly to map and coordinates (Direction 0)
     cr.TransitToMap(map.Id, hexX, hexY, 0);
     cr.Say(SAY_NETMSG, "Teleported to Map " + mapId + " (" + hexX + ", " + hexY + ")");
+}
+
+void tp_loc(Critter& cr, int locPid, int hexX, int hexY)
+{
+    if (!valid(cr)) return;
+
+    Location@ loc = GetLocationByPid(locPid, 0);
+    if (!valid(loc))
+    {
+        cr.Say(SAY_NETMSG, "Location PID " + locPid + " does not exist on the world map.");
+        return;
+    }
+
+    // Grab the primary map (index 0) of that location
+    Map@ map = loc.GetMapByIndex(0);
+    if (!valid(map))
+    {
+        cr.Say(SAY_NETMSG, "Location PID " + locPid + " has no valid map at index 0.");
+        return;
+    }
+
+    cr.TransitToMap(map.Id, hexX, hexY, 0);
+    cr.Say(SAY_NETMSG, "Teleported to Location PID " + locPid + " (" + hexX + ", " + hexY + ")");
 }
 
 // Teleport out to the World Map

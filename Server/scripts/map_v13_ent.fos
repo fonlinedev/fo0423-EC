@@ -1,0 +1,74 @@
+#include "_macros.fos"
+#include "_vars.fos"
+
+#define PID_SKELETON    211
+#define PID_10MM_PISTOL 8
+#define PID_10MM_JHP    29
+#define PID_KNIFE       4
+#define PID_STIMPAK     40
+#define START_JOURNEY_DIALOG 4006
+#define START_JOURNEY_DIALOG2 4007
+
+void map_init(Map& map, bool firstTime)
+{
+    if (firstTime)
+    {
+        // Find the skeleton container at its map hex
+        Item@ skeleton = map.GetItem(72, 41, PID_SKELETON);
+        if (valid(skeleton))
+        {
+            skeleton.AddItem(PID_10MM_PISTOL, 1, 0);
+            skeleton.AddItem(PID_10MM_JHP, 24, 0);
+            skeleton.AddItem(PID_KNIFE, 1, 0);
+            skeleton.AddItem(PID_STIMPAK, 1, 0);
+        }
+    }
+}
+
+void t_StartQuest(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
+{
+	if(!critter.IsPlayer() || !entered)
+		return;
+	GameVar@ var = GetLocalVar(LVAR_quest_water_chip, critter.Id);	
+	var = 1;
+	RunDialog(critter, START_JOURNEY_DIALOG, critter.HexX, critter.HexY, false);
+}
+
+bool t_CheckVaultStatus(Critter& player, Scenery& terminal, int skill, Item@ item)
+{
+    if(!player.IsPlayer() || skill != -1 || valid(item))
+        return false;
+    
+    GameVar@ var = GetLocalVar(LVAR_quest_water_chip, player.Id);  
+    if (!valid(var) || var.GetValue() != 99) {
+        RunDialog(player, START_JOURNEY_DIALOG2, player.HexX, player.HexY, false);
+    }
+	return true;
+}
+
+// Returns true if the quest is active (state == 1)
+bool d_IsQuestRunning(Critter& player, Critter@ npc)
+{
+    GameVar@ var = GetLocalVar(LVAR_quest_water_chip, player.Id);
+    return (valid(var) && var.GetValue() == 1);
+}
+
+// Returns true ONLY if the quest is completed (state == 99)
+bool d_IsQuestFinished(Critter& player, Critter@ npc)
+{
+    GameVar@ var = GetLocalVar(LVAR_quest_water_chip, player.Id);
+    return (valid(var) && var.GetValue() == 99);
+}
+
+// Result function: Set quest state from dialogue choices
+void r_StartQuest(Critter& player, Critter@ npc)
+{
+    GameVar@ var = GetLocalVar(LVAR_quest_water_chip, player.Id);
+    if (valid(var))
+        var = 1;
+}
+
+bool check_quest(Location& Loc, array<Critter@>& critters, uint8 entrance)
+{
+    return true;
+}

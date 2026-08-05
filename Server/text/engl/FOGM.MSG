@@ -663,18 +663,6 @@
 {1285}{}{07desert}
 {1286}{}{gntlwin1:25, gntlwind:25, gustwind:10, blank:40}
 
-# Map 129, base 1300
-{1300}{}{Tutorial}
-{1306}{}{}
-
-# Map 130, base 1310
-{1310}{}{q_tut1_in}
-{1316}{}{}
-
-# Map 131, base 1320
-{1320}{}{q_tut1_out}
-{1326}{}{}
-
 # Map 135, base 1360
 {1360}{}{San Fran Tanker}
 {1365}{}{21sf}
@@ -1636,11 +1624,6 @@
 {3805}{}{12junktn}
 {3806}{}{gntlwin1:25, gntlwind:25, animal1:20, animal:20, gustwind:5, gustwin1:5}
 
-# Map 380, base 3810
-{3810}{}{Jail}
-{3815}{}{07desert}
-{3816}{}{elevato1:25, elevator:25, electri1:15, electric:15, clank:10, clank1:10}
-
 # Map 385, base 3860
 {3860}{}{HQ: Tents}
 {3865}{}{07desert}
@@ -1826,16 +1809,6 @@
 {5570}{}{Junkyard}
 {5575}{}{junkyard.ogg}
 {5576}{}{}
-
-# Map 557, base 5580
-{5580}{}{Spawn 1 in}
-{5585}{}{07desert}
-{5586}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
-
-# Map 558, base 5590
-{5590}{}{Spawn 1 out}
-{5595}{}{07desert}
-{5596}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
 
 # Map 559, base 5600
 {5600}{}{Spawn 2 in}
@@ -2453,12 +2426,12 @@
 
 # Prison, pid 54, base 154000
 {154000}{}{Prison}
-{154005}{}{A New California Republic Correctional Facility.}
+{154005}{}{}
 {154010}{}{10}
 
 # Train Ambush: Rail Raiders, pid 55, base 155000
 {155000}{}{Train Ambush: Rail Raiders}
-{155005}{}{A train ambush!}
+{155005}{}{}
 {155010}{}{6}
 
 # Train Ambush: Buried Rails, pid 56, base 156000
@@ -2648,16 +2621,6 @@
 {189111}{}{Back of the village}
 {189112}{}{216}
 {189113}{}{59}
-
-# Tut_Loc1, pid 91, base 191000
-{191000}{}{Tut_Loc1}
-{191005}{}{Small map tutorial}
-{191010}{}{6}
-
-# Cave Tutorial, pid 92, base 192000
-{192000}{}{Cave Tutorial}
-{192005}{}{Cave tutorial}
-{192010}{}{6}
 
 # Desert 1, pid 101, base 201000
 {201000}{}{Desert 1}
@@ -3114,11 +3077,6 @@
 {376005}{}{A house full of junkies}
 {376010}{}{6}
 
-# Jail, pid 280, base 380000
-{380000}{}{Jail}
-{380005}{}{You are trapped here. Damn!}
-{380010}{}{6}
-
 # Desert 7, pid 300, base 400000
 {400000}{}{Desert 7}
 {400005}{}{}
@@ -3236,7 +3194,7 @@
 
 # Spawnpoint 1, pid 357, base 457000
 {457000}{}{Spawnpoint 1}
-{457005}{}{A place in the dirt.}
+{457005}{}{Your journey starts here, don't come back without the water chip.}
 {457010}{}{6}
 
 # Spawnpoint 2, pid 358, base 458000
@@ -3308,11 +3266,6 @@
 {471000}{}{Talchem California HQ}
 {471005}{}{An abandoned compound.}
 {471010}{}{6}
-
-# Bounty Hunters HQ, pid 372, base 472000
-{472000}{}{Bounty Hunters HQ}
-{472005}{}{A hidden base of Bounty Hunters.}
-{472010}{}{6}
 
 #
 # Worldmap Encounter messages

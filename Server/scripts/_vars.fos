@@ -338,6 +338,7 @@
 #define LVAR_q_first_tent_loc2_id               (7324)
 #define LLVAR_q_mb_uber_bot_terminal            (7325)
 #define LLVAR_q_mb_uber_bot_status              (7326)
+#define LVAR_quest_water_chip                   (7327)
 #define LVAR_blood_type                         (9001)
 #define LVAR_birth_year                         (9002)
 #define LVAR_birth_day                          (9003)
@@ -2330,6 +2331,11 @@
    $	7326	1	q_mb_uber_bot_status	0	0	1	4
 **********
    Variable for johnnys military base quest == status uber bota w zaleznosci od dialogu w kompie na lvl2
+**********
+
+   $	7327	1	q_quest_water_chip	0	0	99	4
+**********
+   Water chip quest status variable for Vault 13.
 **********
 
    $	9001	1	blood_type	0	0	0	4
