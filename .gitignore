@@ -97,3 +97,6 @@ Client/fallout.dat
 Server/dumps/*
 Client/data/cache/*
 Client/FOnline.log
+Tools/WorldEditor/data/lstMaps.dat
+Tools/WorldEditor/data/lstLocations.dat
+Tools/WorldEditor/WorldEditor.user.cfg
