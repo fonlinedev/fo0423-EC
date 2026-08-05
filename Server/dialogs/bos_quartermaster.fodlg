@@ -44,38 +44,39 @@ lang=engl
 106 12050 #
 108 12060 #
 105 12070 #
-0 12080 @
+0 12080 #
+99 12090 @
 101 13000 None 0 #
-107 13010 D _var p factions_points_bos } 150 R _item p PID_10MM_JHP + 20 R _item p PID_10MM_PISTOL + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -150 #
-107 13020 D _var p factions_points_bos } 200 R _item p PID_SHOTGUN + 1 R _item p PID_SHOTGUN_SHELLS + 20 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -200 #
+107 13010 D _script dialog@d_CheckFactionPoints 2 FACTION_BOS 150 R _item p PID_10MM_JHP + 20 R _item p PID_10MM_PISTOL + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -150 #
+107 13020 D _script dialog@d_CheckFactionPoints 2 FACTION_BOS 200 R _item p PID_SHOTGUN + 1 R _item p PID_SHOTGUN_SHELLS + 20 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -200 #
 100 13030 @
 102 14000 None 0 #
-107 14010 D _var p factions_points_bos } 500 R _item p PID_FLAMER + 1 R _item p PID_FLAMETHROWER_FUEL + 15 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -500 #
+107 14010 D _script dialog@d_CheckFactionPoints 2 FACTION_BOS 500 R _item p PID_FLAMER + 1 R _item p PID_FLAMETHROWER_FUEL + 15 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -500 #
 100 14020 @
 103 15000 None 0 #
-107 15010 D _var p factions_points_bos } 400 R _item p PID_MAGNETO_LASER_PISTOL + 1 R _item p PID_SMALL_ENERGY_CELL + 24 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -400 #
+107 15010 D _script dialog@d_CheckFactionPoints 2 FACTION_BOS 400 R _item p PID_MAGNETO_LASER_PISTOL + 1 R _item p PID_SMALL_ENERGY_CELL + 24 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -400 #
 100 15020 @
 104 16000 None 0 #
-107 16010 D _var p factions_points_bos } 50 R _item p PID_ANTIDOTE + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -50 #
-107 16020 D _var p factions_points_bos } 80 R _item p PID_HEALING_POWDER + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -80 #
-107 16030 D _var p factions_points_bos } 50 R _item p PID_CIGARETTES + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -50 #
+107 16010 D _script dialog@d_CheckFactionPoints 2 FACTION_BOS 50 R _item p PID_ANTIDOTE + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -50 #
+107 16020 D _script dialog@d_CheckFactionPoints 2 FACTION_BOS 80 R _item p PID_HEALING_POWDER + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -80 #
+107 16030 D _script dialog@d_CheckFactionPoints 2 FACTION_BOS 50 R _item p PID_CIGARETTES + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -50 #
 100 16040 @
 105 17000 None 0 #
-107 17010 D _var p factions_points_bos } 100 R _item p PID_ROPE + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -100 #
-107 17020 D _var p factions_points_bos } 20 R _item p PID_KNIFE + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -20 #
-107 17030 D _var p factions_points_bos } 70 R _item p PID_AXE + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -70 #
-107 17040 D _var p factions_points_bos } 60 R _item p PID_SLEDGEHAMMER + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -60 #
+107 17010 D _script dialog@d_CheckFactionPoints 2 FACTION_BOS 100 R _item p PID_ROPE + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -100 #
+107 17020 D _script dialog@d_CheckFactionPoints 2 FACTION_BOS 20 R _item p PID_KNIFE + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -20 #
+107 17030 D _script dialog@d_CheckFactionPoints 2 FACTION_BOS 70 R _item p PID_AXE + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -70 #
+107 17040 D _script dialog@d_CheckFactionPoints 2 FACTION_BOS 60 R _item p PID_SLEDGEHAMMER + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -60 #
 100 17050 @
 106 18000 None 0 #
-107 18010 D _var p factions_points_bos } 200 R _item p PID_SPIKED_KNUCKLES + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -200 #
-107 18020 D _var p factions_points_bos } 120 R _item p PID_THROWING_KNIFE + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -120 #
-107 18030 D _var p factions_points_bos } 180 R _item p PID_COMBAT_KNIFE + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -180 #
+107 18010 D _script dialog@d_CheckFactionPoints 2 FACTION_BOS 200 R _item p PID_SPIKED_KNUCKLES + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -200 #
+107 18020 D _script dialog@d_CheckFactionPoints 2 FACTION_BOS 120 R _item p PID_THROWING_KNIFE + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -120 #
+107 18030 D _script dialog@d_CheckFactionPoints 2 FACTION_BOS 180 R _item p PID_COMBAT_KNIFE + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -180 #
 100 18040 @
 107 19000 None 0 #
 100 19010 #
 0 19020 @
 108 20000 None 0 #
-107 20010 D _var p factions_points_bos } 250 R _item p PID_LEATHER_JACKET + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -250 #
+107 20010 D _script dialog@d_CheckFactionPoints 2 FACTION_BOS 250 R _item p PID_LEATHER_JACKET + 1 R _script dialog@r_AddFactionPoints 2 FACTION_BOS -250 #
 100 20020 &
 
 [engl]
@@ -121,6 +122,7 @@ lang=engl
 {12060}{}{I'm looking for quality armor.}
 {12070}{}{Anything else you can offer me?}
 {12080}{}{Actually, I changed my mind. I don't need anything right now.}
+{12090}{}{How many faction points do I have?}
 {13000}{}{[He pulls out a few holsters, each carrying a small gun and some ammunition.] Take your pick.}
 {13010}{}{I'll take the 10mm pistol. [150 FP]}
 {13020}{}{I'll take the shotgun. [200 FP]}
@@ -153,4 +155,3 @@ lang=engl
 {20000}{}{[He pulls out a hanging rack of armors.] Let's find something that fits you properly.}
 {20010}{}{I'll take the leather jacket. [250 FP]}
 {20020}{}{Actually, I'd like to look at something else.}
-
