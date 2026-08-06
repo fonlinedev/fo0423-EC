@@ -3,10 +3,6 @@
 #include "ITEMPID.H"
 
 #define PID_SKELETON    211
-#define PID_10MM_PISTOL 8
-#define PID_10MM_JHP    29
-#define PID_KNIFE       4
-#define PID_STIMPAK     40
 #define START_JOURNEY_DIALOG 4006
 #define START_JOURNEY_DIALOG2 4007
 

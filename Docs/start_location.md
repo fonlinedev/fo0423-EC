@@ -13,7 +13,7 @@ All local variables (`LVAR`) used to track player quest progress must be declare
 Open `Server/scripts/_vars.fos` and add your variable at the bottom of the table using the next available ID:
 
 ```text
-   $	7327	1	q_quest_water_chip	0	0	99	4
+   $	7327	1	quest_water_chip	0	0	99	4
 **********
    Water chip quest status variable for Vault 13.
 **********
@@ -26,7 +26,7 @@ Open `Server/scripts/_vars.fos` and add your variable at the bottom of the table
 | --- | --- | --- |
 | **ID** | `7327` | Unique integer identifier across the server. |
 | **Type** | `1` | `1` = Local Variable (LVAR) stored per player. |
-| **Name** | `q_quest_water_chip` | Internal macro name (`LVAR_q_quest_water_chip`). |
+| **Name** | `quest_water_chip` | Internal macro name (`LVAR_q_quest_water_chip`). |
 | **Default** | `0` | Initial value when player variable is created. |
 | **Min** | `0` | Minimum allowed integer value. |
 | **Max** | `99` | Maximum allowed integer value. |
