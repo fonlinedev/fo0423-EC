@@ -1,0 +1,123 @@
+// overseer.fos - FOnline 2238 Overseer Quest Script
+#include "_macros.fos"
+#include "_vars.fos"
+#include "_maps.fos"
+#include "ITEMPID.H"
+
+// Define quest states & item PIDs
+#define QUEST_WATER_CHIP_NONE           (0)
+#define QUEST_WATER_CHIP_STARTED        (1)
+#define QUEST_WATER_CHIP_COMPLETED      (2)
+
+// Player answer node identifiers
+#define NODE_INITIAL                    (100)
+#define NODE_QUEST_EXPLANATION          (200)
+#define NODE_QUEST_TIME_LIMIT           (300)
+#define NODE_QUEST_ACCEPT               (400)
+#define NODE_LOW_INT_COUNTER            (104)
+#define NODE_LOW_INT_ACCEPT             (401)
+#define NODE_BUSY                       (999)
+
+// Start/restart conversation check
+void dlg_Overseer(Critter& player, Critter& npc, string@ lexems)
+{
+    // Low Intelligence Check (INT < 4)
+    if(player.Stat[ST_INTELLECT] < 4)
+    {
+        // Route to low intelligence dialog branch
+        player.Wait(0);
+        return;
+    }
+}
+
+// Script demand/result function for dialogue
+void r_StartQuest(Critter& player, Critter@ npc)
+{
+    // Access the player's quest variable (declared in var.txt as q_vault13_waterchip)
+    GameVar@ quest = GetLocalVar(LVAR_quest_water_chip, player.Id);
+    
+    if (valid(quest))
+    {
+        quest = 1; // Set quest to in-progress
+		player.SetKnownLoc(true, LOCATION_Vault15);
+        player.Say(SAY_NETMSG, "Quest accepted: Find the Water Chip for Vault 13.");
+		// --- STARTQUEST ITEM LOOT TABLE ---
+        
+        // 100% Chance items (Quantity 1)
+        player.AddItem(PID_KNIFE, 1);
+        player.AddItem(PID_10MM_PISTOL, 1);
+        player.AddItem(PID_WATER_FLASK, 1);
+        
+        // 100% Chance with random quantity (10 to 20 AP rounds)
+        player.AddItem(PID_10MM_AP, Random(10, 20));
+        
+        // 80% Chance item (Quantity 1)
+        if(Random(1, 100) <= 80)
+        {
+            player.AddItem(PID_STIMPAK, 1);
+        }
+        
+        // 25% Chance item (Quantity 1)
+        if(Random(1, 100) <= 25)
+        {
+            player.AddItem(PID_ROPE, 1);
+        }
+        
+        // 15% Chance items (Quantity 3)
+        if(Random(1, 100) <= 15)
+        {
+            player.AddItem(PID_FIRST_AID_KIT, 3);
+        }
+        
+        // 5% Chance item (Quantity 1)
+        if(Random(1, 100) <= 5)
+        {
+            player.AddItem(PID_RADAWAY, 1);
+        }		
+    } else {
+		player.Say(SAY_SHOUT, "Error! Contact admin.");
+	}
+}
+
+// Dialog Node Conditions
+bool d_IsQuestNotStarted(Critter& player, Critter@ npc)
+{
+    return GetQuestState(player) == QUEST_WATER_CHIP_NONE;
+}
+
+bool d_IsQuestStarted(Critter& player, Critter@ npc)
+{
+    return GetQuestState(player) == QUEST_WATER_CHIP_STARTED;
+}
+
+bool d_IsQuestCompleted(Critter& player, Critter@ npc)
+{
+    return GetQuestState(player) == QUEST_WATER_CHIP_COMPLETED;
+}
+
+bool d_IsLowStat(Critter& player, Critter@ npc)
+{
+    return player.Stat[ST_INTELLECT] < 4 &&
+           GetQuestState(player) == QUEST_WATER_CHIP_NONE;
+}
+
+bool d_IsNormalStat(Critter& player, Critter@ npc)
+{
+    return player.Stat[ST_INTELLECT] >= 4;
+}
+
+// Global helper functions to replace the broken Critter methods:
+uint GetQuestState(Critter& player)
+{
+    GameVar@ quest = GetLocalVar(LVAR_quest_water_chip, player.Id);
+    if (valid(quest))
+        return quest.GetValue();
+    return 0;
+}
+
+void SetQuestState(Critter& player, uint state)
+{
+    GameVar@ quest = GetLocalVar(LVAR_quest_water_chip, player.Id);
+    if (valid(quest))
+        quest = state;
+}

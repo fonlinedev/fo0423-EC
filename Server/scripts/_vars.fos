@@ -2333,7 +2333,7 @@
    Variable for johnnys military base quest == status uber bota w zaleznosci od dialogu w kompie na lvl2
 **********
 
-   $	7327	1	q_quest_water_chip	0	0	99	4
+   $	7327	1	quest_water_chip	0	0	99	4
 **********
    Water chip quest status variable for Vault 13.
 **********
