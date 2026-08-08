@@ -332,7 +332,7 @@ bool start()
     // Bramin traders
     InitBrahminTraders();
     // Towns
-    InitTowns();
+    // disabled InitTowns();
 
     InitCaveRandomization();
     InitSlaveruns();
@@ -345,7 +345,7 @@ bool start()
     InitGroups();
     // scenariooos
     // InitScenarios();
-    InitTrains();
+    // disabled InitTrains();
     InitAlertMaps();
     InitWeather();
     InitReverseItem();

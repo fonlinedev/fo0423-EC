@@ -662,7 +662,7 @@ bool IsArenaItem(Item@ item)   // export
 
 bool IsArenaCombatant(Critter& cr)
 {
-    return(cr.GetMapProtoId() == MAP_Arena && IsInsideArena(cr));
+    return false;
 }
 
 void RemoveArenaItems(Critter& cr)   // export

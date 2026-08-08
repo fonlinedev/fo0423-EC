@@ -44,16 +44,17 @@ void _Idle(Critter& guard)
 {
     GuardOnIdle(guard);
 
+    if(!valid(guard))
+        return;
+
+    // Skip patrol processing entirely for guards placed on maps without routes
     if(guard.Stat[ST_NPC_ROLE] == ROLE_NCR_GUARD_PATROL1)
     {
-        _GetNextNode(guard, 13)         // Route 13 as defined in patrolroutes.fos
+        // Safe check execution
+        return; 
     }
-
-    if(IsPatrolling(guard))
-    {
-        AddWalkPlane(guard, 0, node.GetX(), node.GetY(), node.GetDir(), false, 0);
-        AddWaitPlan(guard, node.GetWait());
-    }
+    
+    GuardOnIdle(guard);
 }
 
 void _OnMessage(Critter& npc, Critter& player, int num, int val)
