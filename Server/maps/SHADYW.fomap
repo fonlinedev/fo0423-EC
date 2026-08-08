@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              200
 MaxHexY              200
-WorkHexX             52
-WorkHexY             114
+WorkHexX             90
+WorkHexY             87
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -11176,6 +11176,8 @@ MapObjType           0
 ProtoId              199
 MapX                 98
 MapY                 96
+ScriptName           wandering_ghoul
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -11186,7 +11188,7 @@ Critter_ParamValue1  1
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  1
+Critter_ParamValue3  15
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -15002,6 +15004,8 @@ ProtoId              9
 MapX                 114
 MapY                 72
 Dir                  3
+ScriptName           wandering_ghoul
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -15012,7 +15016,7 @@ Critter_ParamValue1  21
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -15020,7 +15024,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  16
 Critter_ParamIndex9  ST_LEVEL
@@ -15031,6 +15035,8 @@ ProtoId              9
 MapX                 104
 MapY                 90
 Dir                  3
+ScriptName           wandering_ghoul
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -15041,7 +15047,7 @@ Critter_ParamValue1  21
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -15049,7 +15055,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  16
 Critter_ParamIndex9  ST_LEVEL
@@ -15060,6 +15066,8 @@ ProtoId              9
 MapX                 119
 MapY                 96
 Dir                  4
+ScriptName           wandering_ghoul
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -15070,7 +15078,7 @@ Critter_ParamValue1  21
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -15078,7 +15086,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  16
 Critter_ParamIndex9  ST_LEVEL
@@ -15089,6 +15097,8 @@ ProtoId              9
 MapX                 90
 MapY                 100
 Dir                  2
+ScriptName           wandering_ghoul
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -15099,7 +15109,7 @@ Critter_ParamValue1  21
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -15107,7 +15117,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  16
 Critter_ParamIndex9  ST_LEVEL
@@ -15122,7 +15132,7 @@ Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
 Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
+Critter_ParamValue0  4009
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
@@ -15173,9 +15183,11 @@ Critter_ParamValue9  0
 
 MapObjType           0
 ProtoId              9
-MapX                 105
-MapY                 131
-Dir                  3
+MapX                 114
+MapY                 71
+Dir                  4
+ScriptName           wandering_ghoul
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -15186,7 +15198,7 @@ Critter_ParamValue1  21
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -15194,7 +15206,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  16
 Critter_ParamIndex9  ST_LEVEL
@@ -15205,6 +15217,8 @@ ProtoId              9
 MapX                 123
 MapY                 133
 Dir                  5
+ScriptName           wandering_ghoul
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -15215,7 +15229,7 @@ Critter_ParamValue1  21
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -15223,7 +15237,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  16
 Critter_ParamIndex9  ST_LEVEL
@@ -15231,9 +15245,11 @@ Critter_ParamValue9  0
 
 MapObjType           0
 ProtoId              54
-MapX                 104
-MapY                 85
-Dir                  5
+MapX                 113
+MapY                 103
+Dir                  3
+ScriptName           wandering_ghoul
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -15244,7 +15260,7 @@ Critter_ParamValue1  25
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -15252,7 +15268,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  43
 Critter_ParamIndex9  ST_LEVEL
@@ -15260,9 +15276,11 @@ Critter_ParamValue9  0
 
 MapObjType           0
 ProtoId              54
-MapX                 110
-MapY                 116
-Dir                  5
+MapX                 113
+MapY                 131
+Dir                  3
+ScriptName           wandering_ghoul
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -15273,7 +15291,7 @@ Critter_ParamValue1  25
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -15281,7 +15299,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  43
 Critter_ParamIndex9  ST_LEVEL
@@ -15302,7 +15320,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -15321,6 +15339,8 @@ ProtoId              66
 MapX                 114
 MapY                 104
 Dir                  3
+ScriptName           wandering_ghoul
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -15331,7 +15351,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -15339,7 +15359,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  33
 Critter_ParamIndex9  ST_LEVEL
@@ -15437,6 +15457,8 @@ ProtoId              67
 MapX                 112
 MapY                 131
 Dir                  3
+ScriptName           wandering_ghoul
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -15447,7 +15469,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -15455,7 +15477,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  40
 Critter_ParamIndex9  ST_LEVEL
@@ -15465,6 +15487,8 @@ MapObjType           0
 ProtoId              67
 MapX                 114
 MapY                 132
+ScriptName           wandering_ghoul
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -15475,7 +15499,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -15483,7 +15507,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  40
 Critter_ParamIndex9  ST_LEVEL
@@ -15552,6 +15576,8 @@ ProtoId              67
 MapX                 125
 MapY                 97
 Dir                  4
+ScriptName           wandering_ghoul
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -15562,7 +15588,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -15570,7 +15596,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  40
 Critter_ParamIndex9  ST_LEVEL
@@ -15585,7 +15611,7 @@ Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
 Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
+Critter_ParamValue0  4010
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
@@ -15951,7 +15977,6 @@ MapObjType           2
 ProtoId              2049
 MapX                 94
 MapY                 43
-Scenery_ToMapPid     3855
 
 MapObjType           2
 ProtoId              2141
@@ -20359,5 +20384,61 @@ ProtoId              3853
 MapX                 53
 MapY                 108
 Scenery_ToEntire     1
+
+MapObjType           2
+ProtoId              4035
+MapX                 57
+MapY                 46
+
+MapObjType           2
+ProtoId              4035
+MapX                 57
+MapY                 48
+
+MapObjType           2
+ProtoId              4035
+MapX                 61
+MapY                 48
+
+MapObjType           2
+ProtoId              4035
+MapX                 61
+MapY                 46
+
+MapObjType           2
+ProtoId              4022
+MapX                 34
+MapY                 89
+Scenery_ToMapPid     3855
+
+MapObjType           2
+ProtoId              4022
+MapX                 36
+MapY                 89
+Scenery_ToMapPid     3855
+
+MapObjType           2
+ProtoId              4022
+MapX                 34
+MapY                 86
+Scenery_ToMapPid     3855
+
+MapObjType           2
+ProtoId              4022
+MapX                 36
+MapY                 86
+Scenery_ToMapPid     3855
+
+MapObjType           2
+ProtoId              4022
+MapX                 58
+MapY                 131
+Scenery_ToMapPid     3855
+
+MapObjType           2
+ProtoId              4022
+MapX                 56
+MapY                 131
+Scenery_ToMapPid     3855
 
 

@@ -1,0 +1,26 @@
+[comment]
+Seth - Armed Check Test
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 0 #
+2 1010 D _script seth@d_IsArmed 0 #
+3 1020 @
+2 2000 None 0 #
+0 2010 @
+3 3000 None 0 #
+0 3010 &
+
+[engl]
+{100}{}{Seth}
+{200}{}{You see Seth, leader of the guards of Shady Sands.}
+{1000}{}{Predialogue installations}
+{1010}{}{Armed}
+{1020}{}{Not armed}
+{2000}{}{You are carrying a weapon. Please holster it before entering Shady Sands.}
+{2010}{}{[Holster weapon]}
+{3000}{}{Good day. I am called Seth. How can I help you?}
+{3010}{}{Goodbye.}

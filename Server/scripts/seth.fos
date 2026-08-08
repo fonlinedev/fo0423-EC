@@ -1,0 +1,58 @@
+// FOnline: 2238
+// seth.fos
+
+#include "_macros.fos"
+#include "_vars.fos"
+#include "_maps.fos"
+// -----------------------------------------------------------------------
+// Dialog Demands (Conditions)
+// -----------------------------------------------------------------------
+
+// Checks if the player has a weapon equipped in either hand.
+bool d_IsArmed(Critter& player, Critter@ npc)
+{
+    Item@ hand1 = player.GetItem(0, SLOT_HAND1);
+    if(valid(hand1) && hand1.GetType() == ITEM_TYPE_WEAPON) return true;
+
+    Item@ hand2 = player.GetItem(0, SLOT_HAND2);
+    if(valid(hand2) && hand2.GetType() == ITEM_TYPE_WEAPON) return true;
+
+    return false;
+}
+
+// Checks if the player is NOT armed.
+bool d_IsNotArmed(Critter& player, Critter@ npc)
+{
+    return !d_IsArmed(player, npc);
+}
+
+// -----------------------------------------------------------------------
+// Dialog Results (Actions)
+// -----------------------------------------------------------------------
+
+// Sets the radscorpion quest as active and reveals the caves on the map.
+void r_ShowRadscorpionCaves(Critter& player, Critter@ npc)
+{
+    // Assuming LVAR_q_shady_radscorpions is defined in your _vars.fos
+    // 1 = Active, 2 = Completed
+    GameVar@ questVar = GetLocalVar(LVAR_q_shady_radscorpions, player.Id);
+    if(valid(questVar) && questVar.GetValue() == 0)
+    {
+        questVar = 1;
+    }
+
+    // Reveal the Radscorpion Caves on the player's world map.
+    // Replace LOCATION_RadscorpionCaves with your actual map PID.
+    player.SetKnownLoc(true, LOCATION_RadscorpionCaves);
+}
+
+// Completes the radscorpion quest.
+void r_FinishRadscorpionQuest(Critter& player, Critter@ npc)
+{
+    GameVar@ questVar = GetLocalVar(LVAR_q_shady_radscorpions, player.Id);
+    if(valid(questVar) && questVar.GetValue() == 1)
+    {
+        questVar = 2; // Mark as resolved
+        player.StatBase[ST_EXPERIENCE] += 250; // Give some reward
+    }
+}

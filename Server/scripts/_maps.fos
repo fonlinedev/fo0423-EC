@@ -233,14 +233,13 @@
 #define LOCATION_BountyHuntersCave				  (372)		 // BH Cave
 #define LOCATION_Ch1_Vault13				      (373)      // Your journey starts here.
 #define LOCATION_Ch1_Shady Sands  		          (374)      // A small settlement in the desert.
-
+#define LOCATION_RadscorpionCaves                 (375)      // Radscorpion nest infesting Shady sands.
 // ************************************************************************/
 // *  336 Maps                                                            */
 // ************************************************************************/
 // FileName, Script, Parent Location
 #define MAP_ArroyoTemple                          (1)        // arroyo_temple, Arroyo(16)
 #define MAP_TeslaTower                            (2)        // tesla_tower, Tesla Tower(49)
-#define MAP_Arena                                 (3)        // arena, map_arena@map_init, Hinkley(50)
 #define MAP_RailRaiders                           (4)        // q_train_rail_raiders, Train Ambush: Rail Raiders(55)
 #define MAP_BuriedRails                           (5)        // q_train_buried_rails, Train Ambush: Buried Rails(56)
 #define MAP_DenBusiness                           (6)        // den, map_denbus@map_init, The Den(1)
