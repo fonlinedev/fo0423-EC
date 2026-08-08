@@ -109,3 +109,6 @@ Tools/WorldEditor/Cache.dat
 /Client/data/*
 Client/DataFiles2238.cfg
 
+Tools/WorldEditor/Cache.dat
+Tools/WorldEditor/data/lstLocations.dat
+Tools/WorldEditor/data/lstMaps.dat
