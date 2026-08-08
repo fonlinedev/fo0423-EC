@@ -1,0 +1,39 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 0 #
+2 1010 @
+2 2000 None 0 #
+3 2010 D _param p SK_OUTDOORSMAN } 150 D _param p PE_EXPLORER = 0 D _script dialog@d_ExploredWasteland 0 #
+4 2020 D _param p SK_OUTDOORSMAN < 150 #
+0 2030 @
+3 3000 None 0 #
+5 3010 R _script dialog@r_RevealAllLocations 0 #
+0 3020 @
+4 4000 None 0 #
+0 4010 @
+5 5000 None 0 #
+0 5010 &
+
+[engl]
+{100}{}{Faction Clerk}
+{200}{}{You see a Faction Clerk.}
+{210}{}{She looks busy working at the computer.}
+{1000}{}{Predialogue installations}
+{1010}{}{Talked already}
+{2000}{}{Hello brother! What can I do for you?}
+{2010}{}{What can be checked in the computers?}
+{2020}{}{What can be checked in the computers?}
+{2030}{}{Goodbye.}
+{3000}{}{I see you are traveled enough to have use of our maps, are you interested in unlocking all the available locations?}
+{3010}{}{Yes.}
+{3020}{}{No, I will try later.}
+{4000}{}{The faction's story and important information are stored there, but you can't access them without assistance. Check back later if you have more experience.}
+{4010}{}{I see. Goodbye.}
+{5000}{}{There, your maps are unlocked now. Don't get lost out there.}
+{5010}{}{Thank you. Goodbye.}

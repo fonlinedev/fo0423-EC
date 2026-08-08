@@ -2860,7 +2860,7 @@ void tp_map(Critter& cr, int mapId, int hexX, int hexY)
 {
     if(!valid(cr)) return;
 
-    Map@ map = GetMap(mapId);
+	Map@ map = GetMapByPid(mapId, 0);
     if(!valid(map))
     {
         cr.Say(SAY_NETMSG, "Map ID " + mapId + " does not exist.");
@@ -2870,6 +2870,29 @@ void tp_map(Critter& cr, int mapId, int hexX, int hexY)
     // Teleport player directly to map and coordinates (Direction 0)
     cr.TransitToMap(map.Id, hexX, hexY, 0);
     cr.Say(SAY_NETMSG, "Teleported to Map " + mapId + " (" + hexX + ", " + hexY + ")");
+}
+
+void tp_loc(Critter& cr, int locPid, int hexX, int hexY)
+{
+    if (!valid(cr)) return;
+
+    Location@ loc = GetLocationByPid(locPid, 0);
+    if (!valid(loc))
+    {
+        cr.Say(SAY_NETMSG, "Location PID " + locPid + " does not exist on the world map.");
+        return;
+    }
+
+    // Grab the primary map (index 0) of that location
+    Map@ map = loc.GetMapByIndex(0);
+    if (!valid(map))
+    {
+        cr.Say(SAY_NETMSG, "Location PID " + locPid + " has no valid map at index 0.");
+        return;
+    }
+
+    cr.TransitToMap(map.Id, hexX, hexY, 0);
+    cr.Say(SAY_NETMSG, "Teleported to Location PID " + locPid + " (" + hexX + ", " + hexY + ")");
 }
 
 // Teleport out to the World Map
@@ -10939,6 +10962,34 @@ void set_stat_extended(Critter& player, int p0, int p1, int p2)
     player.Say(SAY_NETMSG, "Secondary Stat [" + p0 + "] set to " + p1);
 }
 
+// Call via engine runscript command: ~runscript cheats set_perk <perk_id> <game_var_id> <value> 0
+// List of perks at Perks.txt, game variables at _vars.fo
+void set_perk(Critter& player, int p0, int p1, int p2)
+{
+    // 1. Update local GameVar (p1)
+    if (p1 > 0)
+    {
+        GameVar@ var = GetLocalVar(p1, player.Id);
+        if (valid(var))
+        {
+            var = p2;
+            player.Say(SAY_NETMSG, "GameVar [" + p1 + "] set to " + p2);
+        }
+        else
+        {
+            player.Say(SAY_NETMSG, "Error: GameVar [" + p1 + "] not found.");
+        }
+    }
+
+    // 2. Sync Perk level (p0) based on quest step (p2)
+    if (p0 > 0)
+    {
+        int perkLevel = (p2 >= 2) ? 1 : 0; // Level 1 if step 2+, otherwise 0
+        player.PerkBase[p0] = perkLevel;
+        player.Say(SAY_NETMSG, "Perk [" + p0 + "] set to level " + perkLevel);
+    }
+}
+
 // Call via engine runscript command: ~runscript cheats r_CheckNoHeal 0 0 0
 void r_CheckHealingStatus(Critter& player, int param0, int param1, int param2)
 {
@@ -10956,5 +11007,99 @@ void r_CheckHealingStatus(Critter& player, int param0, int param1, int param2)
     // Index 526 = MODE_NO_HEAL
     player.Say(SAY_NETMSG, "MODE_NO_HEAL (Index 526): " + player.Mode[526]);
 }
+
+// Corrected cheat function for setting faction reputation
+// Call via engine runscript command: ~runscript cheats set_reputation <repId> <value> 0
+void set_reputation(Critter& player, int p0, int p1, int p2)
+{
+    
+    // Directly set the reputation value using the engine function
+    // Syntax typically looks like: target.SetReputation(repId, value);
+    player.ReputationBase[p0] = p1;
+    
+    player.Say(SAY_NETMSG, "Successfully set reputation ID " + p0 + " to " + p1);
+}
+
+void reset_cooldown(Critter& player, int p0, int p1, int p2)
+{
+    
+    DropTimeouts(player);
+    player.Say(SAY_NETMSG, "Lockpick and skill cooldowns have been reset.");
+}
+
+void add_faction(Critter& player, int p0, int p1, int p2)
+{
+    // Check if the player is already a member
+    if(IsMember(p0, player))
+    {
+        player.Say(SAY_NETMSG, "You are already a member of faction ID: " + p0);
+        return;
+    }
+    
+    // If they belong to another faction already, resign first to avoid conflicts
+    if(d_IsMemberOfSomeFaction(player))
+    {
+        _Resign(player.Id);
+    }
+    
+    // Add player to the requested faction ID
+    int res = AddMember(p0, player.Id);
+    if(res != 0)
+    {
+        player.Say(SAY_NETMSG, "ERR: " + FD_Result2String(res));
+        Log("ERR: " + FD_Result2String(res));
+    }
+    else
+    {
+        player.Say(SAY_NETMSG, "Successfully added to faction ID: " + p0);
+        AddFactionNews(p0, player.Id, 0, 1);
+    }
+}
+
+bool d_IsMemberOfSomeFaction(Critter& player)
+{
+    uint faction = _GroupIndex(player);
+    // assert
+    if(faction == FACTION_UNKNOWN)
+        Log("Assert: player's faction shouldn't be UNKNOWN");
+    return GetGroupIndex(player) != FACTION_NONE;
+}
+// ~runscript cheats give_item 92 10 0
+void give_item(Critter& player, int p0, int p1, int p2)
+{
+    player.AddItem(uint16(p0), p1);
+}
+
+// Inside your cheats module
+//~runscript cheats get_var <var> 0 0
+void get_var(Critter& cr, int p0, int p1, int p2)
+{
+    // Retrieve local variable by index for the player
+    GameVar@ var = GetLocalVar(p0, cr.Id);
+    if(!valid(var))
+    {
+        cr.Say(SAY_NETMSG, "Invalid variable index or variable does not exist.");
+        return;
+    }
+    
+    int val = var.GetValue();
+    cr.Say(SAY_NETMSG, "Variable index " + p0 + " value: " + val);
+}
+
+void set_var(Critter& cr, int p0, int p1, int p2)
+{
+    // Modify local variable by index for the player
+    GameVar@ var = GetLocalVar(p0, cr.Id);
+    if(!valid(var))
+    {
+        cr.Say(SAY_NETMSG, "Invalid variable index or variable does not exist.");
+        return;
+    }
+    
+    int oldValue = var.GetValue();
+    var = p1;
+    cr.Say(SAY_NETMSG, "Variable index " + p0 + " changed from " + oldValue + " to " + p1);
+}
+
 #endif
 /*@}*/

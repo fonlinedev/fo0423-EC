@@ -106,19 +106,30 @@ bool d_CheckReputationTooLow(Critter& player, Critter@ npc, int reputationNeeded
 
 void _CaravanGuard(Critter& cr, bool firstTime)
 {
-	_CritSetMode(cr, MODE_UNLIMITED_AMMO);
-    cr.ParamBase[ST_PERCEPTION] = 10;
-    cr.ParamBase[ST_MAX_LIFE] += 30;
-    cr.ParamBase[SK_SMALL_GUNS]=200;
-    cr.ParamBase[SK_BIG_GUNS]=200;
-    cr.ParamBase[SK_ENERGY_WEAPONS]=200;
+    _CritSetMode(cr, MODE_UNLIMITED_AMMO);
+
+    // Randomize Perception and Bonus Life
+    cr.ParamBase[ST_PERCEPTION] = Random(7, 10);
+    cr.ParamBase[ST_MAX_LIFE] += Random(20, 60);
+
+    // Randomize primary combat skills (formerly fixed at 200)
+    cr.ParamBase[SK_SMALL_GUNS]     = Random(160, 240);
+    cr.ParamBase[SK_BIG_GUNS]       = Random(160, 240);
+    cr.ParamBase[SK_ENERGY_WEAPONS] = Random(160, 240);
+
+    // Optional: Add slight variation to combat sequence and AP
+    cr.ParamBase[ST_SEQUENCE] += Random(0, 4);
+
+    // Bind event handlers
     cr.SetEvent(CRITTER_EVENT_ATTACKED, "_GuardAttacked");
     cr.SetEvent(CRITTER_EVENT_SMTH_ATTACKED, "_GuardSmthAttacked");
     cr.SetEvent(CRITTER_EVENT_IDLE, "_OnIdleEncounter");
     cr.SetEvent(CRITTER_EVENT_SMTH_MOVE_ITEM, "_OnSmthMoveItemEncounter");
-	cr.StatBase[ST_CURRENT_HP] = cr.Stat[ST_MAX_LIFE];
-	
-	cr.ParamBase[ST_VAR9]=666; // used for colorizer
+
+    // Recalculate current HP to match updated max HP
+    cr.StatBase[ST_CURRENT_HP] = cr.Stat[ST_MAX_LIFE];
+
+    cr.ParamBase[ST_VAR9] = 666; // Colorizer ID
 }
 
 bool _GuardAttacked(Critter& cr, Critter& attacker)
@@ -420,28 +431,34 @@ uint e_Leave(array<uint>@ values)
             leader.ParamBase[ST_VAR0] = 0;
             array<Critter @> critters;
             uint             critterCount = map.GetCritters(0, FIND_LIFE, critters);
+            
+            // Get the caravan's faction ID from the leader's team parameter
+            uint factionId = leader.Param[ST_TEAM_ID];
+
             for(uint i = 0; i < critterCount; i++)
             {
                 if(caravan.IsCaravanMember(critters[i]))
                 {
-                    //if(critters[i].Timeout[TO_BATTLE] <= 0) Will take even with combat timer on
-                        critters[i].TransitToGlobalGroup(leader.Id);
-						if(critters[i].IsPlayer())
-						{
-							int expAmount = 100;
-							critters[i].StatBase[ST_EXPERIENCE] += expAmount;
-							critters[i].Say(SAY_NETMSG, "You have gained " + expAmount + " experience points for securing caravan leader in the encounter.");						
-						}
+                    critters[i].TransitToGlobalGroup(leader.Id);
+                    if(critters[i].IsPlayer())
+                    {
+                        int expAmount = 100;
+                        int repAmount = 10;
+
+                        // Give Experience and Reputation
+                        critters[i].StatBase[ST_EXPERIENCE] += expAmount;
+                        AddReputation(critters[i], factionId, repAmount);
+
+                        critters[i].Say(SAY_NETMSG, "You gained " + expAmount + " experience and +" + repAmount + " reputation for securing the caravan.");                       
+                    }
                 }
             }
-			//Log("caravans.fos: tworzenie itema (caravanCart)");
+
             Item@ caravanCart = GetItem(leader.ParamBase[ST_VAR2]);
-			//Log("caravans.fos: Item utworzony (caravanCart)");
             if(valid(caravanCart))
-			{
+            {
                 DeleteItem(caravanCart);
-				//Log("caravans.fos: Item skasowany (caravanCart)");
-			}
+            }
         }
     }
     return 0;

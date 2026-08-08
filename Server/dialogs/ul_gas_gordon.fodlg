@@ -11,7 +11,7 @@ lang=engl
 6 2010 #
 65506 2020 #
 4 2030 #
-9 2040 D _var p q_bos_initiatequest_start = 21 D _var p name_mem_npc_player = 0 D _var p q_bos_hummer = 1 #
+9 2040 D _var p q_bos_initiatequest_start = 21 D _var p name_mem_npc_player = 0 D _var p q_bos_hummer = 0 #
 0 2050 @
 4 3000 None 0 #
 8 3010 #
@@ -32,7 +32,7 @@ lang=engl
 9 8000 None 0 #
 10 8010 @
 10 9000 None 0 #
-11 9010 R _var p name_mem_npc_player = 1 R _var p q_bos_hummer = 2 R _item p PID_CAR_REPLACEMENT_PARTS + 1 @
+11 9010 R _var p name_mem_npc_player = 1 R _var p q_bos_hummer = 1 R _item p PID_CAR_REPLACEMENT_PARTS + 1 @
 11 10000 None 0 #
 0 10010 &
 
@@ -46,7 +46,7 @@ lang=engl
 {2010}{}{Who are you?}
 {2020}{}{I need some supplies.}
 {2030}{}{Who's that psycho bitch outside of your store?}
-{2040}{}{I'm here about the hummer that was on its way here.}
+{2040}{}{I'm here about the hummer that broke down.}
 {2050}{}{See you later.}
 {3000}{}{Oh, it's just my daughter, pay no attention to her. She likes to scare the few customers that come by.}
 {3010}{}{Who are you?}
@@ -64,10 +64,9 @@ lang=engl
 {7000}{}{Well, there ain't many customers nowadays, but as NCR is getting more stable, I expect a population boom soon, in fact, I already see some signs of it.}
 {7010}{}{So, what about raiders, do they bother you?}
 {7020}{}{You must be crazy, you old bugger, you've been living out here in the desert for too long.}
-{8000}{}{Oh yeah. They were supposed to be here over an hour ago. What happened?}
-{8010}{}{[You explain what happened and what you need.]}
-{9000}{}{Hm. Sounds like you need a radiator hose. Take this box of parts. You'll find everything you need in here.}
-{9010}{}{Thanks, Gordon. That hummer should be running again soon.}
+{8000}{}{Ah, the Brotherhood transport. They sent word ahead. Take this box of replacement parts over to them.}
+{8010}{}{[Take the box of parts]}
+{9000}{}{Take these parts straight to the stranded hummer. They should be able to get the engine running again.}
+{9010}{}{Thanks, Gordon. I'll get these to them right away.}
 {10000}{}{Just tell them to hurry up. I do have other things to do today.}
 {10010}{}{Will do.}
-

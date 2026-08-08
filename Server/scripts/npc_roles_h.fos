@@ -88,6 +88,7 @@
 #define ROLE_BOS_ENTRANCE_GUARD            (1)
 #define ROLE_BOS_STORAGE_GUARD             (3)
 #define ROLE_BOS_COMPUTER_GUARD            (4)
+#define ROLE_BOS_INITIATE_INSTRUCTOR       (5)
 
 // Cathedral
 #define ROLE_CATHEDRAL_ANOTHER_GUARD       (5)

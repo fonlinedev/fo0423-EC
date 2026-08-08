@@ -1,0 +1,62 @@
+~getaccess admin 123456
+~runscript cheats reset_cooldown 0 0 0
+
+~runscript cheats add_faction <factionid> 0 0
+~runscript cheats set_reputation <faction id> <value> 0
+
+Neutral: 0 - 299
+Accepted: 300 - 899
+Liked: 900 - 1499
+Idolized: 1500+
+
+
+~runscript cheats tp_map 45 50 55 | BOS NCR Entrance
+~runscript cheats tp_map 72 100 100 | BOS Lost Hills entrance
+~runscript cheats tp_map 73 100 100 | BOS Lost Hills 1st floor
+~runscript cheats tp_map 74 100 100 | BOS Lost Hills 2nd floor
+~runscript cheats tp_map 75 100 100 | BOS Lost Hills 3rd floor
+~runscript cheats tp_map 75 100 100 | BOS Lost Hills 4rd floor
+
+
+~runscript cheats set_skill <skill-id>
+
+# brotherhood of steel quest
+
+q_bos_initiatequest_start 7074
+~runscript cheats get_var 7074 0 0
+~runscript cheats set_var 7074 <value> 0
+
+5   |   FACTION_NCR
+3   |   FACTION_ENCLAVE
+9   |   FACTION_SLAVERS_GUILD
+2   |   FACTION_BOS
+24  |   FACTION_HUB_CRIMINALS
+25  |   FACTION_CRIMSON_CARAVANS
+26  |   FACTION_FARGO_TRADERS
+27  |   FACTION_WATER_MERCHANTS
+
+# Quarter master faction points
+
+#define LVAR_factions_points_bos                (201)
+#define LVAR_factions_points_enclave            (202)
+#define LVAR_factions_points_ncr                (203)
+#define LVAR_factions_points_raiders            (204)
+#define LVAR_factions_points_unity              (205)
+#define LVAR_factions_points_vc                 (206)
+
+
+# Items
+725    PID_COMBAT_HELMET
+726    PID_COMBAT_HELMET_MK_II
+727    PID_BROTHERHOOD_HELMET
+728    PID_LEATHER_JACKET_HELMET
+729    PID_COMBAT_LEATHER_JACKET_HELMET
+730    PID_LEATHER_ARMOR_HELMET
+731    PID_LEATHER_ARMOR_HELMET_MK2
+732    PID_METAL_HELMET
+733    PID_METAL_HELMET_MK2
+239    PID_BROTHERHOOD_COMBAT_ARMOR
+233    PID_TURBO_PLASMA_RIFLE
+240    PID_TESLA_ARMOR
+241    PID_223_PISTOL
+242    PID_COMBAT_SHOTGUN

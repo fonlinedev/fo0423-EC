@@ -1,0 +1,26 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 0 #
+3 1010 D _script map_v13_ent@d_IsQuestFinished 0 #
+2 1020 @
+2 2000 None 0 #
+0 2010 @
+3 3000 None 0 #
+0 3010 &
+
+[engl]
+{100}{}{Vault Security Intercom}
+{200}{}{You see the Vault entry security speaker.}
+{1000}{}{Predialogue}
+{1010}{}{Quest Finished -> Open Door}
+{1020}{}{Default (Not Started / Running) -> Access Denied}
+{2000}{}{Halt! Access to the Vault is restricted. Your assigned mission in the wasteland is still in progress. Return when your task is finished.}
+{2010}{}{Understood, I'm heading back out.}
+{3000}{}{Welcome back. Authentication verified. Stand clear while the blast door cycles open.}
+{3010}{}{Thank you.}

@@ -137,6 +137,15 @@ void t_StorageEnter(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
     critter.SendMessage(MSG_BOS_PLAYER_STORAGE_ENTER, 0, MESSAGE_TO_VISIBLE_ME);
 }
 
+void t_NearElevator(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
+{
+    if(!critter.IsPlayer() || !entered)
+        return;
+
+    // Send the elevator proximity message to nearby NPCs
+    critter.SendMessage(MSG_BOS_PLAYER_NEAR_ELEVATOR, 0, MESSAGE_TO_VISIBLE_ME);
+}
+
 void t_NearComputer(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
 {
     if(!critter.IsPlayer() || !entered)

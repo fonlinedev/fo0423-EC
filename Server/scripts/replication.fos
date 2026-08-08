@@ -121,9 +121,13 @@ void SetStartLocation(Critter& cr)   // Export
     // Spawn player in instanced starter location
     uint x, y = 0;
    // uint startloc = Random(LOCATION_Spawnpoint1, LOCATION_Spawnpoint3);
-    uint startloc = LOCATION_Spawnpoint1;
+    uint startloc = LOCATION_Ch1_Vault13;
     switch(startloc)
     {
+	case LOCATION_Ch1_Vault13:
+		x = 700;
+        y = 400;
+        break;
     case LOCATION_Spawnpoint1:
         x = 1522;
         y = 2028;
@@ -160,7 +164,7 @@ void SetStartLocation(Critter& cr)   // Export
     cr.SetFog(zoneX, zoneY + 1, FOG_FULL);
     cr.SetFog(zoneX + 1, zoneY + 1, FOG_FULL);
 
-    cr.TransitToMap(map.Id, 0);
+    cr.TransitToMap(map.Id, 73, 40, 2);
 
     zoneX = cr.WorldX / __GlobalMapZoneLength;
     zoneY = cr.WorldY / __GlobalMapZoneLength;

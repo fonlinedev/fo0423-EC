@@ -15,7 +15,7 @@ lang=engl
 4 2020 #
 80 2030 D _param p PE_PROFESSION_GUNSMITH_S < 2 #
 90 2040 D _param p PE_PROFESSION_GUNSMITH_B < 2 #
-101 2050 D _var p q_bos_eldridge = 0 D _var p q_bos_initiatequest_start = 15 #
+101 2050 D _var p q_bos_eldridge = 0 D _var p q_bos_initiatequest_start } 15 D _var p q_bos_initiatequest_start < 18 #
 107 2060 D _var p q_bos_eldridge = 1 #
 109 2070 D _var p q_bos_eldridge = 1 D _item p PID_FIREWOOD } 5 D _item p PID_METAL_PARTS } 1 R _item p PID_FIREWOOD - 5 R _item p PID_METAL_PARTS - 1 #
 30 2080 D _var p q_la_gunr_courier = 4 D _item p PID_Q_GUNRUNNER_COURIER_BOX > 0 R _param p REPUTATION_NEW_RENO + 2 R _var p q_la_gunr_courier = 7 R _item p PID_Q_GUNRUNNER_COURIER_BOX - 1 #
@@ -25,7 +25,7 @@ lang=engl
 4 3020 #
 80 3030 D _param p PE_PROFESSION_GUNSMITH_S < 2 #
 90 3040 D _param p PE_PROFESSION_GUNSMITH_B < 2 #
-101 3050 D _var p q_bos_eldridge = 0 D _var p q_bos_initiatequest_start = 15 #
+101 3050 D _var p q_bos_eldridge = 0 D _var p q_bos_initiatequest_start } 15 D _var p q_bos_initiatequest_start < 18 #
 107 3060 D _var p q_bos_eldridge = 1 #
 109 3070 D _var p q_bos_eldridge = 1 D _item p PID_FIREWOOD } 5 D _item p PID_METAL_PARTS } 1 R _item p PID_FIREWOOD - 5 R _item p PID_METAL_PARTS - 1 #
 30 3080 D _var p q_la_gunr_courier = 4 D _item p PID_Q_GUNRUNNER_COURIER_BOX > 0 R _param p REPUTATION_NEW_RENO + 2 R _var p q_la_gunr_courier = 7 R _item p PID_Q_GUNRUNNER_COURIER_BOX - 1 #

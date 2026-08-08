@@ -1,0 +1,85 @@
+[comment]
+Vault 13 Overseer Initial Quest Dialogue - FOnline / FOClassic
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 0 #
+2 1010 D _script overseer@d_IsLowStat 0 #
+3 1020 D _script overseer@d_IsQuestNotStarted 0 #
+10 1030 D _script overseer@d_IsQuestStarted 0 #
+20 1040 D _script overseer@d_IsQuestCompleted 0 @
+
+2 2000 None 0 #
+6 2010 #
+0 2020 @
+
+3 3000 None 0 #
+4 3010 #
+0 3020 @
+
+4 4000 None 0 #
+5 4010 @
+
+5 5000 None 0 #
+7 5010 #
+0 5020 @
+
+6 6000 None 0 #
+8 6010 #
+0 6020 @
+
+7 7000 None 0 #
+0 7010 R _var p quest_water_chip = 1 R _script overseer@r_StartQuest 0 @
+
+8 8000 None 0 #
+0 8010 R _var p quest_water_chip = 1 R _script overseer@r_StartQuest 0 @
+
+10 9000 None 0 #
+0 9010 @
+
+20 9100 None 0 #
+0 9110 &
+
+[engl]
+{100}{}{Overseer}
+{200}{}{You see the Vault 13 Overseer.}
+
+{1000}{}{Initial check}
+{1010}{}{Dumb character}
+{1020}{}{Normal - Quest not started}
+{1030}{}{Normal - Quest in progress}
+{1040}{}{Normal - Quest finished}
+
+{2000}{}{Ahh, you're here. Good. Well, only good that you're here. We've got a problem. A big one.}
+{2010}{}{Unh?}
+{2020}{}{Nuh-uh.}
+
+{3000}{}{Ahh, you're here. Good. Well, only good that you're here. We've got a problem. A big one. The controller chip for our water purification system has given up the ghost. We can't make another one and the process is too complicated for a work-around system. Simply put, we're running out of drinking water. No water, no Vault.}
+{3010}{}{Sounds serious. What do you need me to do?}
+{3020}{}{Not now, I'm busy.}
+
+{4000}{}{Now we both know we've had our differences as you've grown up. You've got the wanderlust in you. Seriously, this is crucial to our survival. And frankly, I think you're the only hope we have. You need to go find us another controller chip.}
+{4010}{}{Where should I start looking?}
+
+{5000}{}{We estimate we have four to five months before the vault runs out of water. We need that chip!}
+{5010}{}{I'll do it.}
+{5020}{}{Yeah, well I guess you'll have to find someone else to do your dirty work.}
+
+{6000}{}{One month . . . two . . . four . . . five . . . six . . . You have four to five months before we run out of water. We need that chip!}
+{6010}{}{Ok.}
+{6020}{}{Nuh-uh.}
+
+{7000}{}{We marked your map with the location of another Vault. Not a bad place to start, I think. Here's some equipment you'll probably need. Be safe, find that chip, and get back here, OK?}
+{7010}{}{Ok. I'll be back.}
+
+{8000}{}{We marked your map with the location of another Vault. Go find that chip! Here's some equipment. Be safe, OK?}
+{8010}{}{Ok.}
+
+{9000}{}{Have you found the chip yet? We're running out of time!}
+{9010}{}{Not yet. I'm still looking.}
+
+{9100}{}{The water supply has stabilized thanks to you!}
+{9110}{}{Glad I could help.}

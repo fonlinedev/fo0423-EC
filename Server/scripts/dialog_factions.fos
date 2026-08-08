@@ -324,6 +324,40 @@ bool d_IsNotDisguised(Critter& player, Critter@ npc)   // via dialog
 }
 // @}
 
+
+/**
+ * Checks if the player has at least the specified amount of faction points.
+ */
+bool d_CheckFactionPoints(Critter& player, Critter@ npc, int faction, int amount)
+{
+    int varnum = 0;
+    switch(faction)
+    {
+    case FACTION_BOS:
+        varnum = LVAR_factions_points_bos;
+        break;
+    case FACTION_ENCLAVE:
+        varnum = LVAR_factions_points_enclave;
+        break;
+    case FACTION_NCR:
+        varnum = LVAR_factions_points_ncr;
+        break;
+    case FACTION_RAIDERS:
+        varnum = LVAR_factions_points_raiders;
+        break;
+    case FACTION_UNITY:
+        varnum = LVAR_factions_points_unity;
+        break;
+    case FACTION_VAULT_CITY:
+        varnum = LVAR_factions_points_vc;
+        break;
+    default:
+        return false;
+    }
+    GameVar@ var = GetLocalVar(varnum, player.Id);
+    return valid(var) && (var.GetValue() >= amount);
+}
+
 /*@}*/
 
 #endif

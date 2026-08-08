@@ -1,0 +1,34 @@
+//
+// FOnline: 2238
+// Rotators
+//
+// bos_instructor.fos
+//
+
+#include "_macros.fos"
+#include "factions_h.fos"
+#include "messages_h.fos"
+
+#define DIALOG_INSTRUCTOR_ID   (1822)
+#define STR_INSTRUCTOR_WARNING (1)
+
+void critter_init(Critter& instructor, bool firstTime)
+{
+    instructor.SetEvent(CRITTER_EVENT_MESSAGE, "_OnInstructorMessage");
+}
+
+void _OnInstructorMessage(Critter& npc, Critter& player, int num, int val)
+{
+    if(num == MSG_BOS_PLAYER_NEAR_ELEVATOR)
+    {
+        // Check if player's Brotherhood reputation is less than 1200
+        if(player.ReputationBase[FACTION_BOS] < 1200)
+        {
+            // Say message over his head
+            npc.SayMsg(SAY_NORM_ON_HEAD, TEXTMSG_DLG, DLGSTR(DIALOG_INSTRUCTOR_ID, STR_INSTRUCTOR_WARNING));
+            
+            // Force dialogue interface to open with the player
+            RunDialog(player, npc, DIALOG_INSTRUCTOR_ID, true);
+        }
+    }
+}

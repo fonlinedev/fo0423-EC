@@ -1,0 +1,39 @@
+[comment]
+Brotherhood Instructor Dialog
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 0 #
+3 1010 D _script dialog@d_CheckMinReputation 2 FACTION_BOS 1200 #
+2 1020 @
+2 2000 None 0 #
+3 2010 @
+3 3000 None 0 #
+4 3010 #
+0 3020 @
+4 4000 None 0 #
+5 4010 #
+0 4020 @
+5 5000 None 0 #
+0 5010 &
+
+[engl]
+{100}{}{Brotherhood Instructor}
+{200}{}{You see a strict-looking Brotherhood Instructor.}
+{210}{}{He oversees the trainees and ensures everyone respects the bunker's security levels.}
+{1000}{}{Predialogue}
+{1010}{}{High Rep}
+{1020}{}{Low Rep}
+{2000}{}{You need to talk to me before going there. Our rules are strictly enforced.}
+{2010}{}{Understood. Let's talk.}
+{3000}{}{Initiate, listen closely. This bunker has three distinct security levels, and our rules are strictly enforced. You cannot simply roam wherever you please.}
+{3010}{}{What are the requirements for each floor?}
+{3020}{}{I'll keep that in mind. Goodbye.}
+{4000}{}{Lower levels require proven loyalty and higher standing within the Brotherhood. If you attempt to access a floor your reputation does not permit, the guards will attack you on sight without any warning.}
+{4010}{}{Understood. Tell me the specific reputation thresholds for each level.}
+{4020}{}{Good to know. I'm leaving.}
+{5000}{}{Level 2 requires a Brotherhood reputation of at least 1200. Level 3 requires 1800. Level 4 requires 2600. Earn your keep, raise your standing, or suffer the consequences.}
+{5010}{}{Thank you for the briefing, instructor.}

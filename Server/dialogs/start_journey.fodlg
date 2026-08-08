@@ -1,0 +1,49 @@
+[comment]
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 0 #
+2 1010 @
+2 2000 None 0 #
+3 2010 #
+4 2020 #
+5 2030 #
+0 2040 @
+3 3000 None 0 #
+4 3010 #
+5 3020 #
+0 3030 @
+4 4000 None 0 #
+3 4010 #
+5 4020 #
+0 4030 @
+5 5000 None 0 #
+4 5010 #
+3 5020 #
+0 5030 &
+
+[engl]
+{100}{}{Vault 13 Guide}
+{200}{}{Vault 13 System Message}
+{1000}{}{Predialogue}
+{1010}{}{Default}
+{2000}{}{Before starting your journey, remember your main goal is to find the Water Chip for Vault 13. Is there anything else you need to know before you leave?}
+{2010}{}{How should I handle meeting people out there?}
+{2020}{}{What's the rule on taking items and looting?}
+{2030}{}{How do I survive and get stronger?}
+{2040}{}{I understand. I'm ready to leave.}
+{3000}{}{Don't provoke conversations with other characters—be cordial, otherwise they won't like you much! Speak with most people you find, as they can give you valuable information.}
+{3010}{}{What about looting?}
+{3020}{}{How do I get stronger?}
+{3030}{}{Thanks for the advice. I'm ready to leave.}
+{4000}{}{Lockers are full of items, but remember: you need permission most of the time to get the loot. If you insist on taking things without asking, people will attack you on sight!}
+{4010}{}{How should I talk to people?}
+{4020}{}{How do I get stronger?}
+{4030}{}{Understood. I'm ready to leave.}
+{5000}{}{Raise your skills as you travel and seek out professional trainers in towns. As you grow stronger, look into joining a faction for protection and allies. Good luck!}
+{5010}{}{Tell me about looting again.}
+{5020}{}{Tell me about talking to people again.}
+{5030}{}{I'm ready to step outside.}

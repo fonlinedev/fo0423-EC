@@ -78,7 +78,7 @@ void r_HealSoldier(Critter& player, Critter@ npc, int val)
 
 void r_RetireMap(Critter& player, Critter@ npc)
 {
-    // injured
+    // injured soldier
     GameVar@ var = GetLocalVar(LVAR_se_bosbattleground, player.Id);
     if(var.GetValue() != 0)
     {

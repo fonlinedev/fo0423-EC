@@ -2070,9 +2070,9 @@ int CheckSpecialEncounter(Critter@ leader, CZone@ zone)
 	
 	_CheckSpecialEncounter(LOCATION_Ambush, (ZoneContainsFlag(zone, FLAG_CaesarAmbush) && (GetLvar(leader, LVAR_q_la_train_caesar_ambush) == 1) && (leader.Skill[SK_OUTDOORSMAN] < Random(75, 299))), SetLvar(leader, LVAR_q_la_train_caesar_ambush, 2));
 	
-    _CheckSpecialEncounter(LOCATION_Battleground, (ZoneContainsFlag(zone, FLAG_BattleGround) && (GetLvar(leader, LVAR_se_bosbattleground) == 0) && (GetLvar(leader, LVAR_q_bos_initiatequest_start) == 21) && Random(0, 1) == 0), false);
+    _CheckSpecialEncounter(LOCATION_Battleground, (ZoneContainsFlag(zone, FLAG_BattleGround) && (GetLvar(leader, LVAR_se_bosbattleground) == 0) && (GetLvar(leader, LVAR_q_bos_initiatequest_start) >= 21 && GetLvar(leader, LVAR_q_bos_initiatequest_start) <= 22) && Random(0, 1) == 0), false);
 	
-    _CheckSpecialEncounter(LOCATION_CrashedHummer, (ZoneContainsFlag(zone, FLAG_CrashedHummer) && (GetLvar(leader, LVAR_se_boscrashedhummer) == 0) && (GetLvar(leader, LVAR_q_bos_initiatequest_start) == 21) && Random(0, 8) == 0), false);
+    _CheckSpecialEncounter(LOCATION_CrashedHummer, (ZoneContainsFlag(zone, FLAG_CrashedHummer) && (GetLvar(leader, LVAR_se_boscrashedhummer) == 0) && (GetLvar(leader, LVAR_q_bos_initiatequest_start) >= 21 && GetLvar(leader, LVAR_q_bos_initiatequest_start) <= 22) && Random(0, 8) == 0), false);
 	
     #endif
 
