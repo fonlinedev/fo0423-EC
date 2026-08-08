@@ -108,4 +108,8 @@ Tools/ObjectEditor/Template.lang
 Tools/WorldEditor/Cache.dat
 /Client/data/*
 Client/DataFiles2238.cfg
+Client/FOnline2238.cfg
+Server/config/GetAccess.cfg
 Tools/WorldEditor/Cache.dat
+Tools/WorldEditor/data/lstLocations.dat
+Tools/WorldEditor/data/lstMaps.dat
