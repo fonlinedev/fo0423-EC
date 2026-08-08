@@ -2742,7 +2742,7 @@ $	9950	1	LVAR_FO2077_Book_Barter  0	0	10	0
 **********
 
 **********
-	$	61007	0	q_shady_radscorpions	0	0	2	0
+	$	61007	1	q_shady_radscorpions	0	0	2	0
 **********
 	Used to track Seth's Radscorpion quest in Shady Sands. 0 = Not Started, 1 = Active, 2 = Completed.
 **********
