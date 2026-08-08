@@ -100,3 +100,12 @@ Client/FOnline.log
 Tools/WorldEditor/data/lstMaps.dat
 Tools/WorldEditor/data/lstLocations.dat
 Tools/WorldEditor/WorldEditor.user.cfg
+Server/data/critter.dat
+Server/data/master.dat
+Tools/ObjectEditor/listview.bin
+Tools/ObjectEditor/ObjectEditor.user.cfg
+Tools/ObjectEditor/Template.lang
+Tools/WorldEditor/Cache.dat
+/Client/data/*
+Client/DataFiles2238.cfg
+
