@@ -231,6 +231,8 @@
 #define LOCATION_BarterGround					  (370)		 // Barter Ground
 #define LOCATION_TalChem						  (371)		 // Tal Chem HQ
 #define LOCATION_BountyHuntersCave				  (372)		 // BH Cave
+#define LOCATION_Ch1_Vault13				      (373)      // Your journey starts here.
+#define LOCATION_Ch1_Shady Sands  		          (374)      // A small settlement in the desert.
 
 // ************************************************************************/
 // *  336 Maps                                                            */
