@@ -26,11 +26,6 @@
 {35}{}{08vats}
 {36}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
-# Map 3, base 40
-{40}{}{Arena}
-{45}{}{01hub}
-{46}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
 # Map 4, base 50
 {50}{}{Rail Raiders}
 {55}{}{05raider}
@@ -2229,8 +2224,8 @@
 {125142}{}{198}
 {125143}{}{210}
 
-# New Adytum, pid 26, base 126000
-{126000}{}{New Adytum}
+# Adytum, pid 26, base 126000
+{126000}{}{Adytum}
 {126005}{}{Amongst decimated skyscrapers lies the small industrial town named New Adytum.}
 {126010}{}{12}
 {126020}{}{art\intrface\Twnmap10.frm}
@@ -2403,11 +2398,6 @@
 {149000}{}{Tesla Tower}
 {149005}{}{A wireless  telecommunication tower, in control by the Brotherhood of Steel. Due to this tower, it was possible to greatly increase the general radio reception.}
 {149010}{}{12}
-
-# Hinkley, pid 50, base 150000
-{150000}{}{Hinkley}
-{150005}{}{A recreational area consisting of a few combat arenas for relaxation and training.}
-{150010}{}{10}
 
 # Crashed Hummer, pid 51, base 151000
 {151000}{}{Crashed Hummer}
@@ -3192,11 +3182,6 @@
 {456005}{}{A small and old junkyard. You can see the stacked cars already from far away.}
 {456010}{}{6}
 
-# Spawnpoint 1, pid 357, base 457000
-{457000}{}{Spawnpoint 1}
-{457005}{}{Your journey starts here, don't come back without the water chip.}
-{457010}{}{6}
-
 # Spawnpoint 2, pid 358, base 458000
 {458000}{}{Spawnpoint 2}
 {458005}{}{A place in the dirt.}
@@ -3266,6 +3251,16 @@
 {471000}{}{Talchem California HQ}
 {471005}{}{An abandoned compound.}
 {471010}{}{6}
+
+# Vault 13, pid 373, base 473000
+{473000}{}{Vault 13}
+{473005}{}{A vault hidden in the mountains.}
+{473010}{}{12}
+
+# Shady Sands, pid 374, base 474000
+{474000}{}{Shady Sands}
+{474005}{}{A village in the sand.}
+{474010}{}{12}
 
 #
 # Worldmap Encounter messages

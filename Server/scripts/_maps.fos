@@ -232,7 +232,7 @@
 #define LOCATION_TalChem						  (371)		 // Tal Chem HQ
 #define LOCATION_BountyHuntersCave				  (372)		 // BH Cave
 #define LOCATION_Ch1_Vault13				      (373)      // Your journey starts here.
-#define LOCATION_Ch1_Shady Sands  		          (374)      // A small settlement in the desert.
+#define LOCATION_Ch1_ShadySands  		          (374)      // A small settlement in the desert.
 #define LOCATION_RadscorpionCaves                 (375)      // Radscorpion nest infesting Shady sands.
 // ************************************************************************/
 // *  336 Maps                                                            */
