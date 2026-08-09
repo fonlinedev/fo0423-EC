@@ -26,11 +26,6 @@
 {35}{}{08vats}
 {36}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
-# Map 3, base 40
-{40}{}{Radscorpion Nest cave}
-{45}{}{13carvrn}
-{46}{}{}
-
 # Map 4, base 50
 {50}{}{Rail Raiders}
 {55}{}{05raider}

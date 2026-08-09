@@ -8,6 +8,7 @@
 #include "guard.fos"
 #include "factions_h.fos"
 #include "npc_roles_h.fos"
+#include "ITEMPID.H"
 import void NpcSetLevel(Critter& npc, int level) from "parameters";
 // -----------------------------------------------------------------------
 // Dialog Demands (Conditions)
@@ -16,6 +17,8 @@ import void NpcSetLevel(Critter& npc, int level) from "parameters";
 #define DIALOG_SETH_ID   (4010)
 #define STR_SETH_WARNING (2000)
 #define STR_COMBAT_TAUNT (4)
+#define RADSCORPION_REWARD_PID    PID_BOTTLE_CAPS
+#define RADSCORPION_REWARD_COUNT  250
 
 // Checks if the player has a weapon equipped in either hand.
 bool d_IsArmed(Critter& player, Critter@ npc)
@@ -39,29 +42,32 @@ bool d_IsNotArmed(Critter& player, Critter@ npc)
 // Dialog Results (Actions)
 // -----------------------------------------------------------------------
 
-// Sets the radscorpion quest as active and reveals the caves on the map.
-void r_ShowRadscorpionCaves(Critter& player, Critter@ npc)
+void r_StartRadscorpionQuest(Critter& player, Critter@ npc)
 {
-    // Assuming LVAR_q_shady_radscorpions is defined in your _vars.fos
-    // 1 = Active, 2 = Completed
-    GameVar@ questVar = GetLocalVar(LVAR_q_shady_radscorpions, player.Id);
-    if(valid(questVar) && questVar.GetValue() == 0)
-    {
-        questVar = 1;
-    }
+    int loc = CreateLocation(LOCATION_RadscorpionNestCave, 976, 520, null);
+    if(loc == 0)
+        return;
+    GameVar@  locidv = GetLocalVar(LVAR_q_shady_radscorpions, player.Id);
+    locidv = 1;
+    Location@ location = GetLocation(loc);
+    Map@      map = location.GetMapByIndex(0);
+    //if(player.Mode[MODE_DEFAULT_COMBAT] == COMBAT_MODE_TURN_BASED)
+    SetTurnBasedAvailability(location);
+    
+    SetQuestGarbager(0, player.Id, loc, LVAR_q_shady_radscorpions, 5);
 
-    // Reveal the Radscorpion Caves on the player's world map.    
-    player.SetKnownLoc(true, LOCATION_RadscorpionNestCave);
+    // Transport player into the quest location
+    player.TransitToMap(map.Id, 0);    
+    
 }
 
-// Completes the radscorpion quest.
-void r_FinishRadscorpionQuest(Critter& player, Critter@ npc)
+void r_CompleteRadscorpionQuest(Critter& player, Critter@ npc)
 {
+    player.AddItem(PID_BOTTLE_CAPS, RADSCORPION_REWARD_COUNT);
+    player.StatBase[ST_EXPERIENCE] += 250; // Give some reward
     GameVar@ questVar = GetLocalVar(LVAR_q_shady_radscorpions, player.Id);
-    if(valid(questVar) && questVar.GetValue() == 1)
-    {
-        questVar = 2; // Mark as resolved
-        player.StatBase[ST_EXPERIENCE] += 250; // Give some reward
+    if(valid(questVar)) {
+        questVar = 3;
     }
 }
 // -----------------------------------------------------------------------

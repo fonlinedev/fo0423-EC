@@ -231,7 +231,7 @@
 #define LOCATION_BarterGround					  (370)		 // Barter Ground
 #define LOCATION_TalChem						  (371)		 // Tal Chem HQ
 #define LOCATION_BountyHuntersCave				  (372)		 // BH Cave
-#define LOCATION_RadscorpionNestCave              (3856)      // radscorpion_caves, Radscorpion Nest Cave(AreaID)
+#define LOCATION_RadscorpionNestCave              (90)      // radscorpion_caves, Radscorpion Nest Cave(AreaID)
 // ************************************************************************/
 // *  336 Maps                                                            */
 // ************************************************************************/

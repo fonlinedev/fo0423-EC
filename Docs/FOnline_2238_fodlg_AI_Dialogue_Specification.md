@@ -5044,3 +5044,291 @@ When generating a new `.fodlg` for this project:
 > **Start from a known-good `.fodlg` graph that has actually compiled and been tested in the current Dialogue Editor. Preserve its serialized graph conventions. Every nonzero destination must resolve to a defined graph node. The first integer is the destination graph index; the second integer is the text ID. Build and test plain informational branches before adding scripts, demands, results, or quest variables. Never invent a cleaner graph syntax.**
 
 This rule incorporates the successful Aradesh branch test and should take precedence over any abstract interpretation that conflicts with an existing working project example.
+
+---
+
+# 143. Stop-update: confirmed findings from the Seth investigation
+
+This section records only findings that are useful for future dialogue generation and that are supported by the project files examined during the Seth work. It intentionally does **not** claim that the current Seth quest dialogue is finished or runtime-complete.
+
+## 143.1 Large dialogues prove that the graph is not limited to node 12
+
+The project contains working `.fodlg` files with substantially more than twelve dialogue graph nodes. In particular:
+
+- `den_metzger.fodlg` contains graph indices continuing far beyond 12, including nodes 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, etc.
+- `bos_doctor.fodlg` contains graph indices well beyond 12 and continues through at least node 203 in the supplied file.
+- `bos_lh_qmaster(1).fodlg` contains a large quest dialogue graph with graph indices continuing well beyond 12.
+
+Therefore:
+
+> **There is no general `.fodlg`/DialogEditor rule that limits a dialogue to graph nodes 0–12.**
+
+If a small dialogue fails when adding node 13/14/15/16, the correct response is to inspect the graph links, node definitions, text IDs, demands/results, and parser/runtime errors—not to redesign the dialogue around an assumed twelve-node limit.
+
+Reference examples:
+
+```text
+den_metzger.fodlg
+bos_doctor.fodlg
+bos_lh_qmaster(1).fodlg
+```
+
+These files are project-provided examples and should be treated as structural references when generating larger NPC dialogues.
+
+## 143.2 Graph index and text ID remain separate
+
+The large examples reinforce the already-established rule that the first number is the destination graph index and the second number is the text/message ID.
+
+For example, the supplied `den_metzger.fodlg` contains records such as:
+
+```text
+42 12000 None 0 #
+43 13000 None 0 #
+12 14000 dialog@dlg_ShowFaction 0 #
+44 14010 #
+```
+
+The graph can therefore use destination indices that do not numerically resemble the text IDs. The graph index is an internal routing index; the second number identifies the dialogue text record.
+
+## 143.3 Large NPCs use the same compact D/R system
+
+The large NPC examples confirm that complicated conversations do not require duplicated dialogue text or duplicated copies of the same greeting.
+
+`den_metzger.fodlg` demonstrates long sequences of:
+
+```text
+D <demand/condition>
+R <result/action>
+```
+
+on the same answer record.
+
+Examples include variable checks, item checks, parameters, script demands, and script results.
+
+`bos_doctor.fodlg` similarly combines conditions and results on individual answers.
+
+Therefore the preferred architecture for a quest NPC is:
+
+```text
+one dialogue node
+    |
+    +-- answer with D conditions
+    +-- answer with D conditions
+    +-- answer with D conditions + R actions
+```
+
+rather than duplicating the same NPC greeting three times merely to represent quest states.
+
+## 143.4 Three-state quest variables are a normal and sufficient pattern
+
+The Seth design uses:
+
+```text
+q_shady_radscorpions
+0 = not started
+1 = ongoing
+2 = completed
+```
+
+This is a valid state-machine pattern for a simple quest.
+
+The supplied Brotherhood quartermaster dialogue provides a stronger project reference: `q_bos_initiatequest_start` is used across many dialogue branches with comparisons such as:
+
+```text
+= 11
+< 11
+= 12
+= 13
+= 14
+= 15
+= 20
+= 26
+```
+
+and results that advance or reset the variable.
+
+So a dialogue does **not** need separate duplicate greetings for every quest state. The state can be selected by pre-dialog demands and the answer/branch conditions.
+
+## 143.5 A clean three-state Seth structure is therefore valid in principle
+
+The intended architecture is:
+
+```text
+pre-dialog
+  |
+  +-- d_IsArmed -> weapon-warning branch
+  |
+  +-- q_shady_radscorpions = 0 -> node 3
+  |
+  +-- q_shady_radscorpions = 1 -> node 4
+  |
+  +-- q_shady_radscorpions = 2 -> node 5
+```
+
+Then:
+
+```text
+node 3 (not started)
+  -> information
+  -> offer Radscorpion help
+       -> result: q = 1 + reveal caves
+
+node 4 (ongoing)
+  -> information
+  -> "Not yet"
+  -> "The Radscorpions are dead"
+       -> result: q = 2 + reward
+
+node 5 (completed)
+  -> information
+  -> normal completed-state response
+```
+
+This is structurally consistent with the much larger quest dialogues already present in the SDK.
+
+## 143.6 Script callback signatures are part of dialogue binding
+
+A runtime error observed during Seth testing was:
+
+```text
+Script::Bind - Function<void r_StartRadscorpionQuest(Critter&,Critter@)> in module<seth> not found.
+DialogManager::LoadDemandResult - Script<seth@r_StartRadscorpionQuest> bind error.
+```
+
+This establishes an important rule:
+
+> A dialogue script reference is bound by the function's expected signature, not merely by its name.
+
+The supplied current `seth.fos` uses the project-compatible callback form:
+
+```angelscript
+bool d_IsArmed(Critter& player, Critter@ npc)
+void r_ShowRadscorpionCaves(Critter& player, Critter@ npc)
+void r_FinishRadscorpionQuest(Critter& player, Critter@ npc)
+```
+
+Therefore new Seth dialogue result functions should follow the same callback signature convention:
+
+```angelscript
+void r_SomeAction(Critter& player, Critter@ npc)
+```
+
+**Important:** the exact function name in the `.fodlg` must also exactly match a function actually present in the loaded `seth` script module. A function can exist under a different name and still produce a `Function ... not found` binding error.
+
+The current supplied `seth.fos` contains:
+
+```text
+r_ShowRadscorpionCaves
+r_FinishRadscorpionQuest
+```
+
+while the current `seth(2).fodlg` references:
+
+```text
+r_StartRadscorpionQuest
+r_CompleteRadscorpionQuest
+```
+
+That name mismatch must be treated as a separate script-binding issue. It is **not** a dialogue-node-limit issue.
+
+## 143.7 The current Seth file is already a useful compact reference
+
+The supplied `seth(2).fodlg` demonstrates several useful patterns in one small file:
+
+### Conditional pre-dialog
+
+```text
+2 1010 D _script seth@d_IsArmed 0 #
+3 1020 D _var p q_shady_radscorpions = 0 #
+4 1030 D _var p q_shady_radscorpions = 1 #
+5 1040 D _var p q_shady_radscorpions = 2 @
+```
+
+### Information branch
+
+```text
+7 7000 None 0 #
+8 7010 #
+9 7020 #
+10 7030 #
+0 7050 @
+```
+
+### Demand + result on one answer
+
+```text
+0 14010 R _var p q_shady_radscorpions = 1 R _script seth@r_StartRadscorpionQuest 0 #
+```
+
+This confirms that a result chain can contain multiple `R` operations on the same answer record.
+
+## 143.8 Recommended reference set for future NPC dialogue generation
+
+For a new NPC, use the following project files as the primary structural references:
+
+### Minimal/simple graph
+
+```text
+start_journey.fodlg
+```
+
+Use for understanding the basic graph and answer routing.
+
+### Small informational NPCs
+
+```text
+water_merchant.fodlg
+caravan_informant.fodlg
+all_mine_foreman.fodlg
+```
+
+Use for simple conversations without unnecessary quest-state duplication.
+
+### Medium/large informational or service NPCs
+
+```text
+bos_doctor.fodlg
+hub_jacob.fodlg
+bh_steve.fodlg
+```
+
+Use for multiple branches, demands, and results.
+
+### Large quest/dialogue graphs
+
+```text
+den_metzger.fodlg
+nr_jules.fodlg
+bos_lh_qmaster(1).fodlg
+aradesh.fodlg
+```
+
+Use these when the NPC has multiple quest states, services, information branches, and result chains.
+
+### Seth-specific references
+
+```text
+seth.fos
+seth(2).fodlg
+seth(1).fodlg
+seth_test.fodlg
+map_shadysands.fos
+```
+
+These should be used together when debugging Seth because the `.fodlg` graph, script functions, and Shady Sands event handling are separate layers.
+
+## 143.9 Stop point
+
+The useful conclusion at this stage is:
+
+1. **The dialogue system absolutely supports graphs larger than 12 nodes.**
+2. **A three-state quest variable (0/1/2) is sufficient for the intended Seth quest.**
+3. **Large existing NPCs use the same D/R branching system and do not need duplicated greetings for each state.**
+4. **The first integer in a graph record is the destination graph index; the second is the text ID.**
+5. **Every nonzero destination must correspond to a defined graph node.**
+6. **Dialogue script calls require an exact function name and compatible callback signature.**
+7. **The current Seth script uses `Critter@ npc` in its dialogue callback signatures.**
+8. **The current Seth `.fodlg` has a script-name mismatch (`r_StartRadscorpionQuest` / `r_CompleteRadscorpionQuest` versus the functions currently present in `seth.fos`).**
+9. **Future dialogue generation should use the large SDK NPCs as structural references rather than trying to force the conversation into an artificially small graph.**
+
+This is the stopping point for the current dialogue investigation. The next implementation step can be taken from these verified patterns without redesigning the dialogue architecture.
