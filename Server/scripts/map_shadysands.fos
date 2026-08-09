@@ -1,0 +1,64 @@
+#include "_defines.fos"
+#include "_macros.fos"
+#include "_maps.fos"
+#include "factions_h.fos"
+#include "groups_h.fos"
+#include "mapdata_h.fos"
+#include "messages_h.fos"
+#include "MSGSTR.h"
+#include "npc_common_h.fos"
+#include "npc_roles_h.fos"
+
+
+void t_NearEntrance(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
+{
+    
+    if(!critter.IsPlayer())
+    {    
+        return;
+    }
+
+    if(!entered)
+    {
+        Log("SHADY SANDS DEBUG: t_NearEntrance -> entered=false.");
+        return;
+    }
+        
+    Log("SHADY SANDS DEBUG: t_NearEntrance -> valid player entered trigger.");
+
+    Log("SHADY SANDS DEBUG: Sending MSG_SANDS_NEAR_ENTRANCE.");
+
+    critter.SendMessage(
+        MSG_SANDS_NEAR_ENTRANCE,
+        0,
+        MESSAGE_TO_VISIBLE_ME
+    );
+
+    Log("SHADY SANDS DEBUG: MSG_SANDS_NEAR_ENTRANCE sent.");
+}
+
+
+void t_Entered(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
+{
+    if(!critter.IsPlayer())
+    {
+        return;
+    }
+
+    if(!entered)
+    {
+        return;
+    }
+
+    Log("SHADY SANDS DEBUG: t_Entered -> valid player entered trigger.");
+
+    Log("SHADY SANDS DEBUG: Sending MSG_SANDS_ENTERED.");
+
+    critter.SendMessage(
+        MSG_SANDS_ENTERED,
+        0,
+        MESSAGE_TO_VISIBLE_ME
+    );
+
+    Log("SHADY SANDS DEBUG: MSG_SANDS_ENTERED sent.");
+}

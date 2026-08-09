@@ -4,9 +4,18 @@
 #include "_macros.fos"
 #include "_vars.fos"
 #include "_maps.fos"
+#include "messages_h.fos"
+#include "guard.fos"
+#include "factions_h.fos"
+#include "npc_roles_h.fos"
+import void NpcSetLevel(Critter& npc, int level) from "parameters";
 // -----------------------------------------------------------------------
 // Dialog Demands (Conditions)
 // -----------------------------------------------------------------------
+
+#define DIALOG_SETH_ID   (4010)
+#define STR_SETH_WARNING (2000)
+#define STR_COMBAT_TAUNT (4)
 
 // Checks if the player has a weapon equipped in either hand.
 bool d_IsArmed(Critter& player, Critter@ npc)
@@ -41,9 +50,8 @@ void r_ShowRadscorpionCaves(Critter& player, Critter@ npc)
         questVar = 1;
     }
 
-    // Reveal the Radscorpion Caves on the player's world map.
-    // Replace LOCATION_RadscorpionCaves with your actual map PID.
-    player.SetKnownLoc(true, LOCATION_RadscorpionCaves);
+    // Reveal the Radscorpion Caves on the player's world map.    
+    player.SetKnownLoc(true, LOCATION_RadscorpionNestCave);
 }
 
 // Completes the radscorpion quest.
@@ -55,4 +63,109 @@ void r_FinishRadscorpionQuest(Critter& player, Critter@ npc)
         questVar = 2; // Mark as resolved
         player.StatBase[ST_EXPERIENCE] += 250; // Give some reward
     }
+}
+// -----------------------------------------------------------------------
+// Dialog WARNING
+// -----------------------------------------------------------------------
+
+void critter_init(Critter& guard, bool firstTime)
+{
+    guard.SetEvent(CRITTER_EVENT_MESSAGE, "_OnPlayerMessage");    
+    GuardInit(guard);
+    if(firstTime)
+    {
+        NpcSetLevel(guard, 10);
+        GuardPerks(guard);
+    }
+}
+
+void _OnPlayerMessage(Critter& npc, Critter& player, int num, int val)
+{
+    Log("SETH DEBUG: _OnPlayerMessage called.");
+    Log("SETH DEBUG: num=" + num + " val=" + val);
+    GuardOnMessage(npc, player, num, val);
+
+    if(num == MSG_SANDS_NEAR_ENTRANCE)
+    {
+        Log("SETH DEBUG: *** MSG_SANDS_NEAR_ENTRANCE MATCHED ***");
+
+        int rep = player.ReputationBase[FACTION_NCR];
+        bool armed = d_IsArmed(player, npc);
+
+        Log("SETH DEBUG: NCR reputation=" + rep);
+        Log("SETH DEBUG: armed=" + armed);
+
+        if(rep < 1000 && armed)
+        {
+            Log("SETH DEBUG: ARMED -> RunDialog.");
+
+            RunDialog(player, npc, DIALOG_SETH_ID, true);
+
+            Log("SETH DEBUG: RunDialog returned.");
+        }
+        else if(rep < 1000 && !armed)
+        {
+            Log("SETH DEBUG: UNARMED -> SayMsg.");
+
+            npc.SayMsg(
+                SAY_SHOUT_ON_HEAD,
+                TEXTMSG_DLG,
+                DLGSTR(DIALOG_SETH_ID, STR_SETH_WARNING)
+            );
+
+            Log("SETH DEBUG: SayMsg returned.");
+        }
+        else
+        {
+            Log("SETH DEBUG: NEAR_ENTRANCE reputation condition failed.");
+        }
+
+        return;
+    }
+
+    if(num == MSG_SANDS_ENTERED)
+    {
+        Log("SETH DEBUG: MSG_SANDS_ENTERED received.");
+
+        int rep = player.ReputationBase[FACTION_NCR];
+        bool armed = d_IsArmed(player, npc);
+
+        Log("SETH DEBUG: NCR reputation = " + rep);
+        Log("SETH DEBUG: armed = " + armed);
+
+        if(rep < 1000 && armed)
+        {
+            Log("SETH DEBUG: ENTERED + ARMED + REP < 1000.");
+            Log("SETH DEBUG: Sending MSG_ATTACK_ME to visible critters.");
+
+            player.SendMessage(
+                MSG_ATTACK_ME,
+                0,
+                MESSAGE_TO_VISIBLE_ME
+            );
+
+            Log("SETH DEBUG: MSG_ATTACK_ME returned.");
+
+            if(npc.Stat[ST_NPC_ROLE] == ROLE_SANDS_GUARD)
+            {
+                Log("SETH DEBUG: Seth is ROLE_SANDS_GUARD.");
+
+                npc.SayMsg(
+                    SAY_SHOUT_ON_HEAD,
+                    TEXTMSG_DLG,
+                    DLGSTR(DIALOG_SETH_ID, STR_COMBAT_TAUNT)
+                );
+
+                Log("SETH DEBUG: Combat taunt returned.");
+            }
+        }
+        else
+        {
+            Log("SETH DEBUG: ENTERED conditions FAILED.");
+        }
+
+        return;
+    }
+
+    Log("SETH DEBUG: Unknown message received: " + num);
 }
