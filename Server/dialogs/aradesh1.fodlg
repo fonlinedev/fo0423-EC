@@ -1,0 +1,126 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _var n name_mem_npc_player = 0 #
+6 1020 D _var n name_mem_npc_player = 1 @
+2 2000 None 0 #
+3 2010 D _param p ST_INTELLECT > 3 #
+0 2020 D _param p ST_INTELLECT > 3 #
+0 2030 D _param p ST_INTELLECT > 3 #
+3 2040 D _param p ST_INTELLECT > 3 #
+5 2050 D _param p ST_INTELLECT > 3 #
+0 2060 D _param p ST_INTELLECT > 3 #
+0 2070 D _param p ST_INTELLECT < 3 @
+3 3000 None 0 #
+4 3010 #
+0 3020 #
+4 3030 #
+4 3040 D _param p ST_CHARISMA > 3 @
+4 4000 None 0 #
+5 4010 @
+5 5000 None 0 #
+0 5010 R _var n name_mem_npc_player = 1 @
+6 6000 None 0 #
+7 6010 D _param p ST_INTELLECT > 3 #
+0 6020 D _param p ST_INTELLECT > 3 #
+0 6030 D _param p ST_INTELLECT > 3 #
+0 6040 D _param p ST_INTELLECT < 3 @
+7 7000 None 0 #
+11 7010 D _param p ST_INTELLECT } 5 #
+13 7020 D _script dialog@d_IsLocationNotVisible 1 17 R _script dialog@r_ShowLocation 1 17 #
+14 7030 D _param p ST_INTELLECT } 3 #
+0 7040 @
+8 8000 None 0 #
+9 8010 #
+5 8020 #
+10 8030 @
+9 9000 None 0 #
+0 9010 @
+10 10000 None 0 #
+0 10010 @
+11 11000 None 0 #
+13 11010 #
+12 11020 #
+0 11030 @
+12 12000 None 0 #
+7 12010 #
+0 12020 @
+13 13000 None 0 #
+7 13010 @
+14 14000 None 0 #
+15 14010 @
+15 15000 None 0 #
+16 15010 #
+16 15020 #
+7 15030 @
+16 16000 None 0 #
+0 16010 R _var p q_shady_radscorpions = 1 &
+
+[engl]
+{100}{}{Aradesh}
+{200}{}{You see Aradesh.}
+{1000}{}{Predialogue installations}
+{1010}{}{[First visit]}
+{1020}{}{[2nd visit]}
+{2000}{}{Greetings, wanderer. Please do not be offended if the gentlefolk about seem rude. As Dharma said, 'Tough times tan the human hide.' Your business in Shady Sands might be?}
+{2010}{}{I'm from a small village west of here. I'm just
+ exploring and mean you no harm.}
+{2020}{}{What's it to you?}
+{2030}{}{My reasons are mine to keep.}
+{2040}{}{I'm from a Vault to the west. My people are dying of thirst and I need to find a water purifier chip  for them to survive.}
+{2050}{}{I'm saving an entire people from destruction!}
+{2060}{}{Shady Sands? Whoops, I'm lost! I'll just be going now.}
+{2070}{}{Hunh?}
+{3000}{}{I know of no village to the west.}
+{3010}{}{Have you been through the mountains west of here?}
+{3020}{}{So?}
+{3030}{}{Are you saying you know every location from here  to the ocean?}
+{3040}{}{I'm sure you've been many places, but you must have
+ missed my tiny village.}
+{4000}{}{Ah well, to my regret, I have not. Which begs the question,  how did you make that passage?}
+{4010}{}{It was pretty tough, but I made it.}
+{5000}{}{Yes, hmmm, yes, yes. yes. I shall believe you...for now.  But we do not trust easily, especially those who might be dangerous. Know that Seth and I will be watching you.}
+{5010}{}{[Done.]}
+{6000}{}{Greetings again, young wanderer. I hope your stay here has been pleasant.}
+{6010}{}{It's been great. Can I ask you some questions?}
+{6020}{}{It has. I gotta run though.}
+{6030}{}{If you like sewers.}
+{6040}{}{Nuh-huh.}
+{7000}{}{Certainly. What do you wish to know?}
+{7010}{}{Can you tell me about Shady Sands?}
+{7020}{}{What can you tell me about the other towns around here?}
+{7030}{}{What's going on around here?}
+{7040}{}{Thanks. Bye.}
+{8000}{}{It is my town, wanderer. You must answer my questions  
+> or leave. This is not a matter of choice.}
+{8010}{}{I don't have to tell you anything.}
+{8020}{}{I mean you no harm, really.}
+{8030}{}{Don't worry, I'm leaving.}
+{9000}{}{You are quite insolent. I believe you should leave. Do not return. You will not be welcome.}
+{9010}{}{[Done.]}
+{10000}{}{So be it, wanderer. Seth will show you out.}
+{10010}{}{[Done.]}
+{11000}{}{Shady Sands is much like a family, one that keeps  to itself.}
+{11010}{}{Interesting. Are there any other cities around here?}
+{11020}{}{What kind of things do you have around here?}
+{11030}{}{How cute. Well, I better be going.}
+{12000}{}{The Gardens are on the south side. The Brahma Pens are north, although the smell is, I fear, quite intense this time of year.}
+{12010}{}{Thanks. Can I ask you a few more questions?}
+{12020}{}{Thanks. Bye.}
+{13000}{}{Junktown lies south of here, though there is little in  the way of visitation. From stories, I'm certain there  are cities south of that.}
+{13010}{}{Thanks. I . . . Can I ask you a few more questions?}
+{14000}{}{Oh my yes. Great packs of Rad Scorpions are killing  our herds. We don't know where they're from, and no matter how many we kill, there's always more!}
+{14010}{}{Go on.}
+{15000}{}{And now the monsters are attacking my people! Razlo is trying to find a cure for their poison, but I'm not sure how it goes.}
+{15010}{}{Well, I'll help you get rid of these things!}
+{15020}{}{I can help you for a price.}
+{15030}{}{That's terrible. Can I ask you a few more questions?}
+{16000}{}{Ummm, yes, yes, yes, yes, yes! Please talk to Razlo. He possesses far more information on these creatures than I.}
+{16010}{}{[Done.]}
+

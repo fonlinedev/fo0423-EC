@@ -1,0 +1,134 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _var p name_mem_npc_player = 0 D _script dialog@d_CheckDay 0  #
+4 1020 D _var p name_mem_npc_player = 1 D _script dialog@d_CheckDay 0  #
+3 1030 D _script dialog@d_IsToHeal 0  #
+9 1040 D _script dialog@d_CheckNight 0  @
+2 2000 None 0 #
+0 2010 R _var p name_mem_npc_player = 1 #
+18 2020 D _script dialog@d_IsToHeal 0  R _var p name_mem_npc_player = 1 #
+7 2030 D _script dialog@d_CheckProfession 1 0 D _script dialog@d_CheckDoctor0 1 0 @
+3 3000 None 0 #
+6 3010 D _script dialog@d_IsToHeal 0  #
+0 3020 @
+4 4000 None 0 #
+8 4010 #
+12 4020 D _var p q_shady_radscorpions = 1 #
+16 4030 D _var p q_shady_radscorpions } 1 D _item p PID_SCORPION_TAIL } 1 @
+5 5000 None 0 #
+6 5010 D _script dialog@d_HealingMoney 0  #
+0 5020 @
+6 6000 None 0 #
+0 6010 @
+7 7000 None 0 #
+6 7010 D _script dialog@d_CheckDoctor0 1 1 D _item p PID_BOTTLE_CAPS > 1499 R _item p PID_FIRST_AID_BOOK = 1 R _param p PE_PROFESSION_DOCTOR = 1 R _script dialog@r_RemoveMoney 1 1500 #
+0 7020 @
+8 8000 None 0 #
+0 8010 @
+9 9000 None 0 #
+11 9010 D _param p ST_INTELLECT } 3 #
+10 9020 D _param p ST_INTELLECT < 3 @
+10 10000 None 0 #
+0 10010 @
+11 11000 None 0 #
+12 11010 D _var p q_shady_radscorpions = 1 #
+0 11020 @
+12 12000 None 0 #
+13 12010 #
+14 12020 @
+13 13000 None 0 #
+15 13010 #
+0 13020 #
+19 13030 @
+14 14000 None 0 #
+0 14010 @
+15 15000 None 0 #
+0 15010 @
+16 16000 None 0 #
+17 16010 @
+17 17000 None 0 #
+20 17010 R _item p PID_SCORPION_TAIL - 1 @
+18 18000 None 0 #
+0 18010 @
+19 19000 None 0 #
+0 19010 @
+20 20000 None 0 #
+0 20010 R _item p PID_ANTIDOTE + 1 &
+
+[engl]
+{100}{}{Razlo}
+{200}{}{Doctor for Shady Sands.}
+{1000}{}{Predialogue installations}
+{1010}{}{First dialogue}
+{1020}{}{Second time}
+{1030}{}{Player is in bad shape}
+{1040}{}{Its night}
+{2000}{}{I'm Razlo. Can I help you?}
+{2010}{}{Not right now, but it was nice meeting you.}
+{2020}{}{I need healing.}
+{2030}{}{I am quite interested into medicine myself, and this is the reason I am visiting you today. My hopes are that you could share some of your knowledge and experience with me...}
+{3000}{}{You look distraught. Are you in need of assistance?}
+{3010}{}{I need healing.}
+{3020}{}{Nevermind.}
+{4000}{}{Hello, again. How can I be of service?}
+{4010}{}{Hello again. Just stopping by.}
+{4020}{}{What do you know about Radscorpions?}
+{4030}{}{I have a sample of the Radscorpion poison, can you do
+something with it?}
+{5000}{}{I think I can cure what ails ya. It's gonna cost you @lex price@$ bucks.}
+{5010}{}{Well... all right. That sounds fair.}
+{5020}{}{Changed my mind. I'll be back later.}
+{6000}{}{That should do it. Good luck, youngster.}
+{6010}{}{[End.]}
+{7000}{}{Sure, sure... We can already arrange something, I guess. But I would like to have something in return, a kind of compensation for my time and work. It's not that I'm trying to earn something out of this, but a help from a colleague like you would be quite appreciated. I'll keep it short then -- I would need $1500 for a short lesson or $3000 for one with more detail. Please, let me know when you have it.}
+{7010}{}{You don't have to worry, my appreciated colleague, I have $1500 right here! [You give him $1500]}
+{7020}{}{Well, I should start gathering some healing herbs then. See you later, doctor!}
+{8000}{}{It was nice seeing you again. Have a good day.}
+{8010}{}{[End.]}
+{9000}{}{It's late. Come back in the morning.}
+{9010}{}{But I need your help.}
+{9020}{}{Hnn.}
+{10000}{}{Hnn?! What is that? Great, I get awakened by the great mumbling beast of the north. Come back in the morning.}
+{10010}{}{[End.]}
+{11000}{}{Sure, about what?}
+{11010}{}{What do you know about Radscorpions?}
+{11020}{}{Nothing at all.}
+{12000}{}{Not too much. They seem to be extremely large versions
+of the north American Emperor scorpion. Contrary to my
+medical knowledge, their poison has grown more potent,
+not diluted, as I would expect. Seth has been hunting them,
+which helps some of my tests.}
+{12010}{}{[More...]}
+{12020}{}{You seem well educated. What are you doing here?}
+{13000}{}{And how such a large creature can even be possible by natural evolution, or even radiation induced mutation is beyond me.}
+{13010}{}{I need something for their poison.}
+{13020}{}{Thanks}
+{13030}{}{[More..]}
+{14000}{}{Doc Morbid in Junktown taught me some. And just because we live in stone huts, does not mean we are less intelligent or educated. Have a nice day.}
+{14010}{}{[Exit.]}
+{15000}{}{If I had a sample of their poison, I could create a cure.}
+{15010}{}{I will find a sample.}
+{16000}{}{Here, let's see.}
+{16010}{}{[Next...]}
+{17000}{}{Yep, just as I thought. Let me get the cure.}
+{17010}{}{[Next...]}
+{18000}{}{You seem fine, now. Be careful in the future.}
+{18010}{}{[End.]}
+{19000}{}{They seem to be sensitive to light. Nocturnal. If I
+could get a sample of their poison, especially the
+venom production sac located in their tail, I could
+create an anti-venom.}
+{19010}{}{[End.]}
+{20000}{}{Here, take this as a free sample. It seems to work
+well against radscorpion stings, of course, but it
+shows much potential as a general anti-venom and
+poison cure.}
+{20010}{}{Thank you.}
+

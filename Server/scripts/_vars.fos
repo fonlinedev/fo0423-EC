@@ -421,7 +421,7 @@
 #define GVAR_den_score		                    (61005)
 #define GVAR_redding_score                      (61006)
 #define LVAR_q_shady_radscorpions               (61007)
-
+#define LVAR_q_shady_antidote                   (61008)
 /*************************************************************************************
         Id	Type	Name		Start	Min	Max	Flags
 **************************************************************************************
@@ -2743,6 +2743,10 @@ $	9950	1	LVAR_FO2077_Book_Barter  0	0	10	0
 
 **********
 	$	61007	1	q_shady_radscorpions	0	0	2	0
+**********
+	Used to track Seth's Radscorpion quest in Shady Sands. 0 = Not Started, 1 = Active, 2 = Completed.
+**********
+	$	61008	1	q_shady_antidote	0	0	1	0
 **********
 	Used to track Seth's Radscorpion quest in Shady Sands. 0 = Not Started, 1 = Active, 2 = Completed.
 **********

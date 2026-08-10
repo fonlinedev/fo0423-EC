@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              200
 MaxHexY              200
-WorkHexX             112
-WorkHexY             68
+WorkHexX             101
+WorkHexY             83
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -9119,6 +9119,7 @@ ProtoId              2141
 MapX                 82
 MapY                 73
 LightDistance        8
+LightIntensity       -20
 
 MapObjType           2
 ProtoId              2067
@@ -11186,7 +11187,7 @@ Critter_ParamValue0  0
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  1
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
+Critter_ParamValue2  1
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  15
 Critter_ParamIndex4  ST_NPC_ROLE
@@ -11885,6 +11886,7 @@ ProtoId              2141
 MapX                 86
 MapY                 111
 LightDistance        8
+LightIntensity       -20
 
 MapObjType           2
 ProtoId              2067
@@ -12671,7 +12673,7 @@ Critter_ParamValue1  1
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  1
+Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -13027,6 +13029,7 @@ ProtoId              2141
 MapX                 125
 MapY                 121
 LightDistance        8
+LightIntensity       -10
 
 MapObjType           2
 ProtoId              2067
@@ -13298,6 +13301,7 @@ ProtoId              2141
 MapX                 86
 MapY                 124
 LightDistance        8
+LightIntensity       -20
 
 MapObjType           2
 ProtoId              5621
@@ -13590,7 +13594,7 @@ ProtoId              2141
 MapX                 127
 MapY                 127
 LightDistance        4
-LightIntensity       -100
+LightIntensity       -50
 
 MapObjType           2
 ProtoId              5873
@@ -14983,7 +14987,7 @@ Critter_ParamValue0  0
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  13
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
+Critter_ParamValue2  2
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  0
 Critter_ParamIndex4  ST_NPC_ROLE
@@ -15120,35 +15124,6 @@ Critter_ParamIndex7  ST_FACTION_MODE
 Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  16
-Critter_ParamIndex9  ST_LEVEL
-Critter_ParamValue9  0
-
-MapObjType           0
-ProtoId              206
-MapX                 82
-MapY                 109
-Dir                  3
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  4009
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  14
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-Critter_ParamIndex6  ST_FACTION_RANK
-Critter_ParamValue6  0
-Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
-Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
-Critter_ParamValue8  31
 Critter_ParamIndex9  ST_LEVEL
 Critter_ParamValue9  0
 
@@ -15318,7 +15293,7 @@ Critter_ParamValue0  0
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
+Critter_ParamValue2  1
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
@@ -15380,7 +15355,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  15
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -15388,7 +15363,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  33
 Critter_ParamIndex9  ST_LEVEL
@@ -15409,7 +15384,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  15
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -15417,7 +15392,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  33
 Critter_ParamIndex9  ST_LEVEL
@@ -15438,7 +15413,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  15
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -15446,7 +15421,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  36
 Critter_ParamIndex9  ST_LEVEL
@@ -15515,35 +15490,6 @@ Critter_ParamValue9  0
 
 MapObjType           0
 ProtoId              67
-MapX                 129
-MapY                 122
-Dir                  2
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  14
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  5
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  3
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-Critter_ParamIndex6  ST_FACTION_RANK
-Critter_ParamValue6  0
-Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  1
-Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
-Critter_ParamValue8  40
-Critter_ParamIndex9  ST_LEVEL
-Critter_ParamValue9  0
-
-MapObjType           0
-ProtoId              67
 MapX                 128
 MapY                 113
 Dir                  4
@@ -15557,7 +15503,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -15565,7 +15511,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  40
 Critter_ParamIndex9  ST_LEVEL
@@ -15586,7 +15532,7 @@ Critter_ParamValue0  0
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
+Critter_ParamValue2  1
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
@@ -15617,7 +15563,7 @@ Critter_ParamValue0  4010
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
+Critter_ParamValue2  1
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
@@ -15646,7 +15592,7 @@ Critter_ParamValue0  0
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
+Critter_ParamValue2  1
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  0
 Critter_ParamIndex4  ST_NPC_ROLE
@@ -15675,7 +15621,7 @@ Critter_ParamValue0  0
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
+Critter_ParamValue2  1
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  0
 Critter_ParamIndex4  ST_NPC_ROLE
@@ -15704,7 +15650,7 @@ Critter_ParamValue0  0
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
+Critter_ParamValue2  1
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  0
 Critter_ParamIndex4  ST_NPC_ROLE
@@ -20615,6 +20561,171 @@ MapObjType           2
 ProtoId              3852
 MapX                 107
 MapY                 70
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 82
+MapY                 110
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 84
+MapY                 109
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 83
+MapY                 110
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           0
+ProtoId              206
+MapX                 82
+MapY                 109
+Dir                  3
+ScriptName           aradesh
+FuncName             critter_init
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  14
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  15
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  1
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  31
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              67
+MapX                 128
+MapY                 120
+Dir                  2
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  4012
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  14
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  5
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  1
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  40
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           2
+ProtoId              3852
+MapX                 129
+MapY                 92
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 130
+MapY                 92
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 131
+MapY                 92
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 132
+MapY                 92
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 81
+MapY                 84
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 82
+MapY                 84
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 83
+MapY                 84
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 84
+MapY                 84
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 125
+MapY                 125
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 127
+MapY                 125
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 128
+MapY                 125
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 126
+MapY                 125
 ScriptName           map_shadysands
 FuncName             t_Entered
 
