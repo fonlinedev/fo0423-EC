@@ -19,22 +19,16 @@ void t_NearEntrance(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
     }
 
     if(!entered)
-    {
-        Log("SHADY SANDS DEBUG: t_NearEntrance -> entered=false.");
+    {        
         return;
     }
-        
-    Log("SHADY SANDS DEBUG: t_NearEntrance -> valid player entered trigger.");
-
-    Log("SHADY SANDS DEBUG: Sending MSG_SANDS_NEAR_ENTRANCE.");
-
+       
     critter.SendMessage(
         MSG_SANDS_NEAR_ENTRANCE,
         0,
         MESSAGE_TO_VISIBLE_ME
     );
 
-    Log("SHADY SANDS DEBUG: MSG_SANDS_NEAR_ENTRANCE sent.");
 }
 
 
@@ -50,15 +44,10 @@ void t_Entered(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
         return;
     }
 
-    Log("SHADY SANDS DEBUG: t_Entered -> valid player entered trigger.");
-
-    Log("SHADY SANDS DEBUG: Sending MSG_SANDS_ENTERED.");
-
     critter.SendMessage(
         MSG_SANDS_ENTERED,
         0,
         MESSAGE_TO_VISIBLE_ME
     );
 
-    Log("SHADY SANDS DEBUG: MSG_SANDS_ENTERED sent.");
 }

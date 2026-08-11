@@ -23,6 +23,16 @@ Ex.
 `~runscript cheats set_skill 200 300 0`
 Increase small guns to 300.
 
+`~runscript cheats set_skill 217 150 0
+Increase outdoorsman to 150.
+
+`~runscript cheats set_skill 203 150 0
+Close combat
+
+`~runscript cheats set_skill 200 250 0
+`~runscript cheats set_skill 201 250 0
+`~runscript cheats set_skill 204 250 0
+
 ## Combat Skills:
 
 200 — Small Guns
@@ -84,6 +94,11 @@ ST_NPC_ROLE                 (89)
 
 # set level
 `~run cheats set_level <targetLevel> 0 0`
+
+# Test variables
+`~runscript cheats get_var <var> 0 0
+
+`~runscript cheats set_var <var> <value> 0
 
 # Map teleport
 

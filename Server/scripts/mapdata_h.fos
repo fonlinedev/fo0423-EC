@@ -140,6 +140,10 @@
 #define MAP_DATA_SHA_ENIN_OWNER                 (20)
 #define MAP_DATA_SHA_ENIN_BANDITS_COUNT         (21)
 
+// Shady sands radscorpion cave
+#define MAP_DATA_NESTCAVE_OWNER            (20)
+#define MAP_DATA_NESTCAVE_SCORPIONS        (21)
+
 
 /**
  * Retrieves map data for root-map of the location the given map is in.

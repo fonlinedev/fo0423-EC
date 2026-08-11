@@ -17,8 +17,6 @@ import void NpcSetLevel(Critter& npc, int level) from "parameters";
 #define DIALOG_SETH_ID   (4010)
 #define STR_SETH_WARNING (2000)
 #define STR_COMBAT_TAUNT (4)
-#define RADSCORPION_REWARD_PID    PID_BOTTLE_CAPS
-#define RADSCORPION_REWARD_COUNT  250
 
 // Checks if the player has a weapon equipped in either hand.
 bool d_IsArmed(Critter& player, Critter@ npc)
@@ -42,34 +40,8 @@ bool d_IsNotArmed(Critter& player, Critter@ npc)
 // Dialog Results (Actions)
 // -----------------------------------------------------------------------
 
-void r_StartRadscorpionQuest(Critter& player, Critter@ npc)
-{
-    int loc = CreateLocation(LOCATION_RadscorpionNestCave, 976, 520, null);
-    if(loc == 0)
-        return;
-    GameVar@  locidv = GetLocalVar(LVAR_q_shady_radscorpions, player.Id);
-    locidv = 1;
-    Location@ location = GetLocation(loc);
-    Map@      map = location.GetMapByIndex(0);
-    //if(player.Mode[MODE_DEFAULT_COMBAT] == COMBAT_MODE_TURN_BASED)
-    SetTurnBasedAvailability(location);
-    
-    SetQuestGarbager(0, player.Id, loc, LVAR_q_shady_radscorpions, 5);
 
-    // Transport player into the quest location
-    player.TransitToMap(map.Id, 0);    
-    
-}
 
-void r_CompleteRadscorpionQuest(Critter& player, Critter@ npc)
-{
-    player.AddItem(PID_BOTTLE_CAPS, RADSCORPION_REWARD_COUNT);
-    player.StatBase[ST_EXPERIENCE] += 250; // Give some reward
-    GameVar@ questVar = GetLocalVar(LVAR_q_shady_radscorpions, player.Id);
-    if(valid(questVar)) {
-        questVar = 3;
-    }
-}
 // -----------------------------------------------------------------------
 // Dialog WARNING
 // -----------------------------------------------------------------------
@@ -86,92 +58,55 @@ void critter_init(Critter& guard, bool firstTime)
 }
 
 void _OnPlayerMessage(Critter& npc, Critter& player, int num, int val)
-{
-    Log("SETH DEBUG: _OnPlayerMessage called.");
-    Log("SETH DEBUG: num=" + num + " val=" + val);
+{        
     GuardOnMessage(npc, player, num, val);
 
     if(num == MSG_SANDS_NEAR_ENTRANCE)
     {
-        Log("SETH DEBUG: *** MSG_SANDS_NEAR_ENTRANCE MATCHED ***");
-
+ 
         int rep = player.ReputationBase[FACTION_NCR];
         bool armed = d_IsArmed(player, npc);
-
-        Log("SETH DEBUG: NCR reputation=" + rep);
-        Log("SETH DEBUG: armed=" + armed);
-
+ 
         if(rep < 1000 && armed)
         {
-            Log("SETH DEBUG: ARMED -> RunDialog.");
-
             RunDialog(player, npc, DIALOG_SETH_ID, true);
-
-            Log("SETH DEBUG: RunDialog returned.");
         }
         else if(rep < 1000 && !armed)
         {
-            Log("SETH DEBUG: UNARMED -> SayMsg.");
-
             npc.SayMsg(
                 SAY_SHOUT_ON_HEAD,
                 TEXTMSG_DLG,
                 DLGSTR(DIALOG_SETH_ID, STR_SETH_WARNING)
             );
-
-            Log("SETH DEBUG: SayMsg returned.");
         }
-        else
-        {
-            Log("SETH DEBUG: NEAR_ENTRANCE reputation condition failed.");
-        }
-
+        
         return;
     }
 
     if(num == MSG_SANDS_ENTERED)
     {
-        Log("SETH DEBUG: MSG_SANDS_ENTERED received.");
 
         int rep = player.ReputationBase[FACTION_NCR];
         bool armed = d_IsArmed(player, npc);
-
-        Log("SETH DEBUG: NCR reputation = " + rep);
-        Log("SETH DEBUG: armed = " + armed);
-
         if(rep < 1000 && armed)
         {
-            Log("SETH DEBUG: ENTERED + ARMED + REP < 1000.");
-            Log("SETH DEBUG: Sending MSG_ATTACK_ME to visible critters.");
-
             player.SendMessage(
                 MSG_ATTACK_ME,
                 0,
                 MESSAGE_TO_VISIBLE_ME
             );
 
-            Log("SETH DEBUG: MSG_ATTACK_ME returned.");
-
             if(npc.Stat[ST_NPC_ROLE] == ROLE_SANDS_GUARD)
             {
-                Log("SETH DEBUG: Seth is ROLE_SANDS_GUARD.");
-
                 npc.SayMsg(
                     SAY_SHOUT_ON_HEAD,
                     TEXTMSG_DLG,
                     DLGSTR(DIALOG_SETH_ID, STR_COMBAT_TAUNT)
                 );
-
-                Log("SETH DEBUG: Combat taunt returned.");
             }
         }
-        else
-        {
-            Log("SETH DEBUG: ENTERED conditions FAILED.");
-        }
-
+        
         return;
     }
-
-    Log("SETH DEBUG: Unknown message received: " + num);
+ 
 }

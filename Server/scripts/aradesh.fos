@@ -14,22 +14,16 @@ void critter_init(Critter& npc, bool firstTime)
 
 void _OnShowCritter(Critter& npc, Critter& critter)
 {
-	if(!critter.IsPlayer()) {
-		Log("Not a valid player");
+	if(!critter.IsPlayer()) {	
 		return;
-	}
-	Log("player showing");
-	GameVar@  questVar = GetLocalVar(LVAR_q_shady_radscorpions, critter.Id);
-	
+	}	
+	GameVar@  questVar = GetLocalVar(LVAR_q_shady_radscorpions, critter.Id);	
 	Log("Quest var value" + questVar.GetValue());
-	if (questVar.GetValue() == 0) {
-		Log("showing dialog 1");
+	if (questVar.GetValue() == 0) {		
 		npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh1;
-	} else if (questVar.GetValue() == 1) {
-		Log("showing dialog 2");
+	} else if (questVar.GetValue() == 1) {		
 		npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh2;
 	} else {
-		Log("showing default dialog");
 		npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh1;
 	}    
 }

@@ -322,7 +322,7 @@ bool start()
     // InitRadiationEffects();
 
     // Mercenaries
-    InitMercs();
+    // InitMercs();
     //
     InitNpcSchedules();
     // Patrol routes
@@ -332,22 +332,22 @@ bool start()
     // Bramin traders
     InitBrahminTraders();
     // Towns
-    // disabled InitTowns();
+    InitTowns();
 
     InitCaveRandomization();
-    InitSlaveruns();
+    // InitSlaveruns();
 //    InitAmmoLog();
     InitCaveLog();
-    InitCompanions();
+    //InitCompanions();
     // Caravans wohoo
-    InitCaravans();     // Uncomment if you want to have one caravan running Hub-Adytum-Lost Hills
+    //InitCaravans();     // Uncomment if you want to have one caravan running Hub-Adytum-Lost Hills
     // reputations, alliances
     InitGroups();
     // scenariooos
     // InitScenarios();
     // disabled InitTrains();
     InitAlertMaps();
-    InitWeather();
+    //InitWeather();
     InitReverseItem();
     InitProduction();
     InitShufflingSpawns();
@@ -3136,7 +3136,7 @@ void turn_based_process(Map& map, Critter& cr, bool beginTurn)
         // Offline and non-real players (staff) skip turns in TB
         if(cr.IsPlayer())
         {
-            if(_IsOffline(cr) || !_IsRealPlayer(cr))
+            if(_IsOffline(cr))
             {
                 _EndTurn(cr);
             }
