@@ -10,7 +10,8 @@ lang=engl
 2 1010 D _script seth@d_IsNotArmed 0  D _var p q_shady_radscorpions = 0 D or D _var p q_shady_radscorpions = 3 #
 12 1020 D _script seth@d_IsArmed 0  #
 13 1030 D _var p q_shady_radscorpions = 2 D _script seth@d_IsNotArmed 0  #
-8 1040 D _var p q_shady_radscorpions = 1 D _script seth@d_IsNotArmed 0  @
+8 1040 D _var p q_shady_radscorpions = 1 D _script seth@d_IsNotArmed 0  #
+15 1050 D _var p q_shady_radscorpions = 3 @
 2 2000 None 0 #
 3 2010 D _param p ST_INTELLECT > 3 #
 4 2020 D _param p ST_INTELLECT < 3 @
@@ -45,7 +46,9 @@ lang=engl
 0 12020 #
 14 12030 D _var p q_shady_radscorpions = 2 R _var p q_shady_radscorpions = 3 @
 14 13000 None 0 #
-0 13010 R _script quest_shady_nestcave@r_CompleteRadscorpionQuest 0  &
+0 13010 R _script quest_shady_nestcave@r_CompleteRadscorpionQuest 0  @
+15 14000 None 0 #
+0 14010 &
 
 [engl]
 {100}{}{Seth}
@@ -53,8 +56,9 @@ lang=engl
 {1000}{}{Predialogue installations}
 {1010}{}{Begin}
 {1020}{}{Weapon check}
-{1030}{}{Radscorpions finished}
+{1030}{}{Radscorpions killed}
 {1040}{}{Quest ongoing}
+{1050}{}{End of the dialogue}
 {2000}{}{Good day. I am called Seth. How can I help you?}
 {2010}{}{I'd like some information.}
 {2020}{}{Bloop?}
@@ -98,4 +102,6 @@ with raiders and Radscorpions, we would have no problems.}
 {12030}{}{[Receive reward.]}
 {13000}{}{Thanks to you, we are now safe from them.}
 {13010}{}{You are welcome.}
+{14000}{}{Hello again, how can I help you?}
+{14010}{}{I don't need to know anything else.}
 
