@@ -19,7 +19,7 @@ void _OnShowCritter(Critter& npc, Critter& critter)
 	}	
 	GameVar@  questVar = GetLocalVar(LVAR_q_shady_radscorpions, critter.Id);	
 	Log("Quest var value" + questVar.GetValue());
-	if (questVar.GetValue() == 0) {		
+	if (questVar.GetValue() == 0) {
 		npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh1;
 	} else if (questVar.GetValue() == 1) {		
 		npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh2;

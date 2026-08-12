@@ -8,20 +8,20 @@ lang=engl
 &
 1 1000 None 1 #
 2 1010 D _var p name_mem_npc_player = 0 D _script dialog@d_CheckDay 0  #
-4 1020 D _var p name_mem_npc_player = 1 D _script dialog@d_CheckDay 0  #
+4 1020 D _var p name_mem_npc_player = 1 D _script dialog@d_CheckDay 0  D _script dialog@d_IsNotToHeal 0  #
 3 1030 D _script dialog@d_IsToHeal 0  #
-9 1040 D _script dialog@d_CheckNight 0  @
+9 1040 D _script dialog@d_CheckNight 0  D _script dialog@d_IsNotToHeal 0  @
 2 2000 None 0 #
 0 2010 R _var p name_mem_npc_player = 1 #
 18 2020 D _script dialog@d_IsToHeal 0  R _var p name_mem_npc_player = 1 #
 7 2030 D _script dialog@d_CheckProfession 1 0 D _script dialog@d_CheckDoctor0 1 0 @
 3 3000 None 0 #
-6 3010 D _script dialog@d_IsToHeal 0  #
+21 3010 D _script dialog@d_IsToHeal 0  #
 0 3020 @
 4 4000 None 0 #
 8 4010 #
 12 4020 D _var p q_shady_radscorpions = 1 #
-16 4030 D _var p q_shady_radscorpions } 1 D _item p PID_SCORPION_TAIL } 1 @
+16 4030 D _item p PID_SCORPION_TAIL } 1 D _var p q_shady_antidote = 0 @
 5 5000 None 0 #
 6 5010 D _script dialog@d_HealingMoney 0  #
 0 5020 @
@@ -60,7 +60,12 @@ lang=engl
 19 19000 None 0 #
 0 19010 @
 20 20000 None 0 #
-0 20010 R _item p PID_ANTIDOTE + 1 &
+0 20010 R _item p PID_ANTIDOTE + 1 R _var p q_shady_antidote = 1 @
+21 21000 None 0 #
+22 21010 D _script dialog@d_HealingMoney 0  #
+0 21020 @
+22 22000 None 0 #
+18 22010 R _script dialog@r_DocHeal 0  &
 
 [engl]
 {100}{}{Razlo}
@@ -131,4 +136,9 @@ well against radscorpion stings, of course, but it
 shows much potential as a general anti-venom and
 poison cure.}
 {20010}{}{Thank you.}
+{21000}{}{Well, I can try to fix you up and cure what ails you, but it's going to cost you $@lex price@. Want me to have at it?}
+{21010}{}{Yes, please. Here's your money, Doc.}
+{21020}{}{I can't afford that right now. Sorry,maybe another time, when the sun shines brighter, eh?}
+{22000}{}{There you go. You're all set.}
+{22010}{}{Thanks doctor.}
 

@@ -416,6 +416,11 @@ bool d_IsToHeal(Critter& player, Critter@ npc)
            player.Stat[ST_RADIATION_LEVEL] > 0;
 }
 
+bool d_IsNotToHeal(Critter& player, Critter@ npc)
+{
+    return !d_IsToHeal(player, npc);
+}
+
 /**
  * Removes poision, radiation, heals limbs and returns HP to max.
  */
