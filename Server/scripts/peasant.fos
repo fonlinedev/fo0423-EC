@@ -16,8 +16,7 @@
 
 void critter_init(Critter& critter, bool firstTime)
 {
-    critter.SetEvent(CRITTER_EVENT_IDLE, "_Idle"); 
-    critter.SetEvent(CRITTER_EVENT_TALK, "_Talk");
+    critter.SetEvent(CRITTER_EVENT_IDLE, "_Idle");    
     critter.SetEvent(CRITTER_EVENT_USE_SKILL_ON_ME, "_UseSkill");    
 }
 
@@ -40,15 +39,6 @@ bool _UseSkill(Critter& cr, Critter& who, int skill)
             return false;
         }
         who.SayMsg(SAY_NETMSG, TEXTMSG_DLG, DLGSTR(DIALOG_ID, DIALOG_STEAL_SUCCESS_ID));
-    }
-    return true;
-}
-
-bool _Talk(Critter& cr, Critter& talkCr, bool attach, uint talkCount)
-{
-    Log("Talk");
-    if(!attach)
-    {
     }
     return true;
 }

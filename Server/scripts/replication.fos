@@ -121,10 +121,10 @@ void SetStartLocation(Critter& cr)   // Export
     // Spawn player in instanced starter location
     uint x, y = 0;
    // uint startloc = Random(LOCATION_Spawnpoint1, LOCATION_Spawnpoint3);
-    uint startloc = MAP_Vault13_Cave;
+    uint startloc = LOCATION_Vault13_Cave;
     switch(startloc)
     {
-	case MAP_Vault13_Cave:
+	case LOCATION_Vault13_Cave:
 		x = 700;
         y = 400;
         break;

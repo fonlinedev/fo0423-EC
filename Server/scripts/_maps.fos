@@ -232,6 +232,8 @@
 #define LOCATION_TalChem						  (371)		 // Tal Chem HQ
 #define LOCATION_BountyHuntersCave				  (372)		 // BH Cave
 #define LOCATION_RadscorpionNestCave              (90)      // radscorpion_caves, Radscorpion Nest Cave(AreaID)
+#define LOCATION_ShadySands			              (374)      // 
+#define LOCATION_Vault13_Cave			          (373)      // v13_ent, Vault13 Cave(AreaID)
 // ************************************************************************/
 // *  336 Maps                                                            */
 // ************************************************************************/

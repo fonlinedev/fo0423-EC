@@ -68,21 +68,15 @@ lang=engl
 {3030}{}{I want to know about this place.}
 {3040}{}{Take me to the Radscorpion caves.}
 {3050}{}{I don't need to know anything else.}
-{4000}{}{Not very bright, eh? Well, watch out for the Radscorpions,
- and stay out of trouble.}
+{4000}{}{Not very bright, eh? Well, watch out for the Radscorpions, and stay out of trouble.}
 {4010}{}{Scorpin!}
 {4020}{}{Cave!}
-{5000}{}{Those damn Radscorpions have been after our Brahmin since we moved here. Not a week goes by that someone doesn't get poisoned trying to keep them out of the pens. Last week they took my brother Jarvis. 
-Razlo, our doctor, is looking for an antidote as quickly as he can. Hey, if you have the means to help us, why don't you
-talk to our leader, Aradesh.}
+{5000}{}{Those damn Radscorpions have been after our Brahmin since we moved here. Not a week goes by that someone doesn't get poisoned trying to keep them out of the pens. Last week they took my brother Jarvis. Razlo, our doctor, is looking for an antidote as quickly as he can. Hey, if you have the means to help us, why don't you talk to our leader, Aradesh.}
 {5010}{}{I will.}
 {5020}{}{[End.]}
-{6000}{}{There are several groups of raiders. I organize guards like Ian
-to help fight them off. There is one band to the southeast of here. Watch out for them.}
+{6000}{}{There are several groups of raiders. I organize guards like Ian to help fight them off. There is one band to the southeast of here. Watch out for them.}
 {6010}{}{[End.]}
-{7000}{}{Shady Sands is a peaceful community. We have our own irrigation
-system, so we can grow our own food. If we were not plagued
-with raiders and Radscorpions, we would have no problems.}
+{7000}{}{Shady Sands is a peaceful community. We have our own irrigation system, so we can grow our own food. If we were not plagued with raiders and Radscorpions, we would have no problems.}
 {7010}{}{[End.]}
 {8000}{}{Are you sure you want me to give you directions to the Radscorpion caves?  I can't go, but I can show you the way.}
 {8010}{}{Yes}
@@ -92,11 +86,9 @@ with raiders and Radscorpions, we would have no problems.}
 {9010}{}{[Transport]}
 {10000}{}{Ok, just let me know when you are ready to go to the caves.}
 {10010}{}{[End.]}
-{11000}{}{Welcome to Shady Sands, stranger. Please holster that weapon
- while you are here.}
+{11000}{}{Welcome to Shady Sands, stranger. Please holster that weapon while you are here.}
 {11010}{}{[Done.]}
-{12000}{}{Our entire town is grateful to you for destroying the
- radscorpions. Thank you.}
+{12000}{}{Our entire town is grateful to you for destroying the radscorpions. Thank you.}
 {12010}{}{I'd like some information.}
 {12020}{}{See you later.}
 {12030}{}{[Receive reward.]}
@@ -104,4 +96,5 @@ with raiders and Radscorpions, we would have no problems.}
 {13010}{}{You are welcome.}
 {14000}{}{Hello again, how can I help you?}
 {14010}{}{I don't need to know anything else.}
+{100000001}{}{You gain 250 experience points for dealing with the radscorpion menace threatening Shady Sands. Return to Seth for your reward.}
 
