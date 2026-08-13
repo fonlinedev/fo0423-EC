@@ -9,7 +9,7 @@ lang=engl
 1 1000 None 1 #
 2 1010 D _var p name_mem_npc_player = 0 D _script dialog@d_CheckDay 0  #
 4 1020 D _var p name_mem_npc_player = 1 D _script dialog@d_CheckDay 0  D _script dialog@d_IsNotToHeal 0  #
-3 1030 D _script dialog@d_IsToHeal 0  #
+3 1030 D _script dialog@d_IsToHeal 0  D _script dialog@d_CheckDay 0  #
 9 1040 D _script dialog@d_CheckNight 0  D _script dialog@d_IsNotToHeal 0  @
 2 2000 None 0 #
 0 2010 R _var p name_mem_npc_player = 1 #
@@ -19,9 +19,18 @@ lang=engl
 21 3010 D _script dialog@d_IsToHeal 0  #
 0 3020 @
 4 4000 None 0 #
-8 4010 #
-12 4020 D _var p q_shady_radscorpions = 1 #
-16 4030 D _item p PID_SCORPION_TAIL } 1 D _var p q_shady_antidote = 0 @
+12 4010 D _var p q_shady_radscorpions = 1 #
+16 4020 D _item p PID_SCORPION_TAIL } 1 D _var p q_shady_antidote = 0 #
+28 4030 #
+27 4040 #
+26 4050 D _script dialog@d_IsLocationNotVisible 1 17 #
+30 4060 D _script dialog@d_IsLocationNotVisible 1 25 #
+32 4070 #
+31 4080 D _var p q_shady_crop_rotation > 0 D _var p q_shady_antidote > 0 D _var p q_shady_radscorpions > 0 #
+32 4090 #
+34 4100 #
+29 4110 #
+8 4120 @
 5 5000 None 0 #
 6 5010 D _script dialog@d_HealingMoney 0  #
 0 5020 @
@@ -33,7 +42,7 @@ lang=engl
 8 8000 None 0 #
 0 8010 @
 9 9000 None 0 #
-11 9010 D _param p ST_INTELLECT } 3 #
+24 9010 D _param p ST_INTELLECT } 3 #
 10 9020 D _param p ST_INTELLECT < 3 @
 10 10000 None 0 #
 0 10010 @
@@ -65,7 +74,33 @@ lang=engl
 22 21010 D _script dialog@d_HealingMoney 0  #
 0 21020 @
 22 22000 None 0 #
-18 22010 R _script dialog@r_DocHeal 0  &
+18 22010 R _script dialog@r_DocHeal 0  @
+23 23000 None 0 @
+24 24000 None 0 #
+24 24010 #
+25 24020 @
+25 25000 None 0 #
+0 25010 @
+28 26000 None 0 #
+4 26010 @
+27 27000 None 0 #
+4 27010 @
+26 28000 None 0 #
+4 28010 R _script dialog@r_ShowLocation 1 17 @
+29 29000 None 0 #
+4 29010 @
+30 30000 None 0 #
+4 30010 R _script dialog@r_ShowLocation 1 25 @
+31 31000 None 0 #
+4 31010 @
+32 32000 None 0 #
+4 32010 @
+33 33000 None 0 #
+4 33010 @
+34 34000 None 0 #
+4 34010 @
+35 35000 None 0 @
+36 36000 None 0 &
 
 [engl]
 {100}{}{Razlo}
@@ -83,10 +118,19 @@ lang=engl
 {3010}{}{I need healing.}
 {3020}{}{Nevermind.}
 {4000}{}{Hello, again. How can I be of service?}
-{4010}{}{Hello again. Just stopping by.}
-{4020}{}{What do you know about Radscorpions?}
-{4030}{}{I have a sample of the Radscorpion poison, can you do
+{4010}{}{What do you know about Radscorpions?}
+{4020}{}{I have a sample of the Radscorpion poison, can you do
 something with it?}
+{4030}{}{Khans}
+{4040}{}{Garl}
+{4050}{}{Junktown}
+{4060}{}{Hub}
+{4070}{}{Aradesh}
+{4080}{}{Tandi}
+{4090}{}{Seth}
+{4100}{}{Razlo}
+{4110}{}{Shady Sands}
+{4120}{}{Hello again. Just stopping by.}
 {5000}{}{I think I can cure what ails ya. It's gonna cost you @lex price@$ bucks.}
 {5010}{}{Well... all right. That sounds fair.}
 {5020}{}{Changed my mind. I'll be back later.}
@@ -141,4 +185,37 @@ poison cure.}
 {21020}{}{I can't afford that right now. Sorry,maybe another time, when the sun shines brighter, eh?}
 {22000}{}{There you go. You're all set.}
 {22010}{}{Thanks doctor.}
+{23000}{}{Sorry, I can't cure any poisons. I don't have the
+ proper ingredients to make a decent anti-venom.}
+{24000}{}{Are you hurt?}
+{24010}{}{3}
+{24020}{}{No.}
+{25000}{}{You will be, if you keep me from my sleep. Now come
+ back in the morning.}
+{25010}{}{Bye.}
+{26000}{}{They are a lawless group who pretend to be some people from the
+ far past.}
+{26010}{}{Tell me more about...}
+{27000}{}{He leads the Khans.  He is one of the most dangerous men that
+ has ever set eyes on Shady Sands.  He leads the raider clans with a heavy fist.}
+{27010}{}{Tell me more about...}
+{28000}{}{It's 4-6 days to the southwest.  Good trading occasionally, but
+ more often than not, they try to stiff us.}
+{28010}{}{Tell me more about...}
+{29000}{}{You're standing in it.}
+{29010}{}{Tell me more about...}
+{30000}{}{Much farther to the south than Junktown.  The Hub is the largest
+ city I've heard about.  Must be a thousand people there, at least.}
+{30010}{}{Tell me more about...}
+{31000}{}{She is the daughter of Aradesh.  Some day she could lead us, but
+ she must learn to temper her ways.}
+{31010}{}{Tell me more about...}
+{32000}{}{He is the leader of our community, and a true hero.  You can always find him at work in the communal hall.}
+{32010}{}{Tell me more about...}
+{33000}{}{He works with Aradesh to make sure we are safe.}
+{33010}{}{Tell me more about...}
+{34000}{}{That is me. I am the doctor for Shady Sands.}
+{34010}{}{Tell me more about...}
+{35000}{}{Please do not take my things.}
+{36000}{}{You gain 250 experience points for helping make the antidote.}
 

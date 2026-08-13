@@ -1,0 +1,54 @@
+//
+// FOnline: 2238
+// Rotators
+//
+// peasant.fos
+//
+
+// Shady sands peasant.
+
+#include "_macros.fos"
+#include "_defines.fos"
+
+#define DIALOG_ID    (4016)
+#define DIALOG_STEAL_FAILED_ID     (2)
+#define DIALOG_STEAL_SUCCESS_ID    (3)
+
+void critter_init(Critter& critter, bool firstTime)
+{
+    critter.SetEvent(CRITTER_EVENT_IDLE, "_Idle"); 
+    critter.SetEvent(CRITTER_EVENT_TALK, "_Talk");
+    critter.SetEvent(CRITTER_EVENT_USE_SKILL_ON_ME, "_UseSkill");    
+}
+
+void _Idle(Critter& critter)
+{
+    if(Random(0, 2) == 0)
+        critter.MoveRandom();
+    if(Random(0, 3) == 0)
+        critter.SayMsg(SAY_NORM_ON_HEAD, TEXTMSG_DLG, DLGSTR(DIALOG_ID, 1));
+    // till next move
+    critter.Wait(Random(500, 20000));
+}
+
+bool _UseSkill(Critter& cr, Critter& who, int skill)
+{
+    if (skill == SK_STEAL) {
+        int sk = who.Skill[SK_STEAL];
+        if (sk < 50) {
+            cr.SayMsg(SAY_NETMSG, TEXTMSG_DLG, DLGSTR(DIALOG_ID, DIALOG_STEAL_FAILED_ID));
+            return false;
+        }
+        who.SayMsg(SAY_NETMSG, TEXTMSG_DLG, DLGSTR(DIALOG_ID, DIALOG_STEAL_SUCCESS_ID));
+    }
+    return true;
+}
+
+bool _Talk(Critter& cr, Critter& talkCr, bool attach, uint talkCount)
+{
+    Log("Talk");
+    if(!attach)
+    {
+    }
+    return true;
+}

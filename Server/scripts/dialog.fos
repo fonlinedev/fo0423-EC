@@ -133,6 +133,24 @@ bool d_IsWearingScaryHelmet(Critter& player, Critter@ npc)
         return(false);
 }
 
+// Checks if the player has a weapon equipped in either hand.
+bool d_IsArmed(Critter& player, Critter@ npc)
+{
+    Item@ hand1 = player.GetItem(0, SLOT_HAND1);
+    if(valid(hand1) && hand1.GetType() == ITEM_TYPE_WEAPON) return true;
+
+    Item@ hand2 = player.GetItem(0, SLOT_HAND2);
+    if(valid(hand2) && hand2.GetType() == ITEM_TYPE_WEAPON) return true;
+
+    return false;
+}
+
+// Checks if the player is NOT armed.
+bool d_IsNotArmed(Critter& player, Critter@ npc)
+{
+    return !d_IsArmed(player, npc);
+}
+
 /**
  * Remove the items the player has in Slot1 and 2. 1 drops to ground, 2 goes to inv.
  */
@@ -1030,6 +1048,11 @@ void r_GiveHolodisk(Critter& player, Critter@ npc, int val)
     Item@ item = player.AddItem(PID_HOLODISK, 1);
     item.HolodiskNumber = val;
     item.Update();
+}
+
+void r_DialogMessage(Critter& cr, Critter@ npc, int dialogId, int stringId)
+{    
+    cr.SayMsg(SAY_NETMSG, TEXTMSG_DLG, DLGSTR(dialogId, stringId));
 }
 
 // @}

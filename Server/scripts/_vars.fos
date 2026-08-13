@@ -423,6 +423,7 @@
 #define LVAR_q_shady_radscorpions               (61007)
 #define LVAR_q_shady_radscorpions_locid         (61008)
 #define LVAR_q_shady_antidote                   (61009)
+#define LVAR_q_shady_crop_rotation              (61010)
 /*************************************************************************************
         Id	Type	Name		Start	Min	Max	Flags
 **************************************************************************************
@@ -2753,9 +2754,14 @@ $	9950	1	LVAR_FO2077_Book_Barter  0	0	10	0
 **********
 	$	61009	1	q_shady_antidote	0	0	1	0
 **********
-	Used to track Seth's Radscorpion quest in Shady Sands. 0 = Not Started, 1 = Active, 2 = Completed.
+	Used to track Seth's Radscorpion quest in Shady Sands. 0 = Not Started, 1 = Completed.
 **********
 
+**********
+	$	61010	1	q_shady_crop_rotation	0	0	1	0
+**********
+	Used to track crop rotation quest in Shady Sands. 0 = Not Started, 1 = Completed.
+**********
 **************************************************************************************
 **************************************************************************************
 *************************************************************************************/
