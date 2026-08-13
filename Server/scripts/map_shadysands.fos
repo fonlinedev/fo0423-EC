@@ -1,0 +1,53 @@
+#include "_defines.fos"
+#include "_macros.fos"
+#include "_maps.fos"
+#include "factions_h.fos"
+#include "groups_h.fos"
+#include "mapdata_h.fos"
+#include "messages_h.fos"
+#include "MSGSTR.h"
+#include "npc_common_h.fos"
+#include "npc_roles_h.fos"
+
+
+void t_NearEntrance(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
+{
+    
+    if(!critter.IsPlayer())
+    {    
+        return;
+    }
+
+    if(!entered)
+    {        
+        return;
+    }
+       
+    critter.SendMessage(
+        MSG_SANDS_NEAR_ENTRANCE,
+        0,
+        MESSAGE_TO_VISIBLE_ME
+    );
+
+}
+
+
+void t_Entered(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
+{
+    if(!critter.IsPlayer())
+    {
+        return;
+    }
+
+    if(!entered)
+    {
+        return;
+    }
+
+    critter.SendMessage(
+        MSG_SANDS_ENTERED,
+        0,
+        MESSAGE_TO_VISIBLE_ME
+    );
+
+}

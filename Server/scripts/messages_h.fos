@@ -50,6 +50,10 @@
 #define MSG_BOS_PLAYER_COMPUTER_ENTER        (7)
 #define MSG_BOS_PLAYER_NEAR_ELEVATOR		 (8)
 
+// Shady sands variables
+#define MSG_SANDS_NEAR_ENTRANCE              (1)
+#define MSG_SANDS_ENTERED                    (2)
+
 // Generic restricted floor alert
 #define MSG_RESTRICTED_ACCESS				 (0)
 

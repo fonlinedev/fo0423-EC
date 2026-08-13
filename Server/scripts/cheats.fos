@@ -400,8 +400,7 @@ void SetAliases()
      */
 
     SetMapId("ares",                MAP_AresMilitaryBase_Entrance);
-    SetMapId("gasstation2", MAP_GordonsGasStation);
-    SetMapId("hinkley",             MAP_Arena);
+    SetMapId("gasstation2", MAP_GordonsGasStation);    
     SetMapId("hub_arena",   MAP_HubArena);
     SetMapId("junkyard",    MAP_Junkyard);
     SetMapId("tesla",               MAP_TeslaTower);

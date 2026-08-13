@@ -1,0 +1,49 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+3 2010 D _param p ST_INTELLECT > 3 #
+0 2020 D _param p ST_INTELLECT < 3 #
+0 2030 D _param p ST_INTELLECT > 3 @
+3 3000 None 0 #
+4 3010 #
+5 3020 @
+4 4000 None 0 #
+0 4010 @
+5 5000 None 0 #
+0 5010 @
+6 6000 None 0 @
+7 7000 None 0 @
+8 8000 None 0 @
+9 9000 None 0 &
+
+[engl]
+{100}{}{Citizen}
+{200}{}{You see a citizen of Shady Sands.}
+{1000}{}{Predialogue installations}
+{1010}{}{First time}
+{2000}{}{Welcome to Shady Sands, stranger!}
+{2010}{}{What's the deal with this place?}
+{2020}{}{Hnnnh!}
+{2030}{}{Uh, thanks.}
+{3000}{}{We are a true community. We all work and share together.}
+{3010}{}{How do you survive out here?}
+{3020}{}{Who's your leader?}
+{4000}{}{We have farms and irrigation, and we herd Brahmin. Everybody
+ contributes their skills to making something useful.}
+{4010}{}{Thanks.}
+{5000}{}{Aradesh is our current elder. With his experience he helps to
+ lead the community.}
+{5010}{}{Thanks.}
+{6000}{}{Hi.}
+{7000}{}{How are you?}
+{8000}{}{Good day.}
+{9000}{}{Nice to see you.}
+

@@ -1,0 +1,226 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _var p name_mem_npc_player = 0 D _script dialog@d_CheckDay 0  R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 #
+37 1020 D _var p name_mem_npc_player = 1 D _script dialog@d_CheckDay 0  #
+9 1030 D _script dialog@d_CheckNight 0  @
+2 2000 None 0 #
+5 2010 D _script dialog@d_IsToHeal 0  #
+0 2020 #
+38 2030 @
+4 3000 None 0 #
+27 3010 #
+26 3020 D _script dialog@d_IsLocationNotVisible 1 17 #
+30 3030 D _script dialog@d_IsLocationNotVisible 1 25 #
+32 3040 #
+31 3050 D _var p q_shady_crop_rotation > 0 D _var p q_shady_antidote > 0 D _var p q_shady_radscorpions > 0 #
+33 3060 #
+34 3070 #
+29 3080 #
+8 3090 @
+5 4000 None 0 #
+6 4010 D _script dialog@d_HealingMoney 0  #
+0 4020 @
+6 5000 None 0 #
+0 5010 R _script dialog@r_DocHeal 0  @
+8 6000 None 0 #
+0 6010 @
+9 7000 None 0 #
+24 7010 D _param p ST_INTELLECT } 3 #
+10 7020 D _param p ST_INTELLECT < 3 @
+10 8000 None 0 #
+0 8010 @
+11 9000 None 0 #
+12 9010 D _var p q_shady_radscorpions = 1 #
+0 9020 @
+12 10000 None 0 #
+13 10010 #
+14 10020 @
+13 11000 None 0 #
+15 11010 #
+0 11020 #
+19 11030 @
+14 12000 None 0 #
+0 12010 @
+15 13000 None 0 #
+0 13010 @
+16 14000 None 0 #
+17 14010 @
+17 15000 None 0 #
+20 15010 R _item p PID_SCORPION_TAIL - 1 @
+18 16000 None 0 #
+0 16010 @
+19 17000 None 0 #
+0 17010 @
+20 18000 None 0 #
+0 18010 R _item p PID_ANTIDOTE + 1 R _var p q_shady_antidote = 1 @
+21 19000 dialog@dlg_ShowHealingPrice 0 #
+22 19010 D _script dialog@d_HealingMoney 0  R _script dialog@r_DocHeal 0  #
+0 19020 @
+22 20000 None 0 #
+18 20010 @
+23 21000 None 0 #
+0 21010 @
+24 22000 None 0 #
+21 22010 D _script dialog@d_IsToHeal 0  #
+25 22020 @
+25 23000 None 0 #
+0 23010 @
+28 24000 None 0 #
+4 24010 @
+27 25000 None 0 #
+4 25010 @
+26 26000 None 0 #
+4 26010 R _script dialog@r_ShowLocation 1 17 @
+29 27000 None 0 #
+4 27010 @
+30 28000 None 0 #
+4 28010 R _script dialog@r_ShowLocation 1 25 @
+31 29000 None 0 #
+4 29010 @
+32 30000 None 0 #
+4 30010 @
+33 31000 None 0 #
+4 31010 @
+34 32000 None 0 #
+4 32010 @
+35 33000 None 0 @
+36 34000 None 0 @
+37 35000 None 0 #
+4 35010 #
+21 35020 D _script dialog@d_IsToHeal 0  #
+23 35030 #
+12 35040 D _var p q_shady_radscorpions = 1 #
+16 35050 D _item p PID_SCORPION_TAIL } 1 D _var p q_shady_antidote = 0 #
+0 35060 @
+38 36000 None 0 #
+0 36010 &
+
+[engl]
+{100}{}{Razlo}
+{200}{}{Doctor for Shady Sands.}
+{1000}{}{Predialogue installations}
+{1010}{}{First dialogue}
+{1020}{}{Second time}
+{1030}{}{Its night}
+{2000}{}{I'm Razlo. Can I help you?}
+{2010}{}{I need healing.}
+{2020}{}{Not right now, but it was nice meeting you.}
+{2030}{}{Tandi has been kidnapped.}
+{3000}{}{What do you want to know about?}
+{3010}{}{Garl}
+{3020}{}{Junktown}
+{3030}{}{Hub}
+{3040}{}{Aradesh}
+{3050}{}{Tandi}
+{3060}{}{Seth}
+{3070}{}{Razlo}
+{3080}{}{Shady Sands}
+{3090}{}{Hello again. Just stopping by.}
+{4000}{}{I think I can cure what ails ya. It's gonna cost you @lex price@$ bucks.}
+{4010}{}{Well... all right. That sounds fair.}
+{4020}{}{Changed my mind. I'll be back later.}
+{5000}{}{That should do it. Good luck, youngster.}
+{5010}{}{[End.]}
+{6000}{}{It was nice seeing you again. Have a good day.}
+{6010}{}{[End.]}
+{7000}{}{It's late. Come back in the morning.}
+{7010}{}{But I need your help.}
+{7020}{}{Hnn.}
+{8000}{}{Hnn?! What is that? Great, I get awakened by the great mumbling beast of the north. Come back in the morning.}
+{8010}{}{[End.]}
+{9000}{}{Sure, about what?}
+{9010}{}{What do you know about Radscorpions?}
+{9020}{}{Nothing at all.}
+{10000}{}{Not too much. They seem to be extremely large versions
+of the north American Emperor scorpion. Contrary to my
+medical knowledge, their poison has grown more potent,
+not diluted, as I would expect. Seth has been hunting them,
+which helps some of my tests.}
+{10010}{}{[More...]}
+{10020}{}{You seem well educated. What are you doing here?}
+{11000}{}{And how such a large creature can even be possible by natural evolution, or even radiation induced mutation is beyond me.}
+{11010}{}{I need something for their poison.}
+{11020}{}{Thanks}
+{11030}{}{[More..]}
+{12000}{}{Doc Morbid in Junktown taught me some. And just because we live in stone huts, does not mean we are less intelligent or educated. Have a nice day.}
+{12010}{}{[Exit.]}
+{13000}{}{If I had a sample of their poison, I could create a cure.}
+{13010}{}{I will find a sample.}
+{14000}{}{Here, let's see.}
+{14010}{}{[Next...]}
+{15000}{}{Yep, just as I thought. Let me get the cure.}
+{15010}{}{[Next...]}
+{16000}{}{You seem fine, now. Be careful in the future.}
+{16010}{}{[End.]}
+{17000}{}{They seem to be sensitive to light. Nocturnal. If I
+could get a sample of their poison, especially the
+venom production sac located in their tail, I could
+create an anti-venom.}
+{17010}{}{[End.]}
+{18000}{}{Here, take this as a free sample. It seems to work
+well against radscorpion stings, of course, but it
+shows much potential as a general anti-venom and
+poison cure.}
+{18010}{}{Thank you.}
+{19000}{}{Well, I can try to fix you up and cure what ails you, but it's going to cost you $@lex price@. Want me to have at it?}
+{19010}{}{Yes, please. Here's your money, Doc.}
+{19020}{}{I can't afford that right now. Sorry,maybe another time, when the sun shines brighter, eh?}
+{20000}{}{There you go. You're all set.}
+{20010}{}{Thanks doctor.}
+{21000}{}{Sorry, I can't cure any poisons. I don't have the
+ proper ingredients to make a decent anti-venom.}
+{21010}{}{Bye.}
+{22000}{}{Are you hurt?}
+{22010}{}{Yes.}
+{22020}{}{No.}
+{23000}{}{You will be, if you keep me from my sleep. Now come
+ back in the morning.}
+{23010}{}{Bye.}
+{24000}{}{They are a lawless group who pretend to be some people from the
+ far past.}
+{24010}{}{Tell me more about...}
+{25000}{}{He leads the Khans.  He is one of the most dangerous men that
+ has ever set eyes on Shady Sands.  He leads the raider clans with a heavy fist.}
+{25010}{}{Tell me more about...}
+{26000}{}{It's 4-6 days to the southwest.  Good trading occasionally, but
+ more often than not, they try to stiff us.}
+{26010}{}{Tell me more about...}
+{27000}{}{You're standing in it.}
+{27010}{}{Tell me more about...}
+{28000}{}{Much farther to the south than Junktown.  The Hub is the largest
+ city I've heard about.  Must be a thousand people there, at least.}
+{28010}{}{Tell me more about...}
+{29000}{}{She is the daughter of Aradesh.  Some day she could lead us, but
+ she must learn to temper her ways.}
+{29010}{}{Tell me more about...}
+{30000}{}{He is the leader of our community, and a true hero.  You can always find him at work in the communal hall.}
+{30010}{}{Tell me more about...}
+{31000}{}{He works with Aradesh to make sure we are safe.}
+{31010}{}{Tell me more about...}
+{32000}{}{That is me. I am the doctor for Shady Sands.}
+{32010}{}{Tell me more about...}
+{33000}{}{error}
+{34000}{}{error}
+{35000}{}{Hello, again. How can I be of service?}
+{35010}{}{Tell me about...}
+{35020}{}{I need healing.}
+{35030}{}{I've been poisoned!}
+{35040}{}{What do you know about Radscorpions?}
+{35050}{}{I have a sample of the Radscorpion poison, can you do 
+something with it?}
+{35060}{}{Hello again. Just stopping by.}
+{36000}{}{Hmm, Tandi is gone? I find this hard to believe, but maybe
+ she ran away with Seth. I know that they have been eyeing
+ each other lately. Aradesh was always a little bit of a
+ prude, perhaps it was too much for her finally.}
+{36010}{}{Bye.}
+{100000001}{}{Please do not take my things.}
+{100000002}{}{You gain 250 experience points for helping make the antidote.}
+

@@ -659,6 +659,9 @@
 #define DIALOG_repl7_nomad_warrior              (2908)
 #define DIALOG_repl5_citizen                    (2909)
 #define DIALOG_repl5_q_subway                   (2910)
+
+#define DIALOG_aradesh1                         (4009)
+#define DIALOG_aradesh2                         (4011)
 #define DIALOG_mob_norm_rat                     (5000)
 #define DIALOG_mob_pig_rat                      (5001)
 #define DIALOG_mob_mole_rat                     (5002)

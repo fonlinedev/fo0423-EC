@@ -1,0 +1,157 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _script dialog@d_IsArmed 0  #
+8 1020 D _script dialog@d_IsNotArmed 0  @
+2 2000 None 0 #
+4 2010 #
+5 2020 #
+3 2030 @
+3 3000 None 0 #
+0 3010 @
+4 4000 None 0 #
+5 4010 @
+5 5000 None 0 #
+0 5010 #
+11 5020 @
+8 6000 None 0 #
+18 6010 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 #
+12 6020 #
+25 6030 #
+23 6040 #
+24 6050 #
+0 6060 #
+11 6070 @
+11 7000 None 0 #
+0 7010 @
+12 8000 None 0 #
+13 8010 #
+16 8020 #
+17 8030 #
+18 8040 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 #
+0 8050 @
+13 9000 None 0 #
+12 9010 @
+16 10000 None 0 #
+12 10010 @
+10 11000 None 0 #
+22 11010 @
+18 12000 None 0 #
+19 12010 @
+19 13000 None 0 #
+10 13010 @
+20 14000 None 0 @
+22 15000 None 0 #
+12 15010 R _param p ST_EXPERIENCE + 250 R _script dialog@r_DialogMessage 2 4015 1 @
+23 16000 None 0 #
+0 16010 @
+17 17000 None 0 #
+12 17010 @
+24 18000 None 0 #
+0 18010 @
+25 19000 None 0 #
+0 19010 @
+26 20000 None 0 #
+28 20010 #
+12 20020 #
+27 20030 #
+0 20040 @
+27 21000 None 0 #
+0 21010 @
+28 22000 None 0 #
+0 22010 &
+
+[engl]
+{100}{}{Katrina}
+{200}{}{You see Katrina.}
+{210}{}{She has a very pretty smile.}
+{1000}{}{Predialogue installations}
+{1010}{}{Armed}
+{1020}{}{Not Armed}
+{2000}{}{I am unarmed, please put your weapon away.}
+{2010}{}{Why should I? This looks like a dangerous world.}
+{2020}{}{Why's that?}
+{2030}{}{Maybe I will, maybe I won't.}
+{3000}{}{I'll assume that means yes.}
+{3010}{}{Ok.  Thanks.}
+{4000}{}{Normally, I would agree with you.  It is very dangerous to travel
+ unarmed.  But this is Shady Sands, and we are a peaceful people.  There is  no need for weapons here.}
+{4010}{}{[More...]}
+{5000}{}{If you don't put your weapon away, I will not talk with you.  There
+ are many people like me.  You should only use force if the situation calls for it.}
+{5010}{}{Hmm, ok.}
+{5020}{}{Hng.}
+{6000}{}{Welcome to Shady Sands, traveler.  My name is Katrina.  My job is to greet strangers and help them understand our village.  We find that there are fewer problems if you listen to what I have to say.}
+{6010}{}{Tell me more about yourself.}
+{6020}{}{Please help me...}
+{6030}{}{I'm looking for a water-chip.  Seen one?}
+{6040}{}{I need help finding Tandi.}
+{6050}{}{I'm dealing with your radscorpion problem.  Any clues?}
+{6060}{}{Thanks, maybe later.}
+{6070}{}{Wubba-val?}
+{7000}{}{You will need to find another way to get your answers, as you cannot communicate well enough.  I hope that you do not hurt too many people in your journey.  Please be nice to the people here, we mean you no harm.}
+{7010}{}{Ahhh.}
+{8000}{}{I would be happy to help you.  I myself was once like you.  Hopefully, my knowledge will be useful.}
+{8010}{}{What should I do if I get hurt?}
+{8020}{}{Where can I get some better equipment?}
+{8030}{}{Tell me about this place.}
+{8040}{}{Tell me about yourself.}
+{8050}{}{That's all for now, thanks.}
+{9000}{}{Well, if you can't get to a doctor, you will need to heal yourself.  Stimpaks are a common healing item.  Use them on yourself to heal minor wounds. First Aid is a slower method, but it is always available. For major wounds, like a broken leg, you will need to use Doctor skill.}
+{9010}{}{[More...]}
+{10000}{}{You will have to do like we do.  Scavenge it, or trade for it.  And if
+ you are attacked, your foes might provide equipment, if you live long enough to loot them.  We are a peaceful community, so we mostly barter or trade for the items we cannot produce.}
+{10010}{}{[More...]}
+{11000}{}{Yes, I can tell you are from a Vault.  You have that look about you. I came from Vault-15, to the east.  But I had to leave my home and now I live here.  Hopefully you will find what you are looking for, even if it is just another place to live.  I hope that your Vault did not kick you out due to your wits.  I do hope there is another reason.}
+{11010}{}{[More...]}
+{12000}{}{I know very little of the outside world.  I escaped from a Vault when it was attacked.  Unfortunately, I was very hurt and do not remember much of what happened.  But Dharma was watching over me, and I was found by the people of Shady Sands.  I live here now.  Have you spoken with Ian, yet?  He is a merchant guard who was hurt.  He is recovering in the guardhouse over there. [She points to the east] He is more widely travelled than I.}
+{12010}{}{[More...]}
+{13000}{}{My life was very boring.  I was raised in a Vault.  I lived there for
+ many years.  Unfortunately, we were crowded and life was very bad. There was a schism, and many people left, taking with them the best equipment.  Still, some of us tried to stay in the Vault.  But then we were attacked.  I was hurt, and I ended up here.  Now I try
+ to help people . . .}
+{13010}{}{Where was this Vault of yours?}
+{14000}{}{Bartering is the exchange of goods. You give me some items,
+ and I give you items in trade. Since you initiated the barter,
+ I will let you pick and choose what you want. But the deal must be one that
+ I think I will like, so you will probably want to give me more valuable
+ goods that you don't need in exchange for less expensive things that you want.
+ And if you don't have enough items to trade, there are always caps.
+ Bottle caps are the only common money found out here. The caps are backed
+ by the merchants of the Hub, so you can trade them anywhere.}
+{15000}{}{It was Vault-15.  It is due east of here.  We tried to make contact
+ with some other Vaults, but we always failed.  I think it was the
+ raiders who attacked my fellow dwellers.  Be careful!}
+{15010}{}{[More...]}
+{16000}{}{I hope you find her.  She is like a little sister to me.  I think it
+ was one of the raider groups who took her.  Find out as much information about them as you can and equip yourself before you go after them. But don't be so quick to fight, even they will sometimes listen to reason...}
+{16010}{}{Thanks.}
+{17000}{}{You are standing in Shady Sands.  We are but a small town in a large world.  We just want to be left alone.  Besides some mutated animals and other creatures of the desert, only the Raiders give us trouble. Aradesh is our leader.  He is in the large central house, speak to him.}
+{17010}{}{[More...]}
+{18000}{}{Seth has been trying to follow the radscorpions.  He claims that he
+ even knows the way to their lair, but I think he is a little scared
+ of going out there.  His brother was seriously injured by one of
+ the mutants, and Seth doesn't quite know what to do.}
+{18010}{}{Thanks.}
+{19000}{}{As a matter of fact, yes.  My old home, Vault-15, had one.  I
+ haven't been there since I was hurt, but you might find what you
+ are looking for there.  Someone said that they tried to go to the
+ Vault to have a look around, but it was dark and the elevator was
+ broken.  I hope you're better prepared.}
+{19010}{}{Thanks.}
+{20000}{}{Hello again.  I hope you are doing well.  Is there anything I can help you with?}
+{20010}{}{Is there a doctor around here?}
+{20020}{}{Please help me...}
+{20030}{}{Don't you ever go to sleep?}
+{20040}{}{Thanks.}
+{21000}{}{Well, I take catnaps when you are not around.  Besides, I find the desert air very invigorating and healthy.  And I never tire of looking at the stars.  Can you imagine never seeing the night sky for your entire life? [She pauses and looks at you] Oh, I guess you can.}
+{21010}{}{Ah, yeah.  Thanks.}
+{22000}{}{Small places like Shady Sands would not be able to survive without the help of a healer.  Our doctor, Razlo, lives in southern most house.  If you are seriously hurt, see him.  Try not to bother him at night.  He's a pretty cranky person without his sleep.}
+{22010}{}{Thanks.}
+{100000001}{}{You gain 250 experience points for the knowledge you have gained from Katrina.}
+

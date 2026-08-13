@@ -1,0 +1,27 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 &
+
+[engl]
+{100}{}{Peasant}
+{200}{}{You see a peasant.}
+{1000}{}{Predialogue installations}
+{1010}{}{-}
+{2000}{}{Don't bother me.@@I got nothing to say to you, stranger.@@The brahmin sure do stink this time of year.@@We still need to expand the irrigation.@@Don't bother me.@@I hear the radscorpions killed again last night.@@Got any brahmin burgers?@@Haven't been attacked by raiders recently. Lucky, I guess.}
+{100000001}{}{I got nothing to say to you, stranger.}
+{100000001}{}{The brahmin sure do stink this time of year.}
+{100000001}{}{We still need to expand the irrigation.}
+{100000001}{}{Don't bother me.}
+{100000001}{}{I hear the radscorpions killed again last night.}
+{100000001}{}{Got any brahmin burgers?}
+{100000001}{}{Haven't been attacked by raiders recently. Lucky, I guess.}
+{100000002}{}{What are you doing? Get off me!}
+{100000003}{}{You successfully stole an item from this person.}

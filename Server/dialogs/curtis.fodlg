@@ -1,0 +1,61 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 #
+3 1020 D _var p name_mem_npc_player = 1 @
+2 2000 None 0 #
+4 2010 #
+0 2020 @
+3 3000 None 0 #
+4 3010 @
+4 4000 None 0 #
+5 4010 #
+6 4020 #
+7 4030 D _var p q_shady_crop_rotation = 0 #
+0 4040 @
+5 5000 None 0 #
+4 5010 @
+6 6000 None 0 #
+4 6010 @
+7 7000 None 0 #
+8 7010 @
+8 8000 None 0 #
+9 8010 @
+9 9000 None 0 #
+0 9010 R _var p q_shady_crop_rotation = 1 R _param p ST_EXPERIENCE + 500 R _script dialog@r_DialogMessage 2 4013 1 @
+10 10000 None 0 &
+
+[engl]
+{100}{}{Shady sands farmer}
+{200}{}{You see a weather-beaten farmer.}
+{1000}{}{Predialogue installations}
+{1010}{}{First}
+{1020}{}{Second}
+{2000}{}{Good day.}
+{2010}{}{Hello.}
+{2020}{}{Hubip.}
+{3000}{}{Hello again.}
+{3010}{}{Hello.}
+{4000}{}{What can I do for you?}
+{4010}{}{What's your name?}
+{4020}{}{What can you tell me about your village?}
+{4030}{}{What are you doing?}
+{4040}{}{Nothing, thanks.}
+{5000}{}{I am called Curtis.}
+{5010}{}{Can I ask you another question?}
+{6000}{}{Our village is small, but we support ourselves. Aside from the attacks by raiders and the occasional Rad Scorpion, we have no problems. Aradesh is a good leader.}
+{6010}{}{I see. You seem to be doing pretty well.}
+{7000}{}{I am a farmer. We irrigated the desert many years ago. Although the wasteland is harsh, it is possible to grow things with patience and time.}
+{7010}{}{You have all of your fields planted right now? You could probably do better with crop rotation.}
+{8000}{}{Crop rotation? What's that?}
+{8010}{}{You only plant some of your fields, allowing the others to get back some of the nutrients that the plants used up. You let the other fields become fertile again by just tilling up whatever grows there.}
+{9000}{}{Huh. Never thought of that. Makes sense, though. Good idea.}
+{9010}{}{[Done].}
+{100000001}{}{You gain 500 experience points for helping to improve the agriculture of Shady Sands.}
+

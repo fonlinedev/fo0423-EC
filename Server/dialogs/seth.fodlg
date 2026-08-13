@@ -1,0 +1,107 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _script seth@d_IsNotArmed 0  D _var p q_shady_radscorpions = 0 D or D _var p q_shady_radscorpions = 3 #
+12 1020 D _script seth@d_IsArmed 0  #
+13 1030 D _var p q_shady_radscorpions = 2 D _script seth@d_IsNotArmed 0  #
+8 1040 D _var p q_shady_radscorpions = 1 D _script seth@d_IsNotArmed 0  #
+15 1050 D _var p q_shady_radscorpions = 3 @
+2 2000 None 0 #
+3 2010 D _param p ST_INTELLECT > 3 #
+4 2020 D _param p ST_INTELLECT < 3 @
+3 3000 None 0 #
+5 3010 D _var p q_shady_radscorpions = 0 #
+6 3020 #
+7 3030 #
+8 3040 D _var p q_shady_radscorpions = 1 #
+0 3050 @
+4 4000 None 0 #
+0 4010 #
+8 4020 D _param p ST_INTELLECT < 3 @
+5 5000 None 0 #
+0 5010 R _var p q_shady_radscorpions = 1 R _script quest_shady_nestcave@r_StartRadscorpionQuest 0  #
+0 5020 @
+6 6000 None 0 #
+0 6010 @
+7 7000 None 0 #
+0 7010 @
+8 8000 None 0 #
+10 8010 D _param p ST_INTELLECT > 3 #
+11 8020 D _param p ST_INTELLECT > 3 #
+10 8030 D _param p ST_INTELLECT < 3 @
+10 9000 None 0 #
+0 9010 R _script quest_shady_nestcave@r_TeleportToCave 0  @
+11 10000 None 0 #
+0 10010 @
+12 11000 None 0 #
+0 11010 @
+13 12000 None 0 #
+3 12010 #
+0 12020 #
+14 12030 D _var p q_shady_radscorpions = 2 R _var p q_shady_radscorpions = 3 @
+14 13000 None 0 #
+0 13010 R _script quest_shady_nestcave@r_CompleteRadscorpionQuest 0  @
+15 14000 None 0 #
+0 14010 &
+
+[engl]
+{100}{}{Seth}
+{200}{}{You see Seth, leader of the guards of Shady Sands.}
+{1000}{}{Predialogue installations}
+{1010}{}{Begin}
+{1020}{}{Weapon check}
+{1030}{}{Radscorpions killed}
+{1040}{}{Quest ongoing}
+{1050}{}{End of the dialogue}
+{2000}{}{Good day. I am called Seth. How can I help you?}
+{2010}{}{I'd like some information.}
+{2020}{}{Bloop?}
+{3000}{}{Information? What do you want to know about?}
+{3010}{}{I want to know about the Radscorpions.}
+{3020}{}{I want to know about the raiders.}
+{3030}{}{I want to know about this place.}
+{3040}{}{Take me to the Radscorpion caves.}
+{3050}{}{I don't need to know anything else.}
+{4000}{}{Not very bright, eh? Well, watch out for the Radscorpions,
+ and stay out of trouble.}
+{4010}{}{Scorpin!}
+{4020}{}{Cave!}
+{5000}{}{Those damn Radscorpions have been after our Brahmin since we moved here. Not a week goes by that someone doesn't get poisoned trying to keep them out of the pens. Last week they took my brother Jarvis. 
+Razlo, our doctor, is looking for an antidote as quickly as he can. Hey, if you have the means to help us, why don't you
+talk to our leader, Aradesh.}
+{5010}{}{I will.}
+{5020}{}{[End.]}
+{6000}{}{There are several groups of raiders. I organize guards like Ian
+to help fight them off. There is one band to the southeast of here. Watch out for them.}
+{6010}{}{[End.]}
+{7000}{}{Shady Sands is a peaceful community. We have our own irrigation
+system, so we can grow our own food. If we were not plagued
+with raiders and Radscorpions, we would have no problems.}
+{7010}{}{[End.]}
+{8000}{}{Are you sure you want me to give you directions to the Radscorpion caves?  I can't go, but I can show you the way.}
+{8010}{}{Yes}
+{8020}{}{No.}
+{8030}{}{Uh-huh.}
+{9000}{}{Ok, get ready.}
+{9010}{}{[Transport]}
+{10000}{}{Ok, just let me know when you are ready to go to the caves.}
+{10010}{}{[End.]}
+{11000}{}{Welcome to Shady Sands, stranger. Please holster that weapon
+ while you are here.}
+{11010}{}{[Done.]}
+{12000}{}{Our entire town is grateful to you for destroying the
+ radscorpions. Thank you.}
+{12010}{}{I'd like some information.}
+{12020}{}{See you later.}
+{12030}{}{[Receive reward.]}
+{13000}{}{Thanks to you, we are now safe from them.}
+{13010}{}{You are welcome.}
+{14000}{}{Hello again, how can I help you?}
+{14010}{}{I don't need to know anything else.}
+
