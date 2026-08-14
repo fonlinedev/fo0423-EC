@@ -1,0 +1,31 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+4 2010 #
+0 2020 @
+3 3000 None 0 @
+4 4000 None 0 #
+3 4010 R _script companion@r_BefriendCompanion 0  #
+0 4020 &
+
+[engl]
+{100}{}{Ian}
+{200}{}{You see Ian.}
+{1000}{}{Predialogue installations}
+{1010}{}{next}
+{2000}{}{Hi there, who are you?@@Hello there stranger.@@Who might you be?@@What do you want?@@What are you staring at?@@Excuse me, but why are you looking at me like that?@@Hey, are you looking for trouble or what?@@What are you looking for?@@Don't bother me. I've got enough of scattered thoughts already.@@What brings you here?}
+{2010}{}{My name's @pname@@@I go by the name of @pname@.@@Pleased to meet you, my name is @pname@. Hi there, who are you?@@You look like someone familiar.@@Who might you be?@@Are you new around here?}
+{2020}{}{See you later.@@Nevermind.@@Sorry to disturb you.@@Didn't mean to bother you.@@[Walk away]@@Wrong person, sorry.@@Nevermind, I thought you looked a bit like a friend@@Gotta go.@@You sound terribly uninteresting, bye.}
+{3000}{}{Let's get out of this place.@@I'm ready to rock!@@Fine, let's go!}
+{4000}{}{Pleased to meet you, my name is @lex name@ and I'm your ordinary wastelander, looking for a little something to do, here and there.@@I just arrived from @lex place@ a while ago, not sure if I want to go back there anytime soon.}
+{4010}{}{Why don't we join together?@@Band up with me!@@I think you and I could achieve a lot of great things together!}
+{4020}{}{See you later.@@Nevermind.@@Sorry to disturb you.@@Didn't mean to bother you.@@[Walk away]@@Wrong person, sorry.@@Nevermind, I thought you looked a bit like a friend@@Gotta go.@@You sound terribly uninteresting, bye.}
+

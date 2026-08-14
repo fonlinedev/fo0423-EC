@@ -338,7 +338,7 @@ bool start()
     // InitSlaveruns();
 //    InitAmmoLog();
     InitCaveLog();
-    //InitCompanions();
+    InitCompanions();
     // Caravans wohoo
     //InitCaravans();     // Uncomment if you want to have one caravan running Hub-Adytum-Lost Hills
     // reputations, alliances

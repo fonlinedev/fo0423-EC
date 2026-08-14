@@ -48,7 +48,7 @@ void EnumerateCompanionList(Critter& cr, int, int, int)
 void CreateCompanion()
 {
     Map@ map = GetMapByPid(MAP_BufferMap, 0);
-    uint type = Random(0, 4);
+    uint type = Random(0, 3);
     uint bag = 1;
     uint aipack = 0;
     if(type == COMPANION_TYPE_MELEE)
@@ -70,31 +70,23 @@ void CreateCompanion()
     {
         bag = random_from_array(companion_bags_energy);
         aipack = AIPACKET_2238_MERC_RANGED;
-    }
-    else if(type == COMPANION_TYPE_THROW)
-    {
-        bag = random_from_array(companion_bags_throw);
-        aipack = AIPACKET_2238_MERC_RANGED;
-    }
+    }    
     Critter@ cr = AddNpc(map, random_from_array(companion_pids), 0, 0, 0, COMPANION_DIALOG_PRE_ID, "companion@CompanionInit", aipack, bag, 0, false, Random(1, 3));
     GenerateNewName(cr);
     switch(type)
     {
     case COMPANION_TYPE_MELEE:
-        cr.SkillBase[SK_MELEE_WEAPONS] = Random(150, 175);
+        cr.SkillBase[SK_MELEE_WEAPONS] = Random(150, 250);
         break;
     case COMPANION_TYPE_SG:
-        cr.SkillBase[SK_SMALL_GUNS] = Random(150, 175);
+        cr.SkillBase[SK_SMALL_GUNS] = Random(150, 250);
         break;
     case COMPANION_TYPE_BG:
-        cr.SkillBase[SK_BIG_GUNS] = Random(150, 175);
+        cr.SkillBase[SK_BIG_GUNS] = Random(150, 250);
         break;
     case COMPANION_TYPE_ENERGY:
-        cr.SkillBase[SK_ENERGY_WEAPONS] = Random(150, 175);
-        break;
-    case COMPANION_TYPE_THROW:
-        cr.SkillBase[SK_THROWING] = Random(150, 175);
-        break;
+        cr.SkillBase[SK_ENERGY_WEAPONS] = Random(150, 250);
+        break;    
     default:
         break;
     }
@@ -366,11 +358,44 @@ void dlg_ShowPreInfo(Critter& player, Critter@ npc, string@ text)
     text += "$name" + GetStoredFirstName(npc);
 }
 
-void r_BefriendCompanion(Critter& player, Critter@ npc)
+/*void r_BefriendCompanion(Critter& player, Critter@ npc)
 {
+    Log("companion id "+npc.Id);
     uint index = FindInArray(Companions, npc.Id);
     Companions.removeAt(index);
     MakeFollower(npc, FOLLOWER_TYPE_COMPANION, "follower@FollowerBaseInit", COMPANION_DIALOG_ID, player, true);
+    npc.SetEvent(CRITTER_EVENT_FINISH, "_FinishCompanionOff");
+}*/
+
+void r_BefriendCompanion(Critter& player, Critter@ npc)
+{
+    uint index = FindInArray(Companions, npc.Id);
+
+    if(index < Companions.length())
+        Companions.removeAt(index);
+  
+        //bag = random_from_array(companion_bags_sg);
+        //aipack = AIPACKET_2238_MERC_RANGED;
+  
+    npc.StatBase[ST_LEVEL] = player.StatBase[ST_LEVEL];
+    npc.StatBase[ST_BAG_ID] = random_from_array(companion_bags_sg); //TODO: resolve by PID.
+    npc.StatBase[ST_AI_ID] = AIPACKET_2238_MERC_RANGED;
+            
+    MakeFollower(
+        npc,
+        FOLLOWER_TYPE_COMPANION,
+        "follower@FollowerBaseInit",
+        COMPANION_DIALOG_ID,
+        player,
+        true
+    );
+
+    GenerateNewName(npc);
+    npc.SkillBase[SK_SMALL_GUNS] = Random(150, 250);
+    
+    for(uint i = 0; i <= ST_LUCK; i++)
+        npc.StatBase[i] = Random(6, 10);
+
     npc.SetEvent(CRITTER_EVENT_FINISH, "_FinishCompanionOff");
 }
 

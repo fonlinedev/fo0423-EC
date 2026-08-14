@@ -51,6 +51,8 @@
 
 // #include "event_teleporter_h.fos"
 
+import bool   IsCompanion(Critter& follower) from "follower";
+
 /**
  * \~english @defgroup CheatsGroup Cheats
  * Cheat module with various commands.
@@ -11100,5 +11102,57 @@ void set_var(Critter& cr, int p0, int p1, int p2)
     cr.Say(SAY_NETMSG, "Variable index " + p0 + " changed from " + oldValue + " to " + p1);
 }
 
+// Usage: ~runscript cheats kill_all_mobs 0 0 0
+void kill_all_mobs(Critter& player, int p0, int p1, int p2)
+{
+    if(player.GetAccess() < ACCESS_ADMIN)
+    {
+        player.Say(SAY_NETMSG, "Access denied.");
+        return;
+    }
+
+    Map@ map = player.GetMap();
+    if(!valid(map))
+    {
+        player.Say(SAY_NETMSG, "You are not on a map.");
+        return;
+    }
+
+    array<Critter@> critters;
+    uint count = map.GetCritters(0, FIND_ALL, critters);
+
+    uint killed = 0;
+
+    for(uint i = 0; i < count; i++)
+    {
+        Critter@ cr = critters[i];
+
+        if(!valid(cr))
+            continue;
+
+        // Only kill NPCs/mobs.
+        if(!cr.IsNpc())
+            continue;
+
+        if(cr.IsDead())
+            continue;
+        
+        if(IsCompanion(cr))
+            continue;
+
+        // Don't accidentally kill special/admin-protected entities.
+        if(GodOfTheRealm(cr.Id))
+            continue;
+
+        cr.ToDead(GetRandomDeathAnimation(), null);
+        killed++;
+    }
+
+    LogCommandUsage(player,
+        "Cheat: kill_all_mobs on map " + map.Id + ", killed " + killed);
+
+    player.Say(SAY_NETMSG,
+        "Killed " + killed + " mobs on this map.");
+}
 #endif
 /*@}*/
