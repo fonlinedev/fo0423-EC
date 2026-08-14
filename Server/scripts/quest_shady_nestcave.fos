@@ -81,11 +81,7 @@ void r_CompleteRadscorpionQuest(Critter& player, Critter@ npc)
 {
     player.AddItem(PID_BOTTLE_CAPS, RADSCORPION_REWARD_COUNT);
     player.StatBase[ST_EXPERIENCE] += 250;
-    player.SayMsg(SAY_NETMSG, TEXTMSG_DLG, DLGSTR(SETH_DIALOG_ID, SUCCESS_MSG_ID));
-    //GameVar@ questVar = GetLocalVar(LVAR_q_shady_radscorpions, player.Id);
-    //if(valid(questVar))
-    //    questVar = 2;
-
+    player.SayMsg(SAY_NETMSG, TEXTMSG_DLG, DLGSTR(SETH_DIALOG_ID, SUCCESS_MSG_ID));    
     r_DeleteLocation(player, npc);
 }
 // =============================================

@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              200
 MaxHexY              200
-WorkHexX             74
-WorkHexY             83
+WorkHexX             136
+WorkHexY             110
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -15452,11 +15452,13 @@ ProtoId              67
 MapX                 128
 MapY                 113
 Dir                  4
+ScriptName           jarvis
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
 Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
+Critter_ParamValue0  4018
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
@@ -20309,6 +20311,8 @@ ProtoId              67
 MapX                 128
 MapY                 120
 Dir                  2
+ScriptName           razlo
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0

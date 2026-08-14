@@ -1,0 +1,244 @@
+//
+// FOnline: 2238
+// Rotators
+//
+// jarvis.fos
+//
+
+// Shady Jarvis.
+
+#include "_macros.fos"
+#include "_defines.fos"
+#include "_vars.fos"
+#include "ITEMPID.H"
+#include "messages_h.fos"
+#include "factions_h.fos"
+
+#define JARVIS_DIALOG_ID                    (4018)
+#define JARVIS_DIALOG_TOSS_ID                  (1)
+#define JARVIS_DIALOG_POISON_ID                (2)
+#define JARVIS_DIALOG_UNKNOWN_ID               (3)
+#define JARVIS_DIALOG_RADSCORPION_VENOM_ID     (4)
+#define JARVIS_DIALOG_WRONG_SKILL_ID           (5)
+#define JARVIS_DIALOG_IMPROVEMENT_ID           (6)
+#define JARVIS_DIALOG_CURE_REWARD_ID           (7)
+
+void critter_init(Critter& critter, bool firstTime)
+{
+    if (firstTime) {
+        critter.StatBase[ST_HEALING_RATE] = 0;
+        critter.StatBase[ST_CURRENT_HP] = -10;        
+    }    
+    critter.SetEvent(CRITTER_EVENT_IDLE, "_Idle");
+    critter.SetEvent(CRITTER_EVENT_USE_SKILL_ON_ME, "_UseSkill");
+    critter.SetEvent(CRITTER_EVENT_USE_ITEM_ON_ME, "_UseItem");
+}
+
+
+void _Idle(Critter& critter)
+{   
+    if(Random(0, 2) == 0)
+        critter.MoveRandom();
+    if(Random(0, 3) == 0)
+        critter.SayMsg(SAY_NORM_ON_HEAD, TEXTMSG_DLG, DLGSTR(JARVIS_DIALOG_ID, 1));
+    // till next move
+    critter.Wait(Random(500, 20000));
+}
+
+bool _UseSkill(Critter& cr, Critter& who, int skill)
+{
+    if(skill != SK_DOCTOR)
+    {
+        cr.SayMsg(
+            SAY_NETMSG,
+            TEXTMSG_DLG,
+            DLGSTR(JARVIS_DIALOG_ID, JARVIS_DIALOG_WRONG_SKILL_ID)
+        );
+
+        return false;
+    }
+
+    DiagnoseJarvis(cr, who);
+
+    return true;
+}
+
+bool _UseItem(Critter& cr, Critter& who, Item& item)
+{
+    
+    // Already cured.
+    if(IsJarvisCured(who))
+        return false;
+
+    int pid = item.GetProtoId();
+    
+    // Correct treatment.
+    if(pid == PID_ANTIDOTE)
+    {
+        CureJarvis(cr, who, item);
+        return true;
+    }
+
+    // Wrong medical treatment.
+    if(IsMedicalTreatment(pid))
+    {
+        JarvisWrongTreatment(cr, who, item, pid);
+        return true;
+    }
+
+    // Alcohol or drugs.
+    if(IsAlcohol(pid))
+    {
+        JarvisWrongTreatment(cr, who, item, pid);
+        return true;
+    }
+
+    // Drugs.
+    if(IsDrug(pid))
+    {
+        JarvisWrongTreatment(cr, who, item, pid);
+        return true;
+    }
+
+    // Everything else isn't considered a treatment attempt.
+    return false;
+}
+
+bool IsAlcohol(uint16 pid)
+{
+    switch(pid)
+    {
+    case PID_NUKA_COLA:
+    case PID_BEER:
+    case PID_BOOZE:
+    case PID_GAMMA_GULP_BEER:
+    case PID_ROENTGEN_RUM:
+    case PID_ROT_GUT:
+        return true;
+    default: break;
+    }
+
+    return false;
+}
+
+bool IsMedicalTreatment(uint16 pid)
+{
+    switch(pid)
+    {
+    case PID_STIMPAK:
+    case PID_RADAWAY:
+    case PID_RAD_X:
+    case PID_SUPER_STIMPAK:
+    case PID_JET_ANTIDOTE:
+    case PID_HEALING_POWDER:
+    case PID_HYPO:
+    case PID_WEAK_HEALING_POWDER:
+        return true;
+    default: break;
+    }
+    return false;
+}
+
+bool IsDrug(uint16 pid)
+{
+    switch(pid)
+    {
+    case PID_MENTATS:
+    case PID_BUFFOUT:
+    case PID_PSYCHO:
+    case PID_JET:
+        return true;
+    default: break;
+    }
+
+    return false;
+}
+
+void CureJarvis(Critter& critter, Critter& player, Item& item)
+{    
+    player.SayMsg(
+            SAY_NETMSG,
+            TEXTMSG_DLG,
+            DLGSTR(JARVIS_DIALOG_ID, JARVIS_DIALOG_IMPROVEMENT_ID)
+        );
+    player.Wait(Random(1000, 10000));
+    player.SayMsg(SAY_NETMSG, TEXTMSG_DLG, DLGSTR(JARVIS_DIALOG_ID, JARVIS_DIALOG_CURE_REWARD_ID));
+
+    // add reward.
+    GameVar@ questVar = GetLocalVar(LVAR_q_shady_jarvis_cured, player.Id);
+    if (valid(questVar)) {
+        questVar = 1;
+    }
+    player.StatBase[ST_EXPERIENCE] += 400;
+    player.ReputationBase[FACTION_NCR] += 100;
+}
+
+void JarvisWrongTreatment(
+    Critter& critter,
+    Critter& player,
+    Item& item,
+    int pid)
+{
+    if(IsMedicalTreatment(pid))
+    {
+        critter.SendMessage(MSG_USE_WRONGMEDICINE_JARVIS, 0, MESSAGE_TO_VISIBLE_ME);
+        Log("Wrong medical treatment.");
+    }
+    else if(IsAlcohol(pid))
+    {
+        critter.SendMessage(MSG_USE_ALCOHOL_JARVIS, 0, MESSAGE_TO_VISIBLE_ME);
+        Log("Alcohol used on Jarvis.");
+    }
+    else if(IsDrug(pid))
+    {
+        critter.SendMessage(MSG_USE_DRUGS_JARVIS, 0, MESSAGE_TO_VISIBLE_ME);
+        Log("Drug used on Jarvis.");
+    }
+}
+
+bool IsJarvisCured(Critter& player)
+{
+    GameVar@ questVar = GetLocalVar(LVAR_q_shady_jarvis_cured, player.Id);
+    return(valid(questVar) && questVar.GetValue() == 1);
+}
+
+void DiagnoseJarvisDialog(Critter& player, Critter@ jarvis)
+{
+    DiagnoseJarvis(jarvis, player);
+}
+
+void DiagnoseJarvis(Critter& jarvis, Critter@ player)
+{
+    // Already cured.
+    if(IsJarvisCured(player))
+        return;
+        
+    int medicine = player.Skill[SK_DOCTOR];    
+    if(medicine < 40)
+    {
+        player.SayMsg(
+            SAY_NETMSG,
+            TEXTMSG_DLG,
+            DLGSTR(JARVIS_DIALOG_ID, JARVIS_DIALOG_UNKNOWN_ID)
+        );
+
+        return;
+    }
+
+    if(medicine < 60)
+    {
+        player.SayMsg(
+            SAY_NETMSG,
+            TEXTMSG_DLG,
+            DLGSTR(JARVIS_DIALOG_ID, JARVIS_DIALOG_POISON_ID)
+        );
+
+        return;
+    }
+
+    player.SayMsg(
+        SAY_NETMSG,
+        TEXTMSG_DLG,
+        DLGSTR(JARVIS_DIALOG_ID, JARVIS_DIALOG_RADSCORPION_VENOM_ID)
+    );
+}
