@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              200
 MaxHexY              200
-WorkHexX             147
-WorkHexY             80
+WorkHexX             108
+WorkHexY             74
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -13091,8 +13091,8 @@ MapY                 136
 
 MapObjType           1
 ProtoId              6
-MapX                 96
-MapY                 136
+MapX                 99
+MapY                 141
 
 MapObjType           2
 ProtoId              5888
@@ -18083,5 +18083,310 @@ MapObjType           2
 ProtoId              4012
 MapX                 168
 MapY                 138
+
+MapObjType           1
+ProtoId              1817
+MapX                 111
+MapY                 104
+
+MapObjType           1
+ProtoId              1817
+MapX                 111
+MapY                 111
+
+MapObjType           1
+ProtoId              1817
+MapX                 107
+MapY                 109
+
+MapObjType           1
+ProtoId              1817
+MapX                 115
+MapY                 105
+
+MapObjType           1
+ProtoId              1817
+MapX                 119
+MapY                 105
+
+MapObjType           1
+ProtoId              1817
+MapX                 107
+MapY                 119
+
+MapObjType           1
+ProtoId              9910
+MapX                 118
+MapY                 130
+
+MapObjType           1
+ProtoId              9920
+MapX                 103
+MapY                 125
+
+MapObjType           1
+ProtoId              9920
+MapX                 95
+MapY                 115
+
+MapObjType           1
+ProtoId              9920
+MapX                 91
+MapY                 109
+
+MapObjType           1
+ProtoId              9920
+MapX                 91
+MapY                 119
+
+MapObjType           1
+ProtoId              9920
+MapX                 87
+MapY                 118
+
+MapObjType           1
+ProtoId              9920
+MapX                 84
+MapY                 118
+
+MapObjType           1
+ProtoId              9920
+MapX                 83
+MapY                 109
+
+MapObjType           1
+ProtoId              1825
+MapX                 87
+MapY                 116
+
+MapObjType           1
+ProtoId              1825
+MapX                 91
+MapY                 122
+
+MapObjType           1
+ProtoId              1825
+MapX                 83
+MapY                 122
+
+MapObjType           1
+ProtoId              1825
+MapX                 83
+MapY                 102
+
+MapObjType           1
+ProtoId              1825
+MapX                 91
+MapY                 103
+
+MapObjType           1
+ProtoId              1826
+MapX                 87
+MapY                 110
+
+MapObjType           1
+ProtoId              1826
+MapX                 87
+MapY                 123
+
+MapObjType           1
+ProtoId              1826
+MapX                 91
+MapY                 124
+
+MapObjType           1
+ProtoId              1826
+MapX                 91
+MapY                 106
+
+MapObjType           2
+ProtoId              6092
+MapX                 104
+MapY                 153
+
+MapObjType           2
+ProtoId              6093
+MapX                 103
+MapY                 154
+
+MapObjType           2
+ProtoId              6094
+MapX                 102
+MapY                 153
+
+MapObjType           2
+ProtoId              6095
+MapX                 101
+MapY                 154
+
+MapObjType           2
+ProtoId              6087
+MapX                 107
+MapY                 154
+
+MapObjType           2
+ProtoId              6089
+MapX                 105
+MapY                 154
+
+MapObjType           2
+ProtoId              6089
+MapX                 115
+MapY                 154
+
+MapObjType           2
+ProtoId              6087
+MapX                 117
+MapY                 154
+
+MapObjType           2
+ProtoId              6089
+MapX                 125
+MapY                 154
+
+MapObjType           2
+ProtoId              6093
+MapX                 113
+MapY                 154
+
+MapObjType           2
+ProtoId              6094
+MapX                 112
+MapY                 153
+
+MapObjType           2
+ProtoId              6095
+MapX                 111
+MapY                 154
+
+MapObjType           2
+ProtoId              6095
+MapX                 109
+MapY                 154
+
+MapObjType           2
+ProtoId              6093
+MapX                 123
+MapY                 154
+
+MapObjType           2
+ProtoId              6095
+MapX                 121
+MapY                 154
+
+MapObjType           2
+ProtoId              6094
+MapX                 120
+MapY                 153
+
+MapObjType           2
+ProtoId              6094
+MapX                 122
+MapY                 153
+
+MapObjType           2
+ProtoId              6093
+MapX                 121
+MapY                 154
+
+MapObjType           2
+ProtoId              6094
+MapX                 120
+MapY                 153
+
+MapObjType           2
+ProtoId              6095
+MapX                 119
+MapY                 154
+
+MapObjType           1
+ProtoId              1864
+MapX                 95
+MapY                 137
+ScriptName           workbench
+FuncName             item_init
+
+MapObjType           2
+ProtoId              2067
+MapX                 97
+MapY                 136
+
+MapObjType           2
+ProtoId              2067
+MapX                 97
+MapY                 137
+
+MapObjType           2
+ProtoId              2067
+MapX                 96
+MapY                 136
+
+MapObjType           2
+ProtoId              2067
+MapX                 95
+MapY                 136
+
+MapObjType           2
+ProtoId              2067
+MapX                 95
+MapY                 137
+
+MapObjType           2
+ProtoId              3852
+MapX                 97
+MapY                 138
+ScriptName           workbench
+FuncName             t_Workbench
+
+MapObjType           2
+ProtoId              3852
+MapX                 96
+MapY                 137
+ScriptName           workbench
+FuncName             t_Workbench
+
+MapObjType           2
+ProtoId              3852
+MapX                 95
+MapY                 138
+ScriptName           workbench
+FuncName             t_Workbench
+
+MapObjType           2
+ProtoId              3852
+MapX                 98
+MapY                 137
+ScriptName           workbench
+FuncName             t_Workbench
+
+MapObjType           1
+ProtoId              158
+MapX                 95
+MapY                 137
+
+MapObjType           1
+ProtoId              1851
+MapX                 95
+MapY                 88
+
+MapObjType           1
+ProtoId              1851
+MapX                 97
+MapY                 91
+
+MapObjType           1
+ProtoId              1851
+MapX                 95
+MapY                 92
+
+MapObjType           1
+ProtoId              1851
+MapX                 116
+MapY                 89
+
+MapObjType           1
+ProtoId              1851
+MapX                 115
+MapY                 86
 
 

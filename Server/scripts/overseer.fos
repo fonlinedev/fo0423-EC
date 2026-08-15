@@ -3,6 +3,12 @@
 #include "_vars.fos"
 #include "_maps.fos"
 #include "ITEMPID.H"
+#include "mapdata_h.fos"
+#include "utils_h.fos"
+#include "MSGSTR.h"
+#include "_dialogs.fos"
+#include "groups_h.fos"
+#include "MSGSTR.h"
 
 // Define quest states & item PIDs
 #define QUEST_WATER_CHIP_NONE           (0)
@@ -76,6 +82,16 @@ void r_StartQuest(Critter& player, Critter@ npc)
     } else {
 		player.Say(SAY_SHOUT, "Error! Contact admin.");
 	}
+}
+
+void r_ShowLocation(Critter& player, Critter@ npc, int locationId) {
+    Location@ location = GetLocation(locationId);
+    Log("Location id " + locationId+ " location id "+ location.Id);
+    Map@  map = location.GetMapByIndex(0);
+    SetRootMapData(map, MAP_DATA_OWNER, player.Id);    
+    SetTurnBasedAvailability(location);
+    SetQuestGarbager(0, player.Id, locationId, LVAR_quest_water_chip, 999);
+    player.SetKnownLoc(false, locationId);
 }
 
 // Dialog Node Conditions

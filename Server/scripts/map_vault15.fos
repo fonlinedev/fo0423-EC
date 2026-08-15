@@ -29,6 +29,15 @@
 #define IDLE_ALERTED      (1000)
 
 
+void map_init(Map& map, bool firstTime)
+{
+    if(firstTime)
+    {
+        Log("Making turn base availble...");
+        map.SetTurnBasedAvailability(true);        
+    }
+}
+
 // =============================================
 // Super Mutants / Critter
 // =============================================

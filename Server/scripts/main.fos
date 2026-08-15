@@ -304,7 +304,7 @@ bool start()
     RegisterFaction(FACTION_NCR, "New California Republic", false);
     RegisterFaction(FACTION_VAULT_CITY, "Vault City", false);
     RegisterFaction(FACTION_RAIDERS, "Raiders", false);
-    RegisterFaction(FACTION_MORDINOS, "Mordinos", false);
+    //RegisterFaction(FACTION_MORDINOS, "Mordinos", false);
     // RegisterFaction(FACTION_GUNRUNNERS, "Gun Runners", false); <- screw it
 
     // and some fixed playerdriven factions
