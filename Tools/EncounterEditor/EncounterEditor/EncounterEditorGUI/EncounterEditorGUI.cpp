@@ -18,13 +18,42 @@ struct Config
 {
     std::string fowmPath;
     std::string focwmPath;
+
+    // worldmap_h.fos
     std::string groupsPath;
+
+    // maps/groups.fowm
+    std::string groupsWmPath;
+
+    // text/engl/FOGM.MSG
+    std::string fogmPath;
+};
+
+struct GroupNpc
+{
+    int protoId = -1;
+    int dialogId = 0;
+    std::string script;
+    int ratio = 0;
+
+    // Complete original NPC line.
+    // This lets us preserve fields we aren't editing yet.
+    std::string originalLine;
 };
 
 struct GroupDefinition
 {
     std::string name;
-    int id;
+    int id = -1;
+
+    // From FOGM.MSG
+    std::string gameName;
+
+    // Original groups.fowm group header.
+    std::string groupHeader;
+
+    // NPC entries belonging to this group.
+    std::vector<GroupNpc> npcs;
 };
 
 struct EncounterAssignment
@@ -46,6 +75,12 @@ struct WorldCell
     std::vector<EncounterAssignment> encounters;
 };
 
+struct CritterProto
+{
+    int id;
+    std::string name;
+};
+
 // ============================================================
 // Globals
 // ============================================================
@@ -58,6 +93,12 @@ std::vector<WorldCell> g_Cells;
 HWND g_GroupList = nullptr;
 HWND g_CellList = nullptr;
 HWND g_EncounterList = nullptr;
+HWND g_GroupNpcList = nullptr;
+HWND g_GroupNpcAddButton = nullptr;
+HWND g_GroupNpcRemoveButton = nullptr;
+HWND g_GroupDescription = nullptr;
+
+int g_SelectedGroupNpc = -1;
 
 HWND g_GroupSearch = nullptr;
 
@@ -83,6 +124,7 @@ int g_SelectedCell = -1;
 int g_SelectedEncounter = -1;
 
 bool g_UnsavedChanges = false;
+std::vector<int> g_GroupListIndices;
 
 // ============================================================
 // Forward declarations
@@ -669,11 +711,17 @@ bool LoadConfig(
             config.focwmPath = value;
         else if (key == "GROUPS_PATH")
             config.groupsPath = value;
+        else if (key == "GROUPSWM_PATH")
+            config.groupsWmPath = value;
+        else if (key == "FOGM_PATH")
+            config.fogmPath = value;
     }
 
     return
         !config.fowmPath.empty() &&
-        !config.groupsPath.empty();
+        !config.groupsPath.empty() &&
+        !config.groupsWmPath.empty() &&
+        !config.fogmPath.empty();
 }
 
 // ============================================================
@@ -729,6 +777,74 @@ bool LoadGroups()
     );
 
     return !g_Groups.empty();
+}
+
+bool LoadGameNames()
+{
+    std::ifstream file(
+        g_Config.fogmPath
+    );
+
+    if (!file.is_open())
+        return false;
+
+    std::regex messageRegex(
+        R"(^\s*\{(\d+)\}\{\}\{(.*)\}\s*$)"
+    );
+
+    std::string line;
+
+    while (std::getline(file, line))
+    {
+        std::smatch match;
+
+        if (!std::regex_match(
+            line,
+            match,
+            messageRegex))
+        {
+            continue;
+        }
+
+        int messageId = -1;
+
+        try
+        {
+            messageId =
+                std::stoi(match[1].str());
+        }
+        catch (...)
+        {
+            continue;
+        }
+
+        // Encounter group messages are:
+        //
+        // 20000000 + groupId
+        //
+        if (messageId < 20000000 ||
+            messageId >= 20001000)
+        {
+            continue;
+        }
+
+        int groupId =
+            messageId - 20000000;
+
+        for (GroupDefinition& group :
+            g_Groups)
+        {
+            if (group.id == groupId)
+            {
+                group.gameName =
+                    Trim(match[2].str());
+
+                break;
+            }
+        }
+    }
+
+    return true;
 }
 
 // ============================================================
@@ -797,6 +913,121 @@ ParseEncounters(const std::string& field)
     }
 
     return encounters;
+}
+
+bool ParseGroupNpcLine(
+    const std::string& line,
+    GroupNpc& npc)
+{
+    std::vector<std::string> fields =
+        Split(line, ',');
+
+    if (fields.size() < 6)
+        return false;
+
+    if (Trim(fields[0]) != "*")
+        return false;
+
+    try
+    {
+        npc.protoId =
+            std::stoi(Trim(fields[1]));
+
+        npc.dialogId =
+            std::stoi(Trim(fields[2]));
+
+        npc.script =
+            Trim(fields[3]);
+
+        npc.ratio =
+            std::stoi(Trim(fields[4]));
+    }
+    catch (...)
+    {
+        return false;
+    }
+
+    npc.originalLine = line;
+
+    return true;
+}
+
+bool LoadGroupWorldMap()
+{
+    std::ifstream file(
+        g_Config.groupsWmPath
+    );
+
+    if (!file.is_open())
+        return false;
+
+    std::string line;
+
+    GroupDefinition* currentGroup =
+        nullptr;
+
+    std::regex groupRegex(
+        R"(^\s*(GROUP_[A-Za-z0-9_]+)(?:,.*)?$)"
+    );
+
+    while (std::getline(file, line))
+    {
+        line = Trim(line);
+
+        if (line.empty())
+            continue;
+
+        std::smatch match;
+
+        if (std::regex_match(
+            line,
+            match,
+            groupRegex))
+        {
+            std::string groupName =
+                match[1].str();
+
+            currentGroup = nullptr;
+
+            for (GroupDefinition& group :
+                g_Groups)
+            {
+                if (group.name == groupName)
+                {
+                    currentGroup =
+                        &group;
+
+                    group.groupHeader =
+                        line;
+
+                    group.npcs.clear();
+
+                    break;
+                }
+            }
+
+            continue;
+        }
+
+        if (!currentGroup)
+            continue;
+
+        if (line[0] != '*')
+            continue;
+
+        GroupNpc npc;
+
+        if (ParseGroupNpcLine(
+            line,
+            npc))
+        {
+            currentGroup->npcs.push_back(
+                npc
+            );
+        }
+    }
+
+    return true;
 }
 
 // ============================================================
@@ -1072,63 +1303,107 @@ void PopulateGroups()
         0
     );
 
-    std::string search;
+    g_GroupListIndices.clear();
 
-    char buffer[256];
+    char searchBuffer[256] = {};
 
     GetWindowTextA(
         g_GroupSearch,
-        buffer,
-        sizeof(buffer)
+        searchBuffer,
+        sizeof(searchBuffer)
     );
 
-    search = buffer;
+    std::string search =
+        searchBuffer;
 
-    std::transform(
-        search.begin(),
-        search.end(),
-        search.begin(),
-        [](unsigned char c)
-        {
-            return static_cast<char>(
-                std::tolower(c)
-                );
-        }
-    );
-
-    for (const GroupDefinition& group :
-        g_Groups)
+    for (size_t i = 0;
+        i < g_Groups.size();
+        i++)
     {
-        std::string lowerName =
-            group.name;
+        const GroupDefinition& group =
+            g_Groups[i];
 
-        std::transform(
-            lowerName.begin(),
-            lowerName.end(),
-            lowerName.begin(),
-            [](unsigned char c)
-            {
-                return static_cast<char>(
-                    std::tolower(c)
-                    );
-            }
-        );
-
-        if (!search.empty() &&
-            lowerName.find(search) ==
-            std::string::npos)
+        // Search by GROUP_ name or Game Name.
+        if (!search.empty())
         {
-            continue;
+            if (group.name.find(search) ==
+                std::string::npos &&
+                group.gameName.find(search) ==
+                std::string::npos)
+            {
+                continue;
+            }
         }
 
         std::string text =
-            group.name +
-            "    [" +
             std::to_string(group.id) +
-            "]";
+            "    " +
+            group.name +
+            "    " +
+            group.gameName;
 
         AddListItem(
             g_GroupList,
+            text
+        );
+
+        // Remember which real group this
+        // listbox row represents.
+        g_GroupListIndices.push_back(
+            static_cast<int>(i)
+        );
+    }
+}
+
+void PopulateGroupNpcs()
+{
+    SendMessageA(
+        g_GroupNpcList,
+        LB_RESETCONTENT,
+        0,
+        0
+    );
+
+    g_SelectedGroupNpc = -1;
+
+    if (g_SelectedGroup < 0 ||
+        g_SelectedGroup >=
+        static_cast<int>(g_Groups.size()))
+    {
+        return;
+    }
+
+    const GroupDefinition& group =
+        g_Groups[g_SelectedGroup];
+
+    std::string description =
+        "ID: " +
+        std::to_string(group.id) +
+        "    " +
+        group.name +
+        "    Game Name: " +
+        group.gameName;
+
+    SetWindowTextA(
+        g_GroupDescription,
+        description.c_str()
+    );
+
+    for (const GroupNpc& npc :
+        group.npcs)
+    {
+        std::string text =
+            "Proto " +
+            std::to_string(npc.protoId) +
+            "    Dialog " +
+            std::to_string(npc.dialogId) +
+            "    " +
+            npc.script +
+            "    Ratio " +
+            std::to_string(npc.ratio);
+
+        AddListItem(
+            g_GroupNpcList,
             text
         );
     }
@@ -1519,6 +1794,12 @@ void RemoveSelectedEncounter()
 bool ReloadData()
 {
     if (!LoadGroups())
+        return false;
+
+    if (!LoadGameNames())
+        return false;
+
+    if (!LoadGroupWorldMap())
         return false;
 
     if (!LoadWorldMap())
@@ -1945,105 +2226,27 @@ LRESULT CALLBACK WindowProc(
             if (listIndex == LB_ERR)
                 return 0;
 
-            // Get the selected text.
-            char buffer[512] = {};
+            if (listIndex < 0 ||
+                listIndex >=
+                static_cast<int>(
+                    g_GroupListIndices.size()))
+            {
+                return 0;
+            }
 
-            SendMessageA(
-                g_GroupList,
-                LB_GETTEXT,
-                listIndex,
-                reinterpret_cast<LPARAM>(buffer)
+            g_SelectedGroup =
+                g_GroupListIndices[listIndex];
+
+            g_SelectedCell = -1;
+            g_SelectedEncounter = -1;
+
+            // Show the group's cells.
+            PopulateCellsForGroup(
+                g_Groups[g_SelectedGroup].id
             );
 
-            std::string text = buffer;
-
-            // Expected:
-            //
-            // GROUP_Brahmin    [100]
-            //
-            // Extract the ID from [100].
-
-            size_t openBracket =
-                text.rfind('[');
-
-            size_t closeBracket =
-                text.rfind(']');
-
-            if (openBracket == std::string::npos ||
-                closeBracket == std::string::npos ||
-                closeBracket <= openBracket)
-            {
-                SetWindowTextA(
-                    g_Status,
-                    "Could not determine group ID."
-                );
-
-                return 0;
-            }
-
-            std::string idText =
-                text.substr(
-                    openBracket + 1,
-                    closeBracket - openBracket - 1
-                );
-
-            int groupId = -1;
-
-            try
-            {
-                groupId = std::stoi(idText);
-            }
-            catch (...)
-            {
-                SetWindowTextA(
-                    g_Status,
-                    "Invalid group ID."
-                );
-
-                return 0;
-            }
-
-            // Find the actual group definition.
-            g_SelectedGroup = -1;
-
-            for (size_t i = 0;
-                i < g_Groups.size();
-                i++)
-            {
-                if (g_Groups[i].id == groupId)
-                {
-                    g_SelectedGroup =
-                        static_cast<int>(i);
-
-                    break;
-                }
-            }
-
-            if (g_SelectedGroup == -1)
-            {
-                SetWindowTextA(
-                    g_Status,
-                    "Group ID was not found."
-                );
-
-                return 0;
-            }
-
-            // This is the important part:
-            // populate the cells containing this group.
-            PopulateCellsForGroup(groupId);
-
-            std::string status =
-                "Selected " +
-                g_Groups[g_SelectedGroup].name +
-                " [" +
-                std::to_string(groupId) +
-                "]";
-
-            SetWindowTextA(
-                g_Status,
-                status.c_str()
-            );
+            // Show the group's NPC entries.
+            // PopulateGroupNpcs();
 
             return 0;
         }

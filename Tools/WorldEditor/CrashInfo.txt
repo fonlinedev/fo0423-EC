@@ -1,1 +1,0 @@
-This is a very finicky tool. in case it won't open, go to command line and run WorldEditor.exe --nogui and try open again. It's common to crash.
