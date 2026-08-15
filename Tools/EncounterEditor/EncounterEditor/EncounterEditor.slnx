@@ -4,4 +4,5 @@
     <Platform Name="x86" />
   </Configurations>
   <Project Path="ConsoleApplication1/ConsoleApplication1.vcxproj" />
+  <Project Path="EncounterEditorGUI/EncounterEditorGUI.vcxproj" />
 </Solution>
