@@ -1,0 +1,547 @@
+// ============================================================================
+// Equipment Repair NPC - PROTOTYPE
+// ============================================================================
+
+#include "_macros.fos"
+#include "dialog.fos"
+#include "lexems_h.fos"
+#include "messages_h.fos"
+#include "npc_common_h.fos"
+#include "_vars.fos"
+#include "_defines.fos"
+#include "ITEMPID.H"
+
+const int REPAIR_PRICE_CHEAP     = 1;
+const int REPAIR_PRICE_NORMAL    = 2;
+const int REPAIR_PRICE_EXPENSIVE = 4;
+
+// ============================================================================
+// CONSTANTS DEFINITIONS
+// ============================================================================
+
+
+uint16[] REPAIR_CHEAP_ITEMS =
+{
+    // Armor
+    PID_LEATHER_JACKET,
+    PID_LEATHER_ARMOR,
+    PID_LEATHER_ARMOR_MK_II,
+    PID_CURED_LEATHER_ARMOR,
+
+    PID_LEATHER_JACKET_HELMET,
+    PID_COMBAT_LEATHER_JACKET_HELMET,
+    PID_LEATHER_ARMOR_HELMET,
+    PID_LEATHER_ARMOR_HELMET_MK2,
+
+    // Basic pistols
+    PID_ZIP_GUN,
+    PID_9MM_MAUSER,
+    PID_10MM_PISTOL,
+    PID_14MM_PISTOL,
+    PID_44_MAGNUM_REVOLVER,
+
+    // Basic rifles
+    PID_HUNTING_RIFLE,
+    PID_SCOPED_HUNTING_RIFLE,
+    PID_SPRINGER_RIFLE,
+    PID_RED_RYDER_BB_GUN,
+    PID_RED_RYDER_LE_BB_GUN,
+    PID_JONNY_BB_GUN,
+
+    // Basic shotguns
+    PID_SHOTGUN,
+    PID_SAWED_OFF_SHOTGUN,
+
+    // Basic SMGs
+    PID_10MM_SMG,
+    PID_GREASE_GUN,
+    PID_TOMMY_GUN,
+    
+};
+
+uint16[] REPAIR_EXPENSIVE_ITEMS =
+{
+    // Armor
+    PID_METAL_ARMOR,
+    PID_METAL_ARMOR_MK_II,
+    PID_TESLA_ARMOR,
+    PID_COMBAT_ARMOR,
+    PID_COMBAT_ARMOR_MK_II,
+    PID_BROTHERHOOD_COMBAT_ARMOR,
+    PID_NCR_ARMOR,
+    PID_ENVIROMENTAL_ARMOR,
+    PID_ENCLAVE_COMBAT_ARMOR,
+    PID_DESERT_COMBAT_ARMOR,
+
+    // Helmets
+    PID_METAL_HELMET,
+    PID_METAL_HELMET_MK2,
+    PID_TESLA_HELMET,
+    PID_COMBAT_HELMET,
+    PID_COMBAT_HELMET_MK_II,
+    PID_BROTHERHOOD_HELMET,
+    PID_ENCLAVE_COMBAT_HELMET,
+    PID_ENCLAVE_COMBAT_HELMET_MK2,
+    PID_DESERT_COMBAT_HELMET,
+    PID_NCR_HELMET,
+
+    // Pistols
+    PID_DESERT_EAGLE,
+    PID_DESERT_EAGLE_EXT_MAG,
+    PID_223_PISTOL,
+    PID_NEEDLER_PISTOL,
+    PID_PK12_GAUSS_PISTOL,
+
+    // Rifles
+    PID_ASSAULT_RIFLE,
+    PID_ASSAULT_RIFLE_EXT_MAG,
+    PID_SNIPER_RIFLE,
+    PID_FN_FAL,
+    PID_FN_FAL_NIGHT_SCOPE,
+    PID_FN_FAL_HPFA,
+
+    // Shotguns
+    PID_COMBAT_SHOTGUN,
+    PID_HK_CAWS,
+    PID_PANCOR_JACKHAMMER,
+
+    // SMGs
+    PID_HK_P90C,
+    PID_HK_G11,
+    PID_HK_G11E,
+
+    // Big guns
+    PID_FLAMER,
+    PID_IMPROVED_FLAMETHROWER,
+    PID_ROCKET_LAUNCHER,
+    PID_MINIGUN,
+    PID_AVENGER_MINIGUN,
+    PID_BOZAR,
+    PID_LIGHT_SUPPORT_WEAPON,
+    PID_M60,
+
+    // Laser
+    PID_LASER_PISTOL,
+    PID_MAGNETO_LASER_PISTOL,
+    PID_SOLAR_SCORCHER,
+    PID_LASER_RIFLE,
+    PID_LASER_RIFLE_EXT_CAP,
+
+    // Plasma
+    PID_PLASMA_PISTOL,
+    PID_PLASMA_PISTOL_EXT_CART,
+    PID_PLASMA_RIFLE,
+
+    // Pulse
+    PID_YK32_PULSE_PISTOL,
+    PID_YK42B_PULSE_RIFLE,
+
+    // Advanced melee / unarmed
+    PID_CATTLE_PROD,
+    PID_SUPER_CATTLE_PROD,
+    PID_RIPPER,
+    PID_PLASMA_TORCH,
+    PID_POWER_FIST,
+    PID_MEGA_POWER_FIST,
+
+    // High-end melee
+    PID_SUPER_SLEDGE
+};
+
+uint16[] REPAIR_FORBIDDEN_ITEMS =
+{
+    PID_POWERED_ARMOR,
+    PID_HARDENED_POWER_ARMOR,
+    PID_ADVANCED_POWER_ARMOR,
+    PID_ADVANCED_POWER_ARMOR_MK2,
+    PID_POWER_HELMET,
+    PID_HARDENED_POWER_HELMET,
+    PID_APA_HELMET,
+    PID_APA_HELMET_MK2,    
+    PID_KNIFE,
+    PID_COMBAT_KNIFE,
+    PID_LIL_JESUS_WEAPON,
+    PID_SHIV,
+    PID_SWITCHBLADE,
+    PID_WAKIZASHI_BLADE,
+
+    PID_CLUB,
+    PID_CROWBAR,
+    PID_WRENCH,
+    PID_SLEDGEHAMMER,
+    PID_LOUISVILLE_SLUGGER,
+    PID_SPEAR,
+    PID_SHARP_SPEAR,
+    PID_SHARPENED_POLE,
+    PID_BOXING_GLOVES,
+    PID_PLATED_BOXING_GLOVES,
+    PID_RING_BOXING_GLOVES,
+    PID_RING_PLATED_BOXING_GLOVES,
+    PID_BRASS_KNUCKLES,
+    PID_SPIKED_KNUCKLES,    
+    PID_MOLOTOV_COCKTAIL,
+    PID_FRAG_GRENADE,
+    PID_PLASMA_GRENADE,
+    PID_PULSE_GRENADE,
+    PID_THROWING_KNIFE,
+    PID_ROCK,
+    PID_PLANT_SPIKE,
+    PID_FOOLS_GOLD,
+    PID_GOLD_NUGGET,
+    PID_PASHTSHUUR_SPIKE,
+    PID_ROBO_ROCKET_LAUNCHER,
+    PID_PHAZER,
+    PID_DEATHCLAW_CLAW_1,
+    PID_DEATHCLAW_CLAW_2,
+    PID_FIRE_GECKO_FLAME_WEAPON,
+    PID_FLAME_BREATH,
+    PID_WEAK_FLAME_BREATH,
+    PID_SPECIAL_BOXER_WEAPON,
+    PID_GUN_TURRET_WEAPON,
+    PID_EYEBALL_FIST_1,
+    PID_EYEBALL_FIST_2,
+    PID_DUAL_MINIGUN,
+    PID_HEAVY_DUAL_MINIGUN,
+    PID_END_BOSS_KIFE,
+    PID_END_BOSS_PLASMA_GUN,
+    PID_HOLY_HAND_GRENADE,
+    PID_BAN_HAMMER,
+    PID_HOLY_SPEAR,    
+    PID_FAKE_FRAG_GRENADE,
+    PID_FAKE_PLASMA_GRENADE,
+    PID_FAKE_SUPER_SLEDGE,
+    PID_FAKE_SPEAR,
+    PID_FAKE_THROWING_KNIFE
+};
+
+const int REPAIRMAN_DIALOG_ID = 4019;
+const int REPAIRMAN_WARNING_ID = 1;
+
+// ============================================================================
+// GET EQUIPPED ITEMS
+// ============================================================================
+
+Item@ GetRepairWeapon1(Critter& player)
+{
+    Item@ item = player.GetItem(0, SLOT_HAND1);
+
+    if(valid(item) && item.GetType() == ITEM_TYPE_WEAPON)
+        return item;
+    
+    return null;
+}
+
+Item@ GetRepairWeapon2(Critter& player)
+{
+    Item@ item = player.GetItem(0, SLOT_HAND2);
+
+    if(valid(item) && item.GetType() == ITEM_TYPE_WEAPON)
+        return item;
+
+    return null;
+}
+
+Item@ GetRepairArmor(Critter& player)
+{
+    Item@ item = player.GetItem(0, SLOT_ARMOR);
+
+    if(valid(item))
+        return item;
+
+    return null;
+}
+
+
+Item@ GetRepairHelmet(Critter& player)
+{
+    Item@ item = player.GetItem(0, SLOT_HEAD);
+
+    if(valid(item))
+        return item;
+
+    return null;
+}
+
+int GetRepairItemCondition(Item@ item)
+{
+    if(!valid(item))
+        return 0;
+
+    return 50;
+}
+
+
+int GetRepairItemMaxCondition(Item@ item)
+{
+    if(!valid(item))
+        return 0;
+
+    return 100;
+}
+
+
+// ============================================================================
+// ITEM FILTER
+// ============================================================================
+//
+// For the prototype everything equipped is repairable.
+//
+// Later this is where we put:
+//
+//     - items that cannot be repaired
+//     - equipment level restrictions
+//     - broken beyond repair
+//     - etc.
+// ============================================================================
+
+bool IsRepairableItem(Item@ item)
+{
+    if(!valid(item))
+        return false;
+
+    if(IsRepairForbidden(item))
+        return false;
+
+    if(FLAG(item.BrokenFlags, BI_NOTRESC))
+        return false;
+
+    uint deter = (100 - item.Deterioration * 100 / MAX_DETERIORATION);
+
+    if(deter == 0)
+        return false;
+    
+    return true;
+}
+
+bool HasPid(uint16 pid, uint16[]& list)
+{
+    for(uint i = 0, j = list.length(); i < j; i++)
+    {
+        if(list[i] == pid)
+            return true;
+    }
+
+    return false;
+}
+
+bool IsRepairCheap(Item@ item)
+{
+    if(!valid(item))
+        return false;
+
+    return HasPid(item.GetProtoId(), REPAIR_CHEAP_ITEMS);
+}
+
+bool IsRepairExpensive(Item@ item)
+{
+    if(!valid(item))
+        return false;
+
+    return HasPid(item.GetProtoId(), REPAIR_EXPENSIVE_ITEMS);
+}
+
+bool IsRepairForbidden(Item@ item)
+{
+    if(!valid(item))
+        return false;
+
+    return HasPid(item.GetProtoId(), REPAIR_FORBIDDEN_ITEMS);
+}
+
+// ============================================================================
+// PRICE FOR ONE ITEM
+// ============================================================================
+
+int GetRepairItemPrice(Item@ item, Critter& player)
+{
+    
+    if(!IsRepairableItem(item))
+        return 0;
+
+    // Free for players below level 10.
+    int levelPercent = GetRepairLevelPercent(player);
+
+    if(levelPercent == 0)
+        return 0;
+
+    int pricePerPoint = REPAIR_PRICE_NORMAL;
+
+    if(IsRepairCheap(item))
+        pricePerPoint = REPAIR_PRICE_CHEAP;
+    else if(IsRepairExpensive(item))
+        pricePerPoint = REPAIR_PRICE_EXPENSIVE;
+
+    uint deter = (100 - item.Deterioration * 100 / MAX_DETERIORATION);
+
+    if(deter >= 100)
+        return 0;
+
+    uint repairAmount = 100 - deter;
+
+    int price = repairAmount * pricePerPoint;
+
+    return (price * levelPercent) / 100;
+}
+
+// ============================================================================
+// TOTAL REPAIR PRICE
+// ============================================================================
+
+#define REPAIR_PRICE \
+    #(player) \
+    ( \
+        GetRepairItemPrice(GetRepairWeapon1(player), player) + \
+        GetRepairItemPrice(GetRepairWeapon2(player), player) + \
+        GetRepairItemPrice(GetRepairArmor(player), player) + \
+        GetRepairItemPrice(GetRepairHelmet(player), player) \
+    )
+
+
+// ============================================================================
+// REPAIR PRICE DEMAND
+// ============================================================================
+//
+// This follows the same logic as the doctor's d_HealingMoney.
+//
+// If the player has enough caps, the dialogue demand succeeds.
+// ============================================================================
+
+bool d_RepairMoney(Critter& player, Critter@ npc)
+{
+    uint price = REPAIR_PRICE(player);
+
+    return _CritCountItem(player, PID_BOTTLE_CAPS) >= price;
+}
+
+bool d_NotRepairMoney(Critter& player, Critter@ npc)
+{
+    return !d_RepairMoney(player, npc);
+}
+
+// ============================================================================
+// SHOW REPAIR PRICE
+// ============================================================================
+//
+// Example dialogue text:
+//
+//     "That'll be $price caps."
+//
+// The lexem gets replaced with the calculated price.
+// ============================================================================
+
+void dlg_ShowRepairPrice(Critter& player, Critter@ npc, string@ text)
+{
+    if(!IS_DIALOG_GENERATED(text))
+        return;
+
+    uint price = REPAIR_PRICE(player);
+
+    text = "$price" + price;
+}
+
+int GetRepairLevelPercent(Critter& player)
+{
+    int level = player.Param[ST_LEVEL];
+    
+    if(level <= 10) {
+        return 0;
+    }        
+
+    return 100 + ((level - 10) * 10);
+}
+// ============================================================================
+// BASIC "HAS SOMETHING TO REPAIR" DEMAND
+// ============================================================================
+
+bool d_HasRepairableEquipment(Critter& player, Critter@ npc)
+{
+    Item@ item = GetRepairWeapon1(player);
+
+    if(valid(item) && IsRepairableItem(item))
+        return true;
+
+    @item = GetRepairWeapon2(player);
+
+    if(valid(item) && IsRepairableItem(item))
+        return true;
+
+    @item = GetRepairArmor(player);
+
+    if(valid(item) && IsRepairableItem(item))
+        return true;
+
+    @item = GetRepairHelmet(player);
+
+    if(valid(item) && IsRepairableItem(item))
+        return true;
+
+    return false;
+}
+
+bool d_HasNotRepairableEquipment(Critter& player, Critter@ npc) {
+    return (!d_HasRepairableEquipment(player, npc));
+}
+
+// ============================================================================
+// REPAIR RESULT
+// ============================================================================
+//
+// ============================================================================
+
+void RepairItemClean(Item@ item)
+{
+    if(!valid(item))
+        return;
+
+    item.Deterioration = 0;
+    item.BrokenCount = 0;
+    UNSETFLAG(item.BrokenFlags, BI_BROKEN);
+
+    item.Update();
+}
+
+void r_PayRepair(Critter& player, Critter@ npc)
+{
+    uint price = REPAIR_PRICE(player);
+
+    if(price <= 0)
+        return;
+
+    if(_CritCountItem(player, PID_BOTTLE_CAPS) < price)
+        return;
+
+    BanksTransferFromCritter(player, price, TRANSACTION_DEFAULT, false);
+}
+
+void r_RepairEquipment(Critter& player, Critter@ npc)
+{
+    uint price = REPAIR_PRICE(player);
+
+    if(_CritCountItem(player, PID_BOTTLE_CAPS) < price)
+        return;
+
+    Item@ item = GetRepairWeapon1(player);
+
+    if(valid(item) && IsRepairableItem(item))
+        RepairItemClean(item);
+
+    @item = GetRepairWeapon2(player);
+
+    if(valid(item) && IsRepairableItem(item))
+        RepairItemClean(item);
+
+    @item = GetRepairArmor(player);
+
+    if(valid(item) && IsRepairableItem(item))
+        RepairItemClean(item);
+
+    @item = GetRepairHelmet(player);
+
+    if(valid(item) && IsRepairableItem(item))
+        RepairItemClean(item);
+}
+
+void r_ExitWarning(Critter& player, Critter@ npc)
+{
+    npc.SayMsg(SAY_SHOUT_ON_HEAD, TEXTMSG_DLG, DLGSTR(REPAIRMAN_DIALOG_ID, REPAIRMAN_WARNING_ID));
+}

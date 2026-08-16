@@ -1,0 +1,67 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+3 2010 #
+4 2020 #
+0 2030 R _script npc_repairman@r_ExitWarning 0  @
+3 3000 None 0 #
+6 3010 D _script npc_repairman@d_HasRepairableEquipment 0  #
+4 3020 #
+5 3030 #
+65505 3040 @
+4 4000 None 0 #
+65505 4010 @
+5 5000 None 0 #
+65505 5010 @
+6 6000 None 0 #
+9 6010 D _script npc_repairman@d_HasRepairableEquipment 0  #
+7 6020 D _script npc_repairman@d_HasNotRepairableEquipment 0  @
+7 7000 None 0 #
+0 7010 R _script npc_repairman@r_ExitWarning 0  @
+8 8000 None 0 #
+0 8010 R _script npc_repairman@r_ExitWarning 0  @
+9 9000 npc_repairman@dlg_ShowRepairPrice 0 #
+10 9010 D _script npc_repairman@d_RepairMoney 0  R _script npc_repairman@r_RepairEquipment 0  R _script npc_repairman@r_PayRepair 0  #
+0 9020 R _script npc_repairman@r_ExitWarning 0  @
+10 10000 None 0 #
+0 10010 R _script npc_repairman@r_ExitWarning 0  &
+
+[engl]
+{100}{}{none}
+{1000}{}{Predialogue installations}
+{1010}{}{Begin}
+{2000}{}{Need something fixed?}
+{2010}{}{Can you repair my equipment?}
+{2020}{}{What can you repair?}
+{2030}{}{Never mind.}
+{3000}{}{Weapons and armor. Has to be equipped, though. I don't work on gear stuffed in your pack.}
+{3010}{}{Repair my equipped gear.}
+{3020}{}{What about advanced equipment?}
+{3030}{}{What about badly damaged equipment?}
+{3040}{}{Got it.}
+{4000}{}{There's a limit to what I can handle. Bring me something too sophisticated and I'll tell you to find someone else.}
+{4010}{}{Got it.}
+{5000}{}{If it's too far gone, I can't save it. Once the internals are ruined, it's scrap.}
+{5010}{}{Got it.}
+{6000}{}{Let me have a look.}
+{6010}{}{[More...]}
+{6020}{}{[Wait...]}
+{7000}{}{You've got nothing equipped for me to work on.}
+{7010}{}{Ok, bye.}
+{8000}{}{That's already in good shape. Don't waste your caps.}
+{8010}{}{Ok, bye.}
+{9000}{}{I can fix that. It'll cost you @lex price@ caps.}
+{9010}{}{Repair it.}
+{9020}{}{Too expensive...@@Never mind.}
+{10000}{}{Your equipment had been restored.}
+{10010}{}{Thanks for your service.}
+{100000001}{}{Don't forget to unequip your weapons!}
+

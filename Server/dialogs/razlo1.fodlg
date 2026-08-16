@@ -7,7 +7,7 @@ lang=engl
 [dialog]
 &
 1 1000 None 1 #
-2 1010 D _var p name_mem_npc_player = 0 D _script dialog@d_CheckDay 0  R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 #
+2 1010 D _var p name_mem_npc_player = 0 D _script dialog@d_CheckDay 0  R _var p name_mem_npc_player = 1 #
 37 1020 D _var p name_mem_npc_player = 1 D _script dialog@d_CheckDay 0  #
 9 1030 D _script dialog@d_CheckNight 0  @
 2 2000 None 0 #
@@ -228,3 +228,4 @@ something with it?}
 {100000003}{}{Stop! That isn't what he needs!}
 {100000004}{}{Stop! Don't give him that! You could make the poison worse!}
 {100000005}{}{Stop! Are you trying to kill him?}
+

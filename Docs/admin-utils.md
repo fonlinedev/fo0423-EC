@@ -33,6 +33,8 @@ Close combat
 `~runscript cheats set_skill 201 250 0
 `~runscript cheats set_skill 204 250 0
 
+`~runscript cheats set_skill 210 250 0
+
 ## Combat Skills:
 
 200 — Small Guns

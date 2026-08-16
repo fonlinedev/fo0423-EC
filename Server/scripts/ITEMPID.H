@@ -91,9 +91,9 @@
 
 //TODO:
 //#define PID_BLACK_ROBE                      (xxx)
-//#define PID_BLUE_трико                      (xxx)
-//#define PID_RED_трико                       (xxx)
-//#define PID_GREEN_трико                     (xxx)
+//#define PID_BLUE_пїЅпїЅпїЅпїЅпїЅ                      (xxx)
+//#define PID_RED_пїЅпїЅпїЅпїЅпїЅ                       (xxx)
+//#define PID_GREEN_пїЅпїЅпїЅпїЅпїЅ                     (xxx)
 
 // PID 719 to 749 are free for helmet objects!
 // Use PID 750 to 799 for new armor objects!
@@ -121,7 +121,7 @@
     //Rifles
 #define PID_HUNTING_RIFLE                   (10)
 #define PID_SCOPED_HUNTING_RIFLE            (287)
-#define PID_SPRINGER_RIFLE                  (299)
+#define PID_SPRINGER_RIFLE                  (299)  // Pipe rifle
 #define PID_ASSAULT_RIFLE                   (23)
 #define PID_ASSAULT_RIFLE_EXT_MAG           (405)
 #define PID_SNIPER_RIFLE                    (143)
@@ -535,17 +535,17 @@
 #define PID_HYPODERMIC_NEEDLE               (318)
 #define PID_EMPTY_JET                       (416)
 #define PID_BOTTLE_GLASS                    (542) //Empty glass bottle
-#define PID_BOTTLE_EMPTY                    (532) //Пустая бутылка
-#define PID_PART_OF_ROPE                    (534) //Кусок веревки
-#define PID_METAL_TRASH                     (475) //Металлический мусор
-#define PID_GUNPOWDER                       (535) //Коробка пороха
-#define PID_METAL_ORE                       (536) //Железная руда
-#define PID_MINERAL                         (537) //Минерал
-#define PID_TUBE                            (538) //Металлическая труба
-#define PID_STEEL                           (50) //Сталь
-#define PID_BRAHMIN_SKIN                    (449) //Шкура брамина
-#define PID_MEAT                            (539) //Мясо
-#define PID_CIGARETTES                      (541) //Сигареты
+#define PID_BOTTLE_EMPTY                    (532) //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+#define PID_PART_OF_ROPE                    (534) //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+#define PID_METAL_TRASH                     (475) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+#define PID_GUNPOWDER                       (535) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+#define PID_METAL_ORE                       (536) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+#define PID_MINERAL                         (537) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+#define PID_TUBE                            (538) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+#define PID_STEEL                           (50) //пїЅпїЅпїЅпїЅпїЅ
+#define PID_BRAHMIN_SKIN                    (449) //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+#define PID_MEAT                            (539) //пїЅпїЅпїЅпїЅ
+#define PID_CIGARETTES                      (541) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 #define PID_SCORPION_EGG                    (9911)  
 
 //Self-special parts
@@ -620,9 +620,9 @@
 #define PID_MEDICAL_SUPPLIES                (428)
 #define PID_BIO_GEL                         (440)
     //Other
-#define PID_SHOVEL                          (289) //Лопата
-#define PID_PLANK                           (297) //Лом
-#define PID_AXE                             (543) //Топор
+#define PID_SHOVEL                          (289) //пїЅпїЅпїЅпїЅпїЅпїЅ
+#define PID_PLANK                           (297) //пїЅпїЅпїЅ
+#define PID_AXE                             (543) //пїЅпїЅпїЅпїЅпїЅ
     //Special
 #define PID_GEIGER_COUNTER                  (52)
 #define PID_ACTIVE_GEIGER_COUNTER           (207) //Active
@@ -682,17 +682,17 @@
 
 //Special
 #define PID_BRIEFCASE                       (72)
-#define PID_MUTAGENIC_SYRUM                 (329) //Иньекция от мутации
-#define PID_HEART_PILLS                     (333) //Таблетки от серца
+#define PID_MUTAGENIC_SYRUM                 (329) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+#define PID_HEART_PILLS                     (333) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 #define PID_SPECTACLES                      (415) //Eye glasses
 #define PID_OXYGEN_TANK                     (417)
 #define PID_POISON_TANK                     (418)
 #define PID_HOWITZER_SHELL                  (430) //Ammo of turret in SAD
 #define PID_MIRROR_SHADES                   (433) //Eye glasses
 #define PID_POCKET_LINT                     (439) //Trash
-#define PID_BALL_GAG                        (470) //Кляп
-#define PID_DAISIES                         (474) //Горшок с цветами
-#define PID_BOTTLE_FULL                     (533) //Полная бутылка
+#define PID_BALL_GAG                        (470) //пїЅпїЅпїЅпїЅ
+#define PID_DAISIES                         (474) //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+#define PID_BOTTLE_FULL                     (533) //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 #define PID_GOGGLES                         (570)
 
 #define PID_DOG_TAGS                        (56)
@@ -701,7 +701,7 @@
 #define PID_GOLD_LOCKET                     (99)
 #define PID_TAPE_RECORDER                   (104)
 #define PID_URN                             (112)
-#define PID_NECKLACE                        (119) //Ожерелье
+#define PID_NECKLACE                        (119) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 #define PID_PSYCHIC_NULLIFIER               (123)
 #define PID_BLACK_COC_BADGE                 (141) //Habbology
 #define PID_RED_COC_BADGE                   (142) //Habbology
@@ -727,24 +727,24 @@
 #define PID_RANGER_PIN                      (342) //Ncr
 #define PID_RANGER_MAP                      (343)
 #define PID_GECK                            (366)
-#define PID_STABLES_ID_BADGE                (413) //Пропуск в канюшни
+#define PID_STABLES_ID_BADGE                (413) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 #define PID_RAMIREZ_BOX_CLOSED              (431)
 #define PID_RAMIREZ_BOX_OPEN                (432)
-#define PID_BLONDIE_DOG_TAG                 (441) //Бирка
-#define PID_ANGEL_EYES_DOG_TAG              (442) //Бирка
-#define PID_TUCO_DOG_TAG                    (443) //Бирка
+#define PID_BLONDIE_DOG_TAG                 (441) //пїЅпїЅпїЅпїЅпїЅ
+#define PID_ANGEL_EYES_DOG_TAG              (442) //пїЅпїЅпїЅпїЅпїЅ
+#define PID_TUCO_DOG_TAG                    (443) //пїЅпїЅпїЅпїЅпїЅ
 #define PID_RAIDERS_MAP                     (444)
-#define PID_SHERIFF_BADGE                   (445) //Значек шерифа
-#define PID_ACCOUNT_BOOK                    (448) //Книга по разборкам в Нью-Рено
+#define PID_SHERIFF_BADGE                   (445) //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+#define PID_ACCOUNT_BOOK                    (448) //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ-пїЅпїЅпїЅпїЅ
 #define PID_TORN_PAPER_1                    (450) //Part1 password
 #define PID_TORN_PAPER_2                    (451) //Part2 password
 #define PID_TORN_PAPER_3                    (452) //Part3 password
 #define PID_PASSWORD_PAPER                  (453) //All password
-#define PID_ELRON_FIELD_REP                 (457) //Отчет Хаббологов
-#define PID_SMITTY_MEAL                     (468) //Еда Смитти
-#define PID_ENLIGHTENED_ONE_LETTER          (476) //Доклад
+#define PID_ELRON_FIELD_REP                 (457) //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+#define PID_SMITTY_MEAL                     (468) //пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+#define PID_ENLIGHTENED_ONE_LETTER          (476) //пїЅпїЅпїЅпїЅпїЅпїЅ
 #define PID_FALLOUT_2_HINTBOOK              (483)
-#define PID_MOUSE_SKIN                      (540) //Шкура мыши
+#define PID_MOUSE_SKIN                      (540) //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 #define PID_MEAT_BAG                (546) //a fucking bag of meat
 #define PID_METZGERS_CASE           (547) //a case for metzger you moron!
 #define PID_MORDINOS_CASE           (548) //mordino joining quest case
