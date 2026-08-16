@@ -121,7 +121,7 @@
     //Rifles
 #define PID_HUNTING_RIFLE                   (10)
 #define PID_SCOPED_HUNTING_RIFLE            (287)
-#define PID_SPRINGER_RIFLE                  (299)  // Pipe rifle
+#define PID_SPRINGER_RIFLE                  (299)
 #define PID_ASSAULT_RIFLE                   (23)
 #define PID_ASSAULT_RIFLE_EXT_MAG           (405)
 #define PID_SNIPER_RIFLE                    (143)

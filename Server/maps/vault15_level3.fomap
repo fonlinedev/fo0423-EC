@@ -2,7 +2,7 @@
 Version              4
 MaxHexX              136
 MaxHexY              131
-WorkHexX             59
+WorkHexX             68
 WorkHexY             72
 ScriptModule         map_vault15
 ScriptFunc           map_init
@@ -6571,9 +6571,6 @@ MapObjType           1
 ProtoId              188
 MapX                 52
 MapY                 66
-ScriptName           item_spawner_container
-FuncName             item_init
-Item_Val4            98
 
 MapObjType           2
 ProtoId              2067
@@ -10931,17 +10928,11 @@ MapObjType           1
 ProtoId              188
 MapX                 54
 MapY                 66
-ScriptName           item_spawner_container
-FuncName             item_init
-Item_Val4            99
 
 MapObjType           1
 ProtoId              188
 MapX                 77
 MapY                 50
-ScriptName           item_spawner_container
-FuncName             item_init
-Item_Val4            98
 
 MapObjType           0
 ProtoId              112
@@ -10960,7 +10951,7 @@ Critter_ParamValue1  7
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5003
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -10968,7 +10959,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  55
 Critter_ParamIndex9  ST_LEVEL
@@ -10990,7 +10981,7 @@ Critter_ParamValue1  7
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5003
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -10998,7 +10989,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  55
 Critter_ParamIndex9  ST_LEVEL
@@ -11021,7 +11012,7 @@ Critter_ParamValue1  7
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5003
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -11029,7 +11020,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  55
 Critter_ParamIndex9  ST_LEVEL
@@ -11052,7 +11043,7 @@ Critter_ParamValue1  7
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5002
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -11083,7 +11074,7 @@ Critter_ParamValue1  7
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5000
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -11091,7 +11082,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  55
 Critter_ParamIndex9  ST_LEVEL
@@ -11113,7 +11104,7 @@ Critter_ParamValue1  7
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5000
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -11144,7 +11135,7 @@ Critter_ParamValue1  7
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5000
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -11152,7 +11143,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  55
 Critter_ParamIndex9  ST_LEVEL
@@ -11175,7 +11166,7 @@ Critter_ParamValue1  7
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5000
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -11183,7 +11174,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  55
 Critter_ParamIndex9  ST_LEVEL
@@ -11206,7 +11197,7 @@ Critter_ParamValue1  7
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5001
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -11214,7 +11205,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  55
 Critter_ParamIndex9  ST_LEVEL
@@ -11237,7 +11228,7 @@ Critter_ParamValue1  7
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5001
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -11245,7 +11236,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  24
 Critter_ParamIndex9  ST_LEVEL
@@ -11268,7 +11259,7 @@ Critter_ParamValue1  7
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5001
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -11276,7 +11267,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  24
 Critter_ParamIndex9  ST_LEVEL
@@ -11299,7 +11290,7 @@ Critter_ParamValue1  7
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5002
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -11330,7 +11321,7 @@ Critter_ParamValue1  48
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5003
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -11338,7 +11329,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  24
 Critter_ParamIndex9  ST_LEVEL
@@ -11361,7 +11352,7 @@ Critter_ParamValue1  48
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5003
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -11369,7 +11360,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  24
 Critter_ParamIndex9  ST_LEVEL
@@ -11398,7 +11389,7 @@ Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
 Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
-Critter_ParamValue6  0
+Critter_ParamValue6  5003
 Critter_ParamIndex7  ST_FACTION_MODE
 Critter_ParamValue7  0
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
@@ -11494,5 +11485,448 @@ Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  24
 Critter_ParamIndex9  ST_LEVEL
 Critter_ParamValue9  0
+
+MapObjType           2
+ProtoId              3852
+MapX                 50
+MapY                 75
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 50
+MapY                 76
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 50
+MapY                 77
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 50
+MapY                 78
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 50
+MapY                 79
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 50
+MapY                 80
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 50
+MapY                 82
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 50
+MapY                 81
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 50
+MapY                 83
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 51
+MapY                 83
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 51
+MapY                 82
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 51
+MapY                 81
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 51
+MapY                 80
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 52
+MapY                 78
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 52
+MapY                 76
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 52
+MapY                 74
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 51
+MapY                 79
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 51
+MapY                 57
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       1
+
+MapObjType           2
+ProtoId              3852
+MapX                 55
+MapY                 70
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       1
+
+MapObjType           2
+ProtoId              3852
+MapX                 60
+MapY                 71
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 75
+MapY                 67
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       4
+
+MapObjType           2
+ProtoId              3852
+MapX                 85
+MapY                 67
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       5
+
+MapObjType           2
+ProtoId              3852
+MapX                 71
+MapY                 53
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       6
+
+MapObjType           1
+ProtoId              30
+MapX                 45
+MapY                 54
+
+MapObjType           2
+ProtoId              3852
+MapX                 61
+MapY                 73
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 60
+MapY                 72
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 62
+MapY                 71
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 61
+MapY                 71
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 61
+MapY                 70
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 86
+MapY                 66
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       5
+
+MapObjType           2
+ProtoId              3852
+MapX                 84
+MapY                 66
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       5
+
+MapObjType           2
+ProtoId              3852
+MapX                 83
+MapY                 66
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       5
+
+MapObjType           2
+ProtoId              3852
+MapX                 76
+MapY                 66
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       4
+
+MapObjType           2
+ProtoId              3852
+MapX                 77
+MapY                 67
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       4
+
+MapObjType           2
+ProtoId              3852
+MapX                 78
+MapY                 66
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       4
+
+MapObjType           2
+ProtoId              3852
+MapX                 78
+MapY                 65
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       4
+
+MapObjType           2
+ProtoId              3852
+MapX                 70
+MapY                 52
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       6
+
+MapObjType           2
+ProtoId              3852
+MapX                 72
+MapY                 53
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       6
+
+MapObjType           2
+ProtoId              3852
+MapX                 70
+MapY                 55
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       6
+
+MapObjType           2
+ProtoId              3852
+MapX                 71
+MapY                 53
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       6
+
+MapObjType           2
+ProtoId              3852
+MapX                 55
+MapY                 69
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       1
+
+MapObjType           2
+ProtoId              3852
+MapX                 56
+MapY                 68
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       1
+
+MapObjType           2
+ProtoId              3852
+MapX                 56
+MapY                 67
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       1
+
+MapObjType           2
+ProtoId              3852
+MapX                 53
+MapY                 57
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       1
+
+MapObjType           2
+ProtoId              3852
+MapX                 54
+MapY                 58
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       1
+
+MapObjType           2
+ProtoId              3852
+MapX                 53
+MapY                 63
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       1
+
+MapObjType           2
+ProtoId              3852
+MapX                 55
+MapY                 53
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       1
+
+MapObjType           2
+ProtoId              3852
+MapX                 55
+MapY                 61
+ScriptName           map_vault15
+FuncName             t_Level3Clues
+Scenery_ParamsCount  1
+Scenery_Param0       1
+
+MapObjType           2
+ProtoId              3852
+MapX                 52
+MapY                 77
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 52
+MapY                 75
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 52
+MapY                 81
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 52
+MapY                 79
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 52
+MapY                 82
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 52
+MapY                 80
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
+
+MapObjType           2
+ProtoId              3852
+MapX                 52
+MapY                 83
+ScriptName           map_vault15
+FuncName             t_FinishInvestigation
 
 

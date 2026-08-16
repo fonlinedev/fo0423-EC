@@ -1,0 +1,26 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+0 2010 R _script map_vault15@r_AdvanceQuest 0  &
+
+[engl]
+{100}{}{none}
+{1000}{}{Predialogue installations}
+{1010}{}{Finish}
+{2000}{}{The passage is completely blocked by a massive rockfall.@@The rocks are firmly lodged in place. Even the most powerful explosives wouldn't be enough to clear them.@@The Water Chip cannot be found here. You'll have to search elsewhere.}
+{2010}{}{I'm done here.}
+{100000001}{}{You find old signs of habitation, but nothing useful remains.}
+{100000002}{}{The lights have long since failed. Only darkness remains in the deeper sections.}
+{100000003}{}{The walls show scars from years of neglect.}
+{100000004}{}{You search through the debris, but find only broken equipment and worthless scraps.}
+{100000005}{}{The silence here is unsettling.}
+{100000006}{}{You feel a growing sense that you're wasting your time.}
+

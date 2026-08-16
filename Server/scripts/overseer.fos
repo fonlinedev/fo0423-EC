@@ -13,7 +13,7 @@
 // Define quest states & item PIDs
 #define QUEST_WATER_CHIP_NONE           (0)
 #define QUEST_WATER_CHIP_STARTED        (1)
-#define QUEST_WATER_CHIP_COMPLETED      (2)
+#define QUEST_WATER_CHIP_COMPLETED      (99)
 
 // Player answer node identifiers
 #define NODE_INITIAL                    (100)

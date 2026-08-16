@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              133
 MaxHexY              134
-WorkHexX             60
-WorkHexY             59
+WorkHexX             62
+WorkHexY             50
 ScriptModule         map_vault15
 ScriptFunc           map_init
 NoLogOut             0
@@ -4835,6 +4835,7 @@ MapObjType           1
 ProtoId              139
 MapX                 46
 MapY                 42
+Item_LockerDoorId    2
 
 MapObjType           2
 ProtoId              5685
@@ -6341,6 +6342,7 @@ MapObjType           1
 ProtoId              139
 MapX                 60
 MapY                 60
+Item_LockerDoorId    1
 
 MapObjType           2
 ProtoId              5683
@@ -10870,7 +10872,9 @@ MapObjType           2
 ProtoId              4991
 MapX                 72
 MapY                 43
-Scenery_ToMapPid     36
+Scenery_ToMapPid     35
+Scenery_ToEntire     1
+Scenery_ToDir        2
 
 MapObjType           2
 ProtoId              3853
@@ -10912,7 +10916,7 @@ MapObjType           0
 ProtoId              11
 MapX                 74
 MapY                 51
-Dir                  5
+Dir                  2
 ScriptName           mob
 FuncName             critter_init
 Critter_Cond         1
@@ -11023,13 +11027,6 @@ Critter_ParamIndex7  ST_FACTION_MODE
 Critter_ParamValue7  0
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  0
-
-MapObjType           2
-ProtoId              3852
-MapX                 45
-MapY                 45
-ScriptName           workbench
-FuncName             t_Workbench
 
 MapObjType           1
 ProtoId              4608
@@ -11252,5 +11249,59 @@ Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  24
 Critter_ParamIndex9  ST_LEVEL
 Critter_ParamValue9  0
+
+MapObjType           2
+ProtoId              3852
+MapX                 70
+MapY                 46
+ScriptName           map_vault15
+FuncName             s_Dialog
+Scenery_ParamsCount  1
+Scenery_Param0       4020
+
+MapObjType           2
+ProtoId              3852
+MapX                 71
+MapY                 47
+ScriptName           map_vault15
+FuncName             s_Dialog
+Scenery_ParamsCount  1
+Scenery_Param0       4020
+
+MapObjType           2
+ProtoId              3852
+MapX                 72
+MapY                 46
+ScriptName           map_vault15
+FuncName             s_Dialog
+Scenery_ParamsCount  1
+Scenery_Param0       4020
+
+MapObjType           2
+ProtoId              3852
+MapX                 73
+MapY                 47
+ScriptName           map_vault15
+FuncName             s_Dialog
+Scenery_ParamsCount  1
+Scenery_Param0       4020
+
+MapObjType           2
+ProtoId              3852
+MapX                 74
+MapY                 46
+ScriptName           map_vault15
+FuncName             s_Dialog
+Scenery_ParamsCount  1
+Scenery_Param0       4020
+
+MapObjType           2
+ProtoId              3852
+MapX                 75
+MapY                 47
+ScriptName           map_vault15
+FuncName             s_Dialog
+Scenery_ParamsCount  1
+Scenery_Param0       4020
 
 

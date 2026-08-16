@@ -13,7 +13,7 @@ void map_init(Map& map, bool firstTime)
         // Find the skeleton container at its map hex
         Item@ skeleton = map.GetItem(72, 41, PID_SKELETON);
         if (valid(skeleton))
-        {            
+        {
             skeleton.AddItem(PID_STIMPAK, 3, 0);
         }
     }
@@ -25,7 +25,7 @@ void t_StartQuest(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
 		return;
 	GameVar@ var = GetLocalVar(LVAR_quest_water_chip, critter.Id);	
 	var = 1;
-	RunDialog(critter, START_JOURNEY_DIALOG, critter.HexX, critter.HexY, false);	
+	RunDialog(critter, START_JOURNEY_DIALOG, critter.HexX, critter.HexY, false);
 }
 
 bool t_CheckVaultStatus(Critter& player, Scenery& terminal, int skill, Item@ item)
