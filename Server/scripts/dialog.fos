@@ -112,6 +112,24 @@ bool d_IsMoneyAvailable(Critter& player, Critter@ npc, int val)
     return(int(BanksGetTotalMoney()) >= val);
 }
 
+/**
+ * Check if player has enough caps in the inventory for some procedure.
+ */
+bool d_HasMoney(Critter& player, Critter@ npc, int price)
+{    
+    return _CritCountItem(player, PID_BOTTLE_CAPS) >= price;
+}
+
+/**
+ * Player pays for the procedure directly from his pockets.
+ */
+void r_RemoveMoneyInventory(Critter& player, Critter@ npc, int price)
+{    
+    // reduce money
+    _CritDeleteItem(player, PID_BOTTLE_CAPS, price);
+}
+
+
 bool d_IsWearingArmor(Critter& player, Critter@ npc)
 {
     uint8 dummy = 0;

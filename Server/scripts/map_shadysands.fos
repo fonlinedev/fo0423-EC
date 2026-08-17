@@ -8,8 +8,112 @@
 #include "MSGSTR.h"
 #include "npc_common_h.fos"
 #include "npc_roles_h.fos"
+#include "_vars.fos"
+#include "ITEMPID.H"
 
 
+#define DIALOG_RAZLO_WIFE  (4024)
+
+void map_init(Map& map, bool firstTime)
+{
+    uint respawnTime = 1; // 1 hour loop
+    uint[] values = { map.GetProtoId() };    
+    CreateTimeEvent(__FullSecond + REAL_HOUR(respawnTime), "e_RespawnLoot", values, false);    
+    if(firstTime)
+    {
+        map.SetTurnBasedAvailability(true);
+        initLockersOnce(map.GetProtoId());
+    }
+}
+
+uint e_RespawnLoot(uint[]@ values)
+{
+    if(values is null || values.length() == 0) return 0;
+    uint mapId = values[0];
+    initLockers(mapId);
+    return REAL_HOUR(1);
+}
+
+void s_Dialog(Critter& critter, Scenery& trigger, bool entered, uint8 dir, int dialogId)
+{    
+    if(!critter.IsPlayer() || !entered)
+        return;
+        
+    RunDialog(critter, dialogId, critter.HexX, critter.HexY, false);
+}
+
+void initLockers(uint mapPid) {
+    Log("Run init lockers on map id" + mapPid);
+    Map@ map = GetMapByPid(mapPid, 0);
+    if(!valid(map))
+    {
+        Log("initLockers failed, map " + mapPid + " not found.");
+        return;
+    }
+    if (map.GetProtoId() == MAP_ShadySandsWest) {       
+        AddItemToMapItem(map, 95, 121, PID_BOOKCASE_0, PID_KNIFE, 1);
+        AddItemToMapItem(map, 95, 121, PID_BOOKCASE_0, PID_ROCK, uint(Random(1, 5)));
+        AddItemToMapItem(map, 95, 121, PID_BOOKCASE_0, PID_STIMPAK, uint(Random(0, 3)));
+    } else if (map.GetProtoId() == MAP_ShadySandsEast) {        
+        
+    }
+}
+
+void initLockersOnce(uint mapPid) {    
+    Map@ map = GetMapByPid(mapPid, 0);
+    if(!valid(map))
+    {
+        Log("initLockersOnce failed, map " + mapPid + " not found.");
+        return;
+    }
+    if (map.GetProtoId() == MAP_ShadySandsWest) {
+        // some ammo
+        AddItemToMapItem(map, 87, 71, PID_BOOKCASE_0, PID_223_FMJ, uint(Random(0, 60)));
+        // scout book
+        AddItemToMapItem(map, 131, 79, PID_BOOKSELF_1, PID_SCOUT_HANDBOOK, 1);
+        // Razlo shelf
+        AddItemToMapItem(map, 123, 118, PID_BOOKCASE_0, PID_FIRST_AID_KIT, 1);
+        AddItemToMapItem(map, 123, 118, PID_BOOKCASE_0, PID_STIMPAK, uint(Random(1, 5)));
+        AddItemToMapItem(map, 123, 118, PID_BOOKCASE_0, PID_DOCTORS_BAG, 1);
+        AddItemToMapItem(map, 123, 118, PID_BOOKCASE_0, PID_FIRST_AID_BOOK, 1);        
+    } else if (map.GetProtoId() == MAP_ShadySandsEast) {        
+        
+    }
+}
+
+
+void AddItemToMapItem(Map& map, int hexX, int hexY, int pid, int itemPid, uint count)
+{
+    Item@ item = map.GetItem(hexX, hexY, pid);
+
+    if(!valid(item))
+        return;
+    ClearShelves(item);
+    item.AddItem(itemPid, count, 0);
+}
+
+
+void ClearShelves(Item& container)
+{
+    // Wipe old inventory items
+    Item@[] items;
+    uint count = container.GetItems(0, items);
+    for(uint i = 0; i < count; i++)
+    {
+        DeleteItem(items[i]);
+    }
+
+    // Force the physical container to re-lock itself during the respawn tick
+    // This stops players from picking the lock once and keeping it open forever!
+    if(container.LockerId != 0)
+    {
+        // Sets the item condition flags back to Closed and Locked (Engine state 1)
+        container.LockerCondition = 1; 
+    }
+}
+
+
+// Razlo entrance check
 void t_NearEntrance(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
 {
     

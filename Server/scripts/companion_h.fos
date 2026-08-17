@@ -19,7 +19,7 @@
 #define COMPANION_TYPE_ENERGY         (3)
 #define COMPANION_TYPE_THROW          (4)
 
-uint[] companion_map_pids = { MAP_Junktown, MAP_HubDowntown, MAP_ShadySands }; // Add any new maps here, they should contain at least one entire of each type, see _entires.fos
+uint[] companion_map_pids = { MAP_Junktown, MAP_HubDowntown, MAP_ShadySandsWest }; // Add any new maps here, they should contain at least one entire of each type, see _entires.fos
 uint[] companion_pids = { 23, 24, 36, 37, 40, 41, 32 };                                      // Critter pids used when spawning new companions
 uint[] companion_bags_melee = { 150, 151, 152, };                                        // Bags for melee type
 uint[] companion_bags_sg = { 166, 167, 170, 171, 172, 212 };             				 // Bags for small guns type

@@ -7,25 +7,107 @@ lang=engl
 [dialog]
 &
 1 1000 None 1 #
-2 1010 @
+2 1010 D _param p ST_INTELLECT > 3 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 #
+2 1020 D _param p ST_INTELLECT < 3 #
+11 1030 D _var p name_mem_npc_player = 1 D _param p ST_INTELLECT > 3 @
 2 2000 None 0 #
-4 2010 #
-0 2020 @
+6 2010 #
+5 2020 #
+0 2030 @
 3 3000 None 0 @
 4 4000 None 0 #
 3 4010 R _script companion@r_BefriendCompanion 0  #
-0 4020 &
+0 4020 @
+5 5000 None 0 #
+0 5010 @
+6 6000 None 0 #
+7 6010 #
+8 6020 @
+7 7000 None 0 #
+12 7010 #
+14 7020 @
+12 8000 None 0 #
+65505 8010 @
+8 9000 None 0 #
+13 9010 #
+9 9020 #
+0 9030 @
+9 10000 None 0 #
+10 10010 @
+10 11000 None 0 #
+0 11010 @
+11 12000 None 0 #
+15 12010 #
+9 12020 #
+13 12030 #
+17 12040 D _param p ST_CHARISMA } 3 #
+16 12050 D _param p ST_CHARISMA < 3 #
+0 12060 @
+13 13000 None 0 #
+0 13010 @
+14 14000 None 0 #
+0 14010 R _script dialog@r_ShowLocation 1 17 R _script dialog@r_ShowLocation 1 25 @
+15 15000 None 0 #
+65505 15010 @
+16 16000 None 0 #
+65505 16010 @
+17 17000 None 0 #
+3 17010 D _script dialog@d_HasMoney 1 100 R _script companion@r_BefriendCompanion 0  R _script dialog@r_RemoveMoneyInventory 1 100 R _param p ST_EXPERIENCE + 100 R _script dialog@r_DialogMessage 2 4017 1 #
+3 17020 D _param p ST_CHARISMA > 4 R _script companion@r_BefriendCompanion 0  R _param p ST_EXPERIENCE + 100 R _script dialog@r_DialogMessage 2 4017 1 #
+0 17030 &
 
 [engl]
 {100}{}{Ian}
 {200}{}{You see Ian.}
+{210}{}{You see a short, stocky man.}
 {1000}{}{Predialogue installations}
-{1010}{}{next}
-{2000}{}{Hi there, who are you?@@Hello there stranger.@@Who might you be?@@What do you want?@@What are you staring at?@@Excuse me, but why are you looking at me like that?@@Hey, are you looking for trouble or what?@@What are you looking for?@@Don't bother me. I've got enough of scattered thoughts already.@@What brings you here?}
-{2010}{}{My name's @pname@@@I go by the name of @pname@.@@Pleased to meet you, my name is @pname@. Hi there, who are you?@@You look like someone familiar.@@Who might you be?@@Are you new around here?}
-{2020}{}{See you later.@@Nevermind.@@Sorry to disturb you.@@Didn't mean to bother you.@@[Walk away]@@Wrong person, sorry.@@Nevermind, I thought you looked a bit like a friend@@Gotta go.@@You sound terribly uninteresting, bye.}
-{3000}{}{Let's get out of this place.@@I'm ready to rock!@@Fine, let's go!}
+{1010}{}{first met}
+{1020}{}{Low int}
+{1030}{}{Second  time}
+{2000}{}{Hello, stranger. You look like you're new here. What's  your name?}
+{2010}{}{My name's @pname@.}
+{2020}{}{My name's not important.}
+{2030}{}{See you later.@@Nevermind.@@Sorry to disturb you.@@Didn't mean to bother you.@@[Walk away]@@Wrong person, sorry.@@Nevermind, I thought you looked a bit like a friend@@Gotta go.@@You sound terribly uninteresting, bye.}
+{3000}{}{Let's go. It'll be good to get back into action!}
 {4000}{}{Pleased to meet you, my name is @lex name@ and I'm your ordinary wastelander, looking for a little something to do, here and there.@@I just arrived from @lex place@ a while ago, not sure if I want to go back there anytime soon.}
 {4010}{}{Why don't we join together?@@Band up with me!@@I think you and I could achieve a lot of great things together!}
 {4020}{}{See you later.@@Nevermind.@@Sorry to disturb you.@@Didn't mean to bother you.@@[Walk away]@@Wrong person, sorry.@@Nevermind, I thought you looked a bit like a friend@@Gotta go.@@You sound terribly uninteresting, bye.}
+{5000}{}{Sorry, but I don't have time to waste on morons.}
+{5010}{}{Urgh?}
+{6000}{}{Good to meet you. I'm Ian.}
+{6010}{}{What do you do here?}
+{6020}{}{I'd like to know more about this place. Can you help?}
+{7000}{}{I was a guard for the merchants of the Hub. However, I was  shot during a raid by bandits. I've been staying here, since the people  have helped me recover. Still, my knowledge of the outside world  and my experience make me useful here. Shady Sands is my  home now. Occasionally, I even get to visit Junktown or the Hub  to do some trading, since I'm the only person here who has ever  really left town.}
+{7010}{}{I'm sorry to hear about your injury.}
+{7020}{}{Can you give me directions to the Hub and Junktown?}
+{8000}{}{Thanks. It's been healing up well, thanks to Razlo.}
+{8010}{}{I see...}
+{9000}{}{Shady Sands is a small but self-sufficient community. The only trouble  here is with the bandits and the Radscorpions.}
+{9010}{}{Why are the Radscorpions trouble?}
+{9020}{}{Are there many bandits?}
+{9030}{}{Thanks for your information.}
+{10000}{}{There are several. They come from various groups. They steal  our food and occasionally shoot a few people.  Seth organized the guards to help fight them off.}
+{10010}{}{There are different groups? Who are they all?}
+{11000}{}{There are three groups: the Khans, the Vipers, and the  Jackals. They pretty much hate each other, but they  all raid Shady Sands.}
+{11010}{}{Thanks for the information.}
+{12000}{}{Hello again, stranger. What can I do for you?}
+{12010}{}{Can you tell me about Seth?}
+{12020}{}{Are there many bandits?}
+{12030}{}{Why are the Radscorpions trouble?}
+{12040}{}{Could you help me out a bit? Your experience would be useful.}
+{12050}{}{Could you help me out a bit? Your experience would be useful.}
+{12060}{}{Hmm. Nothing. Never mind, Ian.}
+{13000}{}{Radscorpions are very dangerous. They have a poisonous  stinger in the tail, and they are very quick.  Aradesh has been trying to find a way to get rid of them.  If you feel brave, you could talk to Aradesh about them.}
+{13010}{}{Thanks for your information.}
+{14000}{}{The Hub is a big trading center far south of Shady Sands. It's run by  several different caravan groups of merchants: the Water Merchants, the  Crimson Caravan, and the Far Go Traders. Junktown is a little south and a ways west.  It's smaller, but still a good place to drop in for a drink. It's overseen by a  fellow by the name of Killian Darkwater, the local shopkeeper, sheriff, and mayor.}
+{14010}{}{Thanks.}
+{15000}{}{Seth is a very brave fighter. He occasionally goes to  the Radscorpion caves to kill a few Radscorpions, but  they always wind up coming back. There are just too many  for him to fight.}
+{15010}{}{Tell me more about...}
+{16000}{}{No thanks. I'm needed here.}
+{16010}{}{Tell me more about...}
+{17000}{}{Hmm. Tempting offer, since this place gets boring. Tell ya what. Standard  rates. 100 caps, and you've got a deal.}
+{17010}{}{Deal.}
+{17020}{}{How about a piece of the action, instead?}
+{17030}{}{No thanks.}
+{100000001}{}{You gain 100 experience points for convincing Ian to join your quest.}
 

@@ -16,7 +16,7 @@ lang=engl
 6 3010 D _script npc_repairman@d_HasRepairableEquipment 0  #
 4 3020 #
 5 3030 #
-65505 3040 @
+0 3040 @
 4 4000 None 0 #
 65505 4010 @
 5 5000 None 0 #
@@ -46,7 +46,7 @@ lang=engl
 {3010}{}{Repair my equipped gear.}
 {3020}{}{What about advanced equipment?}
 {3030}{}{What about badly damaged equipment?}
-{3040}{}{Got it.}
+{3040}{}{Maybe next time.@@Good service, maybe next time.}
 {4000}{}{There's a limit to what I can handle. Bring me something too sophisticated and I'll tell you to find someone else.}
 {4010}{}{Got it.}
 {5000}{}{If it's too far gone, I can't save it. Once the internals are ruined, it's scrap.}

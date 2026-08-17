@@ -510,7 +510,7 @@ void r_PayRepair(Critter& player, Critter@ npc)
     if(_CritCountItem(player, PID_BOTTLE_CAPS) < price)
         return;
 
-    BanksTransferFromCritter(player, price, TRANSACTION_DEFAULT, false);
+    _CritDeleteItem(player, PID_BOTTLE_CAPS, price);
 }
 
 void r_RepairEquipment(Critter& player, Critter@ npc)

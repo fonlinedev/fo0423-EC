@@ -2,10 +2,10 @@
 Version              4
 MaxHexX              200
 MaxHexY              200
-WorkHexX             79
-WorkHexY             102
-ScriptModule         -
-ScriptFunc           -
+WorkHexX             99
+WorkHexY             114
+ScriptModule         map_shadysands
+ScriptFunc           map_init
 NoLogOut             0
 Time                 -1
 DayTime              300  600  1140 1380
@@ -14946,7 +14946,7 @@ Critter_ParamValue1  13
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  15
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
+Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -15502,7 +15502,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  1
+Critter_ParamValue7  0
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  40
 Critter_ParamIndex9  ST_LEVEL
@@ -15562,7 +15562,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  1
+Critter_ParamValue7  0
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  40
 Critter_ParamIndex9  ST_LEVEL
@@ -15591,7 +15591,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  1
+Critter_ParamValue7  0
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  40
 Critter_ParamIndex9  ST_LEVEL
@@ -15620,7 +15620,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  1
+Critter_ParamValue7  0
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  40
 Critter_ParamIndex9  ST_LEVEL
@@ -20430,7 +20430,7 @@ Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
 Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
+Critter_ParamValue0  4024
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID

@@ -576,5 +576,6 @@
 #define MAP_Cubik		                          (570)      // _cubik, mapa dla testowej lokacji Cubik Camp(369)
 #define MAP_BarterGround						  (571)		 // BARTER GROUND
 #define MAP_Vault13_Cave   				          (3853)      // v13_ent, Vault13 Cave(373)
-#define MAP_ShadySands  	   	                  (3854)      // shadyw, Shady Sands(AreaID)
+#define MAP_ShadySandsWest 	   	                  (3854)      // shadyw, Shady Sands(AreaID)
+#define MAP_ShadySandsEast 	   	                  (3855)      // shadye, Shady Sands(AreaID)
 #endif // __MAPS__
