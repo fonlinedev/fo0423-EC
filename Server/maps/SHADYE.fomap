@@ -2,10 +2,10 @@
 Version              4
 MaxHexX              200
 MaxHexY              200
-WorkHexX             108
-WorkHexY             74
-ScriptModule         -
-ScriptFunc           -
+WorkHexX             81
+WorkHexY             75
+ScriptModule         map_shadysands
+ScriptFunc           map_init
 NoLogOut             0
 Time                 -1
 DayTime              300  600  1140 1380
@@ -17498,6 +17498,8 @@ ProtoId              10
 MapX                 78
 MapY                 73
 Dir                  4
+ScriptName           all_brahmin
+FuncName             _Domesticated
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -17527,6 +17529,8 @@ ProtoId              10
 MapX                 78
 MapY                 77
 Dir                  3
+ScriptName           all_brahmin
+FuncName             _Domesticated
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -17556,6 +17560,8 @@ ProtoId              10
 MapX                 73
 MapY                 77
 Dir                  1
+ScriptName           all_brahmin
+FuncName             _Domesticated
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -17613,6 +17619,8 @@ ProtoId              10
 MapX                 77
 MapY                 72
 Dir                  5
+ScriptName           all_brahmin
+FuncName             _Domesticated
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -17642,6 +17650,8 @@ ProtoId              67
 MapX                 95
 MapY                 92
 Dir                  5
+ScriptName           sands_guard
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -17654,7 +17664,7 @@ Critter_ParamValue2  167
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
+Critter_ParamValue4  3
 Critter_ParamIndex5  ST_REPLICATION_TIME
 Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
@@ -17670,6 +17680,8 @@ MapObjType           0
 ProtoId              67
 MapX                 97
 MapY                 91
+ScriptName           sands_guard
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -17682,7 +17694,7 @@ Critter_ParamValue2  167
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
+Critter_ParamValue4  3
 Critter_ParamIndex5  ST_REPLICATION_TIME
 Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
@@ -17699,6 +17711,8 @@ ProtoId              67
 MapX                 95
 MapY                 88
 Dir                  2
+ScriptName           sands_guard
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -17711,7 +17725,7 @@ Critter_ParamValue2  167
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
+Critter_ParamValue4  3
 Critter_ParamIndex5  ST_REPLICATION_TIME
 Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
@@ -17742,7 +17756,7 @@ Critter_ParamValue2  137
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  0
 Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
+Critter_ParamValue4  5
 Critter_ParamIndex5  ST_REPLICATION_TIME
 Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
@@ -17773,7 +17787,7 @@ Critter_ParamValue2  137
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  0
 Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
+Critter_ParamValue4  5
 Critter_ParamIndex5  ST_REPLICATION_TIME
 Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
@@ -17818,6 +17832,8 @@ ProtoId              67
 MapX                 116
 MapY                 89
 Dir                  5
+ScriptName           sands_guard
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -17830,7 +17846,7 @@ Critter_ParamValue2  167
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
+Critter_ParamValue4  3
 Critter_ParamIndex5  ST_REPLICATION_TIME
 Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
@@ -17847,6 +17863,8 @@ ProtoId              67
 MapX                 115
 MapY                 86
 Dir                  3
+ScriptName           sands_guard
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -17859,7 +17877,7 @@ Critter_ParamValue2  167
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
+Critter_ParamValue4  3
 Critter_ParamIndex5  ST_REPLICATION_TIME
 Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
@@ -17876,8 +17894,8 @@ ProtoId              67
 MapX                 108
 MapY                 71
 Dir                  2
-ScriptName           peasant
-FuncName             critter_init
+ScriptName           peasantsands_guard
+FuncName             critter_initcritter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -17890,7 +17908,7 @@ Critter_ParamValue2  135
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
+Critter_ParamValue4  3
 Critter_ParamIndex5  ST_REPLICATION_TIME
 Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
@@ -17906,8 +17924,8 @@ MapObjType           0
 ProtoId              67
 MapX                 111
 MapY                 75
-ScriptName           peasant
-FuncName             critter_init
+ScriptName           peasantsands_guard
+FuncName             critter_initcritter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -17920,7 +17938,7 @@ Critter_ParamValue2  135
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
+Critter_ParamValue4  3
 Critter_ParamIndex5  ST_REPLICATION_TIME
 Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
@@ -17967,6 +17985,8 @@ MapObjType           0
 ProtoId              67
 MapX                 105
 MapY                 75
+ScriptName           sands_guard
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -17979,7 +17999,7 @@ Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  0
 Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
+Critter_ParamValue4  3
 Critter_ParamIndex5  ST_REPLICATION_TIME
 Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
@@ -17996,6 +18016,8 @@ ProtoId              67
 MapX                 98
 MapY                 67
 Dir                  2
+ScriptName           sands_guard
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -18008,7 +18030,7 @@ Critter_ParamValue2  167
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
+Critter_ParamValue4  3
 Critter_ParamIndex5  ST_REPLICATION_TIME
 Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
@@ -18025,6 +18047,8 @@ ProtoId              67
 MapX                 95
 MapY                 69
 Dir                  5
+ScriptName           sands_guard
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -18037,7 +18061,7 @@ Critter_ParamValue2  167
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  5
 Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
+Critter_ParamValue4  3
 Critter_ParamIndex5  ST_REPLICATION_TIME
 Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
@@ -18388,5 +18412,153 @@ MapObjType           1
 ProtoId              1851
 MapX                 115
 MapY                 86
+
+MapObjType           2
+ProtoId              3852
+MapX                 108
+MapY                 78
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 96
+MapY                 75
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 107
+MapY                 86
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 113
+MapY                 112
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 117
+MapY                 78
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 119
+MapY                 86
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 115
+MapY                 82
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 115
+MapY                 95
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 94
+MapY                 95
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 99
+MapY                 90
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 96
+MapY                 84
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 98
+MapY                 80
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 78
+MapY                 84
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 78
+MapY                 85
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 75
+MapY                 86
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 74
+MapY                 84
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           2
+ProtoId              3852
+MapX                 77
+MapY                 86
+ScriptName           map_shadysands
+FuncName             t_Entered
+
+MapObjType           0
+ProtoId              202
+MapX                 72
+MapY                 85
+Dir                  2
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  4025
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  1
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  64
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
 
 

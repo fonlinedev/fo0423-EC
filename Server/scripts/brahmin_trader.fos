@@ -96,6 +96,24 @@ bool d_PlayerHasBrahmin(Critter& player, Critter@ npc, int val)
     return(valid(GetPlayerBrahmin(player, npc)));
 }
 
+bool d_NotPlayerHasBrahmin(Critter& player, Critter@ npc, int val)
+{
+    return !d_PlayerHasBrahmin(player, npc, val);
+}
+
+void r_SellBrahminToDealer(Critter& player, Critter@ npc, int val)
+{
+    Critter@ brahmin = GetPlayerBrahmin(player, npc);
+    if(!valid(brahmin))
+    {
+        return;
+    }
+    DisbandFollower(player, brahmin, false);
+    DeleteNpc(brahmin);
+    
+    player.AddItem(PID_BOTTLE_CAPS, val);    
+}
+
 bool SellableBrahmin(Critter& critter)
 {
     return(critter.CrType == CRTYPE_BRAHMIN);
@@ -117,18 +135,24 @@ Critter@ GetPlayerBrahmin(Critter& player, Critter@ npc)
     {
         // Here we check to see if the critter matches our criteria.
 
-        /*if (GetFollowerType(crits[i]) != FOLLOWER_BRAHMIN)
-            continue;*/
-
-        if(!IsOwnersFollower(player, crits[i]))
+        if (GetFollowerType(crits[i]) != FOLLOWER_TYPE_BRAHMIN) {            
             continue;
+        }
+            
 
-        if(!SellableBrahmin(crits[i]))
+        if(!IsOwnersFollower(player, crits[i])) {            
             continue;
+        }
+            
 
-        if(!RightBrahminDistance(crits[i], npc))
+        if(!SellableBrahmin(crits[i])) {            
             continue;
-
+        }
+            
+        if(!RightBrahminDistance(crits[i], npc)) {            
+            continue;
+        }
+        
         return crits[i];
     }
     return null;

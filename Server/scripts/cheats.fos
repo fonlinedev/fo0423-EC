@@ -1166,6 +1166,61 @@ void ExecGiveKeyCommand(array<string@>@ command, Critter@ player, Critter@ targe
     }
 }
 
+void ExecAddBrahminFollowerCommand(Critter& player, Critter& target)
+{
+    Map@ map = player.GetMap();
+
+    if(!valid(map))
+    {
+        player.Say(SAY_NETMSG, "You are not on a map.");
+        return;
+    }
+
+    uint16 brahminPid = 10;
+
+    Critter@ brahmin = AddNpc(
+        map,
+        brahminPid,
+        player.HexX + 1,
+        player.HexY,
+        Random(0, 5),
+        0,
+        "follower@critter_init",
+        FOLLOWER_DLG_BRAHMIN,
+        0,
+        0,
+        0,
+        0,
+        false,
+        1
+    );
+
+    if(!valid(brahmin))
+    {
+        player.Say(SAY_NETMSG, "Failed to create Brahmin.");
+        return;
+    }
+
+    MakeFollower(
+        brahmin,
+        FOLLOWER_TYPE_BRAHMIN,
+        "follower@critter_init",
+        FOLLOWER_DLG_BRAHMIN,
+        player,
+        true
+    );
+
+    ClearEnemyStack(brahmin);
+    ClearFollowersEnemy(player, brahmin);
+
+    brahmin.FollowerVarBase[FV_MERCID] = 9;
+    brahmin.FollowerVarBase[FV_TYPE] = FOLLOWER_TYPE_BRAHMIN;
+
+    player.LastSpawnedCritter = brahmin.Id;
+
+    player.Say(SAY_NETMSG, "Test Brahmin follower created.");
+}
+
 //
 // ExecAddNpcCommand
 //
@@ -11153,6 +11208,60 @@ void kill_all_mobs(Critter& player, int p0, int p1, int p2)
 
     player.Say(SAY_NETMSG,
         "Killed " + killed + " mobs on this map.");
+}
+
+//~runscript cheats c_AddBrahmin 0 0 0
+void c_AddBrahmin(Critter& player, int p0, int p1, int p2)
+{
+    Map@ map = player.GetMap();
+
+    if(!valid(map))
+    {
+        Log("c_AddBrahmin: player has no map.");
+        return;
+    }
+
+    Critter@ brahmin = AddNpc(
+        map,
+        10,                         // Brahmin ProtoId
+        player.HexX + 1,
+        player.HexY,
+        Random(0, 5),
+        0,
+        "follower@critter_init",
+        FOLLOWER_DLG_BRAHMIN,
+        0,
+        0,
+        0,
+        0,
+        false,
+        1
+    );
+
+    if(!valid(brahmin))
+    {
+        Log("c_AddBrahmin: failed to spawn Brahmin.");
+        return;
+    }
+
+    MakeFollower(
+        brahmin,
+        FOLLOWER_TYPE_BRAHMIN,
+        "follower@critter_init",
+        FOLLOWER_DLG_BRAHMIN,
+        player,
+        true
+    );
+
+    ClearEnemyStack(brahmin);
+    ClearFollowersEnemy(player, brahmin);
+
+    brahmin.FollowerVarBase[FV_MERCID] = 9;
+    brahmin.FollowerVarBase[FV_TYPE] = FOLLOWER_TYPE_BRAHMIN;
+
+    player.LastSpawnedCritter = brahmin.Id;
+
+    Log("c_AddBrahmin: created Brahmin " + brahmin.Id);
 }
 #endif
 /*@}*/

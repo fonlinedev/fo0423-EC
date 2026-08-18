@@ -1,5 +1,5 @@
 // FOnline: 2238
-// seth.fos
+// sands_guard.fos
 
 #include "_macros.fos"
 #include "_vars.fos"
@@ -10,12 +10,12 @@
 #include "npc_roles_h.fos"
 #include "ITEMPID.H"
 import void NpcSetLevel(Critter& npc, int level) from "parameters";
+
 // -----------------------------------------------------------------------
 // Dialog Demands (Conditions)
 // -----------------------------------------------------------------------
 
 #define DIALOG_SETH_ID   (4010)
-#define STR_SETH_WARNING (2000)
 #define STR_COMBAT_TAUNT (4)
 
 // Checks if the player has a weapon equipped in either hand.
@@ -37,7 +37,7 @@ bool d_IsNotArmed(Critter& player, Critter@ npc)
 }
 
 // -----------------------------------------------------------------------
-// Dialog WARNING
+// Guard init
 // -----------------------------------------------------------------------
 
 void critter_init(Critter& guard, bool firstTime)
@@ -54,29 +54,7 @@ void critter_init(Critter& guard, bool firstTime)
 void _OnPlayerMessage(Critter& npc, Critter& player, int num, int val)
 {        
     GuardOnMessage(npc, player, num, val);
-
-    if(num == MSG_SANDS_NEAR_ENTRANCE)
-    {
- 
-        int rep = player.ReputationBase[FACTION_NCR];
-        bool armed = d_IsArmed(player, npc);
- 
-        if(rep < 1000 && armed)
-        {
-            RunDialog(player, npc, DIALOG_SETH_ID, true);
-        }
-        else if(rep < 1000 && !armed)
-        {
-            npc.SayMsg(
-                SAY_SHOUT_ON_HEAD,
-                TEXTMSG_DLG,
-                DLGSTR(DIALOG_SETH_ID, STR_SETH_WARNING)
-            );
-        }
-        
-        return;
-    }
-
+    
     if(num == MSG_SANDS_ENTERED)
     {
 

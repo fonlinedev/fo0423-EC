@@ -14,11 +14,26 @@
 
 #define DIALOG_RAZLO_WIFE  (4024)
 
+// items initialized once.
+uint[] LOCKER_PROTECTED_ITEMS = { PID_223_FMJ, PID_SCOUT_HANDBOOK, PID_DOCTORS_BAG, PID_FIRST_AID_BOOK, PID_FIRST_AID_KIT };
+
+class LockerLoot
+{
+    uint Pid;
+    uint Count;
+
+    LockerLoot(uint pid, uint count)
+    {
+        Pid = pid;
+        Count = count;
+    }
+};
+
 void map_init(Map& map, bool firstTime)
 {
     uint respawnTime = 1; // 1 hour loop
     uint[] values = { map.GetProtoId() };    
-    CreateTimeEvent(__FullSecond + REAL_HOUR(respawnTime), "e_RespawnLoot", values, false);    
+    CreateTimeEvent(__FullSecond + REAL_HOUR(respawnTime), "e_RespawnLoot", values, false);
     if(firstTime)
     {
         map.SetTurnBasedAvailability(true);
@@ -30,88 +45,212 @@ uint e_RespawnLoot(uint[]@ values)
 {
     if(values is null || values.length() == 0) return 0;
     uint mapId = values[0];
-    initLockers(mapId);
+    respawnLockers(mapId);
     return REAL_HOUR(1);
 }
 
-void s_Dialog(Critter& critter, Scenery& trigger, bool entered, uint8 dir, int dialogId)
-{    
-    if(!critter.IsPlayer() || !entered)
-        return;
-        
-    RunDialog(critter, dialogId, critter.HexX, critter.HexY, false);
-}
-
-void initLockers(uint mapPid) {
-    Log("Run init lockers on map id" + mapPid);
+// First init the lockers, only run once.
+void initLockersOnce(uint mapPid)
+{
     Map@ map = GetMapByPid(mapPid, 0);
-    if(!valid(map))
-    {
-        Log("initLockers failed, map " + mapPid + " not found.");
-        return;
-    }
-    if (map.GetProtoId() == MAP_ShadySandsWest) {       
-        AddItemToMapItem(map, 95, 121, PID_BOOKCASE_0, PID_KNIFE, 1);
-        AddItemToMapItem(map, 95, 121, PID_BOOKCASE_0, PID_ROCK, uint(Random(1, 5)));
-        AddItemToMapItem(map, 95, 121, PID_BOOKCASE_0, PID_STIMPAK, uint(Random(0, 3)));
-    } else if (map.GetProtoId() == MAP_ShadySandsEast) {        
-        
-    }
-}
 
-void initLockersOnce(uint mapPid) {    
-    Map@ map = GetMapByPid(mapPid, 0);
     if(!valid(map))
     {
         Log("initLockersOnce failed, map " + mapPid + " not found.");
         return;
     }
-    if (map.GetProtoId() == MAP_ShadySandsWest) {
-        // some ammo
-        AddItemToMapItem(map, 87, 71, PID_BOOKCASE_0, PID_223_FMJ, uint(Random(0, 60)));
-        // scout book
-        AddItemToMapItem(map, 131, 79, PID_BOOKSELF_1, PID_SCOUT_HANDBOOK, 1);
-        // Razlo shelf
-        AddItemToMapItem(map, 123, 118, PID_BOOKCASE_0, PID_FIRST_AID_KIT, 1);
-        AddItemToMapItem(map, 123, 118, PID_BOOKCASE_0, PID_STIMPAK, uint(Random(1, 5)));
-        AddItemToMapItem(map, 123, 118, PID_BOOKCASE_0, PID_DOCTORS_BAG, 1);
-        AddItemToMapItem(map, 123, 118, PID_BOOKCASE_0, PID_FIRST_AID_BOOK, 1);        
-    } else if (map.GetProtoId() == MAP_ShadySandsEast) {        
-        
+    array<Item@> lockers;
+    uint count = map.GetItemsByType(ITEM_TYPE_CONTAINER, lockers);
+
+    if(map.GetProtoId() == MAP_ShadySandsWest)
+    {
+        if(count == 0)
+        {
+            Log("No lockers found on Shady Sands West.");
+            return;
+        }
+
+        Log("shelves found " + count);
+       
+        // Guard house
+        LockerLoot@[] westLocker0;
+        westLocker0.insertLast(LockerLoot(PID_223_FMJ, uint(Random(0, 60))));
+        ResetLockerLoot(lockers[0], westLocker0);
+       
+        LockerLoot@[] westLocker1;
+        westLocker1.insertLast(LockerLoot(PID_SCOUT_HANDBOOK, 1));
+        ResetLockerLoot(lockers[1], westLocker1);
+
+        // Razlo locker
+        LockerLoot@[] westLocker2;
+        westLocker2.insertLast(LockerLoot(PID_FIRST_AID_BOOK, 1));
+        westLocker2.insertLast(LockerLoot(PID_STIMPAK, uint(Random(1, 5))));
+        westLocker2.insertLast(LockerLoot(PID_DOCTORS_BAG, 1));
+        westLocker2.insertLast(LockerLoot(PID_FIRST_AID_KIT, 1));
+        ResetLockerLoot(lockers[2], westLocker2);
+
+        LockerLoot@[] westLocker3;
+        westLocker3.insertLast(LockerLoot(PID_BOTTLE_CAPS, uint(Random(1, 50))));
+        ResetLockerLoot(lockers[3], westLocker3);
+    }
+    else if(map.GetProtoId() == MAP_ShadySandsEast)
+    {
+        if(count == 0)
+        {
+            Log("No lockers found on Shady Sands East.");
+            return;
+        }
+
+        Log("shelves found " + count);
+        // Guard house
+        LockerLoot@[] westLocker0;
+        westLocker0.insertLast(LockerLoot(PID_SCOUT_HANDBOOK, 1));
+        westLocker0.insertLast(LockerLoot(PID_ROPE, 1));
+        ResetLockerLoot(lockers[0], westLocker0);
     }
 }
 
+// Called every hour for respawn items.
+void respawnLockers(uint mapPid) {   
 
-void AddItemToMapItem(Map& map, int hexX, int hexY, int pid, int itemPid, uint count)
-{
-    Item@ item = map.GetItem(hexX, hexY, pid);
+    Map@ map = GetMapByPid(mapPid, 0);
 
-    if(!valid(item))
+    if(!valid(map))
+    {
+        Log("initLockersOnce failed, map " + mapPid + " not found.");
         return;
-    ClearShelves(item);
-    item.AddItem(itemPid, count, 0);
+    }
+
+    if(map.GetProtoId() == MAP_ShadySandsWest)
+    {
+        array<Item@> lockers;
+        uint count = map.GetItemsByType(ITEM_TYPE_CONTAINER, lockers);
+        if(count == 0)
+        {
+            Log("No lockers found on Shady Sands West.");
+            return;
+        }
+        Log("shelves found " + count);      
+        
+        // Guard house
+        LockerLoot@[] westLocker0;
+        westLocker0.insertLast(LockerLoot(PID_10MM_JHP, uint(Random(1, 60))));
+        westLocker0.insertLast(LockerLoot(PID_10MM_AP, uint(Random(1, 60))));
+        westLocker0.insertLast(LockerLoot(PID_SPEAR, uint(Random(0, 1))));
+        ResetLockerLoot(lockers[0], westLocker0);
+        
+        // empty house
+        LockerLoot@[] westLocker1;
+        westLocker1.insertLast(LockerLoot(PID_KNIFE, 1));
+        westLocker1.insertLast(LockerLoot(PID_ROCK, 1));
+        ResetLockerLoot(lockers[1], westLocker1);
+
+        // Razlo locker
+        LockerLoot@[] westLocker2;        
+        westLocker2.insertLast(LockerLoot(PID_BOTTLE_CAPS, uint(Random(1, 50))));
+        ResetLockerLoot(lockers[2], westLocker2);
+        
+        // Aradesh house
+        LockerLoot@[] westLocker3;  
+        westLocker3.insertLast(LockerLoot(PID_FLARE, uint(Random(0, 3))));
+        westLocker3.insertLast(LockerLoot(PID_IGUANA_ON_A_STICK, uint(Random(1, 5))));
+        if(Chance(15))
+            westLocker3.insertLast(LockerLoot(PID_SHOTGUN_SHELLS, uint(Random(1, 50))));
+        ResetLockerLoot(lockers[3], westLocker3);
+
+    }
+    else if(map.GetProtoId() == MAP_ShadySandsEast)
+    {
+        array<Item@> lockers;
+        uint count = map.GetItemsByType(ITEM_TYPE_CONTAINER, lockers);
+        // Guard house
+        LockerLoot@[] eastLocker0;
+        eastLocker0.insertLast(LockerLoot(PID_BBS, uint(Random(0, 30))));
+        if(Chance(5))
+            eastLocker0.insertLast(LockerLoot(PID_SNIPER_RIFLE, 1));
+        ResetLockerLoot(lockers[0], eastLocker0);
+    }
 }
 
-
-void ClearShelves(Item& container)
+bool ResetLockerLoot(Item@ locker, LockerLoot@[]@ loot)
 {
-    // Wipe old inventory items
+    if(!valid(locker))
+        return false;
+
+    // Protected/original loot is still present.
+    // Leave the locker completely untouched.
+    if(LockerContainsProtected(locker, LOCKER_PROTECTED_ITEMS))
+        return false;
+
+    // Remove old respawn loot.
+    ClearLocker(locker);
+
+    // Add the complete new loot set.
+    for(uint i = 0; i < loot.length(); i++)
+    {
+        if(loot[i].Count == 0)
+            continue;
+
+        locker.AddItem(loot[i].Pid, loot[i].Count, 0);
+    }
+
+    return true;
+}
+
+// Empty the locker respecting the protected items.
+void ClearLocker(Item@ locker)
+{
+    if(!valid(locker))
+        return;
+    
     Item@[] items;
-    uint count = container.GetItems(0, items);
+    uint count = locker.GetItems(0, items);
+
     for(uint i = 0; i < count; i++)
     {
-        DeleteItem(items[i]);
+        if(valid(items[i]))
+            DeleteItem(items[i]);
     }
 
-    // Force the physical container to re-lock itself during the respawn tick
-    // This stops players from picking the lock once and keeping it open forever!
-    if(container.LockerId != 0)
-    {
-        // Sets the item condition flags back to Closed and Locked (Engine state 1)
-        container.LockerCondition = 1; 
-    }
+    if(locker.LockerId != 0)
+        locker.LockerCondition = 1;
 }
 
+bool Chance(uint percent)
+{
+    return Random(0, 99) < percent;
+}
+
+bool LockerContainsProtected(Item@ locker, uint[] protectedPids)
+{
+    if(!valid(locker))
+        return false;
+
+    for(uint i = 0; i < protectedPids.length(); i++)
+    {
+        if(LockerContainsPid(locker, protectedPids[i]))
+            return true;
+    }
+
+    return false;
+}
+
+bool LockerContainsPid(Item@ locker, uint pid)
+{
+    if(!valid(locker))
+        return false;
+
+    Item@[] items;
+    uint count = locker.GetItems(0, items);
+
+    for(uint i = 0; i < count; i++)
+    {
+        if(valid(items[i]) && items[i].GetProtoId() == pid)
+            return true;
+    }
+
+    return false;
+}
 
 // Razlo entrance check
 void t_NearEntrance(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
@@ -154,4 +293,13 @@ void t_Entered(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
         MESSAGE_TO_VISIBLE_ME
     );
 
+}
+
+
+void s_Dialog(Critter& critter, Scenery& trigger, bool entered, uint8 dir, int dialogId)
+{    
+    if(!critter.IsPlayer() || !entered)
+        return;
+        
+    RunDialog(critter, dialogId, critter.HexX, critter.HexY, false);
 }
