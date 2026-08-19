@@ -15482,8 +15482,8 @@ MapObjType           0
 ProtoId              67
 MapX                 80
 MapY                 77
-ScriptName           peasantsands_guard
-FuncName             critter_initcritter_init
+ScriptName           peasant
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0

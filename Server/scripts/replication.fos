@@ -125,8 +125,8 @@ void SetStartLocation(Critter& cr)   // Export
     switch(startloc)
     {
 	case LOCATION_Vault13_Cave:
-		x = 700;
-        y = 400;
+		x = 1526;
+        y = 1372;
         break;
     case LOCATION_Spawnpoint1:
         x = 1522;
@@ -164,7 +164,7 @@ void SetStartLocation(Critter& cr)   // Export
     cr.SetFog(zoneX, zoneY + 1, FOG_FULL);
     cr.SetFog(zoneX + 1, zoneY + 1, FOG_FULL);
 
-    cr.TransitToMap(map.Id, 73, 40, 2);
+    cr.TransitToMap(map.Id, 74, 45, 5);
 
     zoneX = cr.WorldX / __GlobalMapZoneLength;
     zoneY = cr.WorldY / __GlobalMapZoneLength;
@@ -454,11 +454,11 @@ void ReplicateCritter(Critter& cr)   // Export
             return;
         }
 
-        if(_CritCanDropItemsOnDead(cr))
+        /*if(_CritCanDropItemsOnDead(cr))
         {
             if(!(map.GetLocation().GetProtoId() == LOCATION_Hinkley && IsInsideArena(cr)))
                 DropItems(cr);
-        }
+        }*/
     }
     else
     {
@@ -470,11 +470,12 @@ void ReplicateCritter(Critter& cr)   // Export
             @map = TryFindCompanionRespawn(cr, hx, hy, false);
             if(!valid(map))
             {
-                DLog("Didn't find respawn for companion, deleting ");
+                DLog("Didn't find respawn for companion, deleting ");              
+                // DisbandFollower(player, cr, false);
                 DeleteNpc(cr);
             }
-            if(valid(cr))
-                cr.FollowerVarBase[FV_LOYALITY] = CLAMP(cr.FollowerVar[FV_LOYALITY] - FOLLOWER_LOYALITY_DEATH_DROP, 0, 100);
+            // disabled loyalty if(valid(cr))
+            //  cr.FollowerVarBase[FV_LOYALITY] = CLAMP(cr.FollowerVar[FV_LOYALITY] - FOLLOWER_LOYALITY_DEATH_DROP, 0, 100);
         }
         else
         {

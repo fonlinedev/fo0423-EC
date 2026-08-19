@@ -16,8 +16,11 @@
 
 void map_init(Map& map, bool firstTime)
 {
+    Log("map encounter running");
     if(firstTime)
     {
+        FillEncounterContainers(map);
+
         // scatter some stuff around
         uint pid = map.GetProtoId();
         uint locpid = map.GetLocation().GetProtoId();
@@ -111,6 +114,120 @@ void map_init(Map& map, bool firstTime)
     // map.SetEvent(MAP_EVENT_FINISH, "_Finish");
     map.SetEvent(MAP_EVENT_IN_CRITTER, "_CritterIn");
     map.SetEvent(MAP_EVENT_CRITTER_DEAD, "_CritterDead");
+}
+
+void FillEncounterContainers(Map& map)
+{
+    array<Item@> containers;
+    uint count = map.GetItemsByType(ITEM_TYPE_CONTAINER, containers);
+
+    for(uint i = 0; i < count; i++)
+    {
+        Item@ container = containers[i];
+
+        if(!valid(container))
+            continue;
+        Log("Found container...");
+        // Only fill completely empty containers.
+        Item@[] contents;
+        if(container.GetItems(0, contents) > 0)
+            continue;
+
+        // 50% chance that this container remains empty.
+        if(Random(0, 1) == 0)
+            continue;
+
+        // 1-3 loot items.
+        uint lootCount = Random(1, 3);
+
+        for(uint j = 0; j < lootCount; j++)
+            AddRandomEncounterLoot(container);
+    }
+}
+
+void AddRandomEncounterLoot(Item@ container)
+{
+    uint roll = Random(0, 99);
+
+    // Junk / miscellaneous
+    if(roll < 45)
+    {
+        uint[] junk =
+        {
+            PID_PUMP_PARTS,
+            PID_STEEL,
+            PID_METAL_PARTS,
+            PID_ROPE,
+            PID_FLARE,
+            PID_BOTTLE_EMPTY,
+            PID_WATER_FLASK
+        };
+
+        uint pid = junk[Random(0, junk.length() - 1)];
+        container.AddItem(pid, Random(1, 3), 0);
+        return;
+    }
+
+    // Medical / consumables
+    if(roll < 65)
+    {
+        uint[] medical =
+        {
+            PID_STIMPAK,
+            PID_FIRST_AID_KIT,
+            PID_HEALING_POWDER,
+            PID_ANTIDOTE
+        };
+
+        uint pid = medical[Random(0, medical.length() - 1)];
+        container.AddItem(pid, 1, 0);
+        return;
+    }
+
+    // Ammo
+    if(roll < 85)
+    {
+        uint[] ammo =
+        {
+            PID_10MM_JHP,
+            PID_10MM_AP,
+            PID_223_FMJ,
+            PID_SHOTGUN_SHELLS,
+            PID_9MM_BALL
+        };
+
+        uint pid = ammo[Random(0, ammo.length() - 1)];
+        container.AddItem(pid, Random(5, 30), 0);
+        return;
+    }
+
+    // Low-level weapons
+    if(roll < 96)
+    {
+        uint[] weapons =
+        {
+            PID_KNIFE,
+            PID_CLUB,
+            PID_SPEAR,
+            PID_10MM_PISTOL,
+            PID_SHOTGUN,
+            PID_HUNTING_RIFLE
+        };
+
+        uint pid = weapons[Random(0, weapons.length() - 1)];
+        container.AddItem(pid, 1, 0);
+        return;
+    }
+
+    // Rare low-level armor.
+    uint[] armor =
+    {
+        PID_LEATHER_ARMOR,
+        PID_LEATHER_JACKET
+    };
+
+    uint pid = armor[Random(0, armor.length() - 1)];
+    container.AddItem(pid, 1, 0);
 }
 
 //

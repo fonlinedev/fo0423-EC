@@ -2330,50 +2330,8 @@ void critter_dead(Critter& cr, Critter@ killer)
             }
     }
 
-    // drop items immediately if pulsed
-    if(valid(map) && (cr.Anim2Dead == ANIM2_DEAD_PULSE_DUST || cr.Anim2Dead == ANIM2_DEAD_EXPLODE) && _CritCanDropItemsOnDead(cr))
-    {
-        for(uint i = 0; i < items.length(); i++)
-        {
-            if(valid(items[i]) && items[i].GetType() == ITEM_TYPE_CONTAINER)
-            {
-                DeleteItem(items[i]);
-            }
-        }
-        // drop all (armor/helmet/trophies was removed earlier)
-        MoveItems(items, map, cr.HexX, cr.HexY);
-    }
-    // 'loot-me'
-    if(!_CritHasMode(cr, MODE_NO_LOOT))
-    {
-        uint mappid = 0;
-        if(valid(cr.GetMap()))
-            mappid = cr.GetMap().GetProtoId();
-
-        // encounters and certain towns
-        if(IsEncounterMap(cr.GetMap()) || mappid == MAP_VaultCityDowntown || mappid == MAP_NCR || mappid == MAP_Junktown || mappid  == MAP_HubDowntown || mappid == MAP_SanFranChina || mappid == MAP_Gunrunner)
-        {
-            DPlayerLog(cr, "Having loot here!");
-            array<Critter@> crits;
-            uint num = cr.GetCritters(true, FIND_LIFE | FIND_ONLY_NPC, crits);
-
-            for(uint i = 0; i < num; i++)
-            {
-                // loot only players and other humanoids, and only when you're humanoid and you don't have loot plane already
-                if((cr.IsPlayer() || IsHumanoid(cr)) && IsHumanoid(crits[i]) && crits[i].GetPlanes(PLANE_LOOT, null) == 0 && _IsTrueNpc(crits[i]))
-                {
-                    DPlayerLog(cr, "Critter " + crits[i].Id + " will loot me.");
-                    AddWalkPlane(crits[i], 0, PLANE_LOOT, cr.Id, cr.HexX, cr.HexY, 6, true, 1);
-                    break;
-                }
-            }
-        }
-    }
-
     if(valid(killer) && killer.IsPlayer())
     {
-        CheckBountyHunters(cr, killer);
-
         if(cr.Stat[ST_BODY_TYPE] == BT_CHILDREN)
         {
             uint8 current = killer.Karma[KARMA_CHILDKILLER];
