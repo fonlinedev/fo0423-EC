@@ -3271,11 +3271,26 @@
 {473000}{}{Vault 13}
 {473005}{}{A vault hidden in the mountains.}
 {473010}{}{12}
+{473020}{}{art\intrface\Twnmap00.frm}
+{473030}{}{art\intrface\WM_NCR.FRM}
+{473090}{}{1}
+{473101}{}{Cave}
+{473102}{}{214}
+{473103}{}{309}
 
 # Shady Sands, pid 374, base 474000
 {474000}{}{Shady Sands}
 {474005}{}{A village in the sand.}
 {474010}{}{12}
+{474020}{}{art\intrface\Twnmap02.frm}
+{474030}{}{art\intrface\WM_NCR.FRM}
+{474090}{}{2}
+{474101}{}{Shady West}
+{474102}{}{205}
+{474103}{}{327}
+{474111}{}{Shady East}
+{474112}{}{190}
+{474113}{}{190}
 
 #
 # Worldmap Encounter messages
