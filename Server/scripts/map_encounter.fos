@@ -10,7 +10,7 @@
 #include "entire.fos"
 #include "town_h.fos"
 #include "utils_h.fos"
-
+import bool   IsCompanion(Critter& follower) from "follower";
 #define TRANSFER_RADIUS    (500)
 #define GARBAGE_TIMEOUT    (REAL_DAY(7))      // 6 hours for left out cars and stuff
 
@@ -18,9 +18,8 @@ void map_init(Map& map, bool firstTime)
 {
     Log("map encounter running");
     if(firstTime)
-    {
-        FillEncounterContainers(map);
-
+    {        
+       
         // scatter some stuff around
         uint pid = map.GetProtoId();
         uint locpid = map.GetLocation().GetProtoId();
@@ -109,9 +108,10 @@ void map_init(Map& map, bool firstTime)
         }
         if((t == MAP_TYPE_MOUNTAIN_ENCOUNTER))
             Scatter(map, PID_PROD_FLINT, "prod_flint@item_init");
+        
     }
 
-    // map.SetEvent(MAP_EVENT_FINISH, "_Finish");
+    map.SetEvent(MAP_EVENT_FINISH, "_Finish");
     map.SetEvent(MAP_EVENT_IN_CRITTER, "_CritterIn");
     map.SetEvent(MAP_EVENT_CRITTER_DEAD, "_CritterDead");
 }
@@ -228,6 +228,97 @@ void AddRandomEncounterLoot(Item@ container)
 
     uint pid = armor[Random(0, armor.length() - 1)];
     container.AddItem(pid, 1, 0);
+}
+void ScatterChest(Map& map)
+{
+    // Check for active threats.
+    array<Critter@> critters;
+    uint critterCount = map.GetCritters(0, FIND_ALL | FIND_LIFE, critters);
+
+    uint threats = 0;
+
+    for(uint i = 0; i < critterCount; i++)
+    {
+        Critter@ cr = critters[i];
+        
+        if(!valid(cr))
+            continue;
+
+        if(!cr.IsNpc())
+            continue;
+
+        if(cr.IsDead())
+            continue;
+
+        if(IsCompanion(cr))
+            continue;
+
+        threats++;
+    }
+
+    if(threats == 0)
+    {
+        Log("ScatterChest: No threats found on map " + map.Id + ".");
+        return;
+    }
+
+    // Check if the map already contains a container.
+    array<Item@> containers;
+    uint containerCount = map.GetItemsByType(ITEM_TYPE_CONTAINER, containers);
+
+    if(containerCount > 0)
+    {
+        Log("ScatterChest: Map " + map.Id +
+            " already has " + containerCount +
+            " container(s). Chest not spawned.");
+        return;
+    }
+
+    // Find a random valid location.
+    array<Entire> entires;
+    ParseEntires(map, entires, 0);
+
+    if(entires.length() == 0)
+    {
+        Log("ScatterChest: No valid entires found.");
+        return;
+    }
+
+    uint re = Random(0, entires.length() - 1);
+
+    uint16 hx = entires[re].HexX;
+    uint16 hy = entires[re].HexY;
+
+    uint dist = Random(20, 100);
+
+    map.GetHexCoord(
+        entires[re].HexX,
+        entires[re].HexY,
+        hx,
+        hy,
+        Random(0, 359),
+        dist
+    );
+
+    if(!map.IsHexPassed(hx, hy))
+    {
+        Log("ScatterChest: Selected hex is not passable.");
+        return;
+    }
+
+    Item@ chest = map.AddItem(hx, hy, PID_CHEST, 1);
+
+    if(!valid(chest))
+    {
+        Log("ScatterChest: Failed to create chest.");
+        return;
+    }
+
+    Log("ScatterChest: Spawned one chest on map " + map.Id +
+        " with " + threats + " active threat(s).");
+
+    // Fill the newly created chest.
+    FillEncounterContainers(map);
 }
 
 //
@@ -378,7 +469,8 @@ void _CritterIn(Map& map, Critter& cr)
 		}	
 		
     }	
-	
+	ScatterChest(map);
+    FillEncounterContainers(map);
 }
 
 /**
