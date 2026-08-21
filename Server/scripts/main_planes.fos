@@ -21,7 +21,7 @@ import int  RawToHit(Critter& cr, Critter& target, ProtoItem@ weapon, uint8 weap
 import uint GetKeyId(Critter& cr, uint lockerId) from "lockers";
 import bool IsKeyAviable(Critter& cr, uint lockerId) from "lockers";
 import bool critter_use_skill(Critter& cr, int skill, Critter@ targetCr, Item@ targetItem, Scenery@ targetScen) from "main";   // ugly
-import void MilitiaMoveToFreeHex(Critter& cr) from "town_militia";
+// import void MilitiaMoveToFreeHex(Critter& cr) from "town_militia";
 import void SetWear(Item& item, int wearProcent) from "repair";
 
 #ifdef __TEST__
@@ -531,11 +531,11 @@ bool PlaneEndSuccess(Critter& npc, NpcPlane& plane)
 
 bool PlaneEndPositionIssue(Critter& npc, NpcPlane& plane)
 {
-    if(_CritHasExtMode(npc, MODE_EXT_MILITIA))
+    /*if(_CritHasExtMode(npc, MODE_EXT_MILITIA))
     {
         MilitiaMoveToFreeHex(npc);   // Find new position, not occupied
         return true;
-    }
+    }*/
     if(npc.GetMap().IsTurnBasedAvailability() && npc.Timeout[TO_BATTLE] > 0)
     {
         _EndTurn(npc);
@@ -545,11 +545,11 @@ bool PlaneEndPositionIssue(Critter& npc, NpcPlane& plane)
 
 bool PlaneEndGagCritter(Critter& npc, Critter@ someCr, NpcPlane& plane)
 {
-    if(_CritHasExtMode(npc, MODE_EXT_MILITIA))
+    /*if(_CritHasExtMode(npc, MODE_EXT_MILITIA))
     {
         MilitiaMoveToFreeHex(npc);
         return true;
-    }
+    }*/
 
     if(valid(someCr) && someCr.IsPlayer() && npc.FollowerVar[FV_MASTER] != int(someCr.Id) && IsFlaggedAsIllegal(someCr))
     {

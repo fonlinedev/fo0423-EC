@@ -51,8 +51,32 @@ import ICaravan@ GetCaravan(Critter& cr) from "caravans";
 import void InitCaravans() from "caravans";
 #endif
 
-import bool TakeNextLine(file& f, string& line) from "trains";
-import array<int>@ TakeNextNumLine(file & f) from "trains";
+bool TakeNextLine(file& f, string& line)
+{
+    if(f.isEndOfFile())
+        return false;
+    f.readLine(line);
+    int pos = ::findFirst(line, "#");
+    if(pos >= 0)
+        line = substring(line, 0, pos);
+    return true;
+}
+
+array<int>@ TakeNextNumLine(file & f)
+{
+    string line = "";
+    if(!TakeNextLine(f, line))
+        return null;
+    array<string@> splitted = splitEx(line, " ");
+    uint           n = splitted.length();
+    array<int> arr(n);
+    uint           j = 0;
+    for(uint i = 0; i < n; i++)
+        if(splitted[i].length() > 0 && StrToInt(splitted[i], arr[j]))
+            j++;
+    arr.resize(j);
+    return arr;
+}
 
 /**
  * Checks if given critter is leader of some caravan.

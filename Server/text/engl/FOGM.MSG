@@ -21,11 +21,6 @@
 {25}{}{17arroyo}
 {26}{}{gntlwin1:25, gntlwind:25, animal1:20, animal:20, gustwind:5, gustwin1:5}
 
-# Map 2, base 30
-{30}{}{Tesla Tower}
-{35}{}{08vats}
-{36}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
 # Map 4, base 50
 {50}{}{Rail Raiders}
 {55}{}{05raider}
@@ -36,27 +31,12 @@
 {65}{}{07desert}
 {66}{}{gntlwin1:20, gntlwind:20, dogbark:20, dogbark:20, gustwin1:10, gustwind:10}
 
-# Map 6, base 70
-{70}{}{Den Business}
-{75}{}{05RAIDER}
-{76}{}{dogbark:10, dogbark1:10, gntlwind:20, gntlwin1:20, blank:40}
-
 # Map 7, base 80
 {80}{}{Desert Encounter Khans 1}
 {85}{}{07desert}
 {85}{}{05raider}
 {85}{}{12junktn}
 {86}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 8, base 90
-{90}{}{Klamath Canyon}
-{95}{}{03wrldmp}
-{96}{}{gntlwin1:30, gntlwind:30, gustwin1:10, gustwind:10, vulture:10, vulture1:10}
-
-# Map 9, base 100
-{100}{}{Klamath Downtown}
-{105}{}{03wrldmp}
-{106}{}{laughter:10, laughte1:10, gntlwind:30, gntlwin1:20, brdchir1:10, brdchirp:20}
 
 # Map 10, base 110
 {110}{}{Mountains Encounter Khans 2}
@@ -87,16 +67,6 @@
 {155}{}{12junktn}
 {156}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
-# Map 15, base 160
-{160}{}{Vault City HQ}
-{165}{}{22vcity}
-{166}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
-
-# Map 16, base 170
-{170}{}{Vault City Downtown}
-{175}{}{22vcity}
-{176}{}{blank:40, brdchirp:25, brdchir1:25, potspans:5, potspan1:5}
-
 # Map 17, base 180
 {180}{}{Desert Encounter Khans 4}
 {185}{}{07desert}
@@ -104,30 +74,10 @@
 {185}{}{12junktn}
 {186}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
 
-# Map 18, base 190
-{190}{}{Modoc Large}
-{195}{}{18modoc}
-{196}{}{brdchir1:25, brdchirp:25, chimes:15, chimes1:15, dogbark:10, dogbark1:10}
-
 # Map 19, base 200
 {200}{}{NCR LA Gold Reserve}
 {205}{}{10labone}
 {206}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 20, base 210
-{210}{}{Vault City Vault Level 1}
-{215}{}{22vcity}
-{216}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
-
-# Map 21, base 220
-{220}{}{Vault City Vault Level 2}
-{225}{}{22vcity}
-{226}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
-
-# Map 22, base 230
-{230}{}{Vault City Vault Level 3}
-{235}{}{22vcity}
-{236}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
 
 # Map 23, base 240
 {240}{}{LA Warehouse}
@@ -169,16 +119,6 @@
 {315}{}{08vats}
 {316}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
 
-# Map 31, base 320
-{320}{}{Gecko Settlement}
-{325}{}{12junktn}
-{326}{}{electri1:20, electric:20, gntlwind:20, gntlwin1:20, steam:20, steam1:20}
-
-# Map 32, base 330
-{330}{}{Gecko Power Plant}
-{335}{}{12junktn}
-{336}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
-
 # Map 33, base 340
 {340}{}{Q Cathedral Basement 2}
 {345}{}{08vats}
@@ -214,20 +154,10 @@
 {405}{}{08vats}
 {406}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
 
-# Map 40, base 410
-{410}{}{Gun Runners}
-{415}{}{10labone}
-{416}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
 # Map 41, base 420
 {420}{}{Q Gun Runners Caravan 1}
 {425}{}{12junktn}
 {426}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 42, base 430
-{430}{}{NCR Residental Area}
-{435}{}{01hub}
-{436}{}{gntlwin1:25, gntlwind:25, brdchir1:10, brdchirp:10, blank:30}
 
 # Map 43, base 440
 {440}{}{Q Gun Runners Caravan 2}
@@ -239,23 +169,10 @@
 {455}{}{14necro}
 {456}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
 
-# Map 45, base 460
-{460}{}{NCR}
-{465}{}{01hub}
-{466}{}{gntlwin1:25, gntlwind:25, brdchir1:10, brdchirp:10, blank:30}
-
 # Map 46, base 470
 {470}{}{Hub Trainyard}
 {475}{}{01hub}
 {476}{}{gntlwin1:25, gntlwind:25, brdchir1:10, brdchirp:10, blank:30}
-
-# Map 47, base 480
-{480}{}{Den BoS}
-{486}{}{blank:10}
-
-# Map 48, base 490
-{490}{}{NCR BoS}
-{496}{}{blank:10}
 
 # Map 49, base 500
 {500}{}{Military Base Entrance}
@@ -282,31 +199,6 @@
 {545}{}{08vats}
 {546}{}{elevato1:25, elevator:25, electri1:15, electric:15, clank:10, clank1:10}
 
-# Map 54, base 550
-{550}{}{New Reno 1}
-{555}{}{19reno}
-{556}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 55, base 560
-{560}{}{New Reno 2}
-{565}{}{19reno}
-{566}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 56, base 570
-{570}{}{New Reno 3}
-{575}{}{19reno}
-{576}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 57, base 580
-{580}{}{New Reno 4}
-{585}{}{19reno}
-{586}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 58, base 590
-{590}{}{New Reno Chop Shop}
-{595}{}{19reno}
-{596}{}{clank:20, clank1:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
 # Map 59, base 600
 {600}{}{Eventmap 2}
 {606}{}{}
@@ -320,31 +212,6 @@
 {620}{}{Tobacco Farm}
 {625}{}{14necro}
 {626}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
-
-# Map 62, base 630
-{630}{}{Redding}
-{635}{}{24redd}
-{636}{}{saloon:25, saloon1:25, gustwind:10, laughter:20, footste1:10, footstep:10}
-
-# Map 63, base 640
-{640}{}{Redding Mine}
-{645}{}{24redd}
-{646}{}{animal1:20, animal:20, elevator:15, ore:15, mechpump:20, ore1:10}
-
-# Map 64, base 650
-{650}{}{Wanamingo Mine Entrance}
-{655}{}{24redd}
-{656}{}{animal1:20, animal:20, elevator:15, ore:15, mechpump:20, ore1:10}
-
-# Map 65, base 660
-{660}{}{NCRCF}
-{665}{}{10labone}
-{666}{}{gntlwin1:20, gntlwind:20, dogbark:20, dogbark:20, gustwin1:10, gustwind:10}
-
-# Map 66, base 670
-{670}{}{Rails}
-{675}{}{07desert}
-{676}{}{gntlwin1:20, gntlwind:20, dogbark:20, dogbark:20, gustwin1:10, gustwind:10}
 
 # Map 67, base 680
 {680}{}{Q Radscorpion Cave}
@@ -432,11 +299,6 @@
 {845}{}{16follow}
 {846}{}{brdchir1:20, brdchirp:20, gntlwind:20, gntlwin1:20, gustwind:10, blank:10}
 
-# Map 84, base 850
-{850}{}{Crater}
-{855}{}{16follow}
-{856}{}{gntlwind:20, gntlwin1:20, gntlwind:20, gntlwin1:20, gustwind:10, blank:10}
-
 # Map 85, base 860
 {860}{}{Lost Hills: Entrance}
 {865}{}{04brthrh}
@@ -508,32 +370,6 @@
 {995}{}{18modoc}
 {996}{}{}
 
-# Map 99, base 1000
-{1000}{}{New Reno Sewers}
-{1005}{}{08vats}
-{1005}{}{13carvrn}
-{1005}{}{14necro}
-{1006}{}{animal:20, pebble:15, pebble1:15, water1:20, water:20, blank:15}
-
-# Map 100, base 1010
-{1010}{}{Ares Military Base: Entrance}
-{1015}{}{07desert}
-{1015}{}{05raider}
-{1015}{}{14necro}
-{1016}{}{gntlwin1:20, gntlwind:20,gustwin1:10, gustwind:10}
-
-# Map 101, base 1020
-{1020}{}{Ares Military Base: Level 1}
-{1025}{}{14necro}
-{1025}{}{08vats}
-{1026}{}{elevato1:25, elevator:25, electri1:15, electric:15, clank:10, clank1:10}
-
-# Map 102, base 1030
-{1030}{}{Ares Military Base: Level 2}
-{1035}{}{14necro}
-{1035}{}{08vats}
-{1036}{}{elevato1:25, elevator:25, electri1:15, electric:15, clank:10, clank1:10}
-
 # Map 103, base 1040
 {1040}{}{Ruined Military Bunker Surface}
 {1045}{}{08vats}
@@ -594,26 +430,6 @@
 {1150}{}{Khans HQ}
 {1155}{}{14necro}
 {1156}{}{gntlwin1:25, gntlwind:25, gustwind:10, blank:40}
-
-# Map 115, base 1160
-{1160}{}{Broken Hills}
-{1165}{}{08vats}
-{1166}{}{brdchir1:20, brdchirp:20, gntlwind:20, gntlwin1:20, gustwind:10, blank:10}
-
-# Map 116, base 1170
-{1170}{}{Broken Hills Basement}
-{1175}{}{08vats}
-{1176}{}{brdchir1:20, brdchirp:20, gntlwind:20, gntlwin1:20, gustwind:10, blank:10}
-
-# Map 117, base 1180
-{1180}{}{Broken Hills Mine}
-{1185}{}{08vats}
-{1186}{}{brdchir1:20, brdchirp:20, gntlwind:20, gntlwin1:20, gustwind:10, blank:10}
-
-# Map 118, base 1190
-{1190}{}{Broken Hills Dungeon}
-{1195}{}{08vats}
-{1196}{}{brdchir1:20, brdchirp:20, gntlwind:20, gntlwin1:20, gustwind:10, blank:10}
 
 # Map 119, base 1200
 {1200}{}{Old Warehouse Cave}
@@ -1256,56 +1072,6 @@
 {2475}{}{09glow}
 {2476}{}{electri1:15, electric:15, clank:10, clank1:10, steam:15, steam:10}
 
-# Map 247, base 2480
-{2480}{}{New Reno: Golgotha}
-{2485}{}{10labone}
-{2486}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 260, base 2610
-{2610}{}{New Reno: Basement}
-{2615}{}{19reno}
-{2616}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 261, base 2620
-{2620}{}{New Reno: Bishop Floor 1}
-{2625}{}{19reno}
-{2626}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 262, base 2630
-{2630}{}{New Reno: Bishop Floor 2}
-{2635}{}{19reno}
-{2636}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 263, base 2640
-{2640}{}{New Reno: Mordino HQ}
-{2645}{}{19reno}
-{2646}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 264, base 2650
-{2650}{}{New Reno: Arms}
-{2655}{}{19reno}
-{2656}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 265, base 2660
-{2660}{}{New Reno: Shark Boxing}
-{2665}{}{19reno}
-{2666}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 266, base 2670
-{2670}{}{New Reno: Wright}
-{2675}{}{19reno}
-{2676}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 267, base 2680
-{2680}{}{New Reno: Stables}
-{2685}{}{05raider}
-{2686}{}{gntlwin1:25, gntlwind:25, gustwind:10, blank:40}
-
-# Map 268, base 2690
-{2690}{}{New Reno: Stables 2}
-{2695}{}{05raider}
-{2696}{}{gntlwin1:25, gntlwind:25, gustwind:10, blank:40}
-
 # Map 269, base 2700
 {2700}{}{Modoc: Ghostcave}
 {2705}{}{18modoc}
@@ -1336,11 +1102,6 @@
 {2795}{}{07desert}
 {2796}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
-# Map 279, base 2800
-{2800}{}{Gunrunner}
-{2805}{}{10labone}
-{2806}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
 # Map 280, base 2810
 {2810}{}{Adytum}
 {2815}{}{10labone}
@@ -1351,11 +1112,6 @@
 {2825}{}{10labone}
 {2826}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
-# Map 282, base 2830
-{2830}{}{Blade}
-{2835}{}{16Follow}
-{2836}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
 # Map 283, base 2840
 {2840}{}{Library}
 {2845}{}{16follow}
@@ -1365,16 +1121,6 @@
 {2850}{}{Library Level 1}
 {2855}{}{16follow}
 {2856}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 285, base 2860
-{2860}{}{Ripper}
-{2865}{}{10labone}
-{2866}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 286, base 2870
-{2870}{}{Ripper Sub}
-{2875}{}{10labone}
-{2876}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
 # Map 287, base 2880
 {2880}{}{Tent in the desert}
@@ -1568,51 +1314,6 @@
 {3495}{}{12junktn}
 {3495}{}{24redd}
 {3496}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 370, base 3710
-{3710}{}{Mining Site}
-{3715}{}{07desert}
-{3716}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 371, base 3720
-{3720}{}{Mining Site Inside}
-{3725}{}{08vats}
-{3726}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 372, base 3730
-{3730}{}{San Francisco Mining Site}
-{3735}{}{21sf}
-{3736}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 373, base 3740
-{3740}{}{San Francisco Mining Site Inside}
-{3745}{}{08vats}
-{3746}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 374, base 3750
-{3750}{}{Klamath Mining Site}
-{3755}{}{15shady}
-{3756}{}{gntlwin1:25, gntlwind:25, gustwind:10, brdchirp:10, rattle1:15, vulture:10}
-
-# Map 375, base 3760
-{3760}{}{Klamath Mining Site Inside}
-{3765}{}{08vats}
-{3766}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 376, base 3770
-{3770}{}{NCR Mining Site}
-{3775}{}{01hub}
-{3776}{}{gntlwin1:25, gntlwind:25, gustwind:10, brdchirp:10, rattle1:15, vulture:10}
-
-# Map 377, base 3780
-{3780}{}{Vault City Mining Site}
-{3785}{}{07desert}
-{3786}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 378, base 3790
-{3790}{}{Vault City Mine Inside}
-{3795}{}{08vats}
-{3796}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
 # Map 379, base 3800
 {3800}{}{Junktown Mining Site}
@@ -1884,134 +1585,6 @@
 # Entire X pic x, (pid + 100) * 1000 + 100 + X*10 + 2
 # Entire X pic y, (pid + 100) * 1000 + 100 + X*10 + 3
 
-# The Den, pid 1, base 101000
-{101000}{}{The Den}
-{101005}{}{A town of junkies and slavers.}
-{101010}{}{24}
-{101020}{}{art\intrface\twnden.frm}
-{101030}{}{art\intrface\WM_DEN.FRM}
-{101090}{}{4}
-{101101}{}{Downtown}
-{101102}{}{124}
-{101103}{}{293}
-{101111}{}{East Side}
-{101112}{}{262}
-{101113}{}{330}
-{101121}{}{South Side}
-{101122}{}{205}
-{101123}{}{357}
-{101131}{}{Southwest}
-{101132}{}{135}
-{101133}{}{347}
-
-# Klamath, pid 2, base 102000
-{102000}{}{Klamath}
-{102005}{}{A small town of trappers. Geckos are the lifeblood of this small community.}
-{102010}{}{24}
-{102020}{}{art\intrface\twnklama.frm}
-{102030}{}{art\intrface\WM_KLAM.FRM}
-{102090}{}{4}
-{102101}{}{Downtown}
-{102102}{}{363}
-{102103}{}{186}
-{102111}{}{Hunting Ground}
-{102112}{}{377}
-{102113}{}{297}
-{102121}{}{Trapper Town}
-{102122}{}{191}
-{102123}{}{320}
-{102131}{}{Forest}
-{102132}{}{207}
-{102133}{}{134}
-
-# Modoc, pid 3, base 103000
-{103000}{}{Modoc}
-{103005}{}{A small farming community.}
-{103010}{}{24}
-{103020}{}{art\intrface\twnmodoc.frm}
-{103030}{}{art\intrface\WM_MODOC.FRM}
-{103090}{}{3}
-{103101}{}{South}
-{103102}{}{312}
-{103103}{}{212}
-{103111}{}{North}
-{103112}{}{258}
-{103113}{}{69}
-{103121}{}{East}
-{103122}{}{360}
-{103123}{}{136}
-
-# Vault City, pid 4, base 104000
-{104000}{}{Vault City}
-{104005}{}{A high-tech settlement. Established by the inhabitants of Vault 8.}
-{104010}{}{24}
-{104020}{}{art\intrface\twnvcity.frm}
-{104030}{}{art\intrface\WM_VLTCT.FRM}
-{104090}{}{1}
-{104101}{}{Vault City}
-{104102}{}{306}
-{104103}{}{246}
-
-# Gecko, pid 5, base 105000
-{105000}{}{Gecko}
-{105005}{}{A town of ghouls built around a leaking nuclear power plant.}
-{105010}{}{24}
-{105020}{}{art\intrface\twngecko.frm}
-{105030}{}{art\intrface\WM_GECKO.FRM}
-{105090}{}{4}
-{105101}{}{Settlement}
-{105102}{}{155}
-{105103}{}{246}
-{105111}{}{South West}
-{105112}{}{40}
-{105113}{}{156}
-{105121}{}{Scrapyard}
-{105122}{}{279}
-{105123}{}{169}
-{105131}{}{Reactor}
-{105132}{}{168}
-{105133}{}{147}
-
-# Broken Hills, pid 6, base 106000
-{106000}{}{Broken Hills}
-{106005}{}{A town of humans, mutants and ghouls. Racism is rampant.}
-{106010}{}{24}
-{106020}{}{art\intrface\twnbrokn.frm}
-{106030}{}{art\intrface\WM_HILLS.FRM}
-{106090}{}{3}
-{106101}{}{Downtown}
-{106102}{}{125}
-{106103}{}{276}
-{106111}{}{Residental}
-{106112}{}{367}
-{106113}{}{284}
-{106121}{}{South Side}
-{106122}{}{246}
-{106123}{}{359}
-
-# New Reno, pid 7, base 107000
-{107000}{}{New Reno}
-{107005}{}{A town of casinos, drugs and debauchery.}
-{107010}{}{24}
-{107020}{}{art\intrface\twnreno.frm}
-{107030}{}{art\intrface\WM_RENO.FRM}
-{107090}{}{5}
-{107101}{}{Virgin Street}
-{107102}{}{230}
-{107103}{}{300}
-{107111}{}{2nd Street}
-{107112}{}{230}
-{107113}{}{210}
-{107121}{}{Commercial Row}
-{107122}{}{100}
-{107123}{}{210}
-{107131}{}{East side}
-{107132}{}{360}
-{107133}{}{210}
-{107141}{}{Gas station}
-{107142}{}{360}
-{107143}{}{100}
-
 # Sierra, pid 8, base 108000
 {108000}{}{Sierra}
 {108005}{}{An old military warehouse.}
@@ -2034,23 +1607,6 @@
 {109102}{}{80}
 {109103}{}{256}
 
-# NCR, pid 10, base 110000
-{110000}{}{NCR}
-{110005}{}{Shady Sands, the central government of the New California Republic. The most powerful city in the wastes.}
-{110010}{}{24}
-{110020}{}{art\intrface\twnncr.frm}
-{110030}{}{art\intrface\WM_NCR.FRM}
-{110090}{}{3}
-{110101}{}{Bazaar}
-{110102}{}{258}
-{110103}{}{175}
-{110111}{}{Vortis Holding Center}
-{110112}{}{183}
-{110113}{}{134}
-{110121}{}{Residence}
-{110122}{}{318}
-{110123}{}{241}
-
 # Cathedral, pid 11, base 111000
 {111000}{}{Cathedral}
 {111005}{}{An old Cathedral among city ruins, lighted up by burning barrels. People are wandering outside in a large crowd.}
@@ -2072,26 +1628,6 @@
 {112101}{}{Entrance}
 {112102}{}{125}
 {112103}{}{58}
-
-# Redding, pid 13, base 113000
-{113000}{}{Redding}
-{113005}{}{A mining town. The primary producer and distributor of gold in the wasteland.}
-{113010}{}{24}
-{113020}{}{art\intrface\twnredng.frm}
-{113030}{}{art\intrface\WM_RED.FRM}
-{113090}{}{4}
-{113101}{}{Downtown}
-{113102}{}{160}
-{113103}{}{231}
-{113111}{}{South Side}
-{113112}{}{82}
-{113113}{}{304}
-{113121}{}{Mine}
-{113122}{}{115}
-{113123}{}{204}
-{113131}{}{Wanamingo}
-{113132}{}{64}
-{113133}{}{252}
 
 # San Francisco, pid 14, base 114000
 {114000}{}{San Francisco}
@@ -2167,16 +1703,6 @@
 {119101}{}{Exterior}
 {119102}{}{352}
 {119103}{}{155}
-
-# Golgotha, pid 20, base 120000
-{120000}{}{Golgotha}
-{120005}{}{Golgotha.}
-{120010}{}{6}
-
-# New Reno Stables, pid 21, base 121000
-{121000}{}{New Reno Stables}
-{121005}{}{The New Reno Stables owned and operated by the Mordinos.}
-{121010}{}{6}
 
 # Ghost Farm, pid 22, base 122000
 {122000}{}{Ghost Farm}
@@ -2259,11 +1785,6 @@
 {127112}{}{287}
 {127113}{}{237}
 
-# Ares Rocket Silo, pid 28, base 128000
-{128000}{}{Ares Rocket Silo}
-{128005}{}{In the distance you can see the remains of an old rocket silo. It seems like someone has pitched his camp there a short while ago.}
-{128010}{}{6}
-
 # Raiders South, pid 29, base 129000
 {129000}{}{Raiders South}
 {129005}{}{Southern Raider hideout.}
@@ -2275,44 +1796,6 @@
 {129102}{}{210}
 {129103}{}{300}
 
-# Quarry, pid 30, base 130000
-{130000}{}{Quarry}
-{130005}{}{A well guarded NCR quarry.}
-{130010}{}{6}
-
-# Mining Site, pid 31, base 131000
-{131000}{}{Mining Site}
-{131005}{}{This mining site has been closed many years ago.}
-{131010}{}{6}
-{131020}{}{art\intrface\TWNMAP12.png}
-{131090}{}{2}
-{131101}{}{East}
-{131102}{}{206}
-{131103}{}{176}
-{131111}{}{West}
-{131112}{}{138}
-{131113}{}{189}
-
-# Mining Site, pid 32, base 132000
-{132000}{}{Mining Site}
-{132005}{}{This small mining site is run by a bunch of trappers from Klamath.}
-{132010}{}{6}
-
-# Mining Site, pid 33, base 133000
-{133000}{}{Mining Site}
-{133005}{}{A small industrial mining site, run by the San Francisco Communist Party.}
-{133010}{}{6}
-
-# Mining Site, pid 34, base 134000
-{134000}{}{Mining Site}
-{134005}{}{A small private underground mining site.}
-{134010}{}{6}
-
-# Crater, pid 35, base 135000
-{135000}{}{Crater}
-{135005}{}{The smell of death lies on this ground.}
-{135010}{}{6}
-
 # Library, pid 36, base 136000
 {136000}{}{Library}
 {136005}{}{The Public Library serves as the headquarters of the Followers of the Apocalypse.}
@@ -2322,42 +1805,6 @@
 {136101}{}{Library}
 {136102}{}{158}
 {136103}{}{120}
-
-# Warehouse, pid 37, base 137000
-{137000}{}{Warehouse}
-{137005}{}{An old warehouse between the ruins.}
-{137010}{}{6}
-{137020}{}{art\intrface\Twnmap10.frm}
-{137090}{}{3}
-{137101}{}{West Side}
-{137102}{}{297}
-{137103}{}{165}
-{137111}{}{East Side}
-{137112}{}{397}
-{137113}{}{165}
-{137121}{}{Southeast}
-{137122}{}{397}
-{137123}{}{225}
-
-# Salvagers, pid 38, base 138000
-{138000}{}{Salvagers}
-{138005}{}{Downtown is the home and headquarter for the salvagers of the Angel's Boneyard.}
-{138010}{}{8}
-{138020}{}{art\intrface\Twnmap10.frm}
-{138090}{}{1}
-{138101}{}{Boneyard Downtown}
-{138102}{}{241}
-{138103}{}{201}
-
-# Gun Runners, pid 39, base 139000
-{139000}{}{Gun Runners}
-{139005}{}{The Fortress is surrounded by a moat of glowing green goo. This intimidating location is the home of the Gun Runners.}
-{139010}{}{8}
-{139020}{}{art\intrface\Twnmap10.frm}
-{139090}{}{1}
-{139101}{}{Gun Runners}
-{139102}{}{358}
-{139103}{}{120}
 
 # Replication 1, pid 40, base 140000
 {140000}{}{Replication 1}
@@ -2404,11 +1851,6 @@
 {148005}{}{A small camp for the injured.}
 {148010}{}{6}
 
-# Tesla Tower, pid 49, base 149000
-{149000}{}{Tesla Tower}
-{149005}{}{A wireless  telecommunication tower, in control by the Brotherhood of Steel. Due to this tower, it was possible to greatly increase the general radio reception.}
-{149010}{}{12}
-
 # Crashed Hummer, pid 51, base 151000
 {151000}{}{Crashed Hummer}
 {151005}{}{A crashed Hummer and it's crew.}
@@ -2423,11 +1865,6 @@
 {153000}{}{An Old Bunker}
 {153005}{}{}
 {153010}{}{6}
-
-# Prison, pid 54, base 154000
-{154000}{}{Prison}
-{154005}{}{}
-{154010}{}{10}
 
 # Train Ambush: Rail Raiders, pid 55, base 155000
 {155000}{}{Train Ambush: Rail Raiders}
@@ -3479,7 +2916,7 @@
 {20000126}{}{Raiders}
 {20000127}{}{Raiders}
 {20000128}{}{Jackals}
-{20000129}{}{Vault City Patrol}
+{20000129}{}{Brotherhood of Steel Patrol}
 {20000130}{}{NCR Army}
 {20000131}{}{80s}
 {20000132}{}{Brotherhood Initiate Patrol}

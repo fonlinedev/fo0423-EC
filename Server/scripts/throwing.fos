@@ -13,8 +13,6 @@
 # define CritterMutual       Critter
 # define ItemMutual          Item
 
-import bool IsArenaItem(Item@ item) from "arena";
-import bool IsInsideArena(Critter& cr) from "arena";
 #endif
 #ifdef __CLIENT
 # include "sprite.fos"
@@ -244,7 +242,7 @@ void CommenceThrowing(Critter& cr, Map& map, Item& item, uint16 tx, uint16 ty)
     cr.StatBase[ST_CURRENT_AP] -= 100 * ActionPointsCost(item);
     map.RunFlyEffect(item.GetProtoId(), cr, null, cr.HexX, cr.HexY, tx, ty);
     uint16 pid = item.GetProtoId();
-    if(IsGrenade(item) && (!IsArenaItem(item) || IsInsideArena(cr)))
+    if(IsGrenade(item))
     {
         cr.PlaySound('W', SOUND_WEAPON_USE, _WeaponSoundId(item.Proto, 0), '1', true);         // '1'?
         if(cr.Timeout[TO_BATTLE] < int(__TimeoutBattle))

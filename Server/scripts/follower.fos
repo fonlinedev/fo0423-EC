@@ -28,7 +28,6 @@
 #include "utils_h.fos"
 #include "world_common_h.fos"
 
-import bool   IsArenaCombatant(Critter& cr) from "arena";
 import Map@   GetRoomPosition(uint PlayerId, uint16& out hx, uint16& out hy) from "rooms";
 import IMerc@ GetMerc(uint id) from "mercs";
 
@@ -388,12 +387,7 @@ uint dlg_GiveFollower(Critter& player, Critter@ npc, string@ say)
         player.Say(SAY_DIALOG, "Player is not in game.");
         return 0;
     }
-
-    if(IsArenaCombatant(target))
-    {
-        player.Say(SAY_DIALOG, "Player is inside arena.");
-        return 0;
-    }
+    
 
     if(!CanHaveMoreFollowers(target, npc.FollowerVar[FV_TYPE]))
     {

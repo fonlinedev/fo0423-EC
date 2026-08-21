@@ -53,7 +53,6 @@
 // Imports
 import void DropDrugEffects(Critter& cr) from "drugs";
 import bool FindBaseEncounter(array<Critter@>& group, Item@ car, uint x, uint y, uint& encounterDescriptor, bool& waitForAnswer) from "factions_player";
-import bool IsArenaCombatant(Critter& cr) from "arena";
 import bool IsCarTrunk(Item@ item) from "car";
 import bool OnUseExplode(Critter& cr, Item& explode, Critter@ targetCr, Item@ targetItem, Scenery@ targetScen, uint timer) from "explode";
 import bool PerkCheck(Critter& cr, uint perk, bool always) from "perks";
@@ -91,12 +90,11 @@ import void   InitReverseItem() from "fix_boy";
 import void   InitRoutes() from "patrolroutes";
 import void   InitSlaveruns() from "slaverun";
 import void   InitTowns() from "towns";
-import void   InitTrains() from "trains";
 import void   InitBlueprints() from "blueprints";
 import void   InitPerks() from "perks";
 import void   InitProduction() from "production";
 import void   InitShufflingSpawns() from "shuffling_spawner";
-import bool   IsArenaItem(Item@ item) from "arena";
+
 import void   LogAction(Critter& cr, string& s) from "logging_critter";
 import void   NpcProcessLevel(Critter& cr) from "parameters";
 import void   PlaySound(Critter& cr, string& soundName) from "media";
@@ -105,7 +103,7 @@ import void   ProcessCrippling() from "crippling";
 import void   RemoveAuthed(uint id) from "cheats";
 import void   RemoveWorkbenches(Critter& player) from "workbench";
 import void   ReplicateCritter(Critter& cr) from "replication";
-import void   RemoveArenaItems(Critter& cr) from "arena";
+
 import void   RemoveOnlinePlayer(Critter& cr) from "utils";
 import void   SaveBrahminPenData() from "brahmin_pens";
 import void   SaveEventSpawns() from "cheats";
@@ -509,7 +507,7 @@ void critter_attacked(Critter& cr, Critter& attacker)
         return;
 
     Map@ map = cr.GetMap();
-    if(IsDueling(attacker) || IsArenaCombatant(attacker))
+    if(IsDueling(attacker))
         return;
     uint crGroup = _GroupIndex(cr);
     uint attackerGroup = _GroupIndex(attacker);
@@ -1277,7 +1275,7 @@ bool critter_use_skill(Critter& cr, int skill, Critter@ targetCr, Item@ targetIt
         return true;
     case SK_SCIENCE:     //////////////////////////////////////////////////
     {
-        if(valid(targetItem) && (!FLAG(targetItem.Flags, ITEM_CAN_PICKUP) || IsArenaItem(targetItem)))
+        if(valid(targetItem) && (!FLAG(targetItem.Flags, ITEM_CAN_PICKUP)))
         {
             cr.SayMsg(SAY_NETMSG, TEXTMSG_GAME, STR_USE_NOTHING);
             return true;
@@ -1659,8 +1657,6 @@ void critter_init(Critter& cr, bool firstTime)
             var = 1;
         }
     }
-
-    RemoveArenaItems(cr);     // keep it here, for future hinkley+followers bugs
 
     if(cr.IsNpc())
     {
@@ -2236,7 +2232,7 @@ void critter_dead(Critter& cr, Critter@ killer)
     uint crGroup = _GroupIndex(cr);
     Map@ map = cr.GetMap();
     cr.ParamBase[TO_IMMUNITY_TIME] = MAX(uint(cr.Param[TO_IMMUNITY_TIME]), ELAPSED_TIME + SLEEPY_DEATH_IMMUNITY(cr));
-    if(valid(killer) && killer.IsPlayer() && !IsFlaggedAsIllegal(cr) && (killer.Id != cr.Id) && (crGroup > 1) && !IsArenaCombatant(killer) && !IsDueling(killer))
+    if(valid(killer) && killer.IsPlayer() && !IsFlaggedAsIllegal(cr) && (killer.Id != cr.Id) && (crGroup > 1) && !IsDueling(killer))
     {
         FeedReputations(killer, crGroup, 0);
         if(IsTown(map))
@@ -2481,8 +2477,7 @@ void critter_respawn(Critter& cr)
 // Called when a critter enters a map.
 void map_critter_in(Map& map, Critter& cr)
 {
-	SetWalkRunTimeForNpcs(map, 0);
-    RemoveArenaItems(cr);
+	SetWalkRunTimeForNpcs(map, 0);    
     Location@ loc = map.GetLocation();
 
     if(cr.IsPlayer() || _IsFollower(cr))
@@ -2636,8 +2631,7 @@ void map_critter_in(Map& map, Critter& cr)
 // Call on something critter out from map.
 void map_critter_out(Map& map, Critter& cr)
 {
-    RemoveArenaItems(cr);
-
+    
     if(_IsNotLegit(map.GetData(MAP_DATA_SPAWNER)) && (cr.IsNpc() || _IsRealPlayer(cr)))
     {
 

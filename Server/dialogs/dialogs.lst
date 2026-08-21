@@ -336,9 +336,6 @@ $	770	nr_cody
 $	771	nr_algernon
 $	772	nr_jessy
 $	773	nr_jessy_man
-$	774	nr_door_sharc
-$	775	nr_door_salvatore
-$	776	nr_door_desperado
 $	777	nr_boxer_announcer
 $	778	nr_old_man_mcgee
 
@@ -373,46 +370,7 @@ $	1025	ncr_Hoss
 $	1026	ncr_doctor_jubiley
 $	1027	ncr_doctor_henry
 $	1028	ncr_hub_clearens
-$	1029	ncr_grant
-$	1030	ncr_bob
-$	1031	ncr_felix
-$	1032	ncr_westin
-$	1033	ncr_workers
-$	1034	ncr_gunter
-$	1035	ncr_tandy
-$	1036	ncr_fergus
-$	1037	ncr_karlson
-$	1038	ncr_karlson_guard
-$	1039	ncr_karlson_son
-$	1040	ncr_karlson_bodyguard
-$	1041	ncr_captain
-$	1042	ncr_merk
-$	1043	ncr_merk_bodyguard
-$	1044	ncr_jeck
-$	1045	ncr_prisoner
-$	1046	ncr_robodog
-$	1047	ncr_brahminman
-$	1048	ncr_shaenine
-$	1049	ncr_caravantrader
-$	1051	ncr_train_guard
-$	1052	ncr_train_peasant1
-$	1053	ncr_train_ticketseller
-$	1054	ncr_spawn_feelslong
-$	1055	ncr_harris
-$	1056	ncr_train_shadyperson
-$	1057	ncr_train_mantis
-$	1058	ncr_mine_guard
-$	1059	ncr_mine_shouter
-$	1060	ncr_army_doorguard
-$	1061	ncr_greeter
-$	1062	ncr_bostrainer_henrickson
-$	1063	ncr_prison_doorguard
-$	1064	ncr_prison_guards
-$	1065	ncr_prison_convicts
-$	1066	ncr_prison_governor
-$	1067	ncr_prison_overseer
-$	1068	ncr_prison_rails_overseer
-$	1069	ncr_res_housekeeper
+
 
 $	1100	cath_caravan1
 $	1101	cath_caravan2
@@ -471,7 +429,7 @@ $	1330	redd_wade
 $	1331	redd_melkor_small
 $	1332	redd_fight_fanat
 $	1333	redd_oldman
-$	1334	redd_lost_computer
+
 $	1335	redd_baseseller
 $	1336	redd_christopher
  	1337	redd_old_parker
@@ -569,7 +527,6 @@ $	1720	junktown_ronnie
 $	1721	junktown_phouse_guard
 $	1722	junktown_phouse_thomas
 $	1723	junktown_phouse_mrhandy
-$	1724	junktown_gate_guard
 
 $	1800	bos_lh_guard
 $	1801	bos_lh_guard1
@@ -702,7 +659,6 @@ $	2906	repl_ncr_ranger
 $	2907	repl7_nomad
 $	2908	repl7_nomad_warrior
 $	2909	repl5_citizen
-$	2910	repl5_q_subway
 
  	3102	bos_malogarzt
  	3103	bos_ignat
@@ -858,7 +814,6 @@ $	10150	all_base_foreworker
 $	10151	all_base_builder
 $	10152	all_mr_handy
 
-$	10200	train_conductor
 
 $	10250	ul_junk_todd
 $	10251	spawn_caravan_ghoul1
@@ -910,10 +865,6 @@ $	10799	event_low_outfitter
 $	10800	event_warzone_terminal
 $	10801	event_outfitter
 $	10802	altruist
-$	10803	arena_scheduler
-$	10804	arena_outfitter
-$	10805	arena_guard
-$	10806	arena_door
  	10807	zax
 $	10808	dialogimage
 $	10809 event_outfitter2
@@ -934,10 +885,6 @@ $	21201	q_mb_reactor
 $	21202	q_mb_infi
 $	21203	q_mb_body
 $	21204	q_mb_uber_bot_terminal
-
-$	22120	talchem_l5
-$	22121	talchem_rl
-$	22122	talchem_Ter
 
 $	4000	doctor
 $	4001	tanner

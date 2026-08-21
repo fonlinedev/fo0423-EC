@@ -25,8 +25,6 @@ import void DropPoison(Critter& cr) from "poison";
 // import void DropRadiation(Critter& cr) from "radiation";
 import void CapRadiation(Critter& cr) from "radiation";
 import Map@ GetRoomPosition(uint PlayerId, uint16& out hx, uint16& out hy) from "rooms";
-import bool IsInsideArena(Critter&) from "arena";
-import void OnTeleportToLobby(Critter&) from "arena";
 import void ClearInfluenceBuffer(Critter& cr) from "town";
 
 
@@ -45,15 +43,7 @@ const uint16[] Hospitals =
 
 // starting towns
 const uint16[] Towns =
-{
-    // LOCATION_Den,
-    // LOCATION_Klamath,
-    // LOCATION_Modoc,
-    // LOCATION_BrokenHills,
-    // LOCATION_NewReno,
-    LOCATION_NCR,
-    // LOCATION_Redding,
-    LOCATION_SanFrancisco,
+{    
     LOCATION_Junktown,
     LOCATION_Hub,
     LOCATION_Boneyard
@@ -407,18 +397,7 @@ void ReplicateCritter(Critter& cr)   // Export
                 hy = entires[i].HexY;
             }
         }
-        else if(valid(deathMap) && deathMap.GetLocation().GetProtoId() == LOCATION_Hinkley && IsInsideArena(cr))
-        {
-            @map = deathMap;
-            array<Entire> entires;
-            ParseEntires(map, entires, 242);
-            if(entires.length() > 0)
-            {
-                int i = Random(0, entires.length() - 1);
-                hx = entires[i].HexX;
-                hy = entires[i].HexY;
-            }
-        }
+        
         else
         {
             // Try dynamic respawn points.
@@ -543,29 +522,23 @@ void ReplicateCritter(Critter& cr)   // Export
     }
 
 
-    if(map.GetLocation().GetProtoId() == LOCATION_Hinkley && IsInsideArena(cr))
-    {
-        cr.TransitToMap(map.Id, hx, hy, Random(0, 5));
-        OnTeleportToLobby(cr);
-    }
-    else
-    {
-        cr.TransitToMap(map.Id, hx, hy, Random(0, 5));
-        cr.DamageBase[DAMAGE_EYE] = 0;
-        cr.DamageBase[DAMAGE_RIGHT_ARM] = 0;
-        cr.DamageBase[DAMAGE_LEFT_ARM] = 0;
-        cr.DamageBase[DAMAGE_RIGHT_LEG] = 0;
-        cr.DamageBase[DAMAGE_LEFT_LEG] = 0;
+    
+    cr.TransitToMap(map.Id, hx, hy, Random(0, 5));
+    cr.DamageBase[DAMAGE_EYE] = 0;
+    cr.DamageBase[DAMAGE_RIGHT_ARM] = 0;
+    cr.DamageBase[DAMAGE_LEFT_ARM] = 0;
+    cr.DamageBase[DAMAGE_RIGHT_LEG] = 0;
+    cr.DamageBase[DAMAGE_LEFT_LEG] = 0;
 
-        cr.StatBase[ST_CURRENT_HP] = 10;
-        if(cr.IsNpc())
-            cr.StatBase[ST_CURRENT_HP] = cr.Stat[ST_MAX_LIFE];
+    cr.StatBase[ST_CURRENT_HP] = 10;
+    if(cr.IsNpc())
+        cr.StatBase[ST_CURRENT_HP] = cr.Stat[ST_MAX_LIFE];
 
-        if(IsWarzone(map))     // Full life on warzone
-            cr.StatBase[ST_CURRENT_HP] = cr.Stat[ST_MAX_LIFE];
-        //else
-        //   _SetTimeout(cr, TO_WEAKENED, WEAKENED_TIMEOUT(cr));
-    }
+    if(IsWarzone(map))     // Full life on warzone
+        cr.StatBase[ST_CURRENT_HP] = cr.Stat[ST_MAX_LIFE];
+    //else
+    //   _SetTimeout(cr, TO_WEAKENED, WEAKENED_TIMEOUT(cr));
+
 
 
 

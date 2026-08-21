@@ -127,7 +127,7 @@ void FillEncounterContainers(Map& map)
 
         if(!valid(container))
             continue;
-        Log("Found container...");
+        
         // Only fill completely empty containers.
         Item@[] contents;
         if(container.GetItems(0, contents) > 0)
@@ -153,12 +153,17 @@ void AddRandomEncounterLoot(Item@ container)
     if(roll < 45)
     {
         uint[] junk =
-        {
-            PID_PUMP_PARTS,
-            PID_STEEL,
+        {            
+            
             PID_METAL_PARTS,
-            PID_ROPE,
-            PID_FLARE,
+            PID_ROPE,            
+            PID_BRAHMIN_SKIN,
+            PID_FIREGECKO_PELT,
+            PID_GECKO_PELT,
+            PID_GOLDEN_GECKO_PELT,
+            PID_FIREWOOD,
+            PID_AXE,
+            PID_SHOVEL,
             PID_BOTTLE_EMPTY,
             PID_WATER_FLASK
         };
@@ -175,6 +180,7 @@ void AddRandomEncounterLoot(Item@ container)
         {
             PID_STIMPAK,
             PID_FIRST_AID_KIT,
+            PID_FIRST_AID_BOOK,
             PID_HEALING_POWDER,
             PID_ANTIDOTE
         };
@@ -210,6 +216,7 @@ void AddRandomEncounterLoot(Item@ container)
             PID_CLUB,
             PID_SPEAR,
             PID_10MM_PISTOL,
+            PID_GUNS_AND_BULLETS,
             PID_SHOTGUN,
             PID_HUNTING_RIFLE
         };
@@ -223,14 +230,16 @@ void AddRandomEncounterLoot(Item@ container)
     uint[] armor =
     {
         PID_LEATHER_ARMOR,
+        PID_METAL_ARMOR,
         PID_LEATHER_JACKET
     };
 
     uint pid = armor[Random(0, armor.length() - 1)];
     container.AddItem(pid, 1, 0);
 }
+
 void ScatterChest(Map& map)
-{
+{    
     // Check for active threats.
     array<Critter@> critters;
     uint critterCount = map.GetCritters(0, FIND_ALL | FIND_LIFE, critters);
@@ -258,7 +267,6 @@ void ScatterChest(Map& map)
 
     if(threats == 0)
     {
-        Log("ScatterChest: No threats found on map " + map.Id + ".");
         return;
     }
 
@@ -268,9 +276,6 @@ void ScatterChest(Map& map)
 
     if(containerCount > 0)
     {
-        Log("ScatterChest: Map " + map.Id +
-            " already has " + containerCount +
-            " container(s). Chest not spawned.");
         return;
     }
 
@@ -280,7 +285,6 @@ void ScatterChest(Map& map)
 
     if(entires.length() == 0)
     {
-        Log("ScatterChest: No valid entires found.");
         return;
     }
 
@@ -302,7 +306,12 @@ void ScatterChest(Map& map)
 
     if(!map.IsHexPassed(hx, hy))
     {
-        Log("ScatterChest: Selected hex is not passable.");
+        return;
+    }
+
+    uint roll = Random(0, 99);
+    if (roll < 20) {
+        Log("roll chest is lower than min " + roll);
         return;
     }
 
@@ -310,12 +319,8 @@ void ScatterChest(Map& map)
 
     if(!valid(chest))
     {
-        Log("ScatterChest: Failed to create chest.");
         return;
     }
-
-    Log("ScatterChest: Spawned one chest on map " + map.Id +
-        " with " + threats + " active threat(s).");
 
     // Fill the newly created chest.
     FillEncounterContainers(map);
@@ -326,6 +331,13 @@ void ScatterChest(Map& map)
 //
 void Scatter(Map& map, uint16 pid, string@ script)
 {
+
+    uint roll = Random(0, 99);
+
+    if (roll < 33) {
+        Log("roll scatter items is lower than min " + roll);
+        return;
+    }
     array<Entire> entires;
     ParseEntires(map, entires, 0);
     uint          re = Random(0, entires.length() - 1);

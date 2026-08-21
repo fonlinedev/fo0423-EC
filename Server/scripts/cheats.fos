@@ -5297,6 +5297,7 @@ void ExecBankMoney(array<string@>@ command, Critter& player, bool add)
         BankRemoveMoney(id, amount);
 }
 
+/*
 void ExecCheckTownCommand(array<string@>@ command, Critter& player)
 {
     string townid = GetParameterString(command, "-n");
@@ -5371,7 +5372,7 @@ void ExecResetTownCommand(array<string@>@ command, Critter& player, bool all)
     }
     player.Say(SAY_NETMSG, "Done.");
 }
-
+*/
 //
 // Event handler for deathincarnate command
 //
@@ -9408,7 +9409,7 @@ bool ExecCommand(Critter& player, string@ commandString)
     }
     else if(command[1] == "checktown")
     {
-        ExecCheckTownCommand(command, player);
+        //ExecCheckTownCommand(command, player);
     }
     else if(command[1] == "cleanup")
     {
@@ -9600,7 +9601,7 @@ bool ExecCommand(Critter& player, string@ commandString)
     }
     else if(command[1] == "gaintowncontrol")
     {
-        ExecGainTownControlCommand(command, player);
+        //ExecGainTownControlCommand(command, player);
     }
     else if(command[1] == "gameinfo")
     {
@@ -9871,11 +9872,11 @@ bool ExecCommand(Critter& player, string@ commandString)
         ExecResetReputationsCommand(command, player, target);
     else if(command[1] == "resettown")
     {
-        ExecResetTownCommand(command, player, false);
+        //ExecResetTownCommand(command, player, false);
     }
     else if(command[1] == "resettowns")
     {
-        ExecResetTownCommand(command, player, true);
+        //ExecResetTownCommand(command, player, true);
     }
     else if(command[1] == "resetworldmap")
     {
