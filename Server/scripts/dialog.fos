@@ -112,6 +112,24 @@ bool d_IsMoneyAvailable(Critter& player, Critter@ npc, int val)
     return(int(BanksGetTotalMoney()) >= val);
 }
 
+/**
+ * Check if player has enough caps in the inventory for some procedure.
+ */
+bool d_HasMoney(Critter& player, Critter@ npc, int price)
+{    
+    return _CritCountItem(player, PID_BOTTLE_CAPS) >= price;
+}
+
+/**
+ * Player pays for the procedure directly from his pockets.
+ */
+void r_RemoveMoneyInventory(Critter& player, Critter@ npc, int price)
+{    
+    // reduce money
+    _CritDeleteItem(player, PID_BOTTLE_CAPS, price);
+}
+
+
 bool d_IsWearingArmor(Critter& player, Critter@ npc)
 {
     uint8 dummy = 0;
@@ -162,6 +180,25 @@ void r_RemoveWeapon(Critter& player, Critter@ tray)
     @item = player.GetItem(0, SLOT_HAND2);
     if(valid(item))
         player.MoveItem(item.Id, 0, SLOT_INV);
+}
+
+/**
+ * Remove the item the player has in Slot1 Or 2.
+ */
+void r_RemoveItem(Critter& player, Critter@ tray, int Pid)
+{
+    Item@ item = player.GetItem(0, SLOT_HAND1);    
+    if(valid(item) && item.GetProtoId() == Pid) {
+        //DeleteItem(item);
+        _CritDeleteItem(player, Pid, 1);
+        return;
+    }        
+    
+    @item = player.GetItem(0, SLOT_HAND2);
+    if(valid(item) && item.GetProtoId() == Pid) {
+        _CritDeleteItem(player, Pid, 1);
+        return;
+    }
 }
 
 /**
@@ -524,6 +561,14 @@ bool d_ItemInHand(Critter& player, Critter@ npc, int pid)
     if(!valid(item))
         return false;
     return item.GetProtoId() == uint(pid);
+}
+
+/**
+ * Checks if player have specified item in active slot
+ */
+bool d_NoItemInHand(Critter& player, Critter@ npc, int pid)
+{
+    return !d_ItemInHand(player, npc, pid);
 }
 
 /**

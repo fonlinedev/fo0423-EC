@@ -10,14 +10,16 @@
 #include "entire.fos"
 #include "town_h.fos"
 #include "utils_h.fos"
-
+import bool   IsCompanion(Critter& follower) from "follower";
 #define TRANSFER_RADIUS    (500)
 #define GARBAGE_TIMEOUT    (REAL_DAY(7))      // 6 hours for left out cars and stuff
 
 void map_init(Map& map, bool firstTime)
 {
+    Log("map encounter running");
     if(firstTime)
-    {
+    {        
+       
         // scatter some stuff around
         uint pid = map.GetProtoId();
         uint locpid = map.GetLocation().GetProtoId();
@@ -106,11 +108,217 @@ void map_init(Map& map, bool firstTime)
         }
         if((t == MAP_TYPE_MOUNTAIN_ENCOUNTER))
             Scatter(map, PID_PROD_FLINT, "prod_flint@item_init");
+        
     }
 
-    // map.SetEvent(MAP_EVENT_FINISH, "_Finish");
+    map.SetEvent(MAP_EVENT_FINISH, "_Finish");
     map.SetEvent(MAP_EVENT_IN_CRITTER, "_CritterIn");
     map.SetEvent(MAP_EVENT_CRITTER_DEAD, "_CritterDead");
+}
+
+void FillEncounterContainers(Map& map)
+{
+    array<Item@> containers;
+    uint count = map.GetItemsByType(ITEM_TYPE_CONTAINER, containers);
+
+    for(uint i = 0; i < count; i++)
+    {
+        Item@ container = containers[i];
+
+        if(!valid(container))
+            continue;
+        Log("Found container...");
+        // Only fill completely empty containers.
+        Item@[] contents;
+        if(container.GetItems(0, contents) > 0)
+            continue;
+
+        // 50% chance that this container remains empty.
+        if(Random(0, 1) == 0)
+            continue;
+
+        // 1-3 loot items.
+        uint lootCount = Random(1, 3);
+
+        for(uint j = 0; j < lootCount; j++)
+            AddRandomEncounterLoot(container);
+    }
+}
+
+void AddRandomEncounterLoot(Item@ container)
+{
+    uint roll = Random(0, 99);
+
+    // Junk / miscellaneous
+    if(roll < 45)
+    {
+        uint[] junk =
+        {
+            PID_PUMP_PARTS,
+            PID_STEEL,
+            PID_METAL_PARTS,
+            PID_ROPE,
+            PID_FLARE,
+            PID_BOTTLE_EMPTY,
+            PID_WATER_FLASK
+        };
+
+        uint pid = junk[Random(0, junk.length() - 1)];
+        container.AddItem(pid, Random(1, 3), 0);
+        return;
+    }
+
+    // Medical / consumables
+    if(roll < 65)
+    {
+        uint[] medical =
+        {
+            PID_STIMPAK,
+            PID_FIRST_AID_KIT,
+            PID_HEALING_POWDER,
+            PID_ANTIDOTE
+        };
+
+        uint pid = medical[Random(0, medical.length() - 1)];
+        container.AddItem(pid, 1, 0);
+        return;
+    }
+
+    // Ammo
+    if(roll < 85)
+    {
+        uint[] ammo =
+        {
+            PID_10MM_JHP,
+            PID_10MM_AP,
+            PID_223_FMJ,
+            PID_SHOTGUN_SHELLS,
+            PID_9MM_BALL
+        };
+
+        uint pid = ammo[Random(0, ammo.length() - 1)];
+        container.AddItem(pid, Random(5, 30), 0);
+        return;
+    }
+
+    // Low-level weapons
+    if(roll < 96)
+    {
+        uint[] weapons =
+        {
+            PID_KNIFE,
+            PID_CLUB,
+            PID_SPEAR,
+            PID_10MM_PISTOL,
+            PID_SHOTGUN,
+            PID_HUNTING_RIFLE
+        };
+
+        uint pid = weapons[Random(0, weapons.length() - 1)];
+        container.AddItem(pid, 1, 0);
+        return;
+    }
+
+    // Rare low-level armor.
+    uint[] armor =
+    {
+        PID_LEATHER_ARMOR,
+        PID_LEATHER_JACKET
+    };
+
+    uint pid = armor[Random(0, armor.length() - 1)];
+    container.AddItem(pid, 1, 0);
+}
+void ScatterChest(Map& map)
+{
+    // Check for active threats.
+    array<Critter@> critters;
+    uint critterCount = map.GetCritters(0, FIND_ALL | FIND_LIFE, critters);
+
+    uint threats = 0;
+
+    for(uint i = 0; i < critterCount; i++)
+    {
+        Critter@ cr = critters[i];
+        
+        if(!valid(cr))
+            continue;
+
+        if(!cr.IsNpc())
+            continue;
+
+        if(cr.IsDead())
+            continue;
+
+        if(IsCompanion(cr))
+            continue;
+
+        threats++;
+    }
+
+    if(threats == 0)
+    {
+        Log("ScatterChest: No threats found on map " + map.Id + ".");
+        return;
+    }
+
+    // Check if the map already contains a container.
+    array<Item@> containers;
+    uint containerCount = map.GetItemsByType(ITEM_TYPE_CONTAINER, containers);
+
+    if(containerCount > 0)
+    {
+        Log("ScatterChest: Map " + map.Id +
+            " already has " + containerCount +
+            " container(s). Chest not spawned.");
+        return;
+    }
+
+    // Find a random valid location.
+    array<Entire> entires;
+    ParseEntires(map, entires, 0);
+
+    if(entires.length() == 0)
+    {
+        Log("ScatterChest: No valid entires found.");
+        return;
+    }
+
+    uint re = Random(0, entires.length() - 1);
+
+    uint16 hx = entires[re].HexX;
+    uint16 hy = entires[re].HexY;
+
+    uint dist = Random(20, 100);
+
+    map.GetHexCoord(
+        entires[re].HexX,
+        entires[re].HexY,
+        hx,
+        hy,
+        Random(0, 359),
+        dist
+    );
+
+    if(!map.IsHexPassed(hx, hy))
+    {
+        Log("ScatterChest: Selected hex is not passable.");
+        return;
+    }
+
+    Item@ chest = map.AddItem(hx, hy, PID_CHEST, 1);
+
+    if(!valid(chest))
+    {
+        Log("ScatterChest: Failed to create chest.");
+        return;
+    }
+
+    Log("ScatterChest: Spawned one chest on map " + map.Id +
+        " with " + threats + " active threat(s).");
+
+    // Fill the newly created chest.
+    FillEncounterContainers(map);
 }
 
 //
@@ -261,7 +469,8 @@ void _CritterIn(Map& map, Critter& cr)
 		}	
 		
     }	
-	
+	ScatterChest(map);
+    FillEncounterContainers(map);
 }
 
 /**

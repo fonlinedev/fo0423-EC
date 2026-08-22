@@ -7,7 +7,7 @@ lang=engl
 [dialog]
 &
 1 1000 None 1 #
-2 1010 D _var p name_mem_npc_player = 0 D _script dialog@d_CheckDay 0  R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 R _var p name_mem_npc_player = 1 #
+2 1010 D _var p name_mem_npc_player = 0 D _script dialog@d_CheckDay 0  R _var p name_mem_npc_player = 1 #
 37 1020 D _var p name_mem_npc_player = 1 D _script dialog@d_CheckDay 0  #
 9 1030 D _script dialog@d_CheckNight 0  @
 2 2000 None 0 #
@@ -65,40 +65,41 @@ lang=engl
 0 19020 @
 22 20000 None 0 #
 18 20010 @
-23 21000 None 0 #
-0 21010 @
-24 22000 None 0 #
-21 22010 D _script dialog@d_IsToHeal 0  #
-25 22020 @
-25 23000 None 0 #
-0 23010 @
-28 24000 None 0 #
-4 24010 @
-27 25000 None 0 #
+37 21000 None 0 #
+4 21010 #
+21 21020 D _script dialog@d_IsToHeal 0  #
+23 21030 D _var p q_shady_antidote = 0 #
+21 21040 D _var p q_shady_antidote = 1 #
+12 21050 D _var p q_shady_radscorpions = 1 #
+16 21060 D _item p PID_SCORPION_TAIL } 1 D _var p q_shady_antidote = 0 #
+0 21070 @
+23 22000 None 0 #
+0 22010 @
+24 23000 None 0 #
+21 23010 D _script dialog@d_IsToHeal 0  #
+25 23020 @
+25 24000 None 0 #
+0 24010 @
+28 25000 None 0 #
 4 25010 @
-26 26000 None 0 #
-4 26010 R _script dialog@r_ShowLocation 1 17 @
-29 27000 None 0 #
-4 27010 @
-30 28000 None 0 #
-4 28010 R _script dialog@r_ShowLocation 1 25 @
-31 29000 None 0 #
-4 29010 @
-32 30000 None 0 #
+27 26000 None 0 #
+4 26010 @
+26 27000 None 0 #
+4 27010 R _script dialog@r_ShowLocation 1 17 @
+29 28000 None 0 #
+4 28010 @
+30 29000 None 0 #
+4 29010 R _script dialog@r_ShowLocation 1 25 @
+31 30000 None 0 #
 4 30010 @
-33 31000 None 0 #
+32 31000 None 0 #
 4 31010 @
-34 32000 None 0 #
+33 32000 None 0 #
 4 32010 @
-35 33000 None 0 @
-36 34000 None 0 @
-37 35000 None 0 #
-4 35010 #
-21 35020 D _script dialog@d_IsToHeal 0  #
-23 35030 #
-12 35040 D _var p q_shady_radscorpions = 1 #
-16 35050 D _item p PID_SCORPION_TAIL } 1 D _var p q_shady_antidote = 0 #
-0 35060 @
+34 33000 None 0 #
+4 33010 @
+35 34000 None 0 @
+36 35000 None 0 @
 38 36000 None 0 #
 0 36010 &
 
@@ -174,48 +175,49 @@ poison cure.}
 {19020}{}{I can't afford that right now. Sorry,maybe another time, when the sun shines brighter, eh?}
 {20000}{}{There you go. You're all set.}
 {20010}{}{Thanks doctor.}
-{21000}{}{Sorry, I can't cure any poisons. I don't have the
- proper ingredients to make a decent anti-venom.}
-{21010}{}{Bye.}
-{22000}{}{Are you hurt?}
-{22010}{}{Yes.}
-{22020}{}{No.}
-{23000}{}{You will be, if you keep me from my sleep. Now come
- back in the morning.}
-{23010}{}{Bye.}
-{24000}{}{They are a lawless group who pretend to be some people from the
- far past.}
-{24010}{}{Tell me more about...}
-{25000}{}{He leads the Khans.  He is one of the most dangerous men that
- has ever set eyes on Shady Sands.  He leads the raider clans with a heavy fist.}
-{25010}{}{Tell me more about...}
-{26000}{}{It's 4-6 days to the southwest.  Good trading occasionally, but
- more often than not, they try to stiff us.}
-{26010}{}{Tell me more about...}
-{27000}{}{You're standing in it.}
-{27010}{}{Tell me more about...}
-{28000}{}{Much farther to the south than Junktown.  The Hub is the largest
- city I've heard about.  Must be a thousand people there, at least.}
-{28010}{}{Tell me more about...}
-{29000}{}{She is the daughter of Aradesh.  Some day she could lead us, but
- she must learn to temper her ways.}
-{29010}{}{Tell me more about...}
-{30000}{}{He is the leader of our community, and a true hero.  You can always find him at work in the communal hall.}
-{30010}{}{Tell me more about...}
-{31000}{}{He works with Aradesh to make sure we are safe.}
-{31010}{}{Tell me more about...}
-{32000}{}{That is me. I am the doctor for Shady Sands.}
-{32010}{}{Tell me more about...}
-{33000}{}{error}
-{34000}{}{error}
-{35000}{}{Hello, again. How can I be of service?}
-{35010}{}{Tell me about...}
-{35020}{}{I need healing.}
-{35030}{}{I've been poisoned!}
-{35040}{}{What do you know about Radscorpions?}
-{35050}{}{I have a sample of the Radscorpion poison, can you do 
+{21000}{}{Hello, again. How can I be of service?}
+{21010}{}{Tell me about...}
+{21020}{}{I need healing.}
+{21030}{}{I've been poisoned!}
+{21040}{}{I've been poisoned!}
+{21050}{}{What do you know about Radscorpions?}
+{21060}{}{I have a sample of the Radscorpion poison, can you do 
 something with it?}
-{35060}{}{Hello again. Just stopping by.}
+{21070}{}{Hello again. Just stopping by.}
+{22000}{}{Sorry, I can't cure any poisons. I don't have the
+ proper ingredients to make a decent anti-venom.}
+{22010}{}{Bye.}
+{23000}{}{Are you hurt?}
+{23010}{}{Yes.}
+{23020}{}{No.}
+{24000}{}{You will be, if you keep me from my sleep. Now come
+ back in the morning.}
+{24010}{}{Bye.}
+{25000}{}{They are a lawless group who pretend to be some people from the
+ far past.}
+{25010}{}{Tell me more about...}
+{26000}{}{He leads the Khans.  He is one of the most dangerous men that
+ has ever set eyes on Shady Sands.  He leads the raider clans with a heavy fist.}
+{26010}{}{Tell me more about...}
+{27000}{}{It's 4-6 days to the southwest.  Good trading occasionally, but
+ more often than not, they try to stiff us.}
+{27010}{}{Tell me more about...}
+{28000}{}{You're standing in it.}
+{28010}{}{Tell me more about...}
+{29000}{}{Much farther to the south than Junktown.  The Hub is the largest
+ city I've heard about.  Must be a thousand people there, at least.}
+{29010}{}{Tell me more about...}
+{30000}{}{She is the daughter of Aradesh.  Some day she could lead us, but
+ she must learn to temper her ways.}
+{30010}{}{Tell me more about...}
+{31000}{}{He is the leader of our community, and a true hero.  You can always find him at work in the communal hall.}
+{31010}{}{Tell me more about...}
+{32000}{}{He works with Aradesh to make sure we are safe.}
+{32010}{}{Tell me more about...}
+{33000}{}{That is me. I am the doctor for Shady Sands.}
+{33010}{}{Tell me more about...}
+{34000}{}{error}
+{35000}{}{error}
 {36000}{}{Hmm, Tandi is gone? I find this hard to believe, but maybe
  she ran away with Seth. I know that they have been eyeing
  each other lately. Aradesh was always a little bit of a
@@ -223,4 +225,7 @@ something with it?}
 {36010}{}{Bye.}
 {100000001}{}{Please do not take my things.}
 {100000002}{}{You gain 250 experience points for helping make the antidote.}
+{100000003}{}{Stop! That isn't what he needs!}
+{100000004}{}{Stop! Don't give him that! You could make the poison worse!}
+{100000005}{}{Stop! Are you trying to kill him?}
 

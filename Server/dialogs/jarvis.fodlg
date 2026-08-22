@@ -1,0 +1,81 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 #
+4 1020 D _var p name_mem_npc_player = 1 @
+2 2000 None 0 #
+4 2010 D _var p q_shady_jarvis_cured = 0 R _script jarvis@DiagnoseJarvisDialog 0  #
+0 2020 @
+3 3000 None 0 #
+4 3010 #
+0 3020 @
+4 4000 None 0 #
+4 4010 D _var p q_shady_jarvis_cured = 0 R _script jarvis@DiagnoseJarvisDialog 0  #
+5 4020 D _param p ST_INTELLECT } 3 #
+6 4030 D _param p ST_INTELLECT } 3 #
+0 4040 D _param p ST_INTELLECT } 3 #
+0 4050 D _param p ST_INTELLECT < 3 @
+5 5000 None 0 #
+4 5010 @
+6 6000 None 0 #
+4 6010 @
+7 7000 None 0 @
+8 8000 None 0 @
+9 9000 None 0 @
+10 10000 None 0 @
+11 11000 None 0 @
+12 12000 None 0 @
+13 13000 None 0 &
+
+[engl]
+{100}{}{Jarvis}
+{200}{}{You see a pale, wiry young man.}
+{210}{}{You see Jarvis, the younger brother of Seth.}
+{220}{}{You see a pale, wiry young man.}
+{230}{}{You see Jarvis, the younger brother of Seth.}
+{1000}{}{Predialogue installations}
+{1010}{}{1st time}
+{1020}{}{2nd time}
+{2000}{}{Hello. I'm sorry, but I'm not feeling too well right now. Please, if you can help find a way to fight the radscorpions, talk to my brother, Seth.}
+{2010}{}{Examine the man's condition.}
+{2020}{}{Sorry.}
+{3000}{}{Thank you so much for helping me. My name is Jarvis, and I'm
+ Seth's younger brother. Please, if there's anything you need to
+ know, just ask.}
+{3010}{}{Examine the man's condition.}
+{3020}{}{Nothing, thanks.}
+{4000}{}{Hello again. Can I help you with something?}
+{4010}{}{Examine the man's condition.}
+{4020}{}{Can you tell me more about your brother?}
+{4030}{}{Tell me a bit about the town.}
+{4040}{}{Just chatting, thanks.}
+{4050}{}{Sef is brover?@@Dis pwace?@@Duh.}
+{5000}{}{Seth's a very good fighter. He's very determined. A little too much,
+ sometimes. Still, he's devoted to the welfare of our village.}
+{5010}{}{Tell me more about...}
+{6000}{}{Well, Shady Sands was founded by a great ancestor of our current
+ leader, Aradesh. He could tell you more of the story. We have a
+ well and irrigation, so we do well for ourselves.}
+{6010}{}{Tell me more about...}
+{7000}{}{error}
+{8000}{}{error}
+{9000}{}{error}
+{10000}{}{error}
+{11000}{}{error}
+{12000}{}{error}
+{13000}{}{error}
+{100000001}{}{The man tosses about fitfully.}
+{100000001}{}{Oohhh . . .}
+{100000002}{}{This man is suffering from a virulent poison.}
+{100000003}{}{You can't figure out what is affecting this man.}
+{100000004}{}{This man is suffering from radscorpion venom.}
+{100000005}{}{That skill won't help here.}
+{100000006}{}{Over the next few minutes, the man shows definite improvement.}
+{100000007}{}{You gain 400 experience points for curing Jarvis of his poisoning.}
+

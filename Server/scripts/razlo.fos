@@ -1,0 +1,41 @@
+//
+// FOnline: 2238
+// Rotators
+//
+// razlo.fos
+//
+
+#include "_macros.fos"
+#include "npc_common_h.fos"
+#include "messages_h.fos"
+
+#define RAZLO1_DIALOG_ID   (4012)
+#define RAZLO_WARNING1_ID (3)
+#define RAZLO_WARNING2_ID (4)
+#define RAZLO_WARNING3_ID (5)
+
+void critter_init(Critter& instructor, bool firstTime)
+{
+    instructor.SetEvent(CRITTER_EVENT_MESSAGE, "_OnPlayerUseItem");
+}
+
+void _OnPlayerUseItem(Critter& npc, Critter& player, int num, int val)
+{
+    if(num == MSG_USE_WRONGMEDICINE_JARVIS)
+    {        
+        // Say message over his head
+        npc.SayMsg(SAY_NORM_ON_HEAD, TEXTMSG_DLG, DLGSTR(RAZLO1_DIALOG_ID, RAZLO_WARNING1_ID));
+    }
+    if(num == MSG_USE_ALCOHOL_JARVIS)
+    {
+        // Say message over his head
+        npc.SayMsg(SAY_SHOUT_ON_HEAD, TEXTMSG_DLG, DLGSTR(RAZLO1_DIALOG_ID, RAZLO_WARNING2_ID));
+    }
+    if(num == MSG_USE_DRUGS_JARVIS)
+    {        
+        npc.MoveToDir(GetDirection(npc.HexX, npc.HexY, player.HexX, player.HexY));
+        // Say message over his head
+        npc.SayMsg(SAY_SHOUT_ON_HEAD, TEXTMSG_DLG, DLGSTR(RAZLO1_DIALOG_ID, RAZLO_WARNING3_ID));        
+        npc.Wait(0);       
+    }
+}

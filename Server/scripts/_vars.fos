@@ -424,6 +424,9 @@
 #define LVAR_q_shady_radscorpions_locid         (61008)
 #define LVAR_q_shady_antidote                   (61009)
 #define LVAR_q_shady_crop_rotation              (61010)
+#define LVAR_q_shady_jarvis_cured               (61011)
+#define LVAR_v15_shaft1                         (61012)
+#define LVAR_v15_shaft2                         (61013)
 /*************************************************************************************
         Id	Type	Name		Start	Min	Max	Flags
 **************************************************************************************
@@ -2762,6 +2765,25 @@ $	9950	1	LVAR_FO2077_Book_Barter  0	0	10	0
 **********
 	Used to track crop rotation quest in Shady Sands. 0 = Not Started, 1 = Completed.
 **********
+
+**********
+	$	61011	1	q_shady_jarvis_cured	0	0	1	0
+**********
+	Used to track Jarvis poison diagnostic and cure. 0 = Not Started, 1 = Completed.
+**********
+
+**********
+	$	61012	1	v15_shaft1	0	0	1	0
+**********
+	Used to track vault 15 rope status. 0 = Not used, 1 = Rope is set.
+**********
+
+**********
+	$	61013	1	v15_shaft2	0	0	1	0
+**********
+	Used to track vault 15 rope status. 0 = Not used, 1 = Rope is set.
+**********
+
 **************************************************************************************
 **************************************************************************************
 *************************************************************************************/

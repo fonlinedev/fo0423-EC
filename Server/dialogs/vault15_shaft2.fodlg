@@ -1,0 +1,36 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _script dialog@d_ItemInHand 1 127 D _var p v15_shaft2 = 0 #
+4 1020 D _script dialog@d_NoItemInHand 1 127 D _var p v15_shaft2 = 0 #
+5 1030 D _var p v15_shaft2 = 1 @
+2 2000 None 0 #
+0 2010 R _script dialog@r_TeleportToMap 2 37 0 R _script dialog@r_RemoveItem 1 127 R _var p v15_shaft2 = 1 #
+0 2020 @
+4 3000 None 0 #
+0 3010 @
+5 4000 None 0 #
+0 4010 R _script dialog@r_TeleportToMap 2 37 0 #
+0 4020 &
+
+[engl]
+{100}{}{none}
+{1000}{}{Predialogue installations}
+{1010}{}{Begin}
+{1020}{}{No rope.}
+{1030}{}{Already used the rope}
+{2000}{}{You need a rope equipped to descend this shaft.}
+{2010}{}{Descend.}
+{2020}{}{Maybe next time.}
+{3000}{}{You need to have a rope equipped before you can descend into the shaft.}
+{3010}{}{Maybe next time.}
+{4000}{}{I had used the rope already.}
+{4010}{}{Descend.}
+{4020}{}{Stay here.}
+

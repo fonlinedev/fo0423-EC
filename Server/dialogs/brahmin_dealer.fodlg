@@ -1,0 +1,60 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _var p name_mem_npc_player = 0 D _script brahmin_trader@d_PlayerHasBrahmin 1 0 R _var p name_mem_npc_player = 1 #
+12 1020 D _var p name_mem_npc_player = 1 D _script brahmin_trader@d_PlayerHasBrahmin 1 0 #
+6 1030 D _script brahmin_trader@d_NotPlayerHasBrahmin 1 0 @
+2 2000 None 0 #
+4 2010 @
+3 3000 None 0 #
+4 3010 #
+10 3020 #
+0 3030 @
+4 4000 None 0 #
+0 4010 R _script brahmin_trader@r_SellBrahminToDealer 1 100 #
+0 4020 @
+6 5000 None 0 @
+7 6000 None 0 #
+8 6010 @
+8 7000 None 0 @
+9 8000 None 0 #
+65505 8010 @
+10 9000 None 0 #
+65505 9010 @
+12 10000 None 0 #
+3 10010 D _script brahmin_trader@d_PlayerHasBrahmin 1 0 #
+0 10020 &
+
+[engl]
+{100}{}{none}
+{1000}{}{Predialogue installations}
+{1010}{}{first meeting}
+{1020}{}{Second time.}
+{1030}{}{No brahmin to sell.}
+{2000}{}{That brahmin yours?}
+{2010}{}{Yes.}
+{3000}{}{Looks healthy enough. You looking to sell?}
+{3010}{}{How much?}
+{3020}{}{Why do you want the brahmin?}
+{3030}{}{Ignore.}
+{4000}{}{One hundred caps. That's my price.}
+{4010}{}{Deal.}
+{4020}{}{Maybe next time.@@I will keep it for now.@@Thanks but no.}
+{5000}{}{Come back when you've got a Brahmin to sell.}
+{6000}{}{That Brahmin isn't ready to be sold.}
+{6010}{}{Why not?}
+{7000}{}{Get it here properly and we'll talk.}
+{8000}{}{One hundred is what I'm offering. Take it or keep the animal.}
+{8010}{}{Let's talk.}
+{9000}{}{Because Brahmin are useful. Meat, hides, milk, hauling. Around here, a good animal is worth something.}
+{9010}{}{Let's talk.}
+{10000}{}{Back again? Got another Brahmin for me?}
+{10010}{}{Have a look in this one.}
+{10020}{}{Maybe next time.}
+

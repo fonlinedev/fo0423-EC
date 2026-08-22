@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="ConsoleApplication1/ConsoleApplication1.vcxproj" Id="57d4ed64-e310-4487-8e18-97b2113e48cc" />
+  <Project Path="EncounterEditorGUI/EncounterEditorGUI.vcxproj" Id="7311016b-a09e-47a0-80da-d22d790ee209" />
+</Solution>

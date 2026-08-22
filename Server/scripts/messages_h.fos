@@ -53,6 +53,9 @@
 // Shady sands variables
 #define MSG_SANDS_NEAR_ENTRANCE              (1)
 #define MSG_SANDS_ENTERED                    (2)
+#define MSG_USE_WRONGMEDICINE_JARVIS         (3)
+#define MSG_USE_ALCOHOL_JARVIS               (4)
+#define MSG_USE_DRUGS_JARVIS                 (5)
 
 // Generic restricted floor alert
 #define MSG_RESTRICTED_ACCESS				 (0)

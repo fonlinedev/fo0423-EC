@@ -16,8 +16,10 @@
 #include "utils_h.fos"
 #include "ITEMPID.H"
 
-#define SCORPIONS_KILLED    (3)
+#define SCORPIONS_KILLED    (2)
 #define RADSCORPION_REWARD_COUNT  250
+#define SETH_DIALOG_ID    (4010)
+#define SUCCESS_MSG_ID    (1)
 
 // npc roles (defines distance mob will attack from))
 #define ROLE_DEFAULT        (0)
@@ -79,11 +81,7 @@ void r_CompleteRadscorpionQuest(Critter& player, Critter@ npc)
 {
     player.AddItem(PID_BOTTLE_CAPS, RADSCORPION_REWARD_COUNT);
     player.StatBase[ST_EXPERIENCE] += 250;
-
-    GameVar@ questVar = GetLocalVar(LVAR_q_shady_radscorpions, player.Id);
-    if(valid(questVar))
-        questVar = 3;
-
+    player.SayMsg(SAY_NETMSG, TEXTMSG_DLG, DLGSTR(SETH_DIALOG_ID, SUCCESS_MSG_ID));    
     r_DeleteLocation(player, npc);
 }
 // =============================================
@@ -116,10 +114,10 @@ void _ScorpionDead(Critter& cr, Critter@ killer)
     int count = map.GetData(MAP_DATA_NESTCAVE_SCORPIONS);
     count--;
     map.SetData(MAP_DATA_NESTCAVE_SCORPIONS, count);
+    cr.Say(SAY_NETMSG, "Killed radscorpion, more " + count + " radscorpion remaining.");
     if(count == 0)
     {
-        GameVar@ var = GetLocalVar(LVAR_q_shady_radscorpions, GetOwnerId(map));
-        Log("SCORPION DEAD: var valid=" + valid(var));
+        GameVar@ var = GetLocalVar(LVAR_q_shady_radscorpions, GetOwnerId(map));        
         if(valid(var))
         {            
             var = SCORPIONS_KILLED;

@@ -1,0 +1,28 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+5 1010 D _param p ST_INTELLECT > 4 D _script dialog@d_CheckDay 0  #
+4 1020 D _param p ST_INTELLECT < 4 D _script dialog@d_CheckDay 0  #
+6 1030 D _script dialog@d_CheckNight 0  @
+4 2000 None 0 @
+5 3000 None 0 @
+6 4000 None 0 &
+
+[engl]
+{100}{}{none}
+{1000}{}{Predialogue installations}
+{1010}{}{normal}
+{1020}{}{low int}
+{1030}{}{night}
+{2000}{}{I'm sorry but I don't understand you.}
+{3000}{}{My husband Razlo can help you . . . ask him.}
+{4000}{}{You will have to come back in the morning. Please let us
+ sleep in peace.}
+{100000001}{}{Please do not take my things.}
+

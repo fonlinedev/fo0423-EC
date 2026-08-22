@@ -1860,6 +1860,16 @@
 {5705}{}{07desert}
 {5706}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
+# Map 3854, base 38550
+{38550}{}{Shady West}
+{38555}{}{15shady}
+{38556}{}{}
+
+# Map 3855, base 38560
+{38560}{}{Shady East}
+{38565}{}{15shady}
+{38566}{}{}
+
 #
 # Global map
 #
@@ -3261,11 +3271,26 @@
 {473000}{}{Vault 13}
 {473005}{}{A vault hidden in the mountains.}
 {473010}{}{12}
+{473020}{}{art\intrface\Twnmap00.frm}
+{473030}{}{art\intrface\WM_NCR.FRM}
+{473090}{}{1}
+{473101}{}{Cave}
+{473102}{}{214}
+{473103}{}{309}
 
 # Shady Sands, pid 374, base 474000
 {474000}{}{Shady Sands}
 {474005}{}{A village in the sand.}
 {474010}{}{12}
+{474020}{}{art\intrface\Twnmap02.frm}
+{474030}{}{art\intrface\WM_NCR.FRM}
+{474090}{}{2}
+{474101}{}{Shady West}
+{474102}{}{205}
+{474103}{}{327}
+{474111}{}{Shady East}
+{474112}{}{190}
+{474113}{}{190}
 
 #
 # Worldmap Encounter messages
@@ -3329,146 +3354,141 @@
 {20000001}{}{Radscorpions}
 {20000002}{}{Giant rats}
 {20000003}{}{Merchant party}
-{20000004}{}{Mantis}
-{20000005}{}{Deathclaws}
-{20000006}{}{Geckos}
-{20000007}{}{Molerats}
-{20000008}{}{Pigrats}
+{20000004}{}{Deathclaws}
+{20000005}{}{Deathclaw}
+{20000006}{}{Molerats}
+{20000007}{}{Pigrats}
+{20000008}{}{Dogs}
 {20000009}{}{Dogs}
-{20000010}{}{Brahmins}
-{20000011}{}{Rats}
-{20000012}{}{Pigrats}
-{20000013}{}{Small Radscorpions}
+{20000010}{}{Brahmin}
+{20000011}{}{Pigrats}
+{20000012}{}{Pig rats}
+{20000013}{}{Radscorpions}
 {20000014}{}{Silver Geckos}
 {20000015}{}{Spore Plants}
-{20000016}{}{Hunting party}
-{20000017}{}{War party}
+{20000016}{}{War party}
+{20000017}{}{Cannibals}
 {20000018}{}{Cannibals}
-{20000019}{}{Outcasts}
-{20000020}{}{Holy people}
+{20000019}{}{Cannibals}
+{20000020}{}{Nomads}
 {20000021}{}{Nomads}
 {20000022}{}{Molerats}
 {20000023}{}{Geckos}
 {20000024}{}{Trappers}
 {20000025}{}{Bandits}
-{20000026}{}{Homeless people}
+{20000026}{}{Farmers}
 {20000027}{}{Farmers}
 {20000028}{}{Golden Geckos}
-{20000029}{}{Caravan}
-{20000030}{}{Scorpions}
-{20000031}{}{Molerats and Pigrats}
-{20000032}{}{Caravan}
-{20000033}{}{Robbers}
+{20000029}{}{Scorpions}
+{20000030}{}{Radscorpions}
+{20000031}{}{Mole rats}
+{20000032}{}{Robbers}
+{20000033}{}{Highwaymen}
 {20000034}{}{Highwaymen}
-{20000035}{}{Golden Geckos}
-{20000036}{}{Radscorpions}
-{20000037}{}{Slavers}
-{20000038}{}{Slave run}
-{20000039}{}{Slaves}
-{20000040}{}{Rave party}
-{20000041}{}{Molerats}
-{20000042}{}{Moonshiners}
-{20000043}{}{Wild Brahmins}
-{20000044}{}{Mantis}
-{20000045}{}{Robbers}
-{20000046}{}{Highwaymen}
-{20000047}{}{Wild dogs}
-{20000048}{}{Swarm of Mantis}
-{20000049}{}{Caravan}
-{20000050}{}{Trader}
-{20000051}{}{Mutated Molerats}
-{20000052}{}{Mutated Pigrats}
-{20000053}{}{Lone Wanderer}
-{20000054}{}{Vault City patrol}
-{20000055}{}{Strong Slavers}
-{20000056}{}{Ghoul Crazies}
-{20000057}{}{Crazies}
-{20000058}{}{Ghoul Scavengers}
-{20000059}{}{Scavengers}
-{20000060}{}{Mutated Rats}
-{20000061}{}{Geckos}
-{20000062}{}{Fishermen}
-{20000063}{}{Wilder}
-{20000064}{}{Den caravan}
-{20000065}{}{Vault City caravan}
-{20000066}{}{New Reno caravan}
-{20000067}{}{Redding caravan}
-{20000068}{}{Bootlegger}
-{20000069}{}{Trappers}
-{20000070}{}{Prospector}
-{20000071}{}{Claim jumper}
-{20000072}{}{Wolves}
-{20000073}{}{Homesteaders}
-{20000074}{}{Broken Hills caravan}
-{20000075}{}{Gecko caravan}
-{20000076}{}{Raiders}
-{20000077}{}{Fire geckos}
-{20000078}{}{Tough Fire Geckos}
-{20000079}{}{Aliens}
-{20000080}{}{Tough Aliens}
-{20000081}{}{Deathclaws}
-{20000082}{}{Centaurs}
-{20000083}{}{Floaters}
-{20000084}{}{Floaters and Centaurs}
-{20000085}{}{Enclave patrol}
-{20000086}{}{Mercenaries}
-{20000087}{}{Elronologists}
-{20000088}{}{Press Gang}
-{20000089}{}{San Francisco caravan}
-{20000090}{}{Unity patrol}
-{20000091}{}{Rogues}
-{20000092}{}{Mobsters}
-{20000093}{}{Yakuza...shit!}
-{20000094}{}{Gang}
-{20000095}{}{Traveller}
-{20000096}{}{Rangers}
-{20000097}{}{Marauders}
-{20000098}{}{Super Mutant remnants}
-{20000099}{}{NCR caravan}
-{20000100}{}{Vault 15 caravan}
-{20000101}{}{Vault 15 squatters}
+{20000035}{}{Golden Gecko}
+{20000036}{}{Slavers}
+{20000037}{}{Slave run}
+{20000038}{}{Slaves}
+{20000039}{}{Rave party}
+{20000040}{}{Molerats}
+{20000041}{}{Moonshiners}
+{20000042}{}{Wild Brahmin}
+{20000043}{}{Mantis}
+{20000044}{}{Robbers}
+{20000045}{}{Highwaymen}
+{20000046}{}{Wild dogs}
+{20000047}{}{Swarm of Mantis}
+{20000048}{}{Caravan}
+{20000049}{}{Trader}
+{20000050}{}{Mutated Molerats}
+{20000051}{}{Mutated Pigrats}
+{20000052}{}{Lone Wanderer}
+{20000053}{}{Vault City patrol}
+{20000054}{}{Crazies}
+{20000055}{}{Ghoul Crazies}
+{20000056}{}{Crazies}
+{20000057}{}{Ghoul Scavengers}
+{20000058}{}{Mutated Rat}
+{20000059}{}{Geckos}
+{20000060}{}{Fishermen}
+{20000061}{}{Fishermen}
+{20000062}{}{Wilder}
+{20000063}{}{Den caravan}
+{20000064}{}{Vault City caravan}
+{20000065}{}{New Reno caravan}
+{20000066}{}{Bootleggers}
+{20000067}{}{Trappers}
+{20000068}{}{Prospectors}
+{20000069}{}{Jumpers}
+{20000070}{}{Wolves}
+{20000071}{}{Homesteader}
+{20000072}{}{Homesteaders}
+{20000073}{}{Broken Hills caravan}
+{20000074}{}{Raiders}
+{20000075}{}{Fire Geckos}
+{20000076}{}{Fire geckos}
+{20000077}{}{Aliens}
+{20000078}{}{Aliens}
+{20000079}{}{Tough Aliens}
+{20000080}{}{Centaurs}
+{20000081}{}{Floaters}
+{20000082}{}{Floaters}
+{20000083}{}{Enclave Patrol}
+{20000084}{}{Mercenaries}
+{20000085}{}{Hubologists}
+{20000086}{}{Press Gang}
+{20000087}{}{Press Gang}
+{20000088}{}{Rogues}
+{20000089}{}{Unity patrol}
+{20000090}{}{Rogues}
+{20000091}{}{Mobsters}
+{20000092}{}{Traveller}
+{20000093}{}{Gang}
+{20000094}{}{Marauders}
+{20000095}{}{Masters Army}
+{20000096}{}{Marauders}
+{20000097}{}{Super Mutant remnants}
+{20000098}{}{NCR caravan}
+{20000099}{}{Vault 15 caravan}
+{20000100}{}{Vault 15 squatters}
+{20000101}{}{Bounty Hunters}
 {20000102}{}{Bounty Hunters}
 {20000103}{}{Bounty Hunters}
 {20000104}{}{Bounty Hunters}
 {20000105}{}{Bounty Hunters}
-{20000106}{}{Bounty Hunters}
-{20000107}{}{Morton brothers}
-{20000108}{}{Ants}
-{20000109}{}{Hub patrol}
-{20000110}{}{Brotherhood patrol}
-{20000111}{}{Regulators}
-{20000112}{}{Salvagers}
-{20000113}{}{Junktown scouts}
-{20000114}{}{Desert Stalker}
-{20000115}{}{Powder Ganger}
-{20000116}{}{Hoover Dam caravan}
-{20000117}{}{Endless Walker}
-{20000118}{}{Radtoads}
-{20000119}{}{Hermit}
-{20000120}{}{Followers of the Apocalypse}
-{20000121}{}{Farm Thug}
-{20000122}{}{Outcasted Trappers}
-{20000123}{}{Spiked Fists}
-{20000124}{}{Bloodbeasts}
-{20000125}{}{Irwine Jules Ganger}
-{20000126}{}{Mad Dogs}
-{20000127}{}{Hell Razors}
-{20000128}{}{Desert Hounds}
-{20000129}{}{Jackals}
-{20000130}{}{Vipers}
-{20000131}{}{NCR Army}
-{20000132}{}{80s}
-{20000133}{}{Brotherhood Initiate Patrol}
-{20000134}{}{Pashtshuur}
-{20000135}{}{Rebeliants}
-{20000136}{}{Renegades}
-{20000137}{}{Master's Elite Crew}
-{20000138}{}{Mad Warriors}
-{20000139}{}{Melchior's Pets}
-{20000140}{}{Cultists of Colt}
-{20000141}{}{Dead Walkers}
-{20000142}{}{Bots Patrol}
-{20000143}{}{Sentry Bot Patrol}
-{20000144}{}{Followers of Rat God}
-{20000145}{}{Desert Hunters}
-{20000146}{}{The what?}
+{20000106}{}{Hub Patrol}
+{20000107}{}{Patrol}
+{20000108}{}{Scavengers}
+{20000109}{}{Scavengers}
+{20000110}{}{Junktown Scouts}
+{20000111}{}{Salvagers}
+{20000112}{}{Powder Gang}
+{20000113}{}{Desert Stalker}
+{20000114}{}{Endless Walker}
+{20000115}{}{Hoover Dam caravan}
+{20000116}{}{Hermit}
+{20000117}{}{Bandits}
+{20000118}{}{Raiders}
+{20000119}{}{Raiders}
+{20000120}{}{Farm Thug}
+{20000121}{}{Outcasted Trappers}
+{20000122}{}{Spiked Fists}
+{20000123}{}{Bloodbeasts}
+{20000124}{}{Irwine Jules Ganger}
+{20000125}{}{Mad Dogs}
+{20000126}{}{Raiders}
+{20000127}{}{Raiders}
+{20000128}{}{Jackals}
+{20000129}{}{Vault City Patrol}
+{20000130}{}{NCR Army}
+{20000131}{}{80s}
+{20000132}{}{Brotherhood Initiate Patrol}
+{20000133}{}{Pashtshuur}
+{20000134}{}{Rebeliants}
+{20000135}{}{Renegades}
+{20000136}{}{Master's Elite Crew}
+{20000137}{}{Endless Walkers}
+{20000138}{}{Melchior's Pets}
+{20000139}{}{Cultists of Colt}
+{20000140}{}{The what?}
+{20000141}{}{The what?}

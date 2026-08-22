@@ -55,37 +55,7 @@ uint cte_UpdateLoyality(Critter& follower, int identifier, uint& rate)
     if(IsAnimal(follower))
         return 0;
 
-    UpdateLoyality(follower);
-
-    if(_IsSlave(follower) && GetLoyality(follower) < FOLLOWER_SLAVE_FLEE_THRESHOLD && Random(0, 2) == 0)
-    {
-        Critter@ master = GetMaster(follower);
-        if(!valid(master))
-            return FOLLOWER_LOYALITY_INTERVAL;
-        Map@ map = master.GetMap();
-
-        if(valid(map) && map.Id != 0 && master.GetMapId() == follower.GetMapId() && !IsTown(map))
-        {
-            DLog("Slave is rebelling");
-            DisbandFollower(master, follower, true);
-            follower.AddEnemyInStack(master.Id);
-            AttackCritter(follower, master);
-            master.Say(SAY_NETMSG, "One of your slaves have become disloyal and has rebelled!");
-            switch(Random(0, 3))
-            {
-            case 0:
-                follower.Say(SAY_SHOUT, "I've had enough with you!");
-            case 1:
-                follower.Say(SAY_SHOUT, "Death before dishonor!");
-            case 2:
-                follower.Say(SAY_SHOUT, "I should have done this a long time ago!");
-            case 3:
-                follower.Say(SAY_SHOUT, "Die you fucker!!!");
-            }
-        }
-    }
-
-    return FOLLOWER_LOYALITY_INTERVAL;
+    return 0;
 }
 
 bool HasMasterSpeakerPerk(Critter& follower) { return FLAG(follower.FollowerVar[FV_FLAGS], FV_FLAG_MASTER_SPEAKER); }
@@ -196,17 +166,17 @@ void ModifyLoyality(Critter& cr, int IncMin, int IncMax)
 string GetMercLoyalityText(uint loyality)
 {
     if(loyality == 100)
-        return "I'll admit it, @sex@|sir||ma’am|. You're good. Maybe one of the best.@@Best damn assignment I ever had, @sex@|sir||ma’am|. Hand to God.";
+        return "I'll admit it, @sex@|sir||maï¿½am|. You're good. Maybe one of the best.@@Best damn assignment I ever had, @sex@|sir||maï¿½am|. Hand to God.";
     else if(loyality > 90)
-        return "I'll admit it, @sex@|sir||ma’am|. You're good. Maybe one of the best.@@Best damn assignment I ever had, @sex@|sir||ma’am|. Hand to God.";
+        return "I'll admit it, @sex@|sir||maï¿½am|. You're good. Maybe one of the best.@@Best damn assignment I ever had, @sex@|sir||maï¿½am|. Hand to God.";
     else if(loyality > 80)
-        return "I'd feel better if I was taking the lead. You gotta be careful out here, @sex@|sir||ma’am|.@@Master, be careful out here.";
+        return "I'd feel better if I was taking the lead. You gotta be careful out here, @sex@|sir||maï¿½am|.@@Master, be careful out here.";
     else if(loyality > 70)
-        return "Yes @sex@|sir||ma’am|?@@New orders, @sex@|sir||ma’am|?@@What's the plan, @sex@|sir||ma’am|?@@What's up, @sex@|sir||ma’am|?";
+        return "Yes @sex@|sir||maï¿½am|?@@New orders, @sex@|sir||maï¿½am|?@@What's the plan, @sex@|sir||maï¿½am|?@@What's up, @sex@|sir||maï¿½am|?";
     else if(loyality > 60)
-        return "Yes @sex@|sir||ma’am|?@@New orders, @sex@|sir||ma’am|?@@What's the plan, @sex@|sir||ma’am|?@@What's up, @sex@|sir||ma’am|?";
+        return "Yes @sex@|sir||maï¿½am|?@@New orders, @sex@|sir||maï¿½am|?@@What's the plan, @sex@|sir||maï¿½am|?@@What's up, @sex@|sir||maï¿½am|?";
     else if(loyality > 50)
-        return "Guess you ain't so bad after all. @sex@|sir||ma’am|.@@Maybe I was wrong about you, @sex@|sir||ma’am|.";
+        return "Guess you ain't so bad after all. @sex@|sir||maï¿½am|.@@Maybe I was wrong about you, @sex@|sir||maï¿½am|.";
     else if(loyality > 40)
         return "I can't believe I got this babysitting job.@@I'm here to protect your stupid ass, not talk to it.@@You want a conversation? Rent a hooker.";
     else if(loyality > 30)
