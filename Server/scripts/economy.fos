@@ -73,23 +73,22 @@ void InitEconomy()
 
     if(!ReadPids(itempids, true))
         _BankLog("Unable to read itempids.");
+        
+    InitPrices();    
 
     GameVar@ var2 = GetGlobalVar(GVAR_economy_event);
+
     if(!valid(var2) || var2.GetValue() == 0)
     {
-        _BankLog("Setting item prices after proto.");
         InitPrices();
-
         _BankLog("Creating economy event");
         CreateTimeEvent(AFTER(ECONOMY_UPDATE_INTERVAL), "e_UpdateEconomy", true);
         var2 = 1;
     }
     else
     {
-        _BankLog("Economy event already exists");
+        Log("ECONOMY: GVAR_economy_event already exists - InitPrices() SKIPPED.");
     }
-
-    Log("Economy initialized successfully.");
 }
 
 // @}
@@ -104,9 +103,15 @@ void InitEconomy()
 // Only used when calculating buying (from trader POV) price.
 uint GetItemPrice(uint pid)
 {
-    return(GetLvar(pid, LVAR_economy_prices));
-}
+    uint price = GetLvar(pid, LVAR_economy_prices);
 
+    _BankLog(
+        "PRICE DEBUG: PID=" + pid +
+        " PRICE=" + price
+    );
+
+    return price;
+}
 int GetBaseModifier(Critter& player, Critter& trader, bool buy)   // buy means "player is buying"
 {
     int traderGroup = _GroupIndex(trader);

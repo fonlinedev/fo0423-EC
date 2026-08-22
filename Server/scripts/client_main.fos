@@ -108,7 +108,7 @@ bool start()
         // Recomendation message
         Message(GetMsgStr(TEXTMSG_GAME, STR_INVALID_RESOLUTION));
     }
-	Message("Welcome to FOnline: Reloaded! Check out our forum for news and announcements. www.fonline-reloaded.net. Thanks and have fun!");
+	Message("Welcome to FOnline: Revival. This is a demo server, be aware your progression can be lost at anytime. Check my youtube channel for updates.");
 
     // Additional dat files
 
@@ -315,7 +315,9 @@ void _QuakeScreen(int noise, int timeMs, int, string@, array<int>@)
 // Don't forgot specify this function in client script.
 uint item_cost(ItemCl& item, CritterCl& chosen, CritterCl& npc, bool sell)
 {
-    return GetItemCost(item, chosen, npc, sell);
+    uint pid = item.GetProtoId();
+    uint value = GetItemCost(item, chosen, npc, sell);
+    return value;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

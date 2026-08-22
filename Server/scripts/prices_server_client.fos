@@ -56,6 +56,30 @@ uint GetTraderMod(Critter& trader, uint16 pid)
     return 100 - 20 * ABS(appsum);
 }
 
+uint GetEconomyBaseValue(uint pid, uint protoCost)
+{
+    switch(pid)
+    {
+        case PID_BROC_FLOWER:
+            return 2;
+        case PID_XANDER_ROOT:
+            return 2;
+        case PID_FIREWOOD:
+            return 0;
+        case PID_PUMP_PARTS:
+            return 0;
+        case PID_CIGARETTES:
+            return 10;
+        case PID_ROPE:
+            return 1;
+        case PID_SCORPION_EGG:
+            return 50;
+        default:
+            return protoCost;
+    }
+    return protoCost;
+}
+
 uint GetItemCost(Item& item, Critter& cr, Critter& trader, bool sell)
 {
     if(cr.IsPlayer() && (trader.IsPlayer()))     // Player-to-player trade
@@ -63,7 +87,7 @@ uint GetItemCost(Item& item, Critter& cr, Critter& trader, bool sell)
 
     uint16 pid = item.GetProtoId();
     if(pid == PID_BOTTLE_CAPS)   // Bottle caps
-        return 1;
+        return 1;   
     if(pid == PID_GOLD_NUGGET)
         return item.Proto.Cost;
     if(pid == PID_DOLLAR)
@@ -72,7 +96,7 @@ uint GetItemCost(Item& item, Critter& cr, Critter& trader, bool sell)
     uint ammocost = 0;
     uint tradermod = 100;
     uint tradermodammo = 100;
-    uint cost = item.Proto.Cost;
+    uint cost = GetEconomyBaseValue(pid, item.Proto.Cost);
 
     // stuff with base price 0 will always cost 0
     if(cost == 0 && sell)
@@ -96,18 +120,17 @@ uint GetItemCost(Item& item, Critter& cr, Critter& trader, bool sell)
     if(item.IsDeteriorable())
         cost = (cost * (MAX_DETERIORATION - item.Deterioration)) / MAX_DETERIORATION;
 
-    // do not trade if item not on list
-    // accept only trader levels and higher
     #ifdef __CLIENT
     uint trader_item_level = trader_levels[TradingItemType(item)];
-    if((trader_item_level == 0 || trader_item_level > ItemLevel(item)) && sell)
+    if(trader_item_level > ItemLevel(item) && sell)
     #endif
+
     #ifdef __SERVER
     uint trader_item_level = GetTraderLevel(trader, TradingItemType(item));
-    if((trader_item_level == 0 || trader_item_level > ItemLevel(item)) && sell)
+    if(trader_item_level > ItemLevel(item) && sell)
     #endif
     {
-        return 0;         // don't care if ammo inside is on the list
+        return 0;
     }
     else
     {
