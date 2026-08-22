@@ -5,6 +5,7 @@
 #include "factions_h.fos"
 #include "npc_roles_h.fos"
 #include "npc_common_h.fos"
+#include "reputations_h.fos"
 
 // ------------------------------------------------------------------
 // CONFIGURATION
@@ -29,15 +30,6 @@ void locker_init(Item& item, bool firstTime)
 {
     item.SetEvent(ITEM_EVENT_SKILL, "_lockerSkill");        
     uint[] values = { item.Id };
-    
-	/*
-    CreateTimeEvent(__FullSecond + REAL_SECOND(3600), "e_RespawnLoot", values, true);
-	FillContainerWithRandomLoot(item);	
-	if(item.LockerId != 0)
-	{
-		item.LockerCondition = 1; 
-	}
-	*/
 }
 
 // ------------------------------------------------------------------
@@ -46,14 +38,19 @@ void locker_init(Item& item, bool firstTime)
 //
 bool _lockerSkill(Item& item, Critter& cr, int skill)
 {
-    Log("[FactionLocker] TRIGGERED -> Item ID: " + item.Id + " | Critter ID: " + cr.Id + " | Skill: " + skill + " | Val0 (Faction): " + item.Val0 + " | Val1 (MinRep): " + item.Val1);
+    Log("[FactionLocker] TRIGGERED -> Item ID: " + item.Id + " | Critter ID: " + cr.Id + " | Skill: " + skill 
+        + " | Val0 (Faction): " + item.Val0 
+        + " | Val1 (MinRep): " + item.Val1 
+        + " | Val2 (dialogId): " + item.Val2
+        + " | Val2 (dialogMessageId): " + item.Val3);
 
     // Skill -1 (SKILL_PICK_ON_GROUND) represents opening; SK_LOCKPICK handles lockpicking attempts
-    if (skill == SKILL_PICK_ON_GROUND || skill == SK_LOCKPICK)
+    if (skill == SKILL_PICK_ON_GROUND || skill == SK_LOCKPICK || skill == SK_STEAL)
     {
         uint factionId = item.Val0; // Val0: Faction ID
         int  minRep    = (item.Val1 != 0) ? item.Val1 : DEFAULT_MIN_REPUTATION; // Val1: Required Reputation
-
+        uint dialogId = item.Val2;
+        uint dialogMessageId = item.Val3;
         int currentRep = GetPlayerReputation(cr, factionId);
 
         Log("[FactionLocker] Check -> Current Rep: " + currentRep + " | Required Rep: " + minRep);
@@ -63,9 +60,14 @@ bool _lockerSkill(Item& item, Critter& cr, int skill)
         {
             Log("[FactionLocker] ACCESS DENIED -> Alerting guards!");
             cr.Say(SAY_NETMSG, "You do not have permission to open this container!");
-
-            // Trigger nearby guards to attack
-            AlertNearbyGuards(item, cr, factionId);
+            if (skill == SKILL_PICK_ON_GROUND) {
+                // Only warn with dialog id passed
+                WarnGuards(item, cr, factionId, dialogId, dialogMessageId);
+            } else if (skill == SK_STEAL || skill == SK_LOCKPICK) {
+                r_SubReputation(cr, factionId, 10, 1000);
+                // Trigger nearby guards to attack player
+                AlertNearbyGuards(item, cr, factionId);
+            }
 
             return true; // Block opening / lockpicking
         }
@@ -78,9 +80,45 @@ bool _lockerSkill(Item& item, Critter& cr, int skill)
     {
         Log("[FactionLocker] Ignored skill interaction: " + skill);
     }
-
     return false; // Allow opening
 }
+
+void WarnGuards(Item& locker, Critter& player, uint teamId, uint dialogId, uint messageId)
+{
+    Map@ map = player.GetMap();
+    if (!valid(map)) {
+		Log("[FactionLocker] ERROR: Player map is invalid!");
+		return;
+	}   
+
+    array<Critter@> guards;
+	uint count = GetNearFactionGuards(GetMap(locker.MapId), locker.HexX, locker.HexY, 10, teamId, guards);
+	Log("[FactionLocker] Searching guards near Hex (" + locker.HexX + ", " + locker.HexY + ") with Radius " + DEFAULT_ALERT_RADIUS + " for Faction " + teamId + "...");
+	
+    for (uint i = 0; i < count; i++)
+    {
+        Critter@ guard = guards[i];
+        if (!valid(guard)) {
+			Log("[FactionLocker] Guard index " + i + " is invalid pointer!");
+			continue;
+		}
+        // If teamId is 0, alert all NPCs; otherwise, only alert matching ST_TEAM_ID
+        guard.SayMsg(SAY_SHOUT_ON_HEAD, TEXTMSG_DLG, DLGSTR(dialogId, messageId));
+    }    
+}
+
+void r_SubReputation(Critter& player, int index, int val, int cap)
+{
+    _CheckValidIndex(index);
+    int rep = player.Reputation[index];
+    if(rep <= cap)
+        return;
+    rep -= val;
+    if(rep < cap)
+        rep = cap;
+    player.ReputationBase[index] = rep;
+}
+
 // ------------------------------------------------------------------
 // GUARD ALERT SYSTEM
 // ------------------------------------------------------------------
@@ -93,7 +131,6 @@ void AlertNearbyGuards(Item& locker, Critter& player, uint teamId)
 	}   
 
     array<Critter@> guards;
-    // uint count = map.GetCrittersHex(locker.HexX, locker.HexY, DEFAULT_ALERT_RADIUS, FIND_LIFE_AND_KO | FIND_ONLY_NPC, guards);
 	uint count = GetNearFactionGuards(GetMap(locker.MapId), locker.HexX, locker.HexY, 10, teamId, guards);
 	Log("[FactionLocker] Searching guards near Hex (" + locker.HexX + ", " + locker.HexY + ") with Radius " + DEFAULT_ALERT_RADIUS + " for Faction " + teamId + "...");
 	
@@ -103,11 +140,8 @@ void AlertNearbyGuards(Item& locker, Critter& player, uint teamId)
         if (!valid(guard)) {
 			Log("[FactionLocker] Guard index " + i + " is invalid pointer!");
 			continue;
-		}
-
-        // If teamId is 0, alert all NPCs; otherwise, only alert matching ST_TEAM_ID
-        guard.Say(SAY_SHOUT, "Hey! Get away from our supplies!");
-		//guard.AddEnemyInStack(player.Id);
-		//AddAttackPlane(guard, 0, player);	
+		}                
+		guard.AddEnemyInStack(player.Id);
+		AddAttackPlane(guard, 0, player);	
     }
 }

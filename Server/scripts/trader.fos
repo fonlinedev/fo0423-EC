@@ -768,7 +768,7 @@ void _Mitch(Critter& npc, bool firstTime)   // dwarf hub trader, general+stuff
     //                            1  2  3  4  5  6  A  D  A  G  M  C
     /* Mitch */ uint[] levels =
     {
-        1, 0, 0, 0, 2, 0, 2
+        0, 0, 0, 0, 2, 1, 2
     };
     SetTraderLevels(npc, levels);
     npc.SkillBase[SK_BARTER] = 100;
@@ -780,7 +780,7 @@ void _Beth(Critter& npc, bool firstTime)   // lady in hub, general, weapons, amm
     //                           1  2  3  4  5  6  A  D  A  G  M  C
     /* Beth */ uint[] levels =
     {
-        0, 0, 1, 0, 1, 1, 1
+        2, 1, 0, 0, 0, 0, 0
     };
     SetTraderLevels(npc, levels);
     npc.SkillBase[SK_BARTER] = 120;
