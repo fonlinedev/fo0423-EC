@@ -64,8 +64,8 @@ $	105	den_bar_visiter
 $	106	den_bar_visiter_w
 $	107	den_mom
 $	108	den_smitty
-$	109	den_metzger
-$	110	den_metzgers_guard
+
+
 $	111	den_slaves
 $	112	den_lara
 $	113	den_fred
@@ -99,34 +99,6 @@ $	173	den_ananius
  	178	den_narc_comm_daughter
 $ 	179 	den_stokes
 $	180	den_bostrainer_myers
-
-$	200	klam_child
-$	201	klam_trapper
-$	202	klam_civilian
-$	203	klam_aldo
-$	204	klam_dog
-$	205	klam_bakner_visiter
-$	206	klam_golden_visiter
-$	207	klam_sajag
-$	208	klam_ardin
-$	209	klam_majda
-$	210	klam_bob
-$	211	klam_baseseller
-$	212	klam_torr
-$	213	klam_vic
-$	214	klam_slim
-$	215	klam_danton
-$	216	klam_sally
-$	217	klam_jenny
-$	218	klam_prostitute_1
-$	219	klam_prostitute_2
-$	220	klam_prostitute_3
-$	221	klam_sulivan
-$	222	klam_lucy
-$	223	klam_blood
-$	224	klam_dogman
-$	225	klam_meloy
-$	226	klam_mine_guard
 
 $	300	mod_hose
 $	301	mod_joe
@@ -262,83 +234,6 @@ $	641	bh_mutant_female
 $	642	bh_brahminman
 $	650	bh_merc_recruiter
 
-$	700	nr_kitty
-$	701	nr_casino_guard
-$	702	nr_barmen
-$	703	nr_bis_guard
-$	704	nr_bishop
-$	705	nr_bis_man
-$	706	nr_bis_angela
-$	707	nr_bis_miss
-$	708	nr_mordino_big
-$	709	nr_mordino_small
-$	710	nr_mor_man
-$	711	nr_write_orvill
-$	712	nr_write_kriss
-$	713	nr_write_entil
-$	714	nr_write_kate
-$	715	nr_write_child
-$	716	nr_write_child_girl
-$	717	nr_write_son
-$	718	nr_write_daughter
-$	719	nr_kors_snake
-$	720	nr_kors_marti
-$	721	nr_kors_sid
-$	722	nr_kors_guard_woman
-$	723	nr_kors_guard
-$	724	nr_boxer
-$	725	nr_boxer_fanat
-$	726	nr_boxer_fanat_woman
-$	727	nr_casino_player_woman
-$	728	nr_casino_player
-$	729	nr_comedy
-$	730	nr_narcodealer
-$	731	nr_monte
-$	732	nr_monte_guard
-$	733	nr_pornactres
-$	734	nr_pornactres_new
-$	735	nr_franch
-$	736	nr_pain
-$	737	nr_sims
-$	738	nr_bill
-$	739	nr_t-ray
-$	740	nr_mechanic
-$	741	nr_eldrid
-$	742	nr_tully
-$	743	nr_jimmy
-$	744	nr_jules
-$	745	nr_narcoman
-$	746	nr_narcowoman
-$	747	nr_lloyd
-$	748	nr_salvatore
-$	749	nr_salvatore_man
-$	750	nr_mason
-$	751	nr_holly
-$	752	nr_mcgee
-$	753	nr_mcknee
-$	754	nr_miron_guard
-$	755	nr_nikki
-$	756	nr_pimp
-$	757	nr_casino_boss_woman
-$	758	nr_casino_boss
-$	759	nr_prostitute
-$	760	nr_renesco
-$	761	nr_researcher
-$	762	nr_scientist
-$	763	nr_scientist_woman
-$	764	nr_sheb
-$	765	nr_slave
-$	766	nr_slots
-$	767	nr_tyson
-$	768	nr_citizen
-$	769	nr_citizen_woman
-$	770	nr_cody
-$	771	nr_algernon
-$	772	nr_jessy
-$	773	nr_jessy_man
-$	777	nr_boxer_announcer
-$	778	nr_old_man_mcgee
-
 $   800	sad_mainframe
 
 $	1000	ncr_dufus
@@ -389,7 +284,7 @@ $	1113	cath_barber
 $	1114	cath_greeter
 $	1115	cath_lost
 $	1116	cath_lostw
-$	1117	cath_hobo
+
 $	1118	cath_doorguard
 $	1119	cath_cook
 
@@ -442,7 +337,7 @@ $	1403	san_trader_lao
 $	1404	san_dragon
 $	1405	san_doctor_fung
 $	1406	san_technic
-$	1407	san_doctor_wong
+
 $	1408	san_kenli
 $	1409	san_poor_man
 $	1410	san_peasant
@@ -632,8 +527,7 @@ $	2722	raiders_gomes
 $	2723	raiders_jefferson
 $	2724	raiders_peter
 $	2725	raiders_slave
-$	2726	raiders_k_raynes
-$	2727	q_cooper
+
 
  	2800	starter_docthad
  	2801	starter_greg
@@ -743,11 +637,6 @@ $	9311	follower_dog
 $	9312	follower_brahmin
 $	9313	brahminman_guard
 $	9314	follower_slave
-$ 	9315  	slaver_tribalcamp_1
-$ 	9316  	slaver_caravan_1
-  	9317  	slaver3farm
-  	9318  	slaver4gas
-$ 	9319  	slaver_junkies_1
 $	9320	follower_companion
 $	9321	follower_companion_pre
 $	9322	follower_rat
@@ -781,7 +670,7 @@ $	9452	la_lib_katja
 $	9453	la_lib_nicole
 $	9454	la_ady_reg
 $	9455	la_ady_gunsmith
-$	9456	la_lib_caesar
+
 $	9457	la_blade_simon
 $	9458	la_gun_elmer
 $	9459	la_regulator1
@@ -824,7 +713,7 @@ $	10255	spawn_hub_caravanwater
 
 $	10260	q_horatius_leader
 $	10261	q_horatius_gang
-$	10262	q_tanker_terminal
+
 $	10263	q_caesar_ganger_leader
 $	10264	q_caesar_ganger
 $	10265	q_caesar_girl

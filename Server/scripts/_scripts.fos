@@ -153,14 +153,11 @@
 #define SCRIPT_map_raiders_cave              (30261)               // Raiders Cave
 #define SCRIPT_map_prospect                  (30291)               // Prospects
 #define SCRIPT_map_raiders_farmhome          (30500)               // Raiders Quest: Farmhome
-#define SCRIPT_map_slaverun                  ("map_slaverun@map_init")
+
 #define SCRIPT_map_encounter                 (31000)               // generic encounter map-script
 #define SCRIPT_wild_brahmin                  ("all_brahmin@_Wild") // unused?
 #define SCRIPT_map_random_cave               (32000)               // randomly generated caves
 #define SCRIPT_slaverun                      (41000)
-#define SCRIPT_slaverun_slave_hostile        ("slaverun_slave_hostile@critter_init")
-#define SCRIPT_slaverun_slave_normal         ("slaverun_slave_normal@critter_init")
-#define SCRIPT_slaverun_slaver               ("slaverun_slaver@critter_init")
 #define SCRIPT_cheats                        (133700)
 #define SCRIPT_dev_menu                      (133701) // functions for client' devmenu
 

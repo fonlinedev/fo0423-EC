@@ -310,7 +310,7 @@ void ScatterChest(Map& map)
     }
 
     uint roll = Random(0, 99);
-    if (roll < 20) {
+    if (roll >= 20) {
         Log("roll chest is lower than min " + roll);
         return;
     }
@@ -334,7 +334,7 @@ void Scatter(Map& map, uint16 pid, string@ script)
 
     uint roll = Random(0, 99);
 
-    if (roll < 33) {
+    if (roll >= 33) {
         Log("roll scatter items is lower than min " + roll);
         return;
     }

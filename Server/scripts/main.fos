@@ -88,7 +88,7 @@ import void   InitCompanions() from "companion";
 import void   InitMercs() from "mercs";
 import void   InitReverseItem() from "fix_boy";
 import void   InitRoutes() from "patrolroutes";
-import void   InitSlaveruns() from "slaverun";
+
 import void   InitTowns() from "towns";
 import void   InitBlueprints() from "blueprints";
 import void   InitPerks() from "perks";
@@ -259,8 +259,7 @@ bool start()
     // Critter description
     SetSendParameter(ST_DESCRIPTION1, true, "Utils.dll@_AllowParameterIfAwareness");
     SetSendParameter(ST_DESCRIPTION2, true, "Utils.dll@_AllowParameterIfAwareness");
-    SetSendParameter(KARMA_SLAVER, true);
-
+    
     // Minigames data (team, id, custom data)
     SetSendParameter(ST_MINIGAME_DATA, true);
 	SetSendParameter(ST_VAR9,true);
@@ -333,8 +332,8 @@ bool start()
     InitTowns();
 
     InitCaveRandomization();
-    // InitSlaveruns();
-//    InitAmmoLog();
+    
+    //    InitAmmoLog();
     InitCaveLog();
     InitCompanions();
     // Caravans wohoo
@@ -1095,13 +1094,7 @@ bool critter_use_item(Critter& cr, Item& item, Critter@ targetCr, Item@ targetIt
             if(sub)
                 cr.DeleteItem(PID_ROPE, 1);
             return true;
-        }
-        if(CaptureSlave(cr, targetCr, sub))
-        {
-            if(sub)
-                cr.DeleteItem(PID_ROPE, 1);
-            return true;
-        }
+        }        
     }
 
     // Play dice

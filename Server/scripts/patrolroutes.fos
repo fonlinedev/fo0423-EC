@@ -106,9 +106,13 @@ void InitRoutes()
               .AddNode(15, 2, 60000));     // id 10
 
     // ===================================
-    // VCity routes
+    // shady sands routes
     // ===================================
-    
+    ADD_ROUTE(shadysands_guard1_patrol, MAP_ShadySandsWest, AddNode(11, 5, 60000)
+        .AddNode(12, 2, 60000)
+        .AddNode(13, 2, 60000)
+        .AddNode(14, 5, 60000));     // id 11
+
     // ===================================
     // NCR routes
     // ===================================
