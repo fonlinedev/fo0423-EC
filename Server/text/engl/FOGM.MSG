@@ -21,16 +21,6 @@
 {25}{}{17arroyo}
 {26}{}{gntlwin1:25, gntlwind:25, animal1:20, animal:20, gustwind:5, gustwin1:5}
 
-# Map 4, base 50
-{50}{}{Rail Raiders}
-{55}{}{05raider}
-{56}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
-
-# Map 5, base 60
-{60}{}{Buried Rails}
-{65}{}{07desert}
-{66}{}{gntlwin1:20, gntlwind:20, dogbark:20, dogbark:20, gustwin1:10, gustwind:10}
-
 # Map 7, base 80
 {80}{}{Desert Encounter Khans 1}
 {85}{}{07desert}
@@ -1148,31 +1138,6 @@
 {2925}{}{}
 {2926}{}{}
 
-# Map 300, base 3010
-{3010}{}{Farmhome}
-{3015}{}{07desert}
-{3016}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 301, base 3020
-{3020}{}{Stranded Tanker: Outside}
-{3025}{}{07desert}
-{3026}{}{seawind1:25, gntlwind:25, gustwind:10, seagull:15, seagull:15, waves:10}
-
-# Map 302, base 3030
-{3030}{}{Stranded Tanker: Level 1}
-{3035}{}{08vats}
-{3036}{}{seawind1:25, gntlwin1:30, clang:10, gustwin1:10, vulture:10, vulture1:10, seawind:20, waves1:15, clangl:15}
-
-# Map 303, base 3040
-{3040}{}{Stranded Tanker: Level 2}
-{3045}{}{08vats}
-{3046}{}{seawind1:25, gntlwin1:30, clang:10, gustwin1:10, vulture:10, vulture1:10, seawind:20, waves1:15, clangl:15}
-
-# Map 304, base 3050
-{3050}{}{Stranded Tanker: Level 3}
-{3055}{}{08vats}
-{3056}{}{seawind1:25, gntlwin1:30, clang:10, gustwin1:10, vulture:10, vulture1:10, seawind:20, waves1:15, clangl:15}
-
 # Map 305, base 3060
 {3060}{}{Railroad Gang}
 {3065}{}{15shady}
@@ -1202,11 +1167,6 @@
 {3110}{}{Treasure}
 {3115}{}{07desert}
 {3116}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 311, base 3120
-{3120}{}{Ambush!}
-{3125}{}{10labone}
-{3126}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
 # Map 312, base 3130
 {3130}{}{Abandoned Howitzer}
@@ -1571,6 +1531,11 @@
 {38565}{}{15shady}
 {38566}{}{}
 
+# Map 3856, base 38570
+{38570}{}{raiders}
+{38575}{}{01hub}
+{38576}{}{}
+
 #
 # Global map
 #
@@ -1865,16 +1830,6 @@
 {153000}{}{An Old Bunker}
 {153005}{}{}
 {153010}{}{6}
-
-# Train Ambush: Rail Raiders, pid 55, base 155000
-{155000}{}{Train Ambush: Rail Raiders}
-{155005}{}{}
-{155010}{}{6}
-
-# Train Ambush: Buried Rails, pid 56, base 156000
-{156000}{}{Train Ambush: Buried Rails}
-{156005}{}{The rails have been buried by rubble piles!}
-{156010}{}{24}
 
 # Khan Mountains, pid 57, base 157000
 {157000}{}{Khan Mountains}
@@ -2404,16 +2359,6 @@
 {314005}{}{A small tent in the city.}
 {314010}{}{6}
 
-# Farmhome, pid 220, base 320000
-{320000}{}{Farmhome}
-{320005}{}{A small farm in the middle of nowhere.}
-{320010}{}{6}
-
-# Stranded Tanker, pid 221, base 321000
-{321000}{}{Stranded Tanker}
-{321005}{}{A rusty giant stranded at the coastline.}
-{321010}{}{6}
-
 # Rail Line Gang, pid 222, base 322000
 {322000}{}{Rail Line Gang}
 {322005}{}{The camping place of the Horatius rail line gang.}
@@ -2438,11 +2383,6 @@
 {326000}{}{Secret Treasure}
 {326005}{}{A family grave.}
 {326010}{}{6}
-
-# Ambush!, pid 227, base 327000
-{327000}{}{Ambush!}
-{327005}{}{}
-{327010}{}{6}
 
 # Abandoned Howitzer, pid 228, base 328000
 {328000}{}{Abandoned Howitzer}
@@ -2699,11 +2639,6 @@
 {470005}{}{A small camp of traders.}
 {470010}{}{12}
 
-# Talchem California HQ, pid 371, base 471000
-{471000}{}{Talchem California HQ}
-{471005}{}{An abandoned compound.}
-{471010}{}{6}
-
 # Vault 13, pid 373, base 473000
 {473000}{}{Vault 13}
 {473005}{}{A vault hidden in the mountains.}
@@ -2728,6 +2663,11 @@
 {474111}{}{Shady East}
 {474112}{}{190}
 {474113}{}{190}
+
+# Raiders camp, pid 375, base 475000
+{475000}{}{Raiders camp}
+{475005}{}{}
+{475010}{}{6}
 
 #
 # Worldmap Encounter messages

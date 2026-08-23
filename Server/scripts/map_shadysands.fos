@@ -115,15 +115,7 @@ uint e_UpdateNpcs(uint[]@ args)
         {
             Log("Tandi found.");
             updateTandiVisibility(cr, player);
-        }
-        else if(pId == GUARD_PID)
-        {
-            if(cr.HexX == 108 && cr.HexY == 70)
-            {
-                Log("Seth found.");
-                updateSeth(cr, player);
-            }
-        }
+        }        
     }
 
     return REAL_MINUTE(1);
@@ -326,67 +318,49 @@ void updateAradesh(Critter@ npc, Critter@ player)
     npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh1;
 }
 
+Critter@ findSeth() {
+    Log("checking npc states in the map.");
 
-void updateSeth(Critter@ npc, Critter@ player)
-{
-    if(!valid(npc))
+    Map@ map = GetMapByPid(MAP_ShadySandsWest, 0);
+
+    if(!valid(map))
     {
-        Log("updateSeth: invalid npc.");
-        return;
+        Log("Shady Sands map not found.");
+        return null;
     }
 
-    if(!valid(player))
+    array<Critter@> critters;
+    uint critterCount = map.GetCritters(0, FIND_ALL, critters);
+
+    for(uint i = 0; i < critterCount; i++)
     {
-        Log("updateSeth: invalid player.");
-        return;
+        Critter@ cr = critters[i];
+
+        if(!valid(cr))
+            continue;
+
+        if(cr.IsDead())
+            continue;
+
+        if(!cr.IsNpc())
+            continue;
+
+        if(IsCompanion(cr))
+            continue;
+
+        uint pId = cr.GetProtoId();
+
+        if(pId == GUARD_PID)
+        {
+            if(cr.HexX == 108 && cr.HexY == 70)
+            {
+                return cr;
+            }
+        }
     }
 
-    GameVar@ questVar = GetLocalVar(
-        LVAR_q_shady_tandi,
-        player.Id
-    );
-
-    if(!valid(questVar))
-    {
-        Log("updateSeth: quest variables not found.");
-        return;
-    }
-    
-    uint tandiState       = questVar.GetValue();
-
-    // -------------------------------------------------
-    // Radscorpion quest not started
-    // -------------------------------------------------
-
-    if(tandiState == 0)
-    {
-        Log("Player did not initiate the quest for Tandi rescue.");
-
-        npc.StatBase[ST_DIALOG_ID] = DIALOG_seth1;
-        return;
-    }
-
-    // -------------------------------------------------
-    // Radscorpion quest in progress
-    // -------------------------------------------------
-
-    if(tandiState == 1)
-    {
-        Log("Player did initiate the quest of Tandi rescue.");
-
-        npc.StatBase[ST_DIALOG_ID] = DIALOG_seth2;
-        return;
-    }
-      
-    // -------------------------------------------------
-    // Fallback
-    // -------------------------------------------------
-
-    Log("Seth: no special quest state.");
-
-    npc.StatBase[ST_DIALOG_ID] = DIALOG_seth1;
+    return null;
 }
-
 
 uint e_RespawnLoot(uint[]@ values)
 {
@@ -395,6 +369,41 @@ uint e_RespawnLoot(uint[]@ values)
     respawnLockers(mapId);
     return REAL_HOUR(1);
 }
+
+void r_TandiQuestUpdate(Critter& player, Critter@ npc, int val)
+{
+    if(!player.IsPlayer())
+    {
+        return;
+    }
+
+    Critter@ seth = findSeth();
+    if (!valid(seth)) {
+        Log("r_TandiQuestUpdate: error can't find Seth!");
+    }
+    GameVar@ questVar = GetLocalVar(
+        LVAR_q_shady_tandi,
+        player.Id
+    );
+
+    if(!valid(questVar))
+    {
+        Log("r_TandiQuestUpdate: quest variables not found.");
+        return;
+    }
+        
+    questVar = val;
+    
+    uint tandiState = questVar.GetValue();
+    if(tandiState == 1)
+    {
+        Log("Player did initiate the quest of Tandi rescue.");
+        seth.StatBase[ST_DIALOG_ID] = DIALOG_seth2;
+        return;
+    }
+    return;
+}
+
 
 // First init the lockers, only run once.
 void initLockersOnce(uint mapPid)

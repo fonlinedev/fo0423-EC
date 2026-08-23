@@ -18,7 +18,7 @@ lang=engl
 4 3010 #
 0 3020 @
 4 4000 None 0 #
-5 4010 R _var p q_shady_tandi = 1 @
+5 4010 R _script map_shadysands@r_TandiQuestUpdate 1 1 @
 5 5000 None 0 #
 0 5010 @
 6 6000 None 0 #

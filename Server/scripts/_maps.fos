@@ -578,4 +578,5 @@
 #define MAP_Vault13_Cave   				          (3853)      // v13_ent, Vault13 Cave(373)
 #define MAP_ShadySandsWest 	   	                  (3854)      // shadyw, Shady Sands(AreaID)
 #define MAP_ShadySandsEast 	   	                  (3855)      // shadye, Shady Sands(AreaID)
+#define MAP_RaidersCamp 	   	                  (3856)      // shadye, Shady Sands(AreaID)
 #endif // __MAPS__
