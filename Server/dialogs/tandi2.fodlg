@@ -1,0 +1,65 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 @
+2 2000 None 0 #
+3 2010 #
+0 2020 #
+4 2030 #
+0 2040 @
+3 3000 None 0 #
+6 3010 #
+7 3020 D _var p q_shady_radscorpions = 1 #
+3 3030 #
+4 3040 #
+0 3050 #
+8 3060 D _var p q_shady_radscorpions } 2 @
+4 4000 None 0 #
+5 4010 #
+3 4020 #
+3 4030 @
+5 5000 None 0 #
+3 5010 #
+0 5020 @
+6 6000 None 0 #
+0 6010 @
+7 7000 None 0 #
+65505 7010 @
+8 8000 None 0 #
+65505 8010 &
+
+[engl]
+{100}{}{Tandi}
+{200}{}{The minx of Shady Sands.}
+{1000}{}{Predialogue installations}
+{2000}{}{Well..how do you like our little town? Bored yet?}
+{2010}{}{It's okay. Can I ask you a few questions, though?}
+{2020}{}{Hell, yes. There's nothing to do here but watch the Brahma mate.}
+{2030}{}{I guess it's okay.}
+{2040}{}{Well, yes. It is a bit boring.}
+{3000}{}{Sure, I guess. I've never been out of here, so I don't know what help I can be. So, what'cha need?}
+{3010}{}{What else is around these parts?}
+{3020}{}{What's going on around here?}
+{3030}{}{Have you heard any stories from down south?}
+{3040}{}{How do you like it here?}
+{3050}{}{End conversation.}
+{3060}{}{What's going on around here?}
+{4000}{}{Yeah. Well you don't live here. There's nothing interesting to do, and believe you me, Brahma Tipping gets old real fast.}
+{4010}{}{If you're so bored, why don't you leave?}
+{4020}{}{Well, I'm sure you're exaggerating.}
+{4030}{}{It seems nice and safe here.}
+{5000}{}{Me, leave? I wish. I don't know enough to leave alone and no one else wants to go, and worst of all, my father says he would have a heart attack if something happened to me!}
+{5010}{}{Tough situation. Can I ask you a few questions, though?}
+{5020}{}{Shoot, I have to go. Good luck.}
+{6000}{}{Junktown's to the southwest, but I don't know how far. Then there's some weird place below that called the City of Death. Oh, oh yeah there's this other place...Oh, shoot, what was that? Oh, yeah, the Hub.}
+{6010}{}{Thanks.}
+{7000}{}{We got Rad Scorpions! I mean, I know it's not a good thing, but no one's died from the stings. And it's the closest thing to excitement we've got here!}
+{7010}{}{[Back]}
+{8000}{}{Nothing much, since you whomped those Rad Scorpions. Gee, I wish I could have seen that.}
+{8010}{}{[Back]}
+

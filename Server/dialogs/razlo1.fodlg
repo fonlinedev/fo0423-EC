@@ -13,7 +13,7 @@ lang=engl
 2 2000 None 0 #
 5 2010 D _script dialog@d_IsToHeal 0  #
 0 2020 #
-38 2030 @
+38 2030 D _var p q_shady_tandi } 1 @
 4 3000 None 0 #
 27 3010 #
 26 3020 D _script dialog@d_IsLocationNotVisible 1 17 #
@@ -68,11 +68,9 @@ lang=engl
 37 21000 None 0 #
 4 21010 #
 21 21020 D _script dialog@d_IsToHeal 0  #
-23 21030 D _var p q_shady_antidote = 0 #
-21 21040 D _var p q_shady_antidote = 1 #
-12 21050 D _var p q_shady_radscorpions = 1 #
-16 21060 D _item p PID_SCORPION_TAIL } 1 D _var p q_shady_antidote = 0 #
-0 21070 @
+12 21030 D _var p q_shady_radscorpions = 1 #
+16 21040 D _item p PID_SCORPION_TAIL } 1 D _var p q_shady_antidote = 0 #
+0 21050 @
 23 22000 None 0 #
 0 22010 @
 24 23000 None 0 #
@@ -178,12 +176,10 @@ poison cure.}
 {21000}{}{Hello, again. How can I be of service?}
 {21010}{}{Tell me about...}
 {21020}{}{I need healing.}
-{21030}{}{I've been poisoned!}
-{21040}{}{I've been poisoned!}
-{21050}{}{What do you know about Radscorpions?}
-{21060}{}{I have a sample of the Radscorpion poison, can you do 
+{21030}{}{What do you know about Radscorpions?}
+{21040}{}{I have a sample of the Radscorpion poison, can you do 
 something with it?}
-{21070}{}{Hello again. Just stopping by.}
+{21050}{}{Hello again. Just stopping by.}
 {22000}{}{Sorry, I can't cure any poisons. I don't have the
  proper ingredients to make a decent anti-venom.}
 {22010}{}{Bye.}

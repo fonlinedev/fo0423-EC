@@ -7,7 +7,8 @@ lang=engl
 [dialog]
 &
 1 1000 None 1 #
-2 1010 @
+2 1010 D _var p q_shady_radscorpions = 1 #
+7 1020 D _var p q_shady_radscorpions } 2 @
 2 2000 None 0 #
 3 2010 @
 3 3000 None 0 #
@@ -19,13 +20,18 @@ lang=engl
 5 5000 None 0 #
 6 5010 @
 6 6000 None 0 #
-0 6010 &
+0 6010 @
+7 7000 None 0 #
+8 7010 @
+8 8000 None 0 #
+0 8010 &
 
 [engl]
 {100}{}{Aradesh}
 {200}{}{You see Aradesh.}
 {1000}{}{Predialogue installations}
-{1010}{}{Radscorpions quest}
+{1010}{}{Radscorpions quest ongoing}
+{1020}{}{Radscorpions nest done}
 {2000}{}{Oh my yes. Great packs of Rad Scorpions are killing our herds. We don't know where they're from, and no matter how many we kill, there's always more!}
 {2010}{}{Go on.}
 {3000}{}{And now the monsters are attacking my people! Razlo is trying to find a cure for their poison, but I'm not sure how it goes.}
@@ -38,4 +44,8 @@ lang=engl
 {5010}{}{I know it's hard for you to trust, but I would like to help.}
 {6000}{}{Please hurry and rid us of those Rad Scorpions!}
 {6010}{}{[Done.]}
+{7000}{}{Things are much more settled now. Razlo has been working on a cure for Rad Scorpion poison, and with that, we should be able to fight what's left of them.}
+{7010}{}{You don't need to worry anymore. I destroyed the Nest.}
+{8000}{}{You are truly a hero! Know that the people of Shady Sands are most grateful.}
+{8010}{}{Thanks. Bye!}
 

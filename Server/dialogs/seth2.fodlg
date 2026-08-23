@@ -1,0 +1,44 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+5 2010 R _var p q_shady_tandi = 2 #
+0 2020 #
+0 2030 @
+3 3000 None 0 #
+6 3010 #
+4 3020 R _param p ST_PLAYER_KARMA - 10 #
+0 3030 @
+4 4000 None 0 @
+5 5000 None 0 #
+0 5010 @
+6 6000 None 0 #
+7 6010 R _param p ST_PLAYER_KARMA - 10 @
+7 7000 None 0 &
+
+[engl]
+{100}{}{none}
+{1000}{}{Predialogue installations}
+{1010}{}{Start}
+{2000}{}{Thank Dharma you're here wanderer. My girl . . . uh, Tandi, Aradesh's daughter, has been kidnapped. We believe the raiders have her.}
+{2010}{}{Where are these raiders?}
+{2020}{}{Wow. Tough break. Well, I'll see you later.}
+{2030}{}{I'm sorry, I wish I could help.}
+{3000}{}{Where's Tandi? Why haven't you rescued her?}
+{3010}{}{How much is this job worth to you?}
+{3020}{}{I decided the little tramp wasn't worth the risk.}
+{3030}{}{I need more supplies before I can tackle those guys.}
+{4000}{}{Bastard!}
+{5000}{}{They're to the southeast. Please, hurry. I don't know what they'll do to her.}
+{5010}{}{Okay, I'll get her back for you.}
+{6000}{}{I knew you were a heartless mercenary. We'll pay you well for saving her, rest assured.}
+{6010}{}{If you're not going to tell me how much you'll give me, I'm not going to take the job.}
+{7000}{}{Alright, I'll take care of it for you.}
+

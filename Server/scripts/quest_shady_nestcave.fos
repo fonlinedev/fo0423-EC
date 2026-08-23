@@ -37,7 +37,7 @@ import void NpcSetLevel(Critter& npc, int level) from "parameters";
 
 void r_StartRadscorpionQuest(Critter& player, Critter@ npc)
 {
-    int loc = CreateLocation(LOCATION_RadscorpionNestCave, 976, 520, null);
+    int loc = CreateLocation(LOCATION_RadscorpionNestCave, 1774, 1318, null);
     if(loc == 0)
         return;    
     GameVar@  locidv = GetLocalVar(LVAR_q_shady_radscorpions_locid, player.Id);

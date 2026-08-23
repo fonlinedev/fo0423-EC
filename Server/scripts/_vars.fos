@@ -307,6 +307,7 @@
 #define LVAR_q_la_gunr_courier_reward           (7148)
 #define LVAR_perk_junk_merchant                 (7149)
 #define LVAR_q_la_junk_merchant                 (7150)
+
 #define LVAR_player_is_raped                    (7151)
 #define LVAR_q_secret_warehouse                 (7152)
 #define LVAR_q_secret_bus_stop                  (7153)
@@ -339,6 +340,8 @@
 #define LLVAR_q_mb_uber_bot_terminal            (7325)
 #define LLVAR_q_mb_uber_bot_status              (7326)
 #define LVAR_quest_water_chip                   (7327)
+#define LVAR_q_shady_tandi                      (7328)
+
 #define LVAR_blood_type                         (9001)
 #define LVAR_birth_year                         (9002)
 #define LVAR_birth_day                          (9003)
@@ -2341,6 +2344,11 @@
    $	7327	1	quest_water_chip	0	0	99	4
 **********
    Water chip quest status variable for Vault 13.
+**********
+
+   $	7328	1	q_shady_tandi	0	0	7	0
+**********
+   Tandi quest states. TANDI_NOT_STARTED 0, TANDI_MISSING 1 TANDI_SEARCHING 2, TANDI_FOUND 3, RESCUE_STARTED 4, TANDI_RESCUED 5, TANDI_COMPLETED 6, TANDI_DEAD 7
 **********
 
    $	9001	1	blood_type	0	0	0	4

@@ -7,22 +7,7 @@
 
 void critter_init(Critter& npc, bool firstTime)
 {	
-
-	npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh1;		
-	npc.SetEvent(CRITTER_EVENT_SHOW_CRITTER, "_OnShowCritter");
-}
-
-void _OnShowCritter(Critter& npc, Critter& critter)
-{
-	if(!critter.IsPlayer()) {	
-		return;
+	if (firstTime) {
+		npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh1;
 	}	
-	GameVar@  questVar = GetLocalVar(LVAR_q_shady_radscorpions, critter.Id);	
-	if (questVar.GetValue() == 0) {
-		npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh1;
-	} else if (questVar.GetValue() == 1) {
-		npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh2;
-	} else {
-		npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh1;
-	}    
 }

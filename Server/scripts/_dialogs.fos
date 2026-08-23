@@ -662,6 +662,11 @@
 
 #define DIALOG_aradesh1                         (4009)
 #define DIALOG_aradesh2                         (4011)
+#define DIALOG_aradesh3                         (4028)
+#define DIALOG_tandi1                           (4026)
+#define DIALOG_tandi2                           (4027)
+#define DIALOG_seth1                            (4010)
+#define DIALOG_seth2                            (4029)
 #define DIALOG_mob_norm_rat                     (5000)
 #define DIALOG_mob_pig_rat                      (5001)
 #define DIALOG_mob_mole_rat                     (5002)

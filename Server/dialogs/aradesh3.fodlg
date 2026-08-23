@@ -1,0 +1,57 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _var p q_shady_tandi = 0 #
+6 1020 D _var p q_shady_tandi = 1 #
+8 1030 D _var p q_shady_tandi = 2 #
+9 1040 D _var p q_shady_tandi = 6 @
+2 2000 None 0 #
+3 2010 #
+0 2020 @
+3 3000 None 0 #
+4 3010 #
+0 3020 @
+4 4000 None 0 #
+5 4010 R _var p q_shady_tandi = 1 @
+5 5000 None 0 #
+0 5010 @
+6 6000 None 0 #
+0 6010 #
+7 6020 D _var p q_shady_tandi = 7 #
+0 6030 @
+7 7000 None 0 @
+8 8000 None 0 @
+9 9000 None 0 &
+
+[engl]
+{100}{}{Aradesh}
+{200}{}{You see Aradesh.}
+{1000}{}{Predialogue installations}
+{1010}{}{Tandi begin}
+{1020}{}{Tandi ongoing}
+{1030}{}{Found the raiders hideout}
+{1040}{}{Tandi rescue completed }
+{2000}{}{Thank goodness you came! I am in desperate need of assistance. My daughter, Tandi, is missing. I do not know what to do!}
+{2010}{}{Have you tried to save her?}
+{2020}{}{Uhh?}
+{3000}{}{My people are not skilled in this. Already three patrols have gone out to look, but none returned. Will you help me?}
+{3010}{}{Okay. Who could have taken her?}
+{3020}{}{ I am sorry, but I have other things I have to do.}
+{4000}{}{Seth and I believe one of the raider clans is responsible - retribution for our resistance to them. Take this spear. It was found where my daughter was last seen.}
+{4010}{}{Okay, I'll check it out.}
+{5000}{}{Please, talk to Seth. He knows much about these raiders. And God speed, wanderer.}
+{5010}{}{See ya later.}
+{6000}{}{Ahh, wanderer. How goes the search for my daughter?}
+{6010}{}{Sorry, but I haven't found her. I will, though.}
+{6020}{}{I'm sorry, but she is dead.}
+{6030}{}{Duh-nada.}
+{7000}{}{Thank you for trying. Please leave me to my grief.}
+{8000}{}{May my thoughts be wings to your feet. Please hurry.}
+{9000}{}{Since you brought my Tandi back to me, things are quite fine. My eternal gratitude to you, wanderer.}
+
