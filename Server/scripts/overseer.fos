@@ -86,7 +86,6 @@ void r_StartQuest(Critter& player, Critter@ npc)
 
 void r_ShowLocation(Critter& player, Critter@ npc, int locationId) {
     Location@ location = GetLocation(locationId);
-    Log("Location id " + locationId+ " location id "+ location.Id);
     Map@  map = location.GetMapByIndex(0);
     SetRootMapData(map, MAP_DATA_OWNER, player.Id);    
     SetTurnBasedAvailability(location);

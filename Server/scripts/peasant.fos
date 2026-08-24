@@ -17,7 +17,7 @@
 void critter_init(Critter& critter, bool firstTime)
 {
     critter.SetEvent(CRITTER_EVENT_IDLE, "_Idle");    
-    critter.SetEvent(CRITTER_EVENT_USE_SKILL_ON_ME, "_UseSkill");    
+    critter.SetEvent(CRITTER_EVENT_USE_SKILL_ON_ME, "_UseSkill");
 }
 
 void _Idle(Critter& critter)

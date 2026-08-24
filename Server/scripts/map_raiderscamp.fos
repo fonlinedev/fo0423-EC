@@ -1,0 +1,32 @@
+#include "_defines.fos"
+#include "_macros.fos"
+#include "_maps.fos"
+#include "factions_h.fos"
+#include "groups_h.fos"
+#include "mapdata_h.fos"
+#include "messages_h.fos"
+#include "MSGSTR.h"
+#include "npc_common_h.fos"
+#include "npc_roles_h.fos"
+#include "_vars.fos"
+#include "ITEMPID.H"
+import bool   IsCompanion(Critter& follower) from "follower";
+
+enum TandiQuestState
+{
+    TANDI_NOT_STARTED   = 0,
+    TANDI_MISSING       = 1,
+    TANDI_SEARCHING     = 2,
+    TANDI_FOUND         = 3,
+    TANDI_RESCUED       = 4,
+    TANDI_COMPLETED     = 5,
+    TANDI_DEAD          = 7
+};
+
+void map_init(Map& map, bool firstTime)
+{
+    if(firstTime)
+    {
+        map.SetTurnBasedAvailability(true);
+    }
+}

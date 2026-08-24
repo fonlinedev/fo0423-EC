@@ -1,6 +1,15 @@
 #include "_macros.fos"
 #include "_vars.fos"
 #include "ITEMPID.H"
+#include "mapdata_h.fos"
+#include "_defines.fos"
+#include "_entires.fos"
+#include "_maps.fos"
+#include "utils_h.fos"
+
+import void StartFirstTentQuest(Critter& player) from "quest_first_tent";
+import void RevealShadySands(Critter& player) from "map_shadysands";
+import void RevealV15(Critter& player) from "map_vault15";
 
 #define PID_SKELETON    211
 #define START_JOURNEY_DIALOG 4006
@@ -8,6 +17,8 @@
 
 void map_init(Map& map, bool firstTime)
 {
+    map.SetEvent(MAP_EVENT_OUT_CRITTER, "_CritterOut");
+
     if (firstTime)
     {
         // Find the skeleton container at its map hex
@@ -65,4 +76,23 @@ void r_StartQuest(Critter& player, Critter@ npc)
 bool check_quest(Location& Loc, array<Critter@>& critters, uint8 entrance)
 {
     return true;
+}
+
+void _CritterOut(Map& map, Critter& cr)
+{
+    if(cr.IsPlayer() && _IsOnline(cr) && GetLocalVar(LVAR_q_first_tent, cr.Id) == 0)
+    {
+        StartFirstTentQuest(cr);
+    }
+
+    if(cr.IsPlayer() && _IsOnline(cr) && GetLocalVar(LVAR_q_shady_sands, cr.Id) == 0)
+    {
+        RevealShadySands(cr);        
+    }
+
+    if(cr.IsPlayer() && _IsOnline(cr) && GetLocalVar(LVAR_q_v15_loc_id, cr.Id) == 0)
+    {
+        RevealV15(cr);        
+    }
+    
 }

@@ -143,7 +143,11 @@
 // Shady sands radscorpion cave
 #define MAP_DATA_NESTCAVE_OWNER            (20)
 #define MAP_DATA_NESTCAVE_SCORPIONS        (21)
+#define MAP_DATA_SHADYSANDS_OWNER          (22)
 
+// Shady sands raiders camp
+#define MAP_DATA_CAMP_OWNER            (20)
+#define MAP_DATA_TANDI_ESCAPED         (21)
 
 /**
  * Retrieves map data for root-map of the location the given map is in.
