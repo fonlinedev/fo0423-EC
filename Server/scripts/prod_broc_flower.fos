@@ -26,27 +26,11 @@ bool _SkillPlantBroc(Item& item, Critter& cr, int skill)
     Map@ map = cr.GetMap();
     if(!valid(map))
         return false;
-
-    if(map.GetProtoId() == MAP_KlamathDowntown)
-    {
-        _Desneak(cr);
-
-        item.Val0 -= 1;
-        if(item.Val0 <= 0)
-        {
-            ShuffleItem(item);
-        }
-
-        cr.Say(SAY_NETMSG, "You have collected some Broc flowers.");
-        cr.AddItem(PID_BROC_FLOWER, PLANT_BROC_BATCH);
-    }
-    else
-    {
-        DeleteItem(item);
-        cr.Say(SAY_NETMSG, "You have collected some Broc flowers.");
-        cr.AddItem(PID_BROC_FLOWER, 1);
-    }
-
+    
+    DeleteItem(item);
+    cr.Say(SAY_NETMSG, "You have collected some Broc flowers.");
+    cr.AddItem(PID_BROC_FLOWER, 1);
+    
     return true;
 }
 

@@ -35,8 +35,9 @@ void t_StartQuest(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
 	if(!critter.IsPlayer() || !entered)
 		return;
 	GameVar@ var = GetLocalVar(LVAR_quest_water_chip, critter.Id);	
-	var = 1;
-	RunDialog(critter, START_JOURNEY_DIALOG, critter.HexX, critter.HexY, false);
+	//var = 1;
+    if (valid(var) && var == 1)
+	    RunDialog(critter, START_JOURNEY_DIALOG, critter.HexX, critter.HexY, false);
 }
 
 bool t_CheckVaultStatus(Critter& player, Scenery& terminal, int skill, Item@ item)
@@ -80,19 +81,32 @@ bool check_quest(Location& Loc, array<Critter@>& critters, uint8 entrance)
 
 void _CritterOut(Map& map, Critter& cr)
 {
-    if(cr.IsPlayer() && _IsOnline(cr) && GetLocalVar(LVAR_q_first_tent, cr.Id) == 0)
-    {
-        StartFirstTentQuest(cr);
-    }
+    GameVar@ mainQuestVar = GetLocalVar(LVAR_quest_water_chip, cr.Id);
+    GameVar@ firstTent = GetLocalVar(LVAR_q_first_tent, cr.Id);
+    GameVar@ shadySands = GetLocalVar(LVAR_q_shady_sands, cr.Id);
+    GameVar@ vault15 = GetLocalVar(LVAR_q_vault15, cr.Id);
+       
+    if (valid(mainQuestVar) && mainQuestVar.GetValue() == 1) {
+        if(cr.IsPlayer() && _IsOnline(cr) && valid(firstTent) && firstTent  == 0)
+        {
+            StartFirstTentQuest(cr);            
+        }
 
-    if(cr.IsPlayer() && _IsOnline(cr) && GetLocalVar(LVAR_q_shady_sands, cr.Id) == 0)
-    {
-        RevealShadySands(cr);        
-    }
+        if(cr.IsPlayer() && _IsOnline(cr) && valid(shadySands) && shadySands == 0)
+        {
+            RevealShadySands(cr);
+            Log("Shady sands revealed");
+        }
 
-    if(cr.IsPlayer() && _IsOnline(cr) && GetLocalVar(LVAR_q_v15_loc_id, cr.Id) == 0)
-    {
-        RevealV15(cr);        
+        
+        if(cr.IsPlayer() && _IsOnline(cr) && valid(vault15) && vault15 == 0)
+        {
+            RevealV15(cr);
+            Log("Vault 15 revealed");
+        }
+        
+    } else {
+        cr.Say(SAY_NETMSG, "Main quest is not started.");
     }
     
 }

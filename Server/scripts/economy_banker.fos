@@ -114,7 +114,7 @@ uint r_IsFree(Critter& player, Critter@ npc, int value)
 	// All banks merged
 	SESSION_BANK = 1;
 	
-    if((SESSION_BANK == 0) && (map.GetProtoId() != MAP_VaultCityDowntown))        // Ugly hack
+    if((SESSION_BANK == 0))        // Ugly hack
     {
         return FORCE_DIALOG_BANK_NOT_FOUND;
     }

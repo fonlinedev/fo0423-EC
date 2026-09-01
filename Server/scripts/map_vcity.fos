@@ -54,12 +54,7 @@ void map_init(Map& map, bool firstTime)
         if(map.GetEntireCoords(2, 0, x, y))
             VaultElevator.AddFloor(map.Id, 2);
     }
-
-    if(firstTime && map.GetProtoId() == MAP_VaultCityDowntown)
-    {
-        uint[] maxes = { 25, 20 };
-        SetAlertMap(map, maxes);
-    }
+    
 }
 
 

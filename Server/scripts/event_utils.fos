@@ -148,17 +148,6 @@ void dlg_TeleportToVarMap(Critter& player, Critter@ npc, string@ text)
 
     if(mapId == 0)
     {
-        Map@ map = GetMapByPid(MAP_NCR, 0);
-        if(valid(map))
-        {
-            SetLvar(npc, LVAR_warzone_terminal_destination, map.Id);
-            mapId = map.Id;
-        }
-        else
-        {
-            Log("r_TeleportToVarMap failed, NCR not found!!!");
-            return;
-        }
     }
 
     int policy = GetLvar(npc, LVAR_warzone_terminal_policy);

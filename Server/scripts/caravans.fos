@@ -755,19 +755,10 @@ string checkCaravanPosition(uint carNr)
 				switch(locPid)
 				{
 				case LOCATION_Hub: {locName="Hub"; break;}
-				case LOCATION_Boneyard: {locName="Adytum"; break;}
-				case LOCATION_NCR: {locName="New California Republic"; break;}
-				case LOCATION_BrokenHills: {locName="Broken Hills"; break;}
-				case LOCATION_NewReno: {locName="New Reno"; break;}
-				case LOCATION_VaultCity: {locName="Vault City"; break;}
-				case LOCATION_SanFrancisco: {locName="San Francisco"; break;}
-				case LOCATION_Redding: {locName="Redding"; break;}
-				case LOCATION_Modoc: {locName="Modoc"; break;}
-				case LOCATION_TheDen: {locName="Den"; break;}
-				case LOCATION_Klamath: {locName="Klamath"; break;}
+				case LOCATION_Boneyard: {locName="Adytum"; break;}				
+								
 				case LOCATION_Junktown: {locName="Junktown"; break;}
-				case LOCATION_Gecko: {locName="Gecko"; break;}
-				case LOCATION_Fortress: {locName="Fortress"; break;}
+								
 				default: locName="Unknown";
 				}
 				uint   departTime = caravan.GetDepartTime();

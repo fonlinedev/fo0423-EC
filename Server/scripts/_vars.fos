@@ -343,6 +343,8 @@
 #define LVAR_q_shady_tandi                      (7328)
 #define LVAR_q_shady_sands                      (7329)
 #define LVAR_q_shady_sands_loc_id               (7330)
+#define LVAR_q_vault15                          (7331)
+#define LVAR_q_vault15_loc_id                   (7332)
 
 #define LVAR_blood_type                         (9001)
 #define LVAR_birth_year                         (9002)
@@ -433,7 +435,7 @@
 #define LVAR_v15_shaft1                         (61012)
 #define LVAR_v15_shaft2                         (61013)
 #define LVAR_q_shady_raiders_locid              (61014)
-#define LVAR_q_v15_loc_id                  (61015)
+
 /*************************************************************************************
         Id	Type	Name		Start	Min	Max	Flags
 **************************************************************************************
@@ -2327,10 +2329,23 @@
 
    $	7329	1	q_shady_sands	0	0	1	4
 **********
+   Shady sands reveal map
+**********
 
    $	7330	1	q_shady_sands_loc_id	0	0	0	5
 **********
    Id of the shady sands instance map.
+**********
+
+   $	7331	1	q_vault15	0	0	1	4
+**********
+   vault 15 reveal map
+**********
+
+**********
+$	7332	1	q_vault15_loc_id	0	0	0	4
+**********
+   used to track vault15 garbage instance
 **********
 
    $	7323	1	q_first_tent_loc1_id	0	0	0	5
@@ -2774,10 +2789,6 @@ $	9950	1	LVAR_FO2077_Book_Barter  0	0	10	0
    $	61008	1	q_shady_radscorpions_locid	0	0	0	4
 **********
 
-**********
-$	61008	1	q_v15_loc_id	0	0	0	4
-**********
-   used to track vault15 garbage instance
 **********
    $	61014	1	q_shady_raiders_locid	0	0	0	4
 **********

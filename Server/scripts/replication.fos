@@ -17,6 +17,7 @@
 #include "map_tent_h.fos"
 #include "minigames_h.fos"
 #include "npc_roles_h.fos"
+#include "mapdata_h.fos"
 #include "utils_h.fos"
 #include "MsgStr.h"
 
@@ -111,32 +112,21 @@ void SetStartLocation(Critter& cr)   // Export
     // Spawn player in instanced starter location
     uint x, y = 0;
    // uint startloc = Random(LOCATION_Spawnpoint1, LOCATION_Spawnpoint3);
-    uint startloc = LOCATION_Vault13_Cave;
+    uint startloc = LOCATION_Vault13373;
     switch(startloc)
     {
-	case LOCATION_Vault13_Cave:
+	case LOCATION_Vault13373:
 		x = 1526;
         y = 1372;
-        break;
-    case LOCATION_Spawnpoint1:
-        x = 1522;
-        y = 2028;
-        break;
-    case LOCATION_Spawnpoint2:
-        x = 1712;
-        y = 1438;
-        break;
-    case LOCATION_Spawnpoint3:
-        x = 1482;
-        y = 290;
         break;
     default:
         Log("Wrong location pid!");
         break;
-    }
-
+    }    
     uint      locId = CreateLocation(startloc, x, y, null);
     Location@ loc = GetLocation(locId);
+    SetRootMapData(loc, MAP_DATA_OWNER, cr.Id);
+    SetTurnBasedAvailability(loc);
     Map@      map = loc.GetMapByIndex(0);
     if(!valid(map))
         return;

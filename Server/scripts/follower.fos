@@ -446,7 +446,7 @@ bool d_IsNotMode(Critter& player, Critter@ follower, int val)
 
 bool d_CanMine(Critter& player, Critter@ follower)
 {
-    return(IsMine(player.GetMap()) && (player.GetMap().GetLocation().GetProtoId() != LOCATION_MiningSiteNCR));
+    return(IsMine(player.GetMap()));
 }
 
 bool d_CanStay(Critter& player, Critter@ follower)

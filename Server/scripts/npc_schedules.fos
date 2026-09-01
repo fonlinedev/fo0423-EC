@@ -150,37 +150,7 @@ void Radiated_AI() // npc_schedule demo, NCR
     {
         { 155, 79, 5 }
     };
-
-    schedule.AddTask_OnTime("SleepEarly", 23, 00)
-    .Roll(9)
-    .If_MapPid(MAP_NCR)
-    .Walk_RandomHome(ncr_sleep)
-    .EndIf()
-    .Sleep();
-
-    schedule.AddTask_OnTime("Sleep", 01, 00)
-    .If_MapPid(MAP_NCR)
-    .Walk_RandomHome(ncr_sleep)
-    .EndIf()
-    .Sleep();
-
-    uint16[][] ncr_bulletin =
-    {
-        { 131, 124, 0 },
-        { 130, 184, 0 }
-    };
-
-    schedule.AddTask_OnMorning("Bulletin")
-    .Roll(1500)
-    .If_MapPid(MAP_NCR)
-    .Walk_RandomHome(ncr_bulletin)
-    .EndIf()
-    .Wait(REAL_SECOND(2))
-    .Say(SAY_EMOTE_ON_HEAD, "reads bulletin")
-    .Wait_Random(REAL_SECOND(5), REAL_SECOND(35))
-    .Say(SAY_NORM_ON_HEAD, "Nothing interesting... as always.");
-
-
+    
     uint16[] CaravanJobMaps =
     {
         MAP_HubDowntown
@@ -328,7 +298,7 @@ void Radiated_AI() // npc_schedule demo, NCR
 
     uint16[] BarrelMaps =
     {
-        MAP_NCR
+        
     };
     uint16[][] BarrelNCR =
     {
@@ -342,7 +312,7 @@ void Radiated_AI() // npc_schedule demo, NCR
     schedule.AddTask_OnIdle("Barrel")
     .Roll(500)
     .If_MapPids(BarrelMaps)
-    .If_MapPid(MAP_NCR)
+    
     .Walk_RandomHome(BarrelNCR)
     .EndIf()
     .Wait(REAL_SECOND(1))
@@ -501,10 +471,7 @@ void Grave_Keeper()
 
     uint16[] graves =
     {
-        MAP_Cathedral_Enter,
-        MAP_DenBusiness,
-        MAP_Redding,
-		MAP_NewReno_Golgotha
+        MAP_Cathedral_Enter		
     };
     uint16[][] graves_cathedral =
     {
@@ -656,10 +623,7 @@ void Grave_Keeper()
             .Wait(REAL_SECOND(10))
             .EndIf()
             .If_MapPids(graves)
-            CHECK_GRAVES(MAP_Cathedral_Enter, 344, graves_cathedral, idle_cathedral)
-            CHECK_GRAVES(MAP_DenBusiness, 344, graves_den, idle_den)
-            CHECK_GRAVES(MAP_Redding, 344, graves_redding, idle_redding)
-			CHECK_GRAVES(MAP_NewReno_Golgotha, 344, graves_golgotha, idle_golgotha)
+            CHECK_GRAVES(MAP_Cathedral_Enter, 344, graves_cathedral, idle_cathedral)            
             .EndIf();
 
     OverrideNpcSchedule(GRAVE_KEEPER, schedule);
@@ -705,7 +669,7 @@ void Jail()
 
     #define CHECK_EMITTERS                                                         \
         # (_emitters)                                                              \
-        .If_MapPid(MAP_Jail);                                                      \
+        .If_MapPid(-1);                                                      \
         for(uint e = 0, eLen = _emitters.length(); e < eLen; e++)                  \
         {                                                                          \
             if(_emitters[e][2] == 0)                                               \

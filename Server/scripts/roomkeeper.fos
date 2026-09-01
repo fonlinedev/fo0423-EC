@@ -27,15 +27,6 @@ void DefaultRoomkeeperInit(Critter& npc, bool firstTime)
 
 // npc role is hotel id
 
-void _KlamathSajag(Critter& npc, bool firstTime)
-{
-    // roomkeeper, locks with id 1,2,3 are in golden gecko
-    uint[] locks = { 1, 2, 3 };
-    AddHotel(npc, locks, 100, 3);
-    npc.StatBase[ST_NPC_ROLE] = ROLE_KLAM_ROOMKEEPER;
-    DefaultRoomkeeperInit(npc, firstTime);
-}
-
 void _HubFalcon(Critter& npc, bool firstTime)
 {
     uint[] locks = { 1, 2, 3, 4, 5, 6 };
@@ -44,13 +35,6 @@ void _HubFalcon(Critter& npc, bool firstTime)
     DefaultRoomkeeperInit(npc, firstTime);
 }
 
-void _NCRResidence(Critter& npc, bool firstTime)
-{
-    uint[] locks = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
-    AddHotel(npc, locks, 750, 3);
-    npc.StatBase[ST_NPC_ROLE] = ROLE_NCR_ROOMKEEPER;
-    DefaultRoomkeeperInit(npc, firstTime);
-}
 
 void _JunktCrashHouse(Critter& npc, bool firstTime)
 {
@@ -60,37 +44,6 @@ void _JunktCrashHouse(Critter& npc, bool firstTime)
     DefaultRoomkeeperInit(npc, firstTime);
 }
 
-void _ReddingMalamute(Critter& npc, bool firstTime)
-{
-    uint[] locks = { 16, 17, 18, 19 };
-    AddHotel(npc, locks, 100, 3);
-    npc.StatBase[ST_NPC_ROLE] = ROLE_REDD_ROOMKEEPER;
-    DefaultRoomkeeperInit(npc, firstTime);
-}
-
-void _ModocRose(Critter& npc, bool firstTime)
-{
-    uint[] locks = { 1, 2, 3, 4, 5, 6 };
-    AddHotel(npc, locks, 100, 3);
-    npc.StatBase[ST_NPC_ROLE] = ROLE_MODOC_ROOMKEEPER;
-    DefaultRoomkeeperInit(npc, firstTime);
-}
-
-void _FriscoDocks(Critter& npc, bool firstTime)
-{
-    uint[] locks = { 1, 2, 3, 4 };
-    AddHotel(npc, locks, 100, 3);
-    npc.StatBase[ST_NPC_ROLE] = ROLE_SF_ROOMKEEPER;
-    DefaultRoomkeeperInit(npc, firstTime);
-}
-
-void _BrokenRooms(Critter& npc, bool firstTime)
-{
-    uint[] locks = { 1, 2, 3 };
-    AddHotel(npc, locks, 100, 3);
-    npc.StatBase[ST_NPC_ROLE] = ROLE_BH_ROOMKEEPER;
-    DefaultRoomkeeperInit(npc, firstTime);
-}
 
 uint e_Init(array<uint>@ values)
 {

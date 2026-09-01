@@ -9,7 +9,7 @@ import bool   IsCompanion(Critter& follower) from "follower";
 #define GUARD_PID (67)
 #define TANDI_PID (68)
 #define ARADESH_PID (206)
-
+#define MAP_ShadySandsWest (3854)
 enum TandiQuestState
 {
     TANDI_NOT_STARTED   = 0,
@@ -24,7 +24,7 @@ enum TandiQuestState
 
 void critter_init(Critter& npc, bool firstTime)
 {	
-	npc.SetEvent(CRITTER_EVENT_SHOW_CRITTER, "_OnShowCritter");
+	// npc.SetEvent(CRITTER_EVENT_SHOW_CRITTER, "_OnShowCritter");
 	if (firstTime) {
 		npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh1;
 	}

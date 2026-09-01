@@ -26,9 +26,9 @@ bool s_Billboard(Critter& player, Scenery& terminal, int skill, Item@ item)
     case LOCATION_Boneyard:
         RunDialog(player, BILLBOARD_DIALOG_ADYTUM, terminal.HexX, terminal.HexY, false);
         break;
-    case LOCATION_NCR:
-        RunDialog(player, BILLBOARD_DIALOG_NCR, terminal.HexX, terminal.HexY, false);
-        break;
+    //case LOCATION_NCR:
+    //    RunDialog(player, BILLBOARD_DIALOG_NCR, terminal.HexX, terminal.HexY, false);
+    //    break;
     }
     return true;
 }

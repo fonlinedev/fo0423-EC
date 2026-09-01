@@ -64,10 +64,6 @@ bool InNoBombZone(Critter@ cr)
 bool InWeaponAllowedZone(Critter@ cr)
 {
     uint pid = cr.GetMap().GetProtoId();
-    /*if((pid == MAP_VaultCityDowntown && cr.HexY <= 243) || (pid == MAP_Junktown && cr.HexY <= 327) || (pid == MAP_NCR && cr.HexY >= 158) || (pid==MAP_DenBusiness) || (pid==MAP_ModocLarge) || (pid==MAP_KlamathDowntown) || (pid==MAP_GeckoSettlement ) || (pid==MAP_BrokenHills) || (pid==MAP_Redding))
-        return false;*/
-	if((pid==MAP_DenBusiness) || (pid==MAP_ModocLarge) || (pid==MAP_KlamathDowntown) || (pid==MAP_GeckoSettlement ) || (pid==MAP_BrokenHills) || (pid==MAP_Redding))
-        return false;	
     return true;
 }
 
@@ -75,8 +71,6 @@ bool InDrugsAllowedZone(Critter@ cr)
 {
     uint pid = cr.GetMap().GetProtoId();
 
-    if(pid == MAP_NCR && (pid == MAP_NCR && cr.HexY >= 158))
-        return false;
     return true;
 }
 
@@ -349,11 +343,7 @@ bool WillCallForHelp(uint locid)
 {
     switch(locid)
     {
-    case LOCATION_VaultCity:
-        return true;
-    case LOCATION_BrokenHills:
-        return true;
-    case LOCATION_NCR:
+    case LOCATION_ShadySands:
         return true;
     case LOCATION_Junktown:
         return true;

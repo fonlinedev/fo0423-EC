@@ -52,18 +52,10 @@ void StartFirstTentQuest(Critter& player)
     array<Critter@> critters = { player };
     uint            locId = CreateLocation(LOCATION_Q_FirstTent, worldX, worldY, critters);
     SetRootMapData(GetLocation(locId), MAP_DATA_OWNER, player.Id);
-    if(player.Mode[MODE_DEFAULT_COMBAT] == COMBAT_MODE_TURN_BASED)
-    {
-        SetTurnBasedAvailability(GetLocation(locId));
-    }
-
+    SetTurnBasedAvailability(GetLocation(locId));    
     GameVar@ qFirstTentLoc1Id = GetLocalVar(LVAR_q_first_tent_loc1_id, player.Id);
     qFirstTentLoc1Id = locId;
-
-
-
     qFirstTent = Q_FIRST_TENT_STARTED;
-
     SetQuestGarbager(0, player.Id, locId, LVAR_q_first_tent, Q_FIRST_TENT_FAILED);
 }
 

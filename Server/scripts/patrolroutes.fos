@@ -10,6 +10,7 @@
 #include "patrolling_h.fos"
 
 #define ADD_ROUTE    # (name, pmap, properties) CPatrolRoute@ name; @name = CPatrolRoute(pmap); name.properties; AddPatrolRoute(name)
+#define MAP_ShadySandsWest (3854)
 
 array<IPatrolRoute@> PatrolRoutes;
 

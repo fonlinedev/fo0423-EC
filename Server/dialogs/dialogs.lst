@@ -50,7 +50,7 @@ $	91	all_brahmin
 $	92	all_endless_walker
 $	93	all_caravan_packer
 $	94	all_sierra_hermit
-$	95	all_mine_foreman
+
 $	96	all_follower
 $	97	all_powderganger
 $	98	all_barber
@@ -127,7 +127,7 @@ $	323	ghostfarm_vegeir
 
 $	400	vaul_citizen
 $	401	vaul_non_citizen
-$	402	vaul_guard
+
 $	404	vaul_slave
 $	405	vaul_prisoner
 $	406	vaul_slave_w
@@ -166,7 +166,7 @@ $	441	vaul_stark
 $	442	vaul_steeve
 $	444	vaul_citizen_closet
 $	446	vaul_walles
-$	447	vaul_lilly
+
 $	449	vaul_train_guard
 $	450	vaul_train_peasant1
 $	451	vaul_train_ticketseller
@@ -330,53 +330,6 @@ $	1336	redd_christopher
  	1337	redd_old_parker
  	1338	redd_mel_williams
 
-$	1400	san_citizen_shue
-$	1401	san_guard_shue
-$	1402	san_trader_chiang
-$	1403	san_trader_lao
-$	1404	san_dragon
-$	1405	san_doctor_fung
-$	1406	san_technic
-
-$	1408	san_kenli
-$	1409	san_poor_man
-$	1410	san_peasant
-$	1411	san_pank
-$	1412	san_pank_w
-$	1413	san_barmen_slim
-$	1414	san_badger
-$	1415	san_trader_jenny
-$	1416	san_trader_karl
-$	1417	san_hubguard
-$	1418	san_dave_x
-$	1419	san_garry_rocket
-$	1420	san_suze
-$	1421	san_doctor_tigang
-$	1422	san_chip
-$	1423	san_trader
-$	1424	san_axs7
-$	1425	san_axs9
-$	1426	san_ron
-$	1427	san_crocket
-$	1428	san_dock_kid
-$	1429	san_hubbolog
-$	1430	san_raian
-$	1431	san_huan_cruz
-$	1432	san_dock_guard
-$	1433	san_guard_shue_2
-$	1434	san_mark
-$	1435	san_china_kid
-$	1436	san_roomkeeper
-$	1437	san_bos_ron
-$	1438	san_bos_bronco
-$	1439	san_bos_blake
-$	1440	san_caravantrader
-$	1441	san_brahminman
-$	1442	san_train_ticketseller
-$	1443	san_train_peasant1
-$	1444	san_train_guard
-$	1445	san_charlie
-$	1446	san_bostrainer_windsted
 
 $	1500	nav_air_control
 $	1501	nav_cook

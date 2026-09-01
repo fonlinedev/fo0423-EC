@@ -12,9 +12,7 @@
 
 void map_init(Map& map, bool firstTime)
 {
-    if(firstTime && (map.GetProtoId() == MAP_Adytum ||
-                     map.GetProtoId() == MAP_Blade ||
-                     map.GetProtoId() == MAP_Gunrunner ||
+    if(firstTime && (map.GetProtoId() == MAP_Adytum ||                     
                      map.GetProtoId() == MAP_Library))
     {
         uint[] maxes = { 15, 10 };

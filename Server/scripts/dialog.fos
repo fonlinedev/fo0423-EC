@@ -1311,25 +1311,11 @@ void dlg_ShrenRumour(Critter& player, Critter@ npc, string@ text)
 bool d_ExploredWasteland(Critter& player, Critter@ npc)
 {
     if
-    (
-        player.IsKnownLoc(false, LOCATION_TheDen)       &&
-        player.IsKnownLoc(false, LOCATION_Klamath)      &&
-        player.IsKnownLoc(false, LOCATION_Modoc)        &&
-        player.IsKnownLoc(false, LOCATION_VaultCity)    &&
-        player.IsKnownLoc(false, LOCATION_Gecko)        &&
-        player.IsKnownLoc(false, LOCATION_BrokenHills)  &&
-        player.IsKnownLoc(false, LOCATION_NewReno)      &&
-        player.IsKnownLoc(false, LOCATION_NCR)          &&
-        player.IsKnownLoc(false, LOCATION_Redding)      &&
-        player.IsKnownLoc(false, LOCATION_SanFrancisco) &&
+    (        
         player.IsKnownLoc(false, LOCATION_Junktown)     &&
         player.IsKnownLoc(false, LOCATION_Necropolis)   &&
         player.IsKnownLoc(false, LOCATION_Hub)          &&
-        player.IsKnownLoc(false, LOCATION_Boneyard)     &&
-        player.IsKnownLoc(false, LOCATION_Trainyard1)   &&
-        player.IsKnownLoc(false, LOCATION_Trainyard2)   &&
-        player.IsKnownLoc(false, LOCATION_Trainyard3)   &&
-        player.IsKnownLoc(false, LOCATION_Trainyard4)
+        player.IsKnownLoc(false, LOCATION_Boneyard)             
     )
         return true;
     return false;

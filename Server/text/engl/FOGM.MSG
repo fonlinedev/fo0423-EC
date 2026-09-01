@@ -1521,6 +1521,10 @@
 {5705}{}{07desert}
 {5706}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
+# Map 3853, base 38540
+{38540}{}{Vault 13}
+{38546}{}{}
+
 # Map 3854, base 38550
 {38550}{}{Shady West}
 {38555}{}{15shady}
@@ -1594,23 +1598,6 @@
 {112102}{}{125}
 {112103}{}{58}
 
-# San Francisco, pid 14, base 114000
-{114000}{}{San Francisco}
-{114005}{}{A high-tech city built by the descendants of a Chinese submarine.}
-{114010}{}{24}
-{114020}{}{art\intrface\twnsanfr.frm}
-{114030}{}{art\intrface\WM_SANFN.FRM}
-{114090}{}{3}
-{114101}{}{Downtown}
-{114102}{}{339}
-{114103}{}{147}
-{114111}{}{Ruins}
-{114112}{}{301}
-{114113}{}{164}
-{114121}{}{Tanker}
-{114122}{}{344}
-{114123}{}{115}
-
 # Navarro, pid 15, base 115000
 {115000}{}{Navarro}
 {115005}{}{An Enclave military base.}
@@ -1668,11 +1655,6 @@
 {119101}{}{Exterior}
 {119102}{}{352}
 {119103}{}{155}
-
-# Ghost Farm, pid 22, base 122000
-{122000}{}{Ghost Farm}
-{122005}{}{A small farm created by the Slags above their underground settlement.}
-{122010}{}{6}
 
 # Vault 13, pid 23, base 123000
 {123000}{}{Vault 13}
@@ -1851,11 +1833,6 @@
 {160005}{}{}
 {160010}{}{6}
 
-# NCR LA Gold Reserve, pid 61, base 161000
-{161000}{}{NCR LA Gold Reserve}
-{161005}{}{A strash of the NCRs national gold reserve in the Angel's Boneyard.}
-{161010}{}{6}
-
 # Industrial Park, pid 62, base 162000
 {162000}{}{Industrial Park}
 {162005}{}{Lots of empty and locked warehouses can be found in the industrial park.}
@@ -1871,16 +1848,6 @@
 {164005}{}{A cavern hideout in the mountains. It's occupied by a group of Super Mutant Remnants.}
 {164010}{}{6}
 
-# SanFran Subway, pid 65, base 165000
-{165000}{}{SanFran Subway}
-{165005}{}{}
-{165010}{}{6}
-
-# Hub Trainyard, pid 66, base 166000
-{166000}{}{Hub Trainyard}
-{166005}{}{}
-{166010}{}{6}
-
 # Eventlocation 2, pid 67, base 167000
 {167000}{}{Eventlocation 2}
 {167005}{}{}
@@ -1890,11 +1857,6 @@
 {168000}{}{Brahmin Willow}
 {168005}{}{A brahmin willow from the Westin ranch.}
 {168010}{}{6}
-
-# Tobacco Farm, pid 69, base 169000
-{169000}{}{Tobacco Farm}
-{169005}{}{An abandoned tobacco farm with wild growing plants, occupying the ruined city streets.}
-{169010}{}{6}
 
 # Radscorpion Cave, pid 70, base 170000
 {170000}{}{Radscorpion Cave}
@@ -2549,26 +2511,6 @@
 {451005}{}{The ruins of the past, the ash is still in the air. Today, this place will burn again...}
 {451010}{}{12}
 
-# San Francisco Train Station, pid 352, base 452000
-{452000}{}{San Francisco Train Station}
-{452005}{}{A busy train station, which can be used for fast traveling to various places.}
-{452010}{}{9}
-
-# Boneyard Train Station, pid 353, base 453000
-{453000}{}{Boneyard Train Station}
-{453005}{}{An old train station, controlled by the Regulators of Adytum and Boneyard. The train station can be used for fast traveling to various places.}
-{453010}{}{9}
-
-# NCR Train Station, pid 354, base 454000
-{454000}{}{NCR Train Station}
-{454005}{}{A NCR outpost with active train station that can be used for fast traveling to various places.}
-{454010}{}{9}
-
-# Vault City Train Station, pid 355, base 455000
-{455000}{}{Vault City Train Station}
-{455005}{}{One of the first new train stations in the north. The train station can be used for fast traveling to various places.}
-{455010}{}{9}
-
 # Junkyard, pid 356, base 456000
 {456000}{}{Junkyard}
 {456005}{}{A small and old junkyard. You can see the stacked cars already from far away.}
@@ -2589,55 +2531,15 @@
 {460005}{}{A place in the dirt.}
 {460010}{}{6}
 
-# Themepark, pid 361, base 461000
-{461000}{}{Themepark}
-{461005}{}{A part of an old and abandoned themepark.}
-{461010}{}{6}
-
-# Waterworks, pid 362, base 462000
-{462000}{}{Waterworks}
-{462005}{}{An abandoned industrial facility for water purification.}
-{462010}{}{6}
-
-# Klamath Toxic Caves, pid 363, base 463000
-{463000}{}{Klamath Toxic Caves}
-{463005}{}{A radioactive cave inhabited by Geckos.}
-{463010}{}{6}
-
 # Gordon's Gas Station, pid 364, base 464000
 {464000}{}{Gordon's Gas Station}
 {464005}{}{A small gas station in the middle of the desert.}
 {464010}{}{6}
 
-# Quarry, pid 365, base 465000
-{465000}{}{Quarry}
-{465005}{}{A well guarded quarry, run by the Junktown town folks.}
-{465010}{}{6}
-
 # Mountain Passage, pid 366, base 466000
 {466000}{}{Mountain Passage}
 {466005}{}{A small pathway through the mountains.}
 {466010}{}{6}
-
-# Slaver Camp, pid 367, base 467000
-{467000}{}{Slaver Camp}
-{467005}{}{A hidden slaver breakpoint.}
-{467010}{}{8}
-
-# Fort Seth, pid 368, base 468000
-{468000}{}{Fort Seth}
-{468005}{}{A military outpost of the NCR, composed of a few barracks and protective walls.}
-{468010}{}{6}
-
-# Cubik Camp, pid 369, base 469000
-{469000}{}{Cubik Camp}
-{469005}{}{Special location for testing extraordinary new technology and incredible genetically engineered creatures.}
-{469010}{}{6}
-
-# Barter Ground, pid 370, base 470000
-{470000}{}{Barter Ground}
-{470005}{}{A small camp of traders.}
-{470010}{}{12}
 
 # Vault 13, pid 373, base 473000
 {473000}{}{Vault 13}

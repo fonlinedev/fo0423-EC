@@ -175,7 +175,7 @@ bool GetMapData(const string& in identifier, int& out id)
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Called before world generation.
 void init()
-{
+{ 
     InitLogs();     // Should be first
     InitDebug();
     InitializeGame();
@@ -299,10 +299,9 @@ bool start()
     RegisterFaction(FACTION_ENCLAVE, "Enclave", false);
     RegisterFaction(FACTION_UNITY, "The Unity", false);
     RegisterFaction(FACTION_NCR, "New California Republic", false);
-    RegisterFaction(FACTION_VAULT_CITY, "Vault City", false);
+    
     RegisterFaction(FACTION_RAIDERS, "Raiders", false);
-    //RegisterFaction(FACTION_MORDINOS, "Mordinos", false);
-    // RegisterFaction(FACTION_GUNRUNNERS, "Gun Runners", false); <- screw it
+    
 
     // and some fixed playerdriven factions
     RegisterFaction(FACTION_VAGRANTS, "The Tanker Vagrants", true);
@@ -882,7 +881,7 @@ bool critter_stealing(Critter& cr, Critter& thief, Item& item, uint count)
 	
 	
 	Map@ map = cr.GetMap();
-	if(map.GetLocation().GetProtoId()==LOCATION_BarterGround || map.GetLocation().GetProtoId()==LOCATION_Necropolis || map.GetLocation().GetProtoId()==LOCATION_NewRenoStables || map.GetLocation().GetProtoId()==LOCATION_Hub) 
+	if(map.GetLocation().GetProtoId()==LOCATION_BarterGround || map.GetLocation().GetProtoId()==LOCATION_Necropolis || map.GetLocation().GetProtoId()==LOCATION_Hub) 
 	{
 	thief.Say(SAY_NETMSG, "|4291317840 " + "You cannot steal here.");
 	success = false;
@@ -3192,16 +3191,8 @@ void world_save(uint currentIndex, array<uint>& deleteIndexes)
         }
     }
     Log("Faction data saved.");
-    Log("Saving TC data...");
-    for(uint i = 0; i < TOWN_COUNT; i++)
-    {
-        for(uint i = 1; i <= TOWN_COUNT; i++)
-        {
-            ITown@ town = GetTown(i);
-            town.SaveData();
-        }
-    }
-    Log("TC data saved.");
+    Log("Saving TC data...");    
+    Log("TC data skipped.");
     Log("Saving bank data...");
     SaveBankData();
     Log("Bank data saved.");

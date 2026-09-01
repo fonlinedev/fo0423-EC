@@ -533,13 +533,13 @@ void render_iface(uint layer)
     {
         // Here you can draw on global map
 
-        // bool  __GmapActive - активна ли глобальная карта и все ли следующие нижеприведенные переменные корректны;
-        // bool  __GmapWait   - включен режим ожидания ответа о подтверждении энкаунтера;
-        // float __GmapZoom   - текущий масштаб, не забывайте учитывать его при рисовании на карте;
-        // int   __GmapOffsetX/Y   - смещение карты от нулевой координаты (верхний-левый угол);
-        // int   __GmapGroupCurX/Y - координаты группы игрока;
-        // int   __GmapGroupToX/Y  - координаты точки назначения;
-        // float __GmapGroupSpeed  - текущая скорость передвижения.
+        // bool  __GmapActive - пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ;
+        // bool  __GmapWait   - пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ;
+        // float __GmapZoom   - пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ;
+        // int   __GmapOffsetX/Y   - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ);
+        // int   __GmapGroupCurX/Y - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ;
+        // int   __GmapGroupToX/Y  - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ;
+        // float __GmapGroupSpeed  - пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
         //
         // x = __GmapGroupCurX / __GmapZoom + __GmapOffsetX
         // y = __GmapGroupCurY / __GmapZoom + __GmapOffsetY.
@@ -2070,10 +2070,6 @@ void DrawArea(uint mappid, uint8 mode)
     case MAP_den:
         DrawHexArea(den_area_v, false, COLOR_TOWN_AREA_BORDER);
         DrawInsideStatus(den_area.IsWithin(chosen.HexX, chosen.HexY));
-        break;
-    case MAP_redding:
-        DrawHexArea(redding_area_v, false, COLOR_TOWN_AREA_BORDER);
-        DrawInsideStatus(redding_area.IsWithin(chosen.HexX, chosen.HexY));
         break;
     case MAP_gecko_settlement:
         DrawHexArea(gecko_area_v, false, COLOR_TOWN_AREA_BORDER);

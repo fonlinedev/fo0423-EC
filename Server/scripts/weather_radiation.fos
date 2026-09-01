@@ -18,7 +18,7 @@ import void AffectRadiation(Critter& cr, int value) from "radiation";
 int[] radiation_ignoremaps =
 {
     #ifdef FO2238
-    MAP_Glow_Entrance, MAP_Glow_Floor1, MAP_Glow_Floor2, MAP_Glow_Floor3, MAP_Glow_Floor4, MAP_Glow_Floor5, MAP_Glow_Floor6, MAP_Crater
+    MAP_Glow_Entrance, MAP_Glow_Floor1, MAP_Glow_Floor2, MAP_Glow_Floor3, MAP_Glow_Floor4, MAP_Glow_Floor5, MAP_Glow_Floor6
     #endif
 };
 

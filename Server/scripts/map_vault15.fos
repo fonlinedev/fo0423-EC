@@ -108,25 +108,38 @@ void AddItemToMapItem(Map& map, int hexX, int hexY, int pid, int itemPid, uint c
 // Called when the player leave the v13 cave.
 void RevealV15(Critter& player)
 {
-    GameVar@ qV15 = GetLocalVar(LVAR_q_shady_sands, player.Id);
-    if(qV15 > 0)
+    GameVar@ qV15 = GetLocalVar(LVAR_q_vault15, player.Id);
+    if (!valid(qV15)) {
+        Log("var LVAR_q_vault15 not found");
+        return;
+    }
+    if(valid(qV15) && qV15 == 1)
     {
+        Log("v15 is already defined");
         return;
     }
 
-    uint16 worldX = 1724;
-    uint16 worldY = 1368;
+    uint16 worldX = 1972;
+    uint16 worldY = 1370;
         
     array<Critter@> critters = { player };
-    uint            locId = CreateLocation(LOCATION_Vault15, worldX, worldY, critters);
+    uint locId = CreateLocation(LOCATION_Vault15, worldX, worldY, critters);
+    Log("location id found LOCATION_Vault15: "+locId);
+
     SetRootMapData(GetLocation(locId), MAP_DATA_OWNER, player.Id);
     SetTurnBasedAvailability(GetLocation(locId));
 
-    GameVar@ qV15Locid = GetLocalVar(LVAR_q_v15_loc_id, player.Id);
-    qV15Locid = locId;
+    GameVar@ qV15Locid = GetLocalVar(LVAR_q_vault15_loc_id, player.Id);
+
+    if (!valid(qV15Locid)) {
+        Log("var LVAR_q_vault15_loc_id not found");
+        return;
+    }
+
+    if (valid(qV15Locid))
+        qV15Locid = locId;
 
     qV15 = 1;
-
-    // dont need to garbage
+    Log("v15 set to 1");
     SetQuestGarbager(0, player.Id, locId, LVAR_quest_water_chip, Q_INVESTIGATED);
 }

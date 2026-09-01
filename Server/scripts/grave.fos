@@ -180,10 +180,7 @@ uint e_Init(array<uint>@ values)
         if(valid(map))
         {
             uint16 p = map.GetProtoId();
-            if(p == MAP_DenBusiness || p == MAP_Redding || p == MAP_NewReno_Golgotha || p == MAP_Cathedral_Enter)
-            {
-                ConnectRecycler(grave, ENCOUNTER_RECYCLER);
-            }
+            
         }
     }
     return 0;

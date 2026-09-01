@@ -7,6 +7,8 @@
 
 #include "_macros.fos"
 #include "worldmap_h.fos"
+#include "_maps.fos"
+#include "mapdata_h.fos"
 
 bool LoadWorldmapTables(string@ fileName)
 {
@@ -123,6 +125,6 @@ bool LoadWorldmapTables(string@ fileName)
                 zone.Flags.insertLast(flag);
             }
         }
-    }
+    }    
     return true;
 }

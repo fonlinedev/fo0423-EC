@@ -2030,7 +2030,6 @@ int CheckSpecialEncounter(Critter@ leader, CZone@ zone)
     // _CheckSpecialEncounter(LOCATION_SpecialEncounter_BusStop, (zone.Terrain==TERRAIN_Desert), SetLvar(leader, LVAR_q_secret_bus_stop, ELAPSED_TIME+REAL_HOUR(10))); // 1 roll in 10h
 
     // This is a quest based encounter.
-    //_CheckSpecialEncounter(LOCATION_Ambush, (ZoneContainsFlag(zone, FLAG_CaesarAmbush) && (GetLvar(leader, LVAR_q_la_train_caesar_ambush) == 1) && (leader.Skill[SK_OUTDOORSMAN] < Random(75, 299))), SetLvar(leader, LVAR_q_la_train_caesar_ambush, 2));
     //_CheckSpecialEncounter(LOCATION_CrashedHummer, (ZoneContainsFlag(zone, FLAG_CrashedHummer)), SetLvar(leader, LVAR_se_boscrashedhummer, 1));
     //_CheckSpecialEncounter(LOCATION_Battleground, (ZoneContainsFlag(zone, FLAG_BattleGround)), SetLvar(leader, LVAR_se_bosbattleground, 1));
     #endif
@@ -2064,8 +2063,6 @@ int CheckSpecialEncounter(Critter@ leader, CZone@ zone)
 /*TEST*/	//_CheckSpecialEncounter(LOCATION_DeadBody, ((zone.Terrain == TERRAIN_Desert || zone.Terrain == TERRAIN_Mountain) && ((GetLvar(leader, LVAR_q_mb_location_known)==0) && (uint(GetLvar(leader, LVAR_q_mb)) <= ELAPSED_TIME) && Random(1, 1) == 1 && (leader.Stat[ST_LEVEL] > Random(1, 1)) && (leader.Skill[SK_OUTDOORSMAN]< Random(25,299)))), SetLvar(leader, LVAR_q_mb, ELAPSED_TIME + REAL_HOUR(0)));     
 	_CheckSpecialEncounter(LOCATION_DeadBody, ((zone.Terrain == TERRAIN_Desert || zone.Terrain == TERRAIN_Mountain) && ((GetLvar(leader, LVAR_q_mb_location_known)==0) && (uint(GetLvar(leader, LVAR_q_mb)) <= ELAPSED_TIME) && Random(1, 18000) == 1 && (leader.Stat[ST_LEVEL] > Random(23, 23)) && (leader.Skill[SK_OUTDOORSMAN]> Random(24,299)))), SetLvar(leader, LVAR_q_mb, ELAPSED_TIME + REAL_HOUR(25)));
 
-	
-	_CheckSpecialEncounter(LOCATION_Ambush, (ZoneContainsFlag(zone, FLAG_CaesarAmbush) && (GetLvar(leader, LVAR_q_la_train_caesar_ambush) == 1) && (leader.Skill[SK_OUTDOORSMAN] < Random(75, 299))), SetLvar(leader, LVAR_q_la_train_caesar_ambush, 2));
 	
     _CheckSpecialEncounter(LOCATION_Battleground, (ZoneContainsFlag(zone, FLAG_BattleGround) && (GetLvar(leader, LVAR_se_bosbattleground) == 0) && (GetLvar(leader, LVAR_q_bos_initiatequest_start) >= 21 && GetLvar(leader, LVAR_q_bos_initiatequest_start) <= 22) && Random(0, 1) == 0), false);
 	

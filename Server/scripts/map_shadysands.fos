@@ -48,7 +48,8 @@ void map_init(Map& map, bool firstTime)
 {
     uint respawnTime = 1; // 1 hour loop
     uint[] values = { map.GetProtoId() };    
-    CreateTimeEvent(__FullSecond + REAL_HOUR(respawnTime), "e_RespawnLoot", values, false);    
+    CreateTimeEvent(__FullSecond + REAL_HOUR(respawnTime), "e_RespawnLoot", values, false);
+    map.SetEvent(MAP_EVENT_IN_CRITTER, "_CritterIn");
     if(firstTime)
     {
         map.SetTurnBasedAvailability(true);
@@ -80,6 +81,283 @@ void RevealShadySands(Critter& player)
     // dont need to garbage
 }
 
+// Initialize npcs and Tandi
+void _CritterIn(Map& map, Critter& cr)
+{
+    Critter@ player = null;
+    if(cr.IsPlayer() || _IsRealPlayer(cr)) {
+		@player = cr;
+		Log("Real player found on Shady Sands.");
+	} else {
+		Log("No real player found in Shady Sands, skipping NPC state update.");		
+		return;		
+	}
+
+    if(!valid(map))
+    {
+        Log("Shady Sands map not found.");
+        return;
+    }
+
+    array<Critter@> critters;
+    uint critterCount = map.GetCritters(0, FIND_ALL, critters);
+
+	bool aradeshDone = false;
+    bool tandiDone = false;
+	for(uint i = 0; i < critterCount; i++)
+    {
+        Critter@ cr = critters[i];
+
+        if(!valid(cr))
+            continue;
+
+        if(cr.IsDead())
+            continue;
+
+        if(!cr.IsNpc())
+            continue;
+
+        if(IsCompanion(cr))
+            continue;
+
+        uint pId = cr.GetProtoId();
+
+        if(pId == ARADESH_PID)
+        {
+            Log("Aradesh found.");
+            aradeshDone = updateAradesh(cr, player);            
+        }
+        else if(pId == TANDI_PID)
+        {
+            Log("Tandi found.");
+            tandiDone = updateTandiVisibility(cr, player);
+        }
+    }
+    if(aradeshDone && tandiDone)
+    {
+        Log("Aradesh and Tandi updates complete.");
+        return;
+    }
+}
+
+bool updateAradesh(Critter@ npc, Critter@ player)
+{
+    if(!valid(npc))
+    {
+        Log("updateAradesh: invalid Aradesh.");
+        return false;
+    }
+
+    if(!valid(player))
+    {
+        Log("updateAradesh: invalid player.");
+        return false;
+    }
+
+    GameVar@ questVar1 = GetLocalVar(
+        LVAR_q_shady_radscorpions,
+        player.Id
+    );
+
+    GameVar@ questVar2 = GetLocalVar(
+        LVAR_q_shady_antidote,
+        player.Id
+    );
+
+    GameVar@ questVar3 = GetLocalVar(
+        LVAR_q_shady_tandi,
+        player.Id
+    );
+
+    if(!valid(questVar1) || !valid(questVar2) || !valid(questVar3))
+    {
+        Log("updateAradesh: quest variables not found.");
+        return false;
+    }
+
+    uint radscorpionState = questVar1.GetValue();
+    uint antidoteState    = questVar2.GetValue();
+    uint tandiState       = questVar3.GetValue();
+
+    // -------------------------------------------------
+    // Radscorpion quest not started
+    // -------------------------------------------------
+
+    if(radscorpionState == 0)
+    {
+        Log("Player did not initiate the quest of radscorpions.");
+
+        npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh1;
+        return false;
+    }
+
+    // -------------------------------------------------
+    // Radscorpion quest in progress
+    // -------------------------------------------------
+
+    if(radscorpionState == 1)
+    {
+        Log("Player did initiate the quest of radscorpions.");
+
+        npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh2;
+        return false;
+    }
+
+    // -------------------------------------------------
+    // Both prerequisite quests finished
+    // Player can now start Tandi quest
+    // -------------------------------------------------
+
+    if(radscorpionState == 3 && antidoteState == 1)
+    {
+        Log("Player completed the prerequisites for the Tandi quest.");
+
+        // Tandi quest has not started yet.
+        if(tandiState == 0)
+        {
+            Log("Player can start the quest for Tandi.");
+
+            npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh3;
+            return true;
+        }
+
+        // Tandi quest is already active.
+        if(tandiState == 1 ||
+           tandiState == 2 ||
+           tandiState == 3 ||
+           tandiState == 4)
+        {
+            Log("Tandi quest is currently in progress.");
+
+            npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh3;
+            return true;
+        }
+
+        // Tandi quest completed.
+        if(tandiState == 5)
+        {
+            Log("Tandi quest is completed.");
+
+            npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh3;
+            return true;
+        }
+    }
+
+    // -------------------------------------------------
+    // Fallback
+    // -------------------------------------------------
+
+    Log("Aradesh: no special quest state.");
+
+    npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh1;
+    return false;
+}
+
+bool updateTandiVisibility(Critter@ npc, Critter@ player)
+{
+    if(!valid(npc))
+    {
+        Log("updateTandiVisibility: invalid critter.");
+        return false;
+    }
+
+    if(!valid(player))
+    {
+        Log("updateTandiVisibility: invalid player.");
+        return false;
+    }
+
+    GameVar@ questVar1 = GetLocalVar(
+        LVAR_q_shady_radscorpions,
+        player.Id
+    );
+
+    GameVar@ questVar2 = GetLocalVar(
+        LVAR_q_shady_antidote,
+        player.Id
+    );
+
+    GameVar@ questVar3 = GetLocalVar(
+        LVAR_q_shady_tandi,
+        player.Id
+    );
+
+    if(!valid(questVar1) ||
+       !valid(questVar2) ||
+       !valid(questVar3))
+    {
+        Log("updateTandiVisibility: quest variables not found.");
+        return false;
+    }
+
+    uint radscorpionState = uint(questVar1.GetValue());
+    uint antidoteState    = uint(questVar2.GetValue());
+    uint tandiState       = uint(questVar3.GetValue());
+
+    // -------------------------------------------------
+    // Tandi disappears when the prerequisites are done
+    // and her quest has not been completed.
+    // -------------------------------------------------
+
+    if(radscorpionState == 3 &&
+       antidoteState == 1 &&
+       tandiState != uint(TANDI_RESCUED) &&
+       tandiState != uint(TANDI_COMPLETED))
+    {
+        Log("Tandi is unavailable. Removing her from Shady Sands.");
+
+        DeleteNpc(npc);
+        return true;
+    }
+
+    return false;
+}
+
+
+Critter@ findSeth() {
+    Log("checking npc states in the map.");
+
+    Map@ map = GetMapByPid(MAP_ShadyWest, 0);
+
+    if(!valid(map))
+    {
+        Log("Shady Sands map not found.");
+        return null;
+    }
+
+    array<Critter@> critters;
+    uint critterCount = map.GetCritters(0, FIND_ALL, critters);
+
+    for(uint i = 0; i < critterCount; i++)
+    {
+        Critter@ cr = critters[i];
+
+        if(!valid(cr))
+            continue;
+
+        if(cr.IsDead())
+            continue;
+
+        if(!cr.IsNpc())
+            continue;
+
+        if(IsCompanion(cr))
+            continue;
+
+        uint pId = cr.GetProtoId();
+
+        if(pId == GUARD_PID)
+        {
+            if(cr.HexX == 108 && cr.HexY == 70)
+            {
+                return cr;
+            }
+        }
+    }
+
+    return null;
+}
+
 uint e_RespawnLoot(uint[]@ values)
 {
     if(values is null || values.length() == 0) return 0;
@@ -90,7 +368,7 @@ uint e_RespawnLoot(uint[]@ values)
 
 void r_RevealRaidersCamp(Critter& player, Critter@ npc)
 {
-    int loc = CreateLocation(LOCATION_RaidersCamp, 1774, 1476, null);
+    int loc = CreateLocation(LOCATION_Raiderscamp, 1774, 1476, null);
     Log("Raiders CreateLocation returned = " + loc);
     if(loc == 0)
     {
@@ -101,7 +379,7 @@ void r_RevealRaidersCamp(Critter& player, Critter@ npc)
     GameVar@ locidv = GetLocalVar(LVAR_q_shady_raiders_locid, player.Id);
     locidv = loc;
 
-    Location@ location = GetLocation(LOCATION_RaidersCamp);
+    Location@ location = GetLocation(LOCATION_Raiderscamp);
 
     if(!valid(location))
     {
@@ -126,7 +404,7 @@ void r_RevealRaidersCamp(Critter& player, Critter@ npc)
     SetQuestGarbager(0, player.Id, loc, LVAR_q_shady_tandi, 5);
 
     // Do this LAST, like the known-working function.
-    player.SetKnownLoc(false, LOCATION_RaidersCamp);
+    player.SetKnownLoc(false, LOCATION_Raiderscamp);
 
     setTandiQuestVal(player, 2);
 
@@ -146,7 +424,7 @@ void initLockersOnce(uint mapPid)
     array<Item@> lockers;
     uint count = map.GetItemsByType(ITEM_TYPE_CONTAINER, lockers);
 
-    if(map.GetProtoId() == MAP_ShadySandsWest)
+    if(map.GetProtoId() == MAP_ShadyEast)
     {
         if(count == 0)
         {
@@ -177,7 +455,7 @@ void initLockersOnce(uint mapPid)
         westLocker3.insertLast(LockerLoot(PID_BOTTLE_CAPS, uint(Random(1, 50))));
         ResetLockerLoot(lockers[3], westLocker3);
     }
-    else if(map.GetProtoId() == MAP_ShadySandsEast)
+    else if(map.GetProtoId() == MAP_ShadyEast)
     {
         if(count == 0)
         {
@@ -205,7 +483,7 @@ void respawnLockers(uint mapPid) {
         return;
     }
 
-    if(map.GetProtoId() == MAP_ShadySandsWest)
+    if(map.GetProtoId() == MAP_ShadyEast)
     {
         array<Item@> lockers;
         uint count = map.GetItemsByType(ITEM_TYPE_CONTAINER, lockers);
@@ -243,7 +521,7 @@ void respawnLockers(uint mapPid) {
         ResetLockerLoot(lockers[3], westLocker3);
 
     }
-    else if(map.GetProtoId() == MAP_ShadySandsEast)
+    else if(map.GetProtoId() == MAP_ShadyEast)
     {
         array<Item@> lockers;
         uint count = map.GetItemsByType(ITEM_TYPE_CONTAINER, lockers);

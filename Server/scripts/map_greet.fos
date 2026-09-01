@@ -40,23 +40,13 @@ void AddGreet(uint map, uint var, string& message)
 void InitGreet()
 {
     // Main city locations
-    AddGreet(MAP_NCR, LVAR_greet_ncr, "You have entered Shady Sands, the capital of the New California Republic. Its streets are busy and filled with traders and travelers of various kind.");
-    AddGreet(MAP_Redding, LVAR_greet_redding, "You have entered the mining community of Redding. A glimmer of western city-feeling wafts into your face with the hot desert wind.");
-    AddGreet(MAP_HubDowntown, LVAR_greet_hub, "You have entered the dusty streets of the Hub, the main stopoff point for every caravan that is on its way to the north or the south.");
-    AddGreet(MAP_Gunrunner, LVAR_greet_gunrunner, "You have entered the territory of the Gun Runners. A strange feeling of peace by oversized weapons is surrounding you...");
-    AddGreet(MAP_Library, LVAR_greet_library, "From the distance you can see the old public library that serves as the headquarter of the Follower of the Apocalypse. In the west of it, a small settlement build from self made tents adorns the skyline.");
-    AddGreet(MAP_Adytum, LVAR_greet_adytum, "You have entered the small town of New Adytum. It is surrounded by walls of fences, which provides protection from outside threats.");
 
     // Train stations
-    AddGreet(MAP_SanFransiscoTrainStation, LVAR_greet_train1, "You have encountered the San Francisco train station.");
-    AddGreet(MAP_BoneyardTrainStation, LVAR_greet_train2, "You have encountered the Angel's Boneyard train station.");
-    AddGreet(MAP_NCRTrainStation, LVAR_greet_train3, "You have encountered the New California Republic train station.");
-    AddGreet(MAP_VaultCityTrainStation, LVAR_greet_train4, "You have encountered the Vault City train station.");
 
     // Mining locations
 
     // Quest locations
-    AddGreet(MAP_QBrahminWillow, LVAR_greet_q_ncr_brahmin, "You have entered the wide brahmin willow close to the Westin Ranch. It for sure is a peaceful place.");
+    
 
     // Other locations
 
