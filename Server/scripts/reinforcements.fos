@@ -484,15 +484,10 @@ uint GetPid(uint locpid, uint mappid, uint type)
     if(type == 0)     // light
     {
         switch(locpid)
-        {
-        case LOCATION_Trainyard4:
-                
-        case LOCATION_Trainyard1:
-        case LOCATION_Trainyard3:
+        {        
         case LOCATION_Hub:
         case LOCATION_Junktown:
-        
-        case LOCATION_Trainyard2:
+                
         case LOCATION_Library:
         
         case LOCATION_Boneyard:
@@ -506,17 +501,9 @@ uint GetPid(uint locpid, uint mappid, uint type)
     {
         switch(locpid)
         {
-        case LOCATION_Trainyard4:
-
-        case LOCATION_Trainyard3:
-        
-        
-        case LOCATION_Trainyard1:
-
         case LOCATION_Hub:
         case LOCATION_Junktown:
 
-        case LOCATION_Trainyard2:
         case LOCATION_Library:
         
         case LOCATION_Boneyard:
@@ -631,15 +618,7 @@ uint GetDialog(uint locpid, uint mappid, uint type)
     {
         switch(locpid)
         {
-        case LOCATION_Trainyard1:
-            return 1444;
-        case LOCATION_Trainyard2:
-            return 9460;
-        case LOCATION_Trainyard3:
-            return 1051;
-        case LOCATION_Trainyard4:
-            return 449;
-
+        
         case LOCATION_Junktown:
             return 1700;
         case LOCATION_Hub:
@@ -655,15 +634,7 @@ uint GetDialog(uint locpid, uint mappid, uint type)
     {
         switch(locpid)
         {
-        case LOCATION_Trainyard1:
-            return 1444;
-        case LOCATION_Trainyard2:
-            return 9460;
-        case LOCATION_Trainyard3:
-            return 1051;
-        case LOCATION_Trainyard4:
-            return 449;
-
+        
         case LOCATION_Junktown:
             return 1700;
         case LOCATION_Hub:

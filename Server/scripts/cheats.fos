@@ -366,7 +366,7 @@ void SetAliases()
     
     
     // Slaver Camps
-    SetMapId("slaver1",             MAP_SlaverCamp);
+    
     /* Used in future
        SetMapId("slaver2",		569);
        SetMapId("slaver3",		570);
@@ -374,7 +374,6 @@ void SetAliases()
      */
 
     
-    SetMapId("gasstation2", MAP_GordonsGasStation);    
     SetMapId("hub_arena",   MAP_HubArena);
     SetMapId("junkyard",    MAP_Junkyard);
     

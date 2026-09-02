@@ -127,6 +127,9 @@ void SetStartLocation(Critter& cr)   // Export
     Location@ loc = GetLocation(locId);
     SetRootMapData(loc, MAP_DATA_OWNER, cr.Id);
     SetTurnBasedAvailability(loc);
+
+    cr.SetKnownLoc(false, startloc);
+
     Map@      map = loc.GetMapByIndex(0);
     if(!valid(map))
         return;

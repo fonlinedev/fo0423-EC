@@ -71,10 +71,7 @@ void r_SpawnFarmhouse(Critter& player, Critter@ npc)
     array<Critter@> critters = { player };
     uint            locId = CreateLocation(LOCATION_Q_FirstTent2, farmX, farmY, critters);
     SetRootMapData(GetLocation(locId), MAP_DATA_OWNER, player.Id);
-    if(player.Mode[MODE_DEFAULT_COMBAT] == COMBAT_MODE_TURN_BASED)
-    {
-        SetTurnBasedAvailability(GetLocation(locId));
-    }
+    SetTurnBasedAvailability(GetLocation(locId));    
 
     GameVar@ qFirstTentLoc2Id = GetLocalVar(LVAR_q_first_tent_loc2_id, player.Id);
     qFirstTentLoc2Id = locId;

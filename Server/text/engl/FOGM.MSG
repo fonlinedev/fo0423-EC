@@ -35,21 +35,6 @@
 {115}{}{12junktn}
 {116}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
-# Map 11, base 120
-{120}{}{Klamath Toxic Caves 1}
-{125}{}{13carvrn}
-{126}{}{puddle1:30, puddle:30, water:5, water1:5, pebble:5, pebble1:5}
-
-# Map 12, base 130
-{130}{}{Klamath Toxic Caves 2}
-{135}{}{13carvrn}
-{136}{}{puddle1:30, puddle:30, water:5, water1:5, pebble:5, pebble1:5}
-
-# Map 13, base 140
-{140}{}{Klamath Toxic Caves 3}
-{145}{}{13carvrn}
-{146}{}{puddle1:30, puddle:30, water:5, water1:5, pebble:5, pebble1:5}
-
 # Map 14, base 150
 {150}{}{Mountains Encounter Khans 3}
 {155}{}{07desert}
@@ -63,11 +48,6 @@
 {185}{}{05raider}
 {185}{}{12junktn}
 {186}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
-
-# Map 19, base 200
-{200}{}{NCR LA Gold Reserve}
-{205}{}{10labone}
-{206}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
 # Map 23, base 240
 {240}{}{LA Warehouse}
@@ -154,16 +134,6 @@
 {445}{}{13carvrn}
 {446}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, animal1:15, animal:10}
 
-# Map 44, base 450
-{450}{}{Q: SanFran Subway}
-{455}{}{14necro}
-{456}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
-
-# Map 46, base 470
-{470}{}{Hub Trainyard}
-{475}{}{01hub}
-{476}{}{gntlwin1:25, gntlwind:25, brdchir1:10, brdchirp:10, blank:30}
-
 # Map 49, base 500
 {500}{}{Military Base Entrance}
 {505}{}{07desert}
@@ -197,11 +167,6 @@
 {610}{}{Q Brahmin Willow}
 {615}{}{18modoc}
 {616}{}{brdchir1:25, brdchirp:25, chimes:15, chimes1:15, dogbark:10, dogbark1:10}
-
-# Map 61, base 620
-{620}{}{Tobacco Farm}
-{625}{}{14necro}
-{626}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
 
 # Map 67, base 680
 {680}{}{Q Radscorpion Cave}
@@ -463,26 +428,6 @@
 {1280}{}{Seven Families Village}
 {1285}{}{07desert}
 {1286}{}{gntlwin1:25, gntlwind:25, gustwind:10, blank:40}
-
-# Map 135, base 1360
-{1360}{}{San Fran Tanker}
-{1365}{}{21sf}
-{1366}{}{seawind1:25, clang:10, waves1:15, clangl:15, waves:15, seawind:20}
-
-# Map 137, base 1380
-{1380}{}{San Fran China}
-{1385}{}{21sf}
-{1386}{}{seawind1:25, seawind:25, chimes1:15, chimes:15, blank:20}
-
-# Map 139, base 1400
-{1400}{}{Shi Temple}
-{1405}{}{21sf}
-{1406}{}{}
-
-# Map 140, base 1410
-{1410}{}{San Fran BoS}
-{1415}{}{}
-{1416}{}{}
 
 # Map 141, base 1420
 {1420}{}{Necropolis Hotel}
@@ -1062,16 +1007,6 @@
 {2475}{}{09glow}
 {2476}{}{electri1:15, electric:15, clank:10, clank1:10, steam:15, steam:10}
 
-# Map 269, base 2700
-{2700}{}{Modoc: Ghostcave}
-{2705}{}{18modoc}
-{2706}{}{}
-
-# Map 270, base 2710
-{2710}{}{Modoc: Ghostfarm}
-{2715}{}{18modoc}
-{2716}{}{}
-
 # Map 275, base 2760
 {2760}{}{Replication 1}
 {2765}{}{07desert}
@@ -1137,16 +1072,6 @@
 {2920}{}{Prospect Trees}
 {2925}{}{}
 {2926}{}{}
-
-# Map 305, base 3060
-{3060}{}{Railroad Gang}
-{3065}{}{15shady}
-{3066}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
-
-# Map 306, base 3070
-{3070}{}{Outpost}
-{3075}{}{07desert}
-{3076}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
 
 # Map 307, base 3080
 {3080}{}{Hideout}
@@ -1275,11 +1200,6 @@
 {3495}{}{24redd}
 {3496}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
-# Map 379, base 3800
-{3800}{}{Junktown Mining Site}
-{3805}{}{12junktn}
-{3806}{}{gntlwin1:25, gntlwind:25, animal1:20, animal:20, gustwind:5, gustwin1:5}
-
 # Map 385, base 3860
 {3860}{}{HQ: Tents}
 {3865}{}{07desert}
@@ -1296,36 +1216,6 @@
 {4020}{}{Cave Encounter Out 7}
 {4025}{}{07desert}
 {4026}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 450, base 4510
-{4510}{}{Slaverun 1}
-{4515}{}{07desert}
-{4516}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 451, base 4520
-{4520}{}{Slaverun 2}
-{4525}{}{07desert}
-{4526}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 452, base 4530
-{4530}{}{Slaverun 3}
-{4535}{}{07desert}
-{4536}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 453, base 4540
-{4540}{}{Slaverun 4}
-{4545}{}{07desert}
-{4546}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 454, base 4550
-{4550}{}{Slaverun 5}
-{4555}{}{07desert}
-{4556}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 455, base 4560
-{4560}{}{Slaverun 6}
-{4565}{}{10labone}
-{4566}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
 # Map 500, base 5010
 {5010}{}{Desert Encounter 7}
@@ -1441,26 +1331,6 @@
 {5525}{}{07desert}
 {5526}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
-# Map 552, base 5530
-{5530}{}{San Fransisco Train Station}
-{5535}{}{21sf}
-{5536}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 553, base 5540
-{5540}{}{Boneyard Train Station}
-{5545}{}{01hub}
-{5546}{}{gntlwin1:25, gntlwind:25, dogbark:20, rattle:15, gustwin1:10, vulture:10}
-
-# Map 554, base 5550
-{5550}{}{NCR  Train Station}
-{5555}{}{07desert}
-{5556}{}{gntlwin1:25, gntlwind:25, brdchir1:10, brdchirp:10, blank:30}
-
-# Map 555, base 5560
-{5560}{}{Vault City Train Station}
-{5565}{}{22vcity}
-{5566}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
 # Map 556, base 5570
 {5570}{}{Junkyard}
 {5575}{}{junkyard.ogg}
@@ -1491,35 +1361,10 @@
 {5645}{}{07desert}
 {5646}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
 
-# Map 564, base 5650
-{5650}{}{Themepark}
-{5655}{}{07desert}
-{5656}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
-
-# Map 565, base 5660
-{5660}{}{Waterworks}
-{5665}{}{waterworks.ogg}
-{5666}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
-
-# Map 566, base 5670
-{5670}{}{Gordon's Gas Station}
-{5675}{}{07desert}
-{5676}{}{gntlwin1:20, gntlwind:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
-
 # Map 567, base 5680
 {5680}{}{Mountain Passage}
 {5685}{}{07desert}
 {5686}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 568, base 5690
-{5690}{}{Slaver Camp}
-{5695}{}{07desert}
-{5696}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 569, base 5700
-{5700}{}{Military Camp}
-{5705}{}{07desert}
-{5706}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
 # Map 3853, base 38540
 {38540}{}{Vault 13}
@@ -1655,17 +1500,6 @@
 {119101}{}{Exterior}
 {119102}{}{352}
 {119103}{}{155}
-
-# Vault 13, pid 23, base 123000
-{123000}{}{Vault 13}
-{123005}{}{A Vault very well hidden in the mountains.}
-{123010}{}{12}
-{123020}{}{art\intrface\twnv13.frm}
-{123030}{}{art\intrface\WM_VLT13.FRM}
-{123090}{}{1}
-{123101}{}{Cave}
-{123102}{}{214}
-{123103}{}{309}
 
 # Necropolis, pid 24, base 124000
 {124000}{}{Necropolis}
@@ -2321,16 +2155,6 @@
 {314005}{}{A small tent in the city.}
 {314010}{}{6}
 
-# Rail Line Gang, pid 222, base 322000
-{322000}{}{Rail Line Gang}
-{322005}{}{The camping place of the Horatius rail line gang.}
-{322010}{}{6}
-
-# Lost Hills Outpost, pid 223, base 323000
-{323000}{}{Lost Hills Outpost}
-{323005}{}{On a edge between the mountains, you can see a small shining light.}
-{323010}{}{6}
-
 # Hideout, pid 224, base 324000
 {324000}{}{Hideout}
 {324005}{}{A small camp fire is burning in the distance.}
@@ -2390,36 +2214,6 @@
 {346000}{}{Trapper Camp}
 {346005}{}{A small-sized tent camp with fireplaces.}
 {346010}{}{6}
-
-# Slaverun 1, pid 271, base 371000
-{371000}{}{Slaverun 1}
-{371005}{}{A tribal camp}
-{371010}{}{6}
-
-# Slaverun 2, pid 272, base 372000
-{372000}{}{Slaverun 2}
-{372005}{}{A tribal camp}
-{372010}{}{6}
-
-# Slaverun 3, pid 273, base 373000
-{373000}{}{Slaverun 3}
-{373005}{}{A resting caravan}
-{373010}{}{6}
-
-# Slaverun 4, pid 274, base 374000
-{374000}{}{Slaverun 4}
-{374005}{}{A small farm}
-{374010}{}{6}
-
-# Slaverun 5, pid 275, base 375000
-{375000}{}{Slaverun 5}
-{375005}{}{A highway gas station}
-{375010}{}{6}
-
-# Slaverun 6, pid 276, base 376000
-{376000}{}{Slaverun 6}
-{376005}{}{A house full of junkies}
-{376010}{}{6}
 
 # Desert 7, pid 300, base 400000
 {400000}{}{Desert 7}
@@ -2530,11 +2324,6 @@
 {460000}{}{Ant Lair}
 {460005}{}{A place in the dirt.}
 {460010}{}{6}
-
-# Gordon's Gas Station, pid 364, base 464000
-{464000}{}{Gordon's Gas Station}
-{464005}{}{A small gas station in the middle of the desert.}
-{464010}{}{6}
 
 # Mountain Passage, pid 366, base 466000
 {466000}{}{Mountain Passage}

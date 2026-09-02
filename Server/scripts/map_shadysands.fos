@@ -52,15 +52,15 @@ void map_init(Map& map, bool firstTime)
     map.SetEvent(MAP_EVENT_IN_CRITTER, "_CritterIn");
     if(firstTime)
     {
-        map.SetTurnBasedAvailability(true);
-        initLockersOnce(map.GetProtoId());
+        //map.SetTurnBasedAvailability(true);
+        //initLockersOnce(map.GetProtoId());
     }
 }
 // Called when the player leave the v13 cave.
 void RevealShadySands(Critter& player)
 {
     GameVar@ qshadySands = GetLocalVar(LVAR_q_shady_sands, player.Id);
-    if(qshadySands > 0)
+    if(qshadySands.GetValue() > 0)
     {
         return;
     }
@@ -70,15 +70,32 @@ void RevealShadySands(Critter& player)
         
     array<Critter@> critters = { player };
     uint            locId = CreateLocation(LOCATION_ShadySands, worldX, worldY, critters);
-    SetRootMapData(GetLocation(locId), MAP_DATA_OWNER, player.Id);
-    SetTurnBasedAvailability(GetLocation(locId));  
+    Location@ loc = GetLocation(locId); 
+    if (!valid(loc)) {
+        Log("error getting location based on id "+locId);
+        return;
+    }
+    SetRootMapData(loc, MAP_DATA_OWNER, player.Id);
+    SetTurnBasedAvailability(loc);  
 
     GameVar@ qShadySandsLocid = GetLocalVar(LVAR_q_shady_sands_loc_id, player.Id);
     qShadySandsLocid = locId;
 
     qshadySands = 1;
+    Map@     shadyW = loc.GetMapByIndex(0);
+    if (!valid(shadyW)) {
+        Log("shadyW failed to get reference ");
+        return;
+    }
+    Map@     shadyE = loc.GetMapByIndex(1);
+    if (!valid(shadyE)) {
+        Log("shadyE failed to get reference ");
+        return;
+    }
 
-    // dont need to garbage
+    initLockersOnce(shadyW);
+    initLockersOnce(shadyE);
+    SetQuestGarbager(0, player.Id, locId, LVAR_q_shady_sands, TANDI_DEAD);
 }
 
 // Initialize npcs and Tandi
@@ -412,19 +429,17 @@ void r_RevealRaidersCamp(Critter& player, Critter@ npc)
 }
 
 // First init the lockers, only run once.
-void initLockersOnce(uint mapPid)
-{
-    Map@ map = GetMapByPid(mapPid, 0);
-
+void initLockersOnce(Map@ map)
+{    
     if(!valid(map))
     {
-        Log("initLockersOnce failed, map " + mapPid + " not found.");
+        Log("initLockersOnce failed, map not found.");
         return;
     }
     array<Item@> lockers;
     uint count = map.GetItemsByType(ITEM_TYPE_CONTAINER, lockers);
 
-    if(map.GetProtoId() == MAP_ShadyEast)
+    if(map.GetProtoId() == MAP_ShadyWest)
     {
         if(count == 0)
         {

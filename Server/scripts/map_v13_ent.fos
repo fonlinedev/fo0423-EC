@@ -87,19 +87,19 @@ void _CritterOut(Map& map, Critter& cr)
     GameVar@ vault15 = GetLocalVar(LVAR_q_vault15, cr.Id);
        
     if (valid(mainQuestVar) && mainQuestVar.GetValue() == 1) {
-        if(cr.IsPlayer() && _IsOnline(cr) && valid(firstTent) && firstTent  == 0)
+        if(cr.IsPlayer() && _IsOnline(cr) && valid(firstTent) && firstTent.GetValue()  == 0)
         {
             StartFirstTentQuest(cr);            
         }
 
-        if(cr.IsPlayer() && _IsOnline(cr) && valid(shadySands) && shadySands == 0)
+        if(cr.IsPlayer() && _IsOnline(cr) && valid(shadySands) && shadySands.GetValue() == 0)
         {
             RevealShadySands(cr);
             Log("Shady sands revealed");
         }
 
         
-        if(cr.IsPlayer() && _IsOnline(cr) && valid(vault15) && vault15 == 0)
+        if(cr.IsPlayer() && _IsOnline(cr) && valid(vault15) && vault15.GetValue() == 0)
         {
             RevealV15(cr);
             Log("Vault 15 revealed");

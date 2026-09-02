@@ -881,7 +881,7 @@ bool critter_stealing(Critter& cr, Critter& thief, Item& item, uint count)
 	
 	
 	Map@ map = cr.GetMap();
-	if(map.GetLocation().GetProtoId()==LOCATION_BarterGround || map.GetLocation().GetProtoId()==LOCATION_Necropolis || map.GetLocation().GetProtoId()==LOCATION_Hub) 
+	if(map.GetLocation().GetProtoId()==LOCATION_Necropolis || map.GetLocation().GetProtoId()==LOCATION_Hub) 
 	{
 	thief.Say(SAY_NETMSG, "|4291317840 " + "You cannot steal here.");
 	success = false;
