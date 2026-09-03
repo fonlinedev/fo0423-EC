@@ -59,7 +59,7 @@ lang=engl
 19 17000 None 0 #
 0 17010 @
 20 18000 None 0 #
-0 18010 R _item p PID_ANTIDOTE + 1 R _var p q_shady_antidote = 1 @
+0 18010 R _item p PID_ANTIDOTE + 1 R _var p q_shady_antidote = 1 R _param p PE_SNAKEATER = 1 @
 21 19000 dialog@dlg_ShowHealingPrice 0 #
 22 19010 D _script dialog@d_HealingMoney 0  R _script dialog@r_DocHeal 0  #
 0 19020 @

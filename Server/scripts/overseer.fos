@@ -78,7 +78,8 @@ void r_StartQuest(Critter& player, Critter@ npc)
         if(Random(1, 100) <= 5)
         {
             player.AddItem(PID_RADAWAY, 1);
-        }		
+        }
+        player.PerkBase[PE_AWARENESS] = 1;
     } else {
 		player.Say(SAY_SHOUT, "Error! Contact admin.");
 	}
