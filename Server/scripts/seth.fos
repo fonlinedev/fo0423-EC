@@ -104,3 +104,7 @@ void _OnPlayerMessage(Critter& npc, Critter& player, int num, int val)
     }
  
 }
+
+void r_QuestAccepted(Critter& critter, Critter@ player) {
+    critter.SendMessage(MSG_RADSCORPION_ACCEPTED, 0, MESSAGE_TO_ALL_ON_MAP);    
+}

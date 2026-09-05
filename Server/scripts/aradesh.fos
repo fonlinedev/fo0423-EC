@@ -1,6 +1,7 @@
 #include "_macros.fos"
 #include "_vars.fos"
 #include "_dialogs.fos"
+#include "messages_h.fos"
 #include "_maps.fos"
 #include "_defines.fos"
 #include "ITEMPID.H"
@@ -23,73 +24,20 @@ enum TandiQuestState
 
 
 void critter_init(Critter& npc, bool firstTime)
-{	
-	// npc.SetEvent(CRITTER_EVENT_SHOW_CRITTER, "_OnShowCritter");
+{		
+    npc.SetEvent(CRITTER_EVENT_MESSAGE, "_OnUpdateQuests");
 	if (firstTime) {
 		npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh1;
 	}
 }
 
-void _OnShowCritter(Critter& npc, Critter& showCrit)
+void _OnUpdateQuests(Critter& npc, Critter& player, int num, int val)
 {
-	Critter@ player = null;
-    if(showCrit.IsPlayer() || _IsRealPlayer(showCrit)) {
-		@player = showCrit;
-		Log("Real player found on Shady Sands.");		
-	} else {
-		Log("No real player found in Shady Sands, skipping NPC state update.");		
-		return;		
-	}
-
-	Map@ map = GetMapByPid(MAP_ShadySandsWest, 0);
-
-    if(!valid(map))
+    if(num == MSG_RADSCORPION_ACCEPTED)
     {
-        Log("Shady Sands map not found.");
-        return;
-    }
-
-    array<Critter@> critters;
-    uint critterCount = map.GetCritters(0, FIND_ALL, critters);
-
-	bool aradeshDone = false;
-    bool tandiDone = false;
-	for(uint i = 0; i < critterCount; i++)
-    {
-        Critter@ cr = critters[i];
-
-        if(!valid(cr))
-            continue;
-
-        if(cr.IsDead())
-            continue;
-
-        if(!cr.IsNpc())
-            continue;
-
-        if(IsCompanion(cr))
-            continue;
-
-        uint pId = cr.GetProtoId();
-
-        if(pId == ARADESH_PID)
-        {
-            Log("Aradesh found.");
-            aradeshDone = updateAradesh(cr, player);            
-        }
-        else if(pId == TANDI_PID)
-        {
-            Log("Tandi found.");
-            tandiDone = updateTandiVisibility(cr, player);
-        }
-    }
-    if(aradeshDone && tandiDone)
-    {
-        Log("Aradesh and Tandi updates complete.");
-        return;
+        npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh2;
     }
 }
-
 
 bool updateTandiVisibility(Critter@ npc, Critter@ player)
 {

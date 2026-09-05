@@ -43,10 +43,41 @@ void r_StartRadscorpionQuest(Critter& player, Critter@ npc)
     GameVar@  locidv = GetLocalVar(LVAR_q_shady_radscorpions_locid, player.Id);
     locidv = loc;
     Location@ location = GetLocation(loc);
-    Map@ map = location.GetMapByIndex(0);    
-    SetTurnBasedAvailability(location);
-    map.SetData(MAP_DATA_NESTCAVE_OWNER, player.Id);
-    SetQuestGarbager(0, player.Id, loc, LVAR_q_shady_radscorpions, 5);        
+    if (valid(location)) {
+        Map@ map = location.GetMapByIndex(0);
+        SetTurnBasedAvailability(location);
+        map.SetData(MAP_DATA_NESTCAVE_OWNER, player.Id);
+        SetQuestGarbager(0, player.Id, loc, LVAR_q_shady_radscorpions, 5);
+
+        GameVar@  qVar = GetLocalVar(LVAR_q_shady_radscorpions, player.Id);    
+        if (!valid(qVar))
+            return;
+        qVar = 1;
+        Log("quest location created");
+    } else {
+        Log("error at quest creation!");
+    }    
+}
+
+void r_TeleportToCave(Critter& player, Critter@ npc)
+{
+    GameVar@ var = GetLocalVar(LVAR_q_shady_radscorpions_locid, player.Id);
+    if(!valid(var)) {
+        Log("error finding the location id variable!");
+        return;    
+    }
+    Location@ loc = GetLocation(var.GetValue());
+    if(valid(loc)) {
+        Map@ map = loc.GetMapByIndex(0);
+        if (valid(map)) {
+            Log("RAD CAVE: map=" + map.Id);
+            player.TransitToMap(map.Id, 0);
+        } else {
+            Log("Map index 0 not found!");
+        }
+    } else {
+        Log("Rad cave error, Location not found. ID "+var.GetValue());
+    }
 }
 
 void r_DeleteLocation(Critter& critter, Critter@ npc)
@@ -65,22 +96,15 @@ uint GetOwnerId(Map& map)
     return map.GetLocation().GetMapByIndex(0).GetData(MAP_DATA_NESTCAVE_OWNER);
 }
 
-void r_TeleportToCave(Critter& player, Critter@ npc)
-{
-    GameVar@ var = GetLocalVar(LVAR_q_shady_radscorpions_locid, player.Id);
-    if(!valid(var))
-        return;    
-    Location@ loc = GetLocation(var.GetValue());    
-    if(valid(loc)) {
-        Log("RAD CAVE: map=" + loc.GetMapByIndex(0).Id);
-        player.TransitToMap(loc.GetMapByIndex(0).Id, 0);
-    }    
-}
-
 void r_CompleteRadscorpionQuest(Critter& player, Critter@ npc)
 {
     player.AddItem(PID_BOTTLE_CAPS, RADSCORPION_REWARD_COUNT);
     player.StatBase[ST_EXPERIENCE] += 250;
+    if (player.ReputationBase[FACTION_NCR] < 0) {
+        player.ReputationBase[FACTION_NCR] = 100;
+    } else {
+        player.ReputationBase[FACTION_NCR] += 100;
+    }    
     player.SayMsg(SAY_NETMSG, TEXTMSG_DLG, DLGSTR(SETH_DIALOG_ID, SUCCESS_MSG_ID));    
     r_DeleteLocation(player, npc);
 }

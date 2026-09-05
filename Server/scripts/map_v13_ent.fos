@@ -89,7 +89,7 @@ void _CritterOut(Map& map, Critter& cr)
     if (valid(mainQuestVar) && mainQuestVar.GetValue() == 1) {
         if(cr.IsPlayer() && _IsOnline(cr) && valid(firstTent) && firstTent.GetValue()  == 0)
         {
-            StartFirstTentQuest(cr);            
+            StartFirstTentQuest(cr);
         }
 
         if(cr.IsPlayer() && _IsOnline(cr) && valid(shadySands) && shadySands.GetValue() == 0)

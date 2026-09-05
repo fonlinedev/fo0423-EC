@@ -220,7 +220,10 @@ bool CanHaveMoreFollowers(Critter& player, uint FollowerType)
     }
     else
     {
-        return GetPartyPointsUsed(player) + GetPartyPoints(FollowerType) <= GetPartyPointsMax(player);
+        // return GetPartyPointsUsed(player) + GetPartyPoints(FollowerType) <= GetPartyPointsMax(player);
+        // Limit the max number of companions to 3
+        uint companions = GetNumberOfType(player, FOLLOWER_TYPE_COMPANION);
+        return (companions < 3);
     }
 }
 

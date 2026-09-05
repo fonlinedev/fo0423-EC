@@ -200,23 +200,10 @@ bool updateAradesh(Critter@ npc, Critter@ player)
     // Radscorpion quest not started
     // -------------------------------------------------
 
-    if(radscorpionState == 0)
+    if(radscorpionState == 0 || radscorpionState == 1)
     {
-        Log("Player did not initiate the quest of radscorpions.");
-
-        npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh1;
-        return false;
-    }
-
-    // -------------------------------------------------
-    // Radscorpion quest in progress
-    // -------------------------------------------------
-
-    if(radscorpionState == 1)
-    {
-        Log("Player did initiate the quest of radscorpions.");
-
-        npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh2;
+        Log("Player did not started or finished the quest of radscorpions.");
+        
         return false;
     }
 

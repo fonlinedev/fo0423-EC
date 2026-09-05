@@ -56,6 +56,8 @@
 #define MSG_USE_WRONGMEDICINE_JARVIS         (3)
 #define MSG_USE_ALCOHOL_JARVIS               (4)
 #define MSG_USE_DRUGS_JARVIS                 (5)
+#define MSG_RADSCORPION_ACCEPTED             (1)
+#define MSG_RADSCORPION_STARTED              (2)
 #define MSG_TANDI_STARTED                    (1)
 #define MSG_TANDI_FINISHED                   (2)
 

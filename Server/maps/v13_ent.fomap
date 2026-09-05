@@ -15909,4 +15909,33 @@ Critter_ParamValue8  69
 Critter_ParamIndex9  ST_LEVEL
 Critter_ParamValue9  0
 
+MapObjType           0
+ProtoId              32
+MapX                 73
+MapY                 53
+Dir                  3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  4017
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  13
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  7
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  5
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  45
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
 

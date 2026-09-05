@@ -195,7 +195,7 @@ string GetMercLoyalityText(uint loyality)
 string GetCompanionLoyalityText(uint loyality)
 {
     if(loyality == 100)
-        return "Don't worry @sex@|pal||sweetie|, ain't nobody touching you so long as I'm around.@@You know, you remind me of a @sex@|guy||lady| I used to travel with a couple years back. Uh, not sure you want to know what happened to @sex@|him||her|, though. Awful mess.@@You know, hanging out with you makes me wonder why I used to putz around this stinkhole by myself.@@I'm a little embarrassed to admit this, but you're the best friend I've had in years.";
+        return "Don't worry @sex@|pal||sweetie|, ain't nobody touching you so long as I'm around.@@I'm a little embarrassed to admit this, but you're the best friend I've had in years.";
     else if(loyality > 90)
         return "Don't worry @sex@|pal||sweetie|, ain't nobody touching you so long as I'm around.@@You know, you remind me of a @sex@|guy||lady| I used to travel with a couple years back. Uh, not sure you want to know what happened to @sex@|him||her|, though. Awful mess.@@You know, hanging out with you makes me wonder why I used to putz around this stinkhole by myself.@@I'm a little embarrassed to admit this, but you're the best friend I've had in years.";
     else if(loyality > 80)
@@ -634,7 +634,7 @@ void FollowerBaseInit(Critter& follower, bool firstTime)
         follower.FollowerVarBase[FV_SPAWNMAP] = follower.GetMapId();
         follower.FollowerVarBase[FV_LOYALITY] = 100;
         _CritSetMode(follower, MODE_GECK);
-        follower.AddTimeEvent("cte_UpdateLoyality", FOLLOWER_LOYALITY_INTERVAL, CTE_FOLLOWER_LOYALITY);
+        // follower.AddTimeEvent("cte_UpdateLoyality", FOLLOWER_LOYALITY_INTERVAL, CTE_FOLLOWER_LOYALITY);
     }
 
     Critter@ master = GetCritter(follower.FollowerVar[FV_MASTER]);

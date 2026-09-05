@@ -370,31 +370,60 @@ void dlg_ShowPreInfo(Critter& player, Critter@ npc, string@ text)
 void r_BefriendCompanion(Critter& player, Critter@ npc)
 {
     uint index = FindInArray(Companions, npc.Id);
-
     if(index < Companions.length())
         Companions.removeAt(index);
-  
-        //bag = random_from_array(companion_bags_sg);
-        //aipack = AIPACKET_2238_MERC_RANGED;
-  
-    npc.StatBase[ST_LEVEL] = player.StatBase[ST_LEVEL];
-    npc.StatBase[ST_BAG_ID] = random_from_array(companion_bags_sg); //TODO: resolve by PID.
-    npc.StatBase[ST_AI_ID] = AIPACKET_2238_MERC_RANGED;
-            
-    MakeFollower(
+    uint npcId = npc.GetProtoId();
+
+    // IAN 32
+    if (npcId == 32) {
+        npc.StatBase[ST_LEVEL] = player.StatBase[ST_LEVEL];
+        npc.StatBase[ST_BAG_ID] = random_from_array(companion_bags_sg);
+        npc.StatBase[ST_AI_ID] = AIPACKET_2238_MERC_RANGED;
+        npc.SkillBase[SK_SMALL_GUNS] = Random(150, 250);
+        npc.SkillBase[SK_UNARMED] = Random(50, 100);
+        npc.StatBase[0] = Random(6, 8); // ST
+        npc.StatBase[1] = Random(6, 10); // PE
+        npc.StatBase[2] = Random(8, 10); // en
+        npc.StatBase[3] = 3; // CH
+        npc.StatBase[4] = 3; // IN
+        npc.StatBase[5] = Random(6, 10);// AG
+        npc.StatBase[6] = Random(6, 10);// LK
+        MakeFollower(
         npc,
         FOLLOWER_TYPE_COMPANION,
         "follower@FollowerBaseInit",
-        COMPANION_DIALOG_ID,
+        IAN_DIALOG_ID,
         player,
         true
     );
-
-    GenerateNewName(npc);
-    npc.SkillBase[SK_SMALL_GUNS] = Random(150, 250);
+    }
     
-    for(uint i = 0; i <= ST_LUCK; i++)
-        npc.StatBase[i] = Random(6, 10);
+    // TANDI 68
+    if (npcId == 68) {
+        npc.StatBase[ST_LEVEL] = player.StatBase[ST_LEVEL];
+        npc.StatBase[ST_BAG_ID] = random_from_array(companion_bags_melee);
+        npc.StatBase[ST_AI_ID] = AIPACKET_2238_MERC_MELEE;
+        npc.SkillBase[SK_MELEE_WEAPONS] = Random(150, 250);        
+        npc.SkillBase[SK_UNARMED] = Random(150, 250);
+        npc.StatBase[0] = Random(8, 10); // ST
+        npc.StatBase[1] = Random(4, 6); // PE
+        npc.StatBase[2] = Random(6, 10); // EN
+        npc.StatBase[3] = 5; // CH
+        npc.StatBase[4] = 6; // IN
+        npc.StatBase[5] = Random(6, 10);// AG
+        npc.StatBase[6] = Random(8, 10);// LK
+        MakeFollower(
+        npc,
+        FOLLOWER_TYPE_COMPANION,
+        "follower@FollowerBaseInit",
+        TANDI_DIALOG_ID,
+        player,
+        true
+    );
+    }
+    
+    //for(uint i = 0; i <= ST_LUCK; i++)
+    //    npc.StatBase[i] = Random(6, 10);
 
     npc.SetEvent(CRITTER_EVENT_FINISH, "_FinishCompanionOff");
 }

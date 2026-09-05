@@ -593,6 +593,14 @@ string GetStoredName(Critter& critter)
     GameVar@ nick = GetLocalVar(LVAR_npc_name_nick, critter.Id);
     GameVar@ surname = GetLocalVar(LVAR_npc_name_surname, critter.Id);
 
+    uint npcId = critter.GetProtoId();
+    if (npcId == 32) {                
+        return "Ian";
+    }
+    else if (npcId == 68) {
+        return "Tandi";        
+    }
+
     string   crName = "";
     if(first != -1)
         crName += GetFirstName(critter.Stat[ST_GENDER], first.GetValue()) + " ";
@@ -600,6 +608,7 @@ string GetStoredName(Critter& critter)
         crName += GetNick(critter.Stat[ST_GENDER], nick.GetValue(), (gnick.GetValue() == 1 ? true : false)) + " ";
     if(surname != -1)
         crName += GetSurname(surname.GetValue());
+    
     return crName;
 }
 
@@ -612,19 +621,27 @@ string GenerateNewName(Critter& critter)
     bool   gendernick = false;
     int    nick = -1;
     int    surname = -1;
-
-    switch(critter.Stat[ST_BODY_TYPE])
-    {
-    case BT_MEN:
-    case BT_WOMEN:
-        crName = GetRandomFullName(critter.Stat[ST_GENDER], firstname, gendernick, nick, surname);
-        break;
-    case BT_GHOUL:
-    case BT_SUPER_MUTANT:
-        crName = GetRandomFirstName(critter.Stat[ST_GENDER], firstname);
-        break;
-    default:
-        break;
+    
+    uint npcId = critter.GetProtoId();
+    if (npcId == 32) {        
+        crName = "Ian";
+    }
+    else if (npcId == 68) {
+        crName = "Tandi";
+    } else {
+        switch(critter.Stat[ST_BODY_TYPE])
+        {
+        case BT_MEN:
+        case BT_WOMEN:
+            crName = GetRandomFullName(critter.Stat[ST_GENDER], firstname, gendernick, nick, surname);
+            break;
+        case BT_GHOUL:
+        case BT_SUPER_MUTANT:
+            crName = GetRandomFirstName(critter.Stat[ST_GENDER], firstname);
+            break;
+        default:
+            break;
+        }
     }
 
     // save indices

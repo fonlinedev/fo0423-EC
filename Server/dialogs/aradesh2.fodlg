@@ -7,18 +7,20 @@ lang=engl
 [dialog]
 &
 1 1000 None 1 #
-2 1010 D _var p q_shady_radscorpions = 1 #
-7 1020 D _var p q_shady_radscorpions } 2 @
+6 1010 D _var p q_shady_radscorpions = 1 #
+7 1020 D _var p q_shady_radscorpions } 2 #
+2 1030 D _var p q_shady_radscorpions = 0 @
 2 2000 None 0 #
 3 2010 @
 3 3000 None 0 #
-4 3010 #
+4 3010 R _script quest_shady_nestcave@r_StartRadscorpionQuest 0  #
 5 3020 D _param p ST_INTELLECT > 4 #
 0 3030 @
 4 4000 None 0 #
 0 4010 @
 5 5000 None 0 #
-6 5010 @
+6 5010 R _script quest_shady_nestcave@r_StartRadscorpionQuest 0  #
+0 5020 @
 6 6000 None 0 #
 0 6010 @
 7 7000 None 0 #
@@ -32,6 +34,7 @@ lang=engl
 {1000}{}{Predialogue installations}
 {1010}{}{Radscorpions quest ongoing}
 {1020}{}{Radscorpions nest done}
+{1030}{}{Quest accepted}
 {2000}{}{Oh my yes. Great packs of Rad Scorpions are killing our herds. We don't know where they're from, and no matter how many we kill, there's always more!}
 {2010}{}{Go on.}
 {3000}{}{And now the monsters are attacking my people! Razlo is trying to find a cure for their poison, but I'm not sure how it goes.}
@@ -42,6 +45,7 @@ lang=engl
 {4010}{}{[Done.]}
 {5000}{}{As Dharma said, 'Those who tend their own flock, know the shepherd.'}
 {5010}{}{I know it's hard for you to trust, but I would like to help.}
+{5020}{}{I'm not ready yet.}
 {6000}{}{Please hurry and rid us of those Rad Scorpions!}
 {6010}{}{[Done.]}
 {7000}{}{Things are much more settled now. Razlo has been working on a cure for Rad Scorpion poison, and with that, we should be able to fight what's left of them.}

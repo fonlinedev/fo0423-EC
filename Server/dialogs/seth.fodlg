@@ -22,10 +22,10 @@ lang=engl
 8 3040 D _var p q_shady_radscorpions = 1 #
 0 3050 @
 4 4000 None 0 #
-0 4010 #
-8 4020 D _param p ST_INTELLECT < 3 @
+8 4010 D _param p ST_INTELLECT < 3 #
+0 4020 @
 5 5000 None 0 #
-0 5010 R _var p q_shady_radscorpions = 1 R _script quest_shady_nestcave@r_StartRadscorpionQuest 0  #
+0 5010 R _script seth@r_QuestAccepted 0  #
 0 5020 @
 6 6000 None 0 #
 0 6010 @
@@ -69,11 +69,11 @@ lang=engl
 {3040}{}{Take me to the Radscorpion caves.}
 {3050}{}{I don't need to know anything else.}
 {4000}{}{Not very bright, eh? Well, watch out for the Radscorpions, and stay out of trouble.}
-{4010}{}{Scorpin!}
-{4020}{}{Cave!}
+{4010}{}{Cave!}
+{4020}{}{Scorpin!}
 {5000}{}{Those damn Radscorpions have been after our Brahmin since we moved here. Not a week goes by that someone doesn't get poisoned trying to keep them out of the pens. Last week they took my brother Jarvis. Razlo, our doctor, is looking for an antidote as quickly as he can. Hey, if you have the means to help us, why don't you talk to our leader, Aradesh.}
 {5010}{}{I will.}
-{5020}{}{[End.]}
+{5020}{}{Maybe next time.}
 {6000}{}{There are several groups of raiders. I organize guards like Ian to help fight them off. There is one band to the southeast of here. Watch out for them.}
 {6010}{}{[End.]}
 {7000}{}{Shady Sands is a peaceful community. We have our own irrigation system, so we can grow our own food. If we were not plagued with raiders and Radscorpions, we would have no problems.}
