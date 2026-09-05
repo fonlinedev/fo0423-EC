@@ -201,6 +201,13 @@ void r_RemoveItem(Critter& player, Critter@ tray, int Pid)
     }
 }
 
+void r_RemoveItemInventory(Critter& player, Critter@ npc, int Pid, int qty)
+{    
+    // reduce money
+    _CritDeleteItem(player, Pid, qty);
+}
+
+
 /**
  * Drops armor to ground.
  */
@@ -561,6 +568,16 @@ bool d_ItemInHand(Critter& player, Critter@ npc, int pid)
     if(!valid(item))
         return false;
     return item.GetProtoId() == uint(pid);
+}
+
+bool d_HasItem(Critter& player, Critter@ npc, int pid)
+{    
+    return _CritCountItem(player, pid) > 0;
+}
+
+bool d_HasNotItem(Critter& player, Critter@ npc, int pid)
+{    
+    return !d_HasItem(player, npc, pid);
 }
 
 /**

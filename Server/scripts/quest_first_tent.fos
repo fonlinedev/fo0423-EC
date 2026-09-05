@@ -22,6 +22,10 @@ import void critter_init(Critter& mob, bool firstTime) from "mob";
 #define Q_FIRST_TENT_FAILED         (5)
 
 
+void r_StartFirstTentQuest(Critter& player, Critter@ npc)
+{
+    StartFirstTentQuest(player);
+}
 
 void StartFirstTentQuest(Critter& player)
 {

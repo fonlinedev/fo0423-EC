@@ -7,11 +7,11 @@ lang=engl
 [dialog]
 &
 1 1000 None 1 #
-2 1010 D _script dialog@d_ItemInHand 1 127 D _var p v15_shaft2 = 0 #
-4 1020 D _script dialog@d_NoItemInHand 1 127 D _var p v15_shaft2 = 0 #
+2 1010 D _script dialog@d_HasItem 1 127 D _var p v15_shaft2 = 0 #
+4 1020 D _script dialog@d_HasNotItem 1 127 D _var p v15_shaft2 = 0 #
 5 1030 D _var p v15_shaft2 = 1 @
 2 2000 None 0 #
-0 2010 R _script dialog@r_TeleportToMap 2 37 0 R _script dialog@r_RemoveItem 1 127 R _var p v15_shaft2 = 1 #
+0 2010 R _script dialog@r_TeleportToMap 2 37 0 R _script dialog@r_RemoveItemInventory 2 127 1 R _var p v15_shaft2 = 1 #
 0 2020 @
 4 3000 None 0 #
 0 3010 @

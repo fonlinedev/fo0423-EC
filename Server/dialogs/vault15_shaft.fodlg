@@ -7,11 +7,11 @@ lang=engl
 [dialog]
 &
 1 1000 None 1 #
-2 1010 D _script dialog@d_ItemInHand 1 127 D _var p v15_shaft1 = 0 #
-4 1020 D _script dialog@d_NoItemInHand 1 127 D _var p v15_shaft1 = 0 #
+2 1010 D _script dialog@d_HasItem 1 127 D _var p v15_shaft1 = 0 #
+4 1020 D _script dialog@d_HasNotItem 1 127 D _var p v15_shaft1 = 0 #
 5 1030 D _var p v15_shaft1 = 1 @
 2 2000 None 0 #
-0 2010 R _script dialog@r_TeleportToMap 2 36 0 R _script dialog@r_RemoveItem 1 127 R _var p v15_shaft1 = 1 #
+0 2010 R _script dialog@r_TeleportToMap 2 36 0 R _script dialog@r_RemoveItemInventory 2 127 1 R _var p v15_shaft1 = 1 #
 0 2020 @
 4 3000 None 0 #
 0 3010 @
@@ -25,10 +25,10 @@ lang=engl
 {1010}{}{Begin}
 {1020}{}{No rope.}
 {1030}{}{Already used the rope}
-{2000}{}{You need a rope equipped to descend this shaft.}
+{2000}{}{You need a rope in your inventory to descend this shaft.}
 {2010}{}{Descend.}
 {2020}{}{Maybe next time.}
-{3000}{}{You need to have a rope equipped before you can descend into the shaft.}
+{3000}{}{You need to have a rope in your inventory before you can descend into the shaft.}
 {3010}{}{Maybe next time.}
 {4000}{}{I had used the rope already.}
 {4010}{}{Descend.}
