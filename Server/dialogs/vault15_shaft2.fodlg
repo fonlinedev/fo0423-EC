@@ -11,12 +11,12 @@ lang=engl
 4 1020 D _script dialog@d_HasNotItem 1 127 D _var p v15_shaft2 = 0 #
 5 1030 D _var p v15_shaft2 = 1 @
 2 2000 None 0 #
-0 2010 R _script dialog@r_TeleportToMap 2 37 0 R _script dialog@r_RemoveItemInventory 2 127 1 R _var p v15_shaft2 = 1 #
+0 2010 R _script dialog@r_TeleportToMap 2 37 0 R _script dialog@r_TeleportToMapFollowers 2 37 0 R _script dialog@r_RemoveItemInventory 2 127 1 R _var p v15_shaft2 = 1 #
 0 2020 @
 4 3000 None 0 #
 0 3010 @
 5 4000 None 0 #
-0 4010 R _script dialog@r_TeleportToMap 2 37 0 #
+0 4010 R _script dialog@r_TeleportToMap 2 37 0 R _script dialog@r_TeleportToMapFollowers 2 37 0 #
 0 4020 &
 
 [engl]

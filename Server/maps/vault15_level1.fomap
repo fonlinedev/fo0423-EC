@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              133
 MaxHexY              134
-WorkHexX             62
-WorkHexY             50
+WorkHexX             70
+WorkHexY             46
 ScriptModule         map_vault15
 ScriptFunc           map_init
 NoLogOut             0
@@ -11303,5 +11303,26 @@ ScriptName           map_vault15
 FuncName             s_Dialog
 Scenery_ParamsCount  1
 Scenery_Param0       4020
+
+MapObjType           2
+ProtoId              3853
+MapX                 70
+MapY                 49
+Scenery_ToEntire     1
+Scenery_ToDir        2
+
+MapObjType           2
+ProtoId              3853
+MapX                 74
+MapY                 49
+Scenery_ToEntire     1
+Scenery_ToDir        2
+
+MapObjType           2
+ProtoId              3853
+MapX                 72
+MapY                 50
+Scenery_ToEntire     1
+Scenery_ToDir        2
 
 
