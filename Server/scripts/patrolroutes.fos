@@ -11,6 +11,7 @@
 
 #define ADD_ROUTE    # (name, pmap, properties) CPatrolRoute@ name; @name = CPatrolRoute(pmap); name.properties; AddPatrolRoute(name)
 #define MAP_ShadySandsWest (3854)
+#define MAP_RaidersCamp (3857)
 
 array<IPatrolRoute@> PatrolRoutes;
 
@@ -113,6 +114,15 @@ void InitRoutes()
         .AddNode(12, 2, 60000)
         .AddNode(13, 2, 60000)
         .AddNode(14, 5, 60000));     // id 11
+
+    // ===================================
+    // raider camp route
+    // ===================================
+    ADD_ROUTE(raiderscamp_guard1_patrol, MAP_RaidersCamp, AddNode(11, 3, 60000)
+        .AddNode(12, 5, 60000));     // id 12
+
+    ADD_ROUTE(raiderscamp_guard2_patrol, MAP_RaidersCamp, AddNode(94, 75, 5, 60000)
+        .AddNode(108, 68, 2, 60000));     // id 13
 
     // ===================================
     // NCR routes

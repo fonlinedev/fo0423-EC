@@ -1,0 +1,28 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+3 2010 D _param p ST_INTELLECT } 5 #
+4 2020 D _param p SK_SPEECH } 50 #
+0 2030 @
+3 3000 None 0 @
+4 4000 None 0 &
+
+[engl]
+{100}{}{none}
+{1000}{}{Predialogue installations}
+{1010}{}{begin}
+{2000}{}{Hey! Stay away from this door.}
+{2010}{}{I'm checking the prisoner.}
+{2020}{}{Garl asked me to see the prisoner.}
+{2030}{}{Wrong door.}
+{3000}{}{Leave before I shoot your ass.}
+{4000}{}{I don't think so.}
+

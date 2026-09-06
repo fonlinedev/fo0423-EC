@@ -372,26 +372,27 @@ uint e_RespawnLoot(uint[]@ values)
 
 void r_RevealRaidersCamp(Critter& player, Critter@ npc)
 {
-    int loc = CreateLocation(LOCATION_Raiderscamp, 1774, 1476, null);
-    Log("Raiders CreateLocation returned = " + loc);
-    if(loc == 0)
+    array<Critter@> critters = { player };
+    uint locId = CreateLocation(LOCATION_Raiderscamp, 1774, 1476, critters);
+    
+    if(locId == 0)
     {
         Log("Failed to create Raiders Camp.");
         return;
     }
-
+    Log("Raiders CreateLocation returned = " + locId);
     GameVar@ locidv = GetLocalVar(LVAR_q_shady_raiders_locid, player.Id);
-    locidv = loc;
+    locidv = locId;
 
-    Location@ location = GetLocation(LOCATION_Raiderscamp);
+    Location@ location = GetLocation(locId);
 
     if(!valid(location))
     {
-        Log("Raiders Camp location not found: " + loc);
+        Log("Raiders Camp location not found: " + locId);
         return;
     }
 
-    Log("Raiders Camp location id " + loc + " actual location id " + location.Id);
+    Log("Raiders Camp location id " + locId + " actual location id " + location.Id);
 
     Map@ map = location.GetMapByIndex(0);
 
@@ -405,7 +406,7 @@ void r_RevealRaidersCamp(Critter& player, Critter@ npc)
 
     map.SetData(MAP_DATA_CAMP_OWNER, player.Id);
 
-    SetQuestGarbager(0, player.Id, loc, LVAR_q_shady_tandi, 5);
+    SetQuestGarbager(0, player.Id, locId, LVAR_q_shady_tandi, 5);
 
     // Do this LAST, like the known-working function.
     player.SetKnownLoc(false, LOCATION_Raiderscamp);

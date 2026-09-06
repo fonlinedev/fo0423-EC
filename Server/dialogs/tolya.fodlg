@@ -1,0 +1,63 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 #
+11 1020 D _var p name_mem_npc_player = 1 @
+2 2000 None 0 #
+4 2010 #
+5 2020 #
+0 2030 @
+4 3000 None 0 #
+12 3010 #
+5 3020 @
+5 4000 None 0 #
+6 4010 #
+12 4020 #
+0 4030 @
+6 5000 None 0 #
+0 5010 @
+11 6000 None 0 @
+12 7000 None 0 #
+13 7010 #
+14 7020 @
+13 8000 None 0 #
+0 8010 @
+14 9000 None 0 #
+0 9010 &
+
+[engl]
+{100}{}{Tolya}
+{200}{}{You see Tolya, a desert bandit.}
+{1000}{}{Predialogue installations}
+{1010}{}{Begin}
+{1020}{}{over}
+{2000}{}{Hello, I am Tolya. Looks like you just wandered in from the desert. Who are you?}
+{2010}{}{What do you do?}
+{2020}{}{Can you tell me about your camp?}
+{2030}{}{Never mind, thanks.}
+{3000}{}{As a raider, I explore the lands in search of new supplies. There have been some towns which have been graced by our presence.}
+{3010}{}{What places have you been to?}
+{3020}{}{In other words, you steal from the people you visit.}
+{4000}{}{We never steal. We just take the extra that others have and redistribute it among our hungry people.}
+{4010}{}{So, basically, you steal it.}
+{4020}{}{That sounds like a really great idea.}
+{4030}{}{Uh, yeah. I think I will be going now.}
+{5000}{}{You are starting to become annoying now. I think I will end
+ that slight problem.}
+{5010}{}{Uh, yeah. I think I will be going now.}
+{6000}{}{Do not bother me right now. I am preparing for the next raid.}
+{7000}{}{I've been to many places in the wastelands. The closest places that I've been to are Shady Sands and Junktown. They are very grateful for the trips we make to them.}
+{7010}{}{You visit Shady Sands?}
+{7020}{}{Where's Junktown?}
+{8000}{}{Yes, we go to Shady Sands from time to time. It adds a little
+ excitement to the lives of everyone concerned.}
+{8010}{}{Uh, yeah. I think I will be going now.}
+{9000}{}{Why, Junktown is just a little bit to the south of here. Go a few miles, turn right at the dying cactus. You can't miss it!}
+{9010}{}{Uh, yeah. I think I will be going now.}
+

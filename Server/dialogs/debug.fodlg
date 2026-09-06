@@ -1,0 +1,34 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+3 2010 D _var p q_shady_radscorpions = 0 R _script mod_npc@r_StartRadscorpionQuest 0  #
+3 2020 D _var p q_shady_radscorpions > 0 D _var p q_shady_radscorpions < 2 R _script mod_npc@r_TeleportToCave 0  #
+3 2030 D _var p q_shady_tandi = 0 R _script map_shadysands@r_RevealRaidersCamp 0  #
+3 2040 D _var p q_first_tent = 0 R _script quest_first_tent@r_StartFirstTentQuest 0  R _script quest_first_tent@r_SpawnFarmhouse 0  #
+0 2050 D _var p q_shady_tandi > 0 R _script mod_npc@r_TeleportToRaidersCamp 0  #
+2 2060 D _var p q_vault15_loc_id = 0 R _script mod_npc@r_SpawnVault15 0  #
+0 2070 D _var p q_vault15_loc_id > 0 R _script mod_npc@r_TeleportToVault15 0  @
+3 3000 None 0 &
+
+[engl]
+{100}{}{none}
+{1000}{}{Predialogue installations}
+{1010}{}{begin}
+{2000}{}{State your busines}
+{2010}{}{start radscorpion quest.}
+{2020}{}{teleport to the radscorpion cave.}
+{2030}{}{start tandi quest.}
+{2040}{}{spawn first tent farm.}
+{2050}{}{Teleport to raiders camp}
+{2060}{}{Spawn vault 15}
+{2070}{}{Teleport to vault15}
+{3000}{}{Done!}
+

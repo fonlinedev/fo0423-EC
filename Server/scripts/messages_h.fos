@@ -59,7 +59,10 @@
 #define MSG_RADSCORPION_ACCEPTED             (1)
 #define MSG_RADSCORPION_STARTED              (2)
 #define MSG_TANDI_STARTED                    (1)
-#define MSG_TANDI_FINISHED                   (2)
+#define MSG_TANDI_FOUND                      (2)
+#define MSG_TANDI_FINISHED                   (3)
+#define MSG_TANDI_DOOR_UNLOCK                (4)
+#define MSG_TANDI_ESCAPING                   (5)
 
 // Generic restricted floor alert
 #define MSG_RESTRICTED_ACCESS				 (0)

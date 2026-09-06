@@ -1,0 +1,26 @@
+//
+// FOnline: 2238
+// Rotators
+//
+// bos_instructor.fos
+//
+
+#include "_macros.fos"
+#include "factions_h.fos"
+#include "messages_h.fos"
+
+#define DIALOG_TANDI_ID   (4038)
+
+void critter_init(Critter& cr, bool firstTime)
+{
+    cr.SetEvent(CRITTER_EVENT_MESSAGE, "_OnPlayerNearDoor");
+}
+
+void _OnPlayerNearDoor(Critter& npc, Critter& player, int num, int val)
+{
+    if(num == MSG_TANDI_FOUND)
+    {
+        // Force dialogue interface to open with the player
+        RunDialog(player, npc, DIALOG_TANDI_ID, true);
+    }
+}

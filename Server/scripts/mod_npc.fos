@@ -1,0 +1,121 @@
+//
+// FOnline: 2238
+// Rotators
+//
+// mob_npc.fos
+//
+
+// Generic mob ai
+#include "_macros.fos"
+#include "_vars.fos"
+#include "_maps.fos"
+#include "mapdata_h.fos"
+#include "npc_common_h.fos"
+#include "npc_planes_h.fos"
+#include "npc_roles_h.fos"
+#include "messages_h.fos"
+#include "utils_h.fos"
+#include "ITEMPID.H"
+
+import void RevealV15(Critter& player) from "map_vault15";
+
+void r_StartRadscorpionQuest(Critter& player, Critter@ npc)
+{
+    int loc = CreateLocation(LOCATION_RadscorpionsNest, 1774, 1318, null);
+    if(loc == 0)
+        return;    
+    GameVar@  locidv = GetLocalVar(LVAR_q_shady_radscorpions_locid, player.Id);
+    locidv = loc;
+    Location@ location = GetLocation(loc);
+    if (valid(location)) {
+        Map@ map = location.GetMapByIndex(0);
+        SetTurnBasedAvailability(location);
+        map.SetData(MAP_DATA_NESTCAVE_OWNER, player.Id);
+        SetQuestGarbager(0, player.Id, loc, LVAR_q_shady_radscorpions, 5);
+
+        GameVar@  qVar = GetLocalVar(LVAR_q_shady_radscorpions, player.Id);    
+        if (!valid(qVar))
+            return;
+        qVar = 1;
+        Log("quest location created");
+    } else {
+        Log("error at quest creation!");
+    }    
+}
+
+void r_TeleportToCave(Critter& player, Critter@ npc)
+{
+    GameVar@ var = GetLocalVar(LVAR_q_shady_radscorpions_locid, player.Id);
+    if(!valid(var)) {
+        Log("error finding the location id variable!");
+        return;    
+    }
+    Location@ loc = GetLocation(var.GetValue());
+    if(valid(loc)) {
+        Map@ map = loc.GetMapByIndex(0);
+        if (valid(map)) {
+            Log("RAD CAVE: map=" + map.Id);
+            player.TransitToMap(map.Id, 0);
+        } else {
+            Log("Map index 0 not found!");
+        }
+    } else {
+        Log("Rad cave error, Location not found. ID "+var.GetValue());
+    }
+}
+
+void r_TeleportToRaidersCamp(Critter& player, Critter@ npc)
+{
+    GameVar@ locidv = GetLocalVar(LVAR_q_shady_raiders_locid, player.Id);
+    if (locidv == 0){
+        Log("locidv not found.");
+    }
+    Log("locidv val "+locidv.GetValue());
+    Location@ location = GetLocation(locidv.GetValue());
+    if(!valid(location))
+    {
+        Log("Raiders Camp location not found: " + LOCATION_Raiderscamp);
+        return;
+    }
+    Log("Raiders Camp location id " + LOCATION_Raiderscamp + " actual location id " + location.Id);
+    Map@ map = location.GetMapByIndex(0);
+
+    if(!valid(map))
+    {
+        Log("Raiders Camp map not found.");
+        return;
+    }
+    player.TransitToMap(map.Id, 0);
+}
+
+void r_SpawnVault15(Critter& player, Critter@ npc)
+{
+    RevealV15(player);
+}
+
+void r_TeleportToVault15(Critter& player, Critter@ npc)
+{    
+    GameVar@ var = GetLocalVar(LVAR_quest_water_chip, player.Id);
+    if (valid(var))
+        var = 1;
+    
+    GameVar@ qV15Locid = GetLocalVar(LVAR_q_vault15_loc_id, player.Id);
+    if (!valid(qV15Locid)) {
+        Log("var LVAR_q_vault15_loc_id not found");        
+    }
+
+    qV15Locid = GetLocalVar(LVAR_q_vault15_loc_id, player.Id);
+    Location@ location = GetLocation(qV15Locid.GetValue());
+    if(!valid(location))
+    {
+        Log("Vault 15 location not found: " + LOCATION_Vault15);
+        return;
+    }
+    Map@ map = location.GetMapByIndex(0);
+    if(!valid(map))
+    {
+        Log("Vault 15 map not found.");
+        return;
+    }
+    player.TransitToMap(map.Id, 0);
+}

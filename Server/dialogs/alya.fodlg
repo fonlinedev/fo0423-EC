@@ -1,0 +1,69 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 #
+11 1020 D _var p name_mem_npc_player = 1 @
+2 2000 None 0 #
+4 2010 #
+5 2020 #
+3 2030 #
+0 2040 @
+3 3000 None 0 @
+4 4000 None 0 #
+0 4010 @
+5 5000 None 0 #
+6 5010 #
+6 5020 #
+0 5030 @
+6 6000 None 0 #
+7 6010 #
+6 6020 #
+0 6030 @
+7 7000 Attack 0 #
+8 7010 #
+65507 7020 #
+0 7030 @
+8 8000 None 0 @
+9 9000 None 0 @
+10 10000 None 0 @
+11 11000 None 0 &
+
+[engl]
+{100}{}{Alya}
+{200}{}{You see Alya, a desert raider.}
+{1000}{}{Predialogue installations}
+{1010}{}{Begin}
+{1020}{}{over}
+{2000}{}{I am Alya of the Khans. How might I help you today?}
+{2010}{}{I'm looking for a woman named Tandi. Have you seen her?}
+{2020}{}{Why has your band of Raiders attacked Shady Sands?}
+{2030}{}{How about a little kiss?}
+{2040}{}{Never mind, thanks.}
+{3000}{}{No, thank you.}
+{4000}{}{If she is one of those women from Shady Sands, maybe you should look there. Now go, I need to finish sharpening my knives.}
+{4010}{}{Good bye.}
+{5000}{}{We do not attack those of Shady Sands. We are from the same place they are. It is only right that they share with us!}
+{5010}{}{But you are hurting their livestock and terrifying them.}
+{5020}{}{That seems fair to me.}
+{5030}{}{Uh, yeah. I think I will be going now.}
+{6000}{}{You sound just as wimpy as they are. Look, if they were in any trouble of starvation, then it is their own fault for not planning ahead. Consider what we do a trade in talents.}
+{6010}{}{A trade in talents?!? How can this be a trade in talents? You don't
+ give them anything.}
+{6020}{}{Sure, and chickens have three legs.}
+{6030}{}{Uh, yeah. I think I will be going now.}
+{7000}{}{We give them the most important thing possible. We give their dreary lives excitement.}
+{7010}{}{I don't think they want your type of excitement.}
+{7020}{}{I think I will make their lives boring again. I'll start with you![attack]}
+{7030}{}{Uh, yeah. I think I will be going now.}
+{8000}{}{I didn't ask. But since you obviously don't have any concept of fun,
+ I think I will end your existence.}
+{9000}{}{Mocking me does not bode well for you. I suggest you leave my presence.}
+{10000}{}{Darn straight that it's fair. Now get out of my face.}
+{11000}{}{I am busy right now preparing for our next raid.}
+

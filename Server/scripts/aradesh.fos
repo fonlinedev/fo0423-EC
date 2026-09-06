@@ -17,11 +17,11 @@ enum TandiQuestState
     TANDI_MISSING       = 1,
     TANDI_SEARCHING     = 2,
     TANDI_FOUND         = 3,
-    TANDI_RESCUED       = 4,
-    TANDI_COMPLETED     = 5,
+    TANDI_RESCUE_ESCAPE   = 4,
+    TANDI_RESCUE_DUEL = 5,
+    TANDI_COMPLETED     = 6,
     TANDI_DEAD          = 7
-};
-
+};   
 
 void critter_init(Critter& npc, bool firstTime)
 {		
@@ -86,8 +86,7 @@ bool updateTandiVisibility(Critter@ npc, Critter@ player)
     // -------------------------------------------------
 
     if(radscorpionState == 3 &&
-       antidoteState == 1 &&
-       tandiState != uint(TANDI_RESCUED) &&
+       antidoteState == 1 &&       
        tandiState != uint(TANDI_COMPLETED))
     {
         Log("Tandi is unavailable. Removing her from Shady Sands.");

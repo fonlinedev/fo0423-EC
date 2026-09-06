@@ -1,0 +1,46 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 #
+6 1020 D _var p name_mem_npc_player = 1 @
+2 2000 None 0 #
+3 2010 #
+4 2020 #
+0 2030 @
+3 3000 None 0 #
+0 3010 @
+4 4000 None 0 #
+6 4010 #
+5 4020 @
+5 5000 None 0 #
+6 5010 @
+6 6000 None 0 #
+0 6010 &
+
+[engl]
+{100}{}{Diana}
+{200}{}{You see Diana, a desert raider.}
+{1000}{}{Predialogue installations}
+{1010}{}{Begin}
+{1020}{}{over}
+{2000}{}{I am Diana. How might I help you today?}
+{2010}{}{I'm looking for a woman named Tandi. Have you seen her?}
+{2020}{}{What do you do here?}
+{2030}{}{Never mind, thanks.}
+{3000}{}{If she is one of those women from Shady Sands, maybe you should look there. I just work here.}
+{3010}{}{Oh. Well, thank you anyway.}
+{4000}{}{I am the armorer for this encampment. I am the only one with the necessary skills to repair and maintain the weapons and
+ equipment of Garl's men.}
+{4010}{}{Can you fix my equipment for me?}
+{4020}{}{What can you tell me about this camp?}
+{5000}{}{It is run by Garl Death-Hand. He is a fearsome and remorseless leader. He makes sure that we all survive the harsh reality of the desert.}
+{5010}{}{Can you fix my equipment for me?}
+{6000}{}{I am busy now. Please go elsewhere.}
+{6010}{}{Sure, maybe later.}
+

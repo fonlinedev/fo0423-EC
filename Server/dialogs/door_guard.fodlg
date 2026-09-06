@@ -1,0 +1,28 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+3 2010 D _param p ST_INTELLECT } 5 #
+4 2020 D _param p SK_SPEECH } 50 #
+65507 2030 @
+3 3000 None 0 @
+4 4000 Attack 0 &
+
+[engl]
+{100}{}{none}
+{1000}{}{Predialogue installations}
+{1010}{}{begin}
+{2000}{}{Halt! Where are you going with the prisoner?}
+{2010}{}{I'm walking the prisoner to the bathroom.}
+{2020}{}{Garl asked me to see the prisoner.}
+{2030}{}{Wrong door. [Attack]}
+{3000}{}{Proceed!}
+{4000}{}{I don't think so. [Attack]}
+

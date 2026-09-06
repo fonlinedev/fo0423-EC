@@ -113,6 +113,8 @@
 // Raiders
 #define ROLE_RAIDERS_CAVEGUARD             (2700) // these are somehow to dialogs, i think
 #define ROLE_RAIDERS_CAGEGUARD             (2720) // these are somehow to dialogs, i think
+#define ROLE_TANDI_GUARD                   (1)
+#define ROLE_DOOR_GUARD                    (2)
 
 // Klamath
 #define ROLE_KLAM_ROOMKEEPER               (1)

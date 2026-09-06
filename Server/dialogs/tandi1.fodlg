@@ -26,7 +26,8 @@ lang=engl
 3 4030 @
 5 5000 None 0 #
 3 5010 #
-0 5020 @
+0 5020 #
+0 5030 R _script companion@r_BefriendCompanion 0  @
 6 6000 None 0 #
 0 6010 @
 7 7000 None 0 #
@@ -58,6 +59,7 @@ lang=engl
 {5000}{}{Me, leave? I wish. I don't know enough to leave alone and no one else wants to go, and worst of all, my father says he would have a heart attack if something happened to me!}
 {5010}{}{Tough situation. Can I ask you a few questions, though?}
 {5020}{}{Shoot, I have to go. Good luck.}
+{5030}{}{Come with me.}
 {6000}{}{Junktown's to the southwest, but I don't know how far. Then there's some weird place below that called the City of Death. Oh, oh yeah there's this other place...Oh, shoot, what was that? Oh, yeah, the Hub.}
 {6010}{}{Thanks.}
 {7000}{}{We got Rad Scorpions! I mean, I know it's not a good thing, but no one's died from the stings. And it's the closest thing to excitement we've got here!}

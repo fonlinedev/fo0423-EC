@@ -1,0 +1,23 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 &
+
+[engl]
+{100}{}{Raider}
+{200}{}{You see a raider.}
+{1000}{}{Predialogue installations}
+{1010}{}{-}
+{2000}{}{Stay out of our way!@@Kill or be killed!@@Enjoy your victory, and pray to your gods that we never meet again!@@I have no time for talk!}
+{100000001}{}{Stay out of our way!}
+{100000001}{}{Kill or be killed!}
+{100000001}{}{Enjoy your victory, and pray to your gods that we never meet again!}
+{100000001}{}{I have no time for talk!}
+

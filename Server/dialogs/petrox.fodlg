@@ -1,0 +1,50 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 #
+6 1020 D _var p name_mem_npc_player = 1 @
+2 2000 None 0 #
+4 2010 @
+3 3000 None 0 #
+5 3010 @
+4 4000 None 0 #
+7 4010 #
+8 4020 @
+5 5000 None 0 #
+6 5010 @
+6 6000 None 0 #
+0 6010 @
+7 7000 None 0 #
+0 7010 @
+8 8000 None 0 #
+0 8010 &
+
+[engl]
+{100}{}{Petrox}
+{200}{}{You see Petrox, a desert bandit.}
+{1000}{}{Predialogue installations}
+{1010}{}{Begin}
+{1020}{}{over}
+{2000}{}{Greetings! I am Petrox. I am one of Garl's lead raiders. Who are you?}
+{2010}{}{My name is unimportant at the moment. Can you tell me something about your camp?}
+{3000}{}{As a raider, I get to travel to many parts of the wasteland. In my travels, I get supplies for the camp.}
+{3010}{}{In other words, you steal from the people you go to.}
+{4000}{}{Well, it's nice that you think that you are so important that you don't need a name to go around here. But, I will at least tell you a little about us. We are the toughest people in the wastelands. No one can stand against us. Not even those wimps from Shady Sands or Junktown.}
+{4010}{}{What about Shady Sands?}
+{4020}{}{What is Junktown?}
+{5000}{}{We never steal. We just take the extra that others have and redistribute it among our hungry people.}
+{5010}{}{So, basically, you steal it.}
+{6000}{}{I have told you all that I am permitted. Please go.}
+{6010}{}{Sure, maybe later.}
+{7000}{}{Shady Sands is a fertile community. They are happy to, um,
+ share their bounty with us.}
+{7010}{}{Sure, maybe later.}
+{8000}{}{Junktown is a little bit south of here. They have many good women.}
+{8010}{}{Sure, maybe later.}
+

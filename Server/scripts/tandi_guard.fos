@@ -1,0 +1,50 @@
+//
+// FOnline: 2238
+// Rotators
+//
+// tandi_guard.fos
+//
+
+#include "_macros.fos"
+#include "factions_h.fos"
+#include "messages_h.fos"
+#include "guard_h.fos"
+#include "npc_common_h.fos"
+#include "npc_planes_h.fos"
+#include "npc_roles_h.fos"
+#include "patrolling.fos"
+#include "factions_h.fos"
+
+#define DIALOG_TANDI_GUARD_ID   (4039)
+#define GUARD_DIR_1 (5)
+#define GUARD_HEXX (102)
+#define GUARD_HEXY (82)
+
+void critter_init(Critter& cr, bool firstTime)
+{    
+    cr.SetEvent(CRITTER_EVENT_MESSAGE, "_OnPlayerUnlockDoor");
+    cr.SetEvent(CRITTER_EVENT_IDLE, "_Idle");
+}
+
+void _OnPlayerUnlockDoor(Critter& npc, Critter& player, int num, int val)
+{
+    if(num == MSG_TANDI_DOOR_UNLOCK) {
+        if (npc.Dir == GUARD_DIR_1) {
+            // Force dialogue interface to open with the player
+            RunDialog(player, npc, DIALOG_TANDI_GUARD_ID, true);            
+        } else {
+            player.Say(SAY_NETMSG, "The guard is distracted, its the perfect time to open the door.");
+        }
+    }
+    if (num == MSG_TANDI_ESCAPING && val == ROLE_TANDI_GUARD) {
+        Log("player is escaping with Tandi");
+    }
+}
+
+void _Idle(Critter& guard)
+{
+    GuardOnIdle(guard);
+    _GetNextNode(guard, 12)         // Route 12 as defined in patrolroutes.fos
+    AddWalkPlane(guard, 0, node.GetX(), node.GetY(), node.GetDir(), false, 0);
+    AddWaitPlan(guard, node.GetWait());
+}

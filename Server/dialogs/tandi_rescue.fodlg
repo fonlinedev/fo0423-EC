@@ -1,0 +1,67 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 #
+7 1020 D _var p q_shady_tandi = 5 #
+8 1030 D _var p q_shady_tandi = 4 #
+4 1040 D _var p name_mem_npc_player = 1 @
+2 2000 None 0 #
+3 2010 #
+4 2020 #
+0 2030 @
+3 3000 None 0 #
+4 3010 #
+0 3020 R _var p q_shady_tandi = 3 @
+4 4000 None 0 #
+5 4010 R _var p q_shady_tandi = 4 #
+6 4020 R _var p q_shady_tandi = 5 @
+5 5000 None 0 @
+6 6000 None 0 @
+7 7000 None 0 #
+4 7010 D _var p q_tandi_rescue = 2 #
+4 7020 #
+0 7030 @
+8 8000 None 0 #
+4 8010 D _var p q_tandi_rescue = 1 #
+4 8020 #
+0 8030 &
+
+[engl]
+{100}{}{Tandi}
+{200}{}{You see Tandi.}
+{1000}{}{Predialogue installations}
+{1010}{}{start}
+{1020}{}{Fight Garl option}
+{1030}{}{Escape plan}
+{1040}{}{fallback}
+{2000}{}{You? Who are you? What do you want?}
+{2010}{}{My name is @pname@, and your father sent me.}
+{2020}{}{I'm your fairy god-mother. What's it look like?}
+{2030}{}{Duh.}
+{3000}{}{Father sent you!? Are you here to get me out?}
+{3010}{}{Yes, so just sit tight. I'll get you out.}
+{3020}{}{No, he just sent me to look at you.}
+{4000}{}{Well, what's your plan?}
+{4010}{}{Just wait for the doors to open. Then run for it!}
+{4020}{}{I'm going to fight the Khan leader in exchange for your freedom.}
+{5000}{}{That's it? That's your plan...}
+{6000}{}{You? Fight him? You got to be kidding me!}
+{7000}{}{Did you finished the duel?}
+{7010}{}{Let's go.}
+{7020}{}{I changed my mind.}
+{7030}{}{Not yet.}
+{8000}{}{Are you ready to rescue me?}
+{8010}{}{Let's go.}
+{8020}{}{I changed my mind.}
+{8030}{}{Not yet.}
+{100000001}{}{No please don't!}
+{100000001}{}{[sobs uncontrollably]}
+{100000001}{}{[whispers]Please help me!}
+{100000002}{}{Thank you for saving me.}
+

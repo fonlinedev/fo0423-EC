@@ -1,0 +1,56 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 #
+10 1020 D _var p name_mem_npc_player = 1 @
+2 2000 None 0 #
+4 2010 #
+3 2020 #
+0 2030 @
+3 3000 None 0 #
+0 3010 @
+4 4000 None 0 #
+6 4010 #
+9 4020 #
+9 4030 #
+0 4040 @
+5 5000 None 0 #
+0 5010 @
+6 6000 None 0 #
+0 6010 @
+9 7000 Attack 0 @
+10 8000 None 0 &
+
+[engl]
+{100}{}{Gwen}
+{200}{}{You see Gwen, a desert bandit.}
+{1000}{}{Predialogue installations}
+{1010}{}{Begin}
+{1020}{}{over}
+{2000}{}{I am Gwen. I'm one of Garl's advisors. Who are you?}
+{2010}{}{What do you do here?}
+{2020}{}{I'm nobody special. Can you tell me about your camp?}
+{2030}{}{Never mind, thanks.}
+{3000}{}{Hmpf. If you're nobody special then I won't bother  talking to you. Go away.}
+{3010}{}{Oh. Well, thank you anyway.}
+{4000}{}{As an advisor, I make sure that no low-lifes cause any trouble for Garl.}
+{4010}{}{And how do you do that?}
+{4020}{}{You and what army? [attack]}
+{4030}{}{I doubt you could do anything to stop anyone. [attack]}
+{4040}{}{I can see that I was wrong. You probably could do your
+ job well. Good bye.}
+{5000}{}{It is run by Garl Death-Hand. He is a fearsome and remorseless leader. He makes sure that we all survive the harsh reality of the desert.}
+{5010}{}{I can see that I was wrong. You probably could do your
+ job well. Good bye.}
+{6000}{}{I have ways to make certain undesirables are no longer here.}
+{6010}{}{I can see that I was wrong. You probably could do your
+ job well. Good bye.}
+{7000}{}{You'll regret that remark.  It will be your last! @@ It's been so long since I've had a good fight. Too bad  you are going to lose. Here is proof of my skills!}
+{8000}{}{You annoy me. Leave before I become truly angry.}
+
