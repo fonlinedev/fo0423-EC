@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>18.0</VCProjectVersion>
+    <ProjectGuid>{6987821C-24B9-4856-9989-4730C309A680}</ProjectGuid>
+    <RootNamespace>Client</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>18.0.12022.297</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>__CLIENT;__DEBUG__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>__CLIENT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\achievements.fos" />
+    <None Include="..\achievements_h.fos" />
+    <None Include="..\broadcast_h.fos" />
+    <None Include="..\buffer.fos" />
+    <None Include="..\buffer_h.fos" />
+    <None Include="..\buffer_lazy.fos" />
+    <None Include="..\buffer_lazy_h.fos" />
+    <None Include="..\cfg_file.fos" />
+    <None Include="..\cheats_core_h.fos" />
+    <None Include="..\chosen_actions_h.fos" />
+    <None Include="..\chosen_tabs.fos" />
+    <None Include="..\client_anti_cheat.fos" />
+    <None Include="..\client_anti_cheat_h.fos" />
+    <None Include="..\client_broadcast.fos" />
+    <None Include="..\client_combat.fos" />
+    <None Include="..\client_container_volume.fos" />
+    <None Include="..\client_cutscene.fos" />
+    <None Include="..\client_dev_menu.fos" />
+    <None Include="..\client_followers_menu.fos" />
+    <None Include="..\client_fov.fos" />
+    <None Include="..\client_gmtools.fos" />
+    <None Include="..\client_gmtools_chat.fos" />
+    <None Include="..\client_gmtools_h.fos" />
+    <None Include="..\client_gmtools_macro.fos" />
+    <None Include="..\client_gmtools_menu.fos" />
+    <None Include="..\client_gui.fos" />
+    <None Include="..\client_gui_barter.fos" />
+    <None Include="..\client_gui_elevator.fos" />
+    <None Include="..\client_gui_ex.fos" />
+    <None Include="..\client_gui_h.fos" />
+    <None Include="..\client_gui_regwindow_ex.fos" />
+    <None Include="..\client_interface.fos" />
+    <None Include="..\client_interface_h.fos" />
+    <None Include="..\client_io.fos" />
+    <None Include="..\client_keybinds.fos" />
+    <None Include="..\client_keybinds_h.fos" />
+    <None Include="..\client_main.fos" />
+    <None Include="..\client_mapper_animation.fos" />
+    <None Include="..\client_messages.fos" />
+    <None Include="..\client_online_stats.fos" />
+    <None Include="..\client_recording.fos" />
+    <None Include="..\client_screens.fos" />
+    <None Include="..\client_screens_h.fos" />
+    <None Include="..\client_screen_picture.fos" />
+    <None Include="..\client_screen_test.fos" />
+    <None Include="..\client_smart_cursor.fos" />
+    <None Include="..\client_smart_cursor_h.fos" />
+    <None Include="..\client_spawn_npc.fos" />
+    <None Include="..\client_timeouts.fos" />
+    <None Include="..\client_utils.fos" />
+    <None Include="..\client_utils_h.fos" />
+    <None Include="..\combat_h.fos" />
+    <None Include="..\config.fos" />
+    <None Include="..\config_file.fos" />
+    <None Include="..\config_file_h.fos" />
+    <None Include="..\config_h.fos" />
+    <None Include="..\critter_description.fos" />
+    <None Include="..\critter_item_movement.fos" />
+    <None Include="..\foart.fos" />
+    <None Include="..\foart_addons.fos" />
+    <None Include="..\foart_client.fos" />
+    <None Include="..\foart_h.fos" />
+    <None Include="..\gmtools_csc.fos" />
+    <None Include="..\gmtools_h.fos" />
+    <None Include="..\groups_h.fos" />
+    <None Include="..\gui\main.fos" />
+    <None Include="..\ini_parser.fos" />
+    <None Include="..\item_dogtags_h.fos" />
+    <None Include="..\lexems.fos" />
+    <None Include="..\lexems_h.fos" />
+    <None Include="..\madness.fos" />
+    <None Include="..\minigames_h.fos" />
+    <None Include="..\name_colorizing.fos" />
+    <None Include="..\online_stats_h.fos" />
+    <None Include="..\parameters.fos" />
+    <None Include="..\perks.fos" />
+    <None Include="..\perks_data.fos" />
+    <None Include="..\polygon.fos" />
+    <None Include="..\polygon_h.fos" />
+    <None Include="..\polygon_towns.fos" />
+    <None Include="..\prices_server_client.fos" />
+    <None Include="..\prod_ingredients.fos" />
+    <None Include="..\prod_ingredients_h.fos" />
+    <None Include="..\radio.fos" />
+    <None Include="..\sprite.fos" />
+    <None Include="..\strtoint.fos" />
+    <None Include="..\strtoint_h.fos" />
+    <None Include="..\throwing.fos" />
+    <None Include="..\time.fos" />
+    <None Include="..\_animation.fos" />
+    <None Include="..\_basetypes.fos" />
+    <None Include="..\_client_defines.fos" />
+    <None Include="..\_client_maps.fos" />
+    <None Include="..\_colors.fos" />
+    <None Include="..\_defines.fos" />
+    <None Include="..\_dialogs.fos" />
+    <None Include="..\_globalvars.fos" />
+    <None Include="..\_macros.fos" />
+    <None Include="..\_maps.fos" />
+    <None Include="..\_math.fos" />
+    <None Include="..\_time.fos" />
+    <None Include="..\_vars.fos" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\itempid.h" />
+    <ClInclude Include="..\msgstr.h" />
+    <ClInclude Include="intellisense_client.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

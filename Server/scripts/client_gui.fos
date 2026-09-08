@@ -349,7 +349,7 @@ IGUIScreenOpt@ GUI_GetScreenOptions()
 //
 
 void GUI_Init()
-{
+{    
     AllScreens.resize(0);
     ActiveScreens.resize(0);
     KeyPressed.resize(0x100);
@@ -629,12 +629,15 @@ void GUI_MouseMove(int fromX, int fromY, int toX, int toY)
 }
 
 bool GUI_KeyDown(uint8 key)
-{
+{    
     if(KeyPressed.length() != 0)
         KeyPressed[key] = true;
     uint len = ActiveScreens.length();
-    if(len != 0)
+    if(key == 1 && ActiveScreens[len - 1].Index == CLIENT_SCREEN_DIALOG)
+        return true;
+    if(len != 0) {        
         return ActiveScreens[len - 1].KeyDown(key);
+    }
     return false;
 }
 

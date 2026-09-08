@@ -2,7 +2,7 @@
 // FOnline: 2238
 // Rotators
 //
-// tandi_guard.fos
+// door_guard.fos
 //
 
 #include "_macros.fos"
@@ -28,9 +28,10 @@ void critter_init(Critter& cr, bool firstTime)
 void _OnPlayerWalkDoor(Critter& npc, Critter& player, int num, int val)
 {
     if(num == MSG_TANDI_ESCAPING && val == ROLE_DOOR_GUARD) {
-        if (npc.Dir == GUARD_DIR_1) {            
+        Log("player is escaping with Tandi role guard "+ val);
+        if (npc.Dir == GUARD_DIR_1) {
             // Force dialogue interface to open with the player
-            RunDialog(player, npc, DIALOG_DOOR_GUARD_ID, true);            
+            RunDialog(player, npc, DIALOG_DOOR_GUARD_ID, true);
         } else {
             player.Say(SAY_NETMSG, "The guard is distracted, its the perfect time to escape.");
         }

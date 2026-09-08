@@ -18,6 +18,7 @@
 #include "ITEMPID.H"
 
 import void RevealV15(Critter& player) from "map_vault15";
+import void RevealShadySands(Critter& player) from "map_shadysands";
 
 void r_StartRadscorpionQuest(Critter& player, Critter@ npc)
 {
@@ -93,6 +94,11 @@ void r_SpawnVault15(Critter& player, Critter@ npc)
     RevealV15(player);
 }
 
+void r_SpawnShadySands(Critter& player, Critter@ npc)
+{
+    RevealShadySands(player);
+}
+
 void r_TeleportToVault15(Critter& player, Critter@ npc)
 {    
     GameVar@ var = GetLocalVar(LVAR_quest_water_chip, player.Id);
@@ -115,6 +121,29 @@ void r_TeleportToVault15(Critter& player, Critter@ npc)
     if(!valid(map))
     {
         Log("Vault 15 map not found.");
+        return;
+    }
+    player.TransitToMap(map.Id, 0);
+}
+
+void r_TeleportToShadySands(Critter& player, Critter@ npc)
+{       
+    GameVar@ qSandsLocid = GetLocalVar(LVAR_q_shady_sands_loc_id, player.Id);
+    if (!valid(qSandsLocid)) {
+        Log("var LVAR_q_shady_sands_loc_id not found");        
+    }
+
+    qSandsLocid = GetLocalVar(LVAR_q_shady_sands_loc_id, player.Id);
+    Location@ location = GetLocation(qSandsLocid.GetValue());
+    if(!valid(location))
+    {
+        Log("Shady Sands location not found: " + LOCATION_ShadySands);
+        return;
+    }
+    Map@ map = location.GetMapByIndex(0);
+    if(!valid(map))
+    {
+        Log("Shady sands map not found.");
         return;
     }
     player.TransitToMap(map.Id, 0);

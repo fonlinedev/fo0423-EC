@@ -13,9 +13,12 @@ lang=engl
 3 2020 D _var p q_shady_radscorpions > 0 D _var p q_shady_radscorpions < 2 R _script mod_npc@r_TeleportToCave 0  #
 3 2030 D _var p q_shady_tandi = 0 R _script map_shadysands@r_RevealRaidersCamp 0  #
 3 2040 D _var p q_first_tent = 0 R _script quest_first_tent@r_StartFirstTentQuest 0  R _script quest_first_tent@r_SpawnFarmhouse 0  #
-0 2050 D _var p q_shady_tandi > 0 R _script mod_npc@r_TeleportToRaidersCamp 0  #
-2 2060 D _var p q_vault15_loc_id = 0 R _script mod_npc@r_SpawnVault15 0  #
-0 2070 D _var p q_vault15_loc_id > 0 R _script mod_npc@r_TeleportToVault15 0  @
+3 2050 D _var p q_shady_sands = 0 R _script mod_npc@r_SpawnShadySands 0  #
+0 2060 D _var p q_shady_sands = 1 R _script mod_npc@r_TeleportToShadySands 0  #
+0 2070 D _var p q_shady_tandi > 0 R _script mod_npc@r_TeleportToRaidersCamp 0  #
+2 2080 D _var p q_vault15_loc_id = 0 R _script mod_npc@r_SpawnVault15 0  #
+0 2090 D _var p q_vault15_loc_id > 0 R _script mod_npc@r_TeleportToVault15 0  #
+65505 2100 @
 3 3000 None 0 &
 
 [engl]
@@ -27,8 +30,11 @@ lang=engl
 {2020}{}{teleport to the radscorpion cave.}
 {2030}{}{start tandi quest.}
 {2040}{}{spawn first tent farm.}
-{2050}{}{Teleport to raiders camp}
-{2060}{}{Spawn vault 15}
-{2070}{}{Teleport to vault15}
+{2050}{}{spawn shady sans.}
+{2060}{}{Teleport to shady sans.}
+{2070}{}{Teleport to raiders camp}
+{2080}{}{Spawn vault 15}
+{2090}{}{Teleport to vault15}
+{2100}{}{Maybe next time.}
 {3000}{}{Done!}
 

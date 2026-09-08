@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              200
 MaxHexY              400
-WorkHexX             108
-WorkHexY             84
+WorkHexX             98
+WorkHexY             77
 ScriptModule         map_raiderscamp
 ScriptFunc           map_init
 NoLogOut             1
@@ -13930,7 +13930,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  1
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  3
+Critter_ParamValue7  0
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  5
 Critter_ParamIndex9  ST_LEVEL
@@ -14050,7 +14050,7 @@ Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  0
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  12
 Critter_ParamIndex9  ST_LEVEL
@@ -14188,7 +14188,6 @@ MapX                 104
 MapY                 80
 ScriptName           map_raiders
 FuncName             door_init
-Item_LockerDoorId    123
 
 MapObjType           2
 ProtoId              4012
@@ -18254,15 +18253,27 @@ MapObjType           2
 ProtoId              3852
 MapX                 93
 MapY                 77
+ScriptName           map_raiders
+FuncName             t_EscapingTandiAtDoor
+Scenery_ParamsCount  1
+Scenery_Param0       2
 
 MapObjType           2
 ProtoId              3852
 MapX                 92
 MapY                 76
+ScriptName           map_raiders
+FuncName             t_EscapingTandiAtDoor
+Scenery_ParamsCount  1
+Scenery_Param0       2
 
 MapObjType           2
 ProtoId              3852
 MapX                 92
 MapY                 77
+ScriptName           map_raiders
+FuncName             t_EscapingTandiAtDoor
+Scenery_ParamsCount  1
+Scenery_Param0       2
 
 

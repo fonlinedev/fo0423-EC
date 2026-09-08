@@ -22,22 +22,24 @@
 
 void critter_init(Critter& cr, bool firstTime)
 {    
-    cr.SetEvent(CRITTER_EVENT_MESSAGE, "_OnPlayerUnlockDoor");
+    cr.SetEvent(CRITTER_EVENT_MESSAGE, "_OnPlayerWalkCorridor");
     cr.SetEvent(CRITTER_EVENT_IDLE, "_Idle");
 }
-
-void _OnPlayerUnlockDoor(Critter& npc, Critter& player, int num, int val)
+// Capture trying opening the cage or walking at the corridor
+void _OnPlayerWalkCorridor(Critter& npc, Critter& player, int num, int val)
 {
     if(num == MSG_TANDI_DOOR_UNLOCK) {
         if (npc.Dir == GUARD_DIR_1) {
             // Force dialogue interface to open with the player
             RunDialog(player, npc, DIALOG_TANDI_GUARD_ID, true);            
         } else {
-            player.Say(SAY_NETMSG, "The guard is distracted, its the perfect time to open the door.");
+            if(player.Mode[MODE_HIDE] == 0)
+                player.ModeBase[MODE_HIDE] = 1;
+            player.Say(SAY_NETMSG, "The guard is distracted, its the perfect time to open the door. [SNEAK] is recommended now.");
         }
     }
-    if (num == MSG_TANDI_ESCAPING && val == ROLE_TANDI_GUARD) {
-        Log("player is escaping with Tandi");
+    if (num == MSG_TANDI_ESCAPING && val == ROLE_TANDI_GUARD) {        
+        Log("player is escaping with Tandi role guard "+ ROLE_TANDI_GUARD);
     }
 }
 

@@ -121,8 +121,8 @@ void InitRoutes()
     ADD_ROUTE(raiderscamp_guard1_patrol, MAP_RaidersCamp, AddNode(11, 3, 60000)
         .AddNode(12, 5, 60000));     // id 12
 
-    ADD_ROUTE(raiderscamp_guard2_patrol, MAP_RaidersCamp, AddNode(94, 75, 5, 60000)
-        .AddNode(108, 68, 2, 60000));     // id 13
+    ADD_ROUTE(raiderscamp_guard2_patrol, MAP_RaidersCamp, AddNode(13, 5, 60000)
+        .AddNode(14, 2, 60000));     // id 13
 
     // ===================================
     // NCR routes

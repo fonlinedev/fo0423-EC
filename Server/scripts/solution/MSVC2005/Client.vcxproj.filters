@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Modules">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Disabled">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\achievements.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\buffer.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\buffer_lazy.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\chosen_tabs.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_anti_cheat.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_broadcast.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_combat.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_container_volume.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_cutscene.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_dev_menu.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_followers_menu.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_fov.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_gmtools.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_gmtools_menu.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_gui.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_interface.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_io.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_keybinds.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_main.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_mapper_animation.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_messages.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_online_stats.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_recording.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_screens.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_smart_cursor.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_timeouts.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\client_utils.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\config.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\config_file.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\critter_description.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\critter_item_movement.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\foart.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\ini_parser.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\lexems.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\name_colorizing.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\parameters.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\perks.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\polygon.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\prod_ingredients.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\radio.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\strtoint.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\throwing.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\time.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\..\_animation.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\_basetypes.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\_client_defines.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\_client_maps.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\_colors.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\_defines.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\_dialogs.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\_globalvars.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\_macros.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\_maps.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\_math.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\_time.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\_vars.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\achievements_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\broadcast_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\buffer_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\buffer_lazy_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\cfg_file.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\cheats_core_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\chosen_actions_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\client_anti_cheat_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\client_gmtools_chat.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\client_gmtools_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\client_gmtools_macro.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\client_gui_barter.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\client_gui_elevator.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\client_gui_ex.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\client_gui_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\client_interface_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\client_keybinds_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\client_screen_picture.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\client_screens_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\client_smart_cursor_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\client_spawn_npc.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\client_utils_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\combat_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\config_file_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\config_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\foart_addons.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\foart_client.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\foart_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\gmtools_csc.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\gmtools_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\groups_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\item_dogtags_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\lexems_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\minigames_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\online_stats_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\perks_data.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\polygon_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\polygon_towns.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\prices_server_client.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\prod_ingredients_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\sprite.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\strtoint_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\..\client_gui_regwindow_ex.fos">
+      <Filter>Disabled</Filter>
+    </None>
+    <None Include="..\..\client_screen_test.fos">
+      <Filter>Disabled</Filter>
+    </None>
+    <None Include="..\..\gui\main.fos">
+      <Filter>Disabled</Filter>
+    </None>
+    <None Include="..\..\madness.fos">
+      <Filter>Disabled</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\intellisense_client.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\itempid.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\msgstr.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

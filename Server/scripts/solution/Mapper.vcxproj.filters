@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Modules">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Disabled">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\buffer.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\client_mapper_animation.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\config.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\foart.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\mapper_autowall.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\mapper_crtypes.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\mapper_grid.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\mapper_main.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\mapper_plugin.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\mapper_tilemap.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\mapper_utils.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\strtoint.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\_animation.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_basetypes.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_colors.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_defines.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_dialogs.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_globalvars.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_macros.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_mapper_defines.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_mapper_macros.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_maps.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_math.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_time.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_vars.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\buffer_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\config_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\foart_addons.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\foart_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\foart_mapper.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\groups_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\mapper_gui.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\mapper_plugin_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\mapper_utils_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\setentry.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\sprite.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\strtoint_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\mapper_generators.fos">
+      <Filter>Disabled</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="intellisense_mapper.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\itempid.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\msgstr.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

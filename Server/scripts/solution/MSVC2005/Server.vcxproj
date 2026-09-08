@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>18.0</VCProjectVersion>
+    <ProjectGuid>{B843473C-F2AD-4F5A-BF0E-FA58713EEB1B}</ProjectGuid>
+    <RootNamespace>Server</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>18.0.12022.297</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>__SERVER;__DEBUG__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>__SERVER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\..\achievements.fos" />
+    <None Include="..\..\achievements_h.fos" />
+    <None Include="..\..\all_brahmin.fos" />
+    <None Include="..\..\all_brahmin_herdsman.fos" />
+    <None Include="..\..\all_farmer.fos" />
+    <None Include="..\..\antiblock.fos" />
+    <None Include="..\..\arena.fos" />
+    <None Include="..\..\arena_generator.fos" />
+    <None Include="..\..\backend.fos" />
+    <None Include="..\..\backend_h.fos" />
+    <None Include="..\..\billboards.fos" />
+    <None Include="..\..\blueprints.fos" />
+    <None Include="..\..\bos_lh_guard.fos" />
+    <None Include="..\..\bounties.fos" />
+    <None Include="..\..\bounties_h.fos" />
+    <None Include="..\..\brahmin_pens.fos" />
+    <None Include="..\..\brahmin_pen_h.fos" />
+    <None Include="..\..\brahmin_trader.fos" />
+    <None Include="..\..\brahmin_traders.fos" />
+    <None Include="..\..\brahmin_trader_h.fos" />
+    <None Include="..\..\broadcast.fos" />
+    <None Include="..\..\broadcast_h.fos" />
+    <None Include="..\..\buffer.fos" />
+    <None Include="..\..\buffer_h.fos" />
+    <None Include="..\..\buffer_lazy.fos" />
+    <None Include="..\..\buffer_lazy_h.fos" />
+    <None Include="..\..\car.fos" />
+    <None Include="..\..\caravans.fos" />
+    <None Include="..\..\caravans_h.fos" />
+    <None Include="..\..\car_seller.fos" />
+    <None Include="..\..\casino.fos" />
+    <None Include="..\..\cathedral_guard.fos" />
+    <None Include="..\..\cave.fos" />
+    <None Include="..\..\cavelog.fos" />
+    <None Include="..\..\cave_critters.fos" />
+    <None Include="..\..\cave_critter_h.fos" />
+    <None Include="..\..\cave_groups.fos" />
+    <None Include="..\..\cave_h.fos" />
+    <None Include="..\..\cave_items.fos" />
+    <None Include="..\..\cave_item_h.fos" />
+    <None Include="..\..\cheats.fos" />
+    <None Include="..\..\cheats2.fos" />
+    <None Include="..\..\cheats_core_h.fos" />
+    <None Include="..\..\chess.fos" />
+    <None Include="..\..\chess_h.fos" />
+    <None Include="..\..\combat.fos" />
+    <None Include="..\..\combat_h.fos" />
+    <None Include="..\..\combat_msg.fos" />
+    <None Include="..\..\companion.fos" />
+    <None Include="..\..\companion_h.fos" />
+    <None Include="..\..\config.fos" />
+    <None Include="..\..\config_file.fos" />
+    <None Include="..\..\config_file_h.fos" />
+    <None Include="..\..\config_h.fos" />
+    <None Include="..\..\counters.fos" />
+    <None Include="..\..\crippling.fos" />
+    <None Include="..\..\critical_failures.fos" />
+    <None Include="..\..\critical_table.fos" />
+    <None Include="..\..\critter_age.fos" />
+    <None Include="..\..\critter_age_h.fos" />
+    <None Include="..\..\critter_description.fos" />
+    <None Include="..\..\critter_item_movement.fos" />
+    <None Include="..\..\cutscene.fos" />
+    <None Include="..\..\cutscene_h.fos" />
+    <None Include="..\..\debug.fos" />
+    <None Include="..\..\debug_h.fos" />
+    <None Include="..\..\den_metzger_guard.fos" />
+    <None Include="..\..\dev_menu.fos" />
+    <None Include="..\..\dialog.fos" />
+    <None Include="..\..\dialog_altruist.fos" />
+    <None Include="..\..\dialog_factions.fos" />
+    <None Include="..\..\dialog_reputations.fos" />
+    <None Include="..\..\drugs.fos" />
+    <None Include="..\..\drugs_data.fos" />
+    <None Include="..\..\duel.fos" />
+    <None Include="..\..\economy.fos" />
+    <None Include="..\..\economy_bank.fos" />
+    <None Include="..\..\economy_bankaccount.fos" />
+    <None Include="..\..\economy_banker.fos" />
+    <None Include="..\..\economy_h.fos" />
+    <None Include="..\..\effects.fos" />
+    <None Include="..\..\elevators.fos" />
+    <None Include="..\..\elevators_h.fos" />
+    <None Include="..\..\encounter_containers.fos" />
+    <None Include="..\..\encounter_guard.fos" />
+    <None Include="..\..\entire.fos" />
+    <None Include="..\..\eventboss.fos" />
+    <None Include="..\..\eventboss_h.fos" />
+    <None Include="..\..\event_utils.fos" />
+    <None Include="..\..\event_warzone.fos" />
+    <None Include="..\..\explode.fos" />
+    <None Include="..\..\factions.fos" />
+    <None Include="..\..\factions_bases.fos" />
+    <None Include="..\..\factions_bases_h.fos" />
+    <None Include="..\..\factions_generic.fos" />
+    <None Include="..\..\factions_generic_bartender.fos" />
+    <None Include="..\..\factions_h.fos" />
+    <None Include="..\..\factions_names.fos" />
+    <None Include="..\..\factions_news.fos" />
+    <None Include="..\..\factions_player.fos" />
+    <None Include="..\..\factions_player_h.fos" />
+    <None Include="..\..\factions_recognition.fos" />
+    <None Include="..\..\factions_terminal.fos" />
+    <None Include="..\..\factions_vc_q_scoutsf.fos" />
+    <None Include="..\..\faction_data.fos" />
+    <None Include="..\..\fix_boy.fos" />
+    <None Include="..\..\floyd.fos" />
+    <None Include="..\..\foart.fos" />
+    <None Include="..\..\foart_2238.fos" />
+    <None Include="..\..\foart_addons.fos" />
+    <None Include="..\..\foart_h.fos" />
+    <None Include="..\..\foart_server.fos" />
+    <None Include="..\..\follower.fos" />
+    <None Include="..\..\followers_menu.fos" />
+    <None Include="..\..\follower_capturing.fos" />
+    <None Include="..\..\follower_common.fos" />
+    <None Include="..\..\follower_common_h.fos" />
+    <None Include="..\..\follower_h.fos" />
+    <None Include="..\..\frisco_guard.fos" />
+    <None Include="..\..\frisco_trader.fos" />
+    <None Include="..\..\geiger.fos" />
+    <None Include="..\..\generator.fos" />
+    <None Include="..\..\generic_guard.fos" />
+    <None Include="..\..\globalmap_group.fos" />
+    <None Include="..\..\gm.fos" />
+    <None Include="..\..\gmtools.fos" />
+    <None Include="..\..\gmtools_csc.fos" />
+    <None Include="..\..\gmtools_h.fos" />
+    <None Include="..\..\golden_globes.fos" />
+    <None Include="..\..\grave.fos" />
+    <None Include="..\..\groups_h.fos" />
+    <None Include="..\..\guard.fos" />
+    <None Include="..\..\guard_h.fos" />
+    <None Include="..\..\hub_guard.fos" />
+    <None Include="..\..\item_attributes.fos" />
+    <None Include="..\..\item_bag_container.fos" />
+    <None Include="..\..\item_blueprint.fos" />
+    <None Include="..\..\item_brahmin_dung.fos" />
+    <None Include="..\..\item_dogtags.fos" />
+    <None Include="..\..\item_dogtags_h.fos" />
+    <None Include="..\..\item_dynamic.fos" />
+    <None Include="..\..\item_dynamic_h.fos" />
+    <None Include="..\..\item_flare.fos" />
+    <None Include="..\..\item_holodisk.fos" />
+    <None Include="..\..\item_lock.fos" />
+    <None Include="..\..\item_mapdoor.fos" />
+    <None Include="..\..\item_misc.fos" />
+    <None Include="..\..\item_misc_h.fos" />
+    <None Include="..\..\item_perks.fos" />
+    <None Include="..\..\item_perks_h.fos" />
+    <None Include="..\..\item_radio.fos" />
+    <None Include="..\..\item_skills.fos" />
+    <None Include="..\..\item_spawner_container.fos" />
+    <None Include="..\..\item_stealth.fos" />
+    <None Include="..\..\item_tent.fos" />
+    <None Include="..\..\junktown_guard.fos" />
+    <None Include="..\..\junktown_skumpitt.fos" />
+    <None Include="..\..\la_ady_guard.fos" />
+    <None Include="..\..\lexems.fos" />
+    <None Include="..\..\lexems_h.fos" />
+    <None Include="..\..\linetracer.fos" />
+    <None Include="..\..\linetracer_h.fos" />
+    <None Include="..\..\lockers.fos" />
+    <None Include="..\..\logging.fos" />
+    <None Include="..\..\logging_critter.fos" />
+    <None Include="..\..\logging_h.fos" />
+    <None Include="..\..\madness.fos" />
+    <None Include="..\..\main.fos" />
+    <None Include="..\..\main_planes.fos" />
+    <None Include="..\..\mapdata_h.fos" />
+    <None Include="..\..\map_arena.fos" />
+    <None Include="..\..\map_ares.fos" />
+    <None Include="..\..\map_boneyard.fos" />
+    <None Include="..\..\map_bosbunker.fos" />
+    <None Include="..\..\map_bos_lh.fos" />
+    <None Include="..\..\map_broken.fos" />
+    <None Include="..\..\map_cathdead.fos" />
+    <None Include="..\..\map_cathedral.fos" />
+    <None Include="..\..\map_denbus.fos" />
+    <None Include="..\..\map_encounter.fos" />
+    <None Include="..\..\map_frisco_mine.fos" />
+    <None Include="..\..\map_gecko.fos" />
+    <None Include="..\..\map_ghostfarm.fos" />
+    <None Include="..\..\map_glow.fos" />
+    <None Include="..\..\map_golgotha.fos" />
+    <None Include="..\..\map_greet.fos" />
+    <None Include="..\..\map_hub.fos" />
+    <None Include="..\..\map_junktown.fos" />
+    <None Include="..\..\map_klamath.fos" />
+    <None Include="..\..\map_klam_tox.fos" />
+    <None Include="..\..\map_mariposa.fos" />
+    <None Include="..\..\map_modoc.fos" />
+    <None Include="..\..\map_navarro.fos" />
+    <None Include="..\..\map_navarro_sub1.fos" />
+    <None Include="..\..\map_ncr_army.fos" />
+    <None Include="..\..\map_ncr_downtown.fos" />
+    <None Include="..\..\map_ncr_prison.fos" />
+    <None Include="..\..\map_necropolis.fos" />
+    <None Include="..\..\map_newreno.fos" />
+    <None Include="..\..\map_npcmap.fos" />
+    <None Include="..\..\map_playerfaction_hq.fos" />
+    <None Include="..\..\map_player_mine.fos" />
+    <None Include="..\..\map_prospect.fos" />
+    <None Include="..\..\map_public_mines.fos" />
+    <None Include="..\..\map_raiders_cave.fos" />
+    <None Include="..\..\map_raiders_cave_entrance.fos" />
+    <None Include="..\..\map_raiders_farmhome.fos" />
+    <None Include="..\..\map_raiders_south.fos" />
+    <None Include="..\..\map_random_cave.fos" />
+    <None Include="..\..\map_redding.fos" />
+    <None Include="..\..\map_redding_lost.fos" />
+    <None Include="..\..\map_redding_mine.fos" />
+    <None Include="..\..\map_sad.fos" />
+    <None Include="..\..\map_se_truck.fos" />
+    <None Include="..\..\map_sf_bos.fos" />
+    <None Include="..\..\map_sf_china.fos" />
+    <None Include="..\..\map_sf_shi.fos" />
+    <None Include="..\..\map_sf_tanker.fos" />
+    <None Include="..\..\map_slaverun.fos" />
+    <None Include="..\..\map_starter.fos" />
+    <None Include="..\..\map_talchem.fos" />
+    <None Include="..\..\map_tent.fos" />
+    <None Include="..\..\map_tent_h.fos" />
+    <None Include="..\..\map_trainyard.fos" />
+    <None Include="..\..\map_vault13.fos" />
+    <None Include="..\..\map_vcity.fos" />
+    <None Include="..\..\map_vcity_hq.fos" />
+    <None Include="..\..\media.fos" />
+    <None Include="..\..\mercs.fos" />
+    <None Include="..\..\mercs_h.fos" />
+    <None Include="..\..\merc_dialog.fos" />
+    <None Include="..\..\messages_h.fos" />
+    <None Include="..\..\mine.fos" />
+    <None Include="..\..\mine_h.fos" />
+    <None Include="..\..\minigames.fos" />
+    <None Include="..\..\minigames_h.fos" />
+    <None Include="..\..\mob.fos" />
+    <None Include="..\..\mob_wave.fos" />
+    <None Include="..\..\mob_wave_data.fos" />
+    <None Include="..\..\mob_wave_h.fos" />
+    <None Include="..\..\movable_container.fos" />
+    <None Include="..\..\mr_handy.fos" />
+    <None Include="..\..\multihex.fos" />
+    <None Include="..\..\multihex_data.fos" />
+    <None Include="..\..\multihex_h.fos" />
+    <None Include="..\..\name_colorizing.fos" />
+    <None Include="..\..\navarro_guard.fos" />
+    <None Include="..\..\ncr_guard.fos" />
+    <None Include="..\..\ncr_guard_prison.fos" />
+    <None Include="..\..\npc_ai.fos" />
+    <None Include="..\..\npc_barber.fos" />
+    <None Include="..\..\npc_common.fos" />
+    <None Include="..\..\npc_common_h.fos" />
+    <None Include="..\..\npc_junktown_tasks.fos" />
+    <None Include="..\..\npc_names.fos" />
+    <None Include="..\..\npc_names_h.fos" />
+    <None Include="..\..\npc_planes.fos" />
+    <None Include="..\..\npc_planes_h.fos" />
+    <None Include="..\..\npc_roles_h.fos" />
+    <None Include="..\..\npc_schedule.fos" />
+    <None Include="..\..\npc_schedules.fos" />
+    <None Include="..\..\npc_schedule_action.fos" />
+    <None Include="..\..\npc_schedule_h.fos" />
+    <None Include="..\..\npc_schedule_instance.fos" />
+    <None Include="..\..\npc_shouter.fos" />
+    <None Include="..\..\npc_travel.fos" />
+    <None Include="..\..\npc_unlootable.fos" />
+    <None Include="..\..\online_stats.fos" />
+    <None Include="..\..\online_stats_h.fos" />
+    <None Include="..\..\parameters.fos" />
+    <None Include="..\..\patrolling.fos" />
+    <None Include="..\..\patrolling_h.fos" />
+    <None Include="..\..\patrolnodes.fos" />
+    <None Include="..\..\patrolnodes_h.fos" />
+    <None Include="..\..\patrolroutes.fos" />
+    <None Include="..\..\perks.fos" />
+    <None Include="..\..\perks_data.fos" />
+    <None Include="..\..\pids_groups.fos" />
+    <None Include="..\..\poison.fos" />
+    <None Include="..\..\polygon.fos" />
+    <None Include="..\..\polygon_h.fos" />
+    <None Include="..\..\polygon_towns.fos" />
+    <None Include="..\..\prices_server_client.fos" />
+    <None Include="..\..\production.fos" />
+    <None Include="..\..\production_h.fos" />
+    <None Include="..\..\prod_barrel_junk.fos" />
+    <None Include="..\..\prod_broc_flower.fos" />
+    <None Include="..\..\prod_chemicals.fos" />
+    <None Include="..\..\prod_computer.fos" />
+    <None Include="..\..\prod_flint.fos" />
+    <None Include="..\..\prod_generic.fos" />
+    <None Include="..\..\prod_ingredients.fos" />
+    <None Include="..\..\prod_ingredients_h.fos" />
+    <None Include="..\..\prod_machine.fos" />
+    <None Include="..\..\prod_nukacola.fos" />
+    <None Include="..\..\prod_plant_barley.fos" />
+    <None Include="..\..\prod_plant_fiber.fos" />
+    <None Include="..\..\prod_plant_fruit.fos" />
+    <None Include="..\..\prod_plant_h.fos" />
+    <None Include="..\..\prod_plant_tobacco.fos" />
+    <None Include="..\..\prod_rocks_minerals.fos" />
+    <None Include="..\..\prod_rocks_ore.fos" />
+    <None Include="..\..\prod_rocks_uranium.fos" />
+    <None Include="..\..\prod_still_rotgut.fos" />
+    <None Include="..\..\prod_table_brahmin.fos" />
+    <None Include="..\..\prod_tree_firewood.fos" />
+    <None Include="..\..\prod_veins.fos" />
+    <None Include="..\..\prod_xander_root.fos" />
+    <None Include="..\..\prospects.fos" />
+    <None Include="..\..\prospect_guard.fos" />
+    <None Include="..\..\prospect_miner.fos" />
+    <None Include="..\..\prospect_owner.fos" />
+    <None Include="..\..\questpool.fos" />
+    <None Include="..\..\quest_antlair.fos" />
+    <None Include="..\..\quest_bos_initiate.fos" />
+    <None Include="..\..\quest_brahmin_run.fos" />
+    <None Include="..\..\quest_caesar_train.fos" />
+    <None Include="..\..\quest_caravan_box.fos" />
+    <None Include="..\..\quest_cath_basement.fos" />
+    <None Include="..\..\quest_corsican_brothers.fos" />
+    <None Include="..\..\quest_courier_boxes.fos" />
+    <None Include="..\..\quest_first_tent.fos" />
+    <None Include="..\..\quest_frisco_subway.fos" />
+    <None Include="..\..\quest_jt_power.fos" />
+    <None Include="..\..\quest_jt_scorpion.fos" />
+    <None Include="..\..\quest_killmobs_h.fos" />
+    <None Include="..\..\quest_la_dogs.fos" />
+    <None Include="..\..\quest_la_gunr_caravan.fos" />
+    <None Include="..\..\quest_la_warehouse.fos" />
+    <None Include="..\..\quest_mb.fos" />
+    <None Include="..\..\quest_ncr_brahmin.fos" />
+    <None Include="..\..\quest_raiders.fos" />
+    <None Include="..\..\quest_railgang.fos" />
+    <None Include="..\..\quest_railraiders.fos" />
+    <None Include="..\..\quest_sha_enin.fos" />
+    <None Include="..\..\quest_tanker.fos" />
+    <None Include="..\..\radiation.fos" />
+    <None Include="..\..\radio.fos" />
+    <None Include="..\..\raiders_attack.fos" />
+    <None Include="..\..\raiders_guard.fos" />
+    <None Include="..\..\recycler.fos" />
+    <None Include="..\..\recycler_h.fos" />
+    <None Include="..\..\reinforcements.fos" />
+    <None Include="..\..\reinforcements_h.fos" />
+    <None Include="..\..\repair.fos" />
+    <None Include="..\..\replication.fos" />
+    <None Include="..\..\reputations.fos" />
+    <None Include="..\..\reputations_h.fos" />
+    <None Include="..\..\reputations_modifiers.fos" />
+    <None Include="..\..\reputations_tables.fos" />
+    <None Include="..\..\roomkeeper.fos" />
+    <None Include="..\..\rooms.fos" />
+    <None Include="..\..\rq_cave.fos" />
+    <None Include="..\..\rq_fetcher.fos" />
+    <None Include="..\..\scenery.fos" />
+    <None Include="..\..\scripts.cfg" />
+    <None Include="..\..\serializator.fos" />
+    <None Include="..\..\se_door.fos" />
+    <None Include="..\..\show.fos" />
+    <None Include="..\..\shuffling_spawner.fos" />
+    <None Include="..\..\skills.fos" />
+    <None Include="..\..\slaverun.fos" />
+    <None Include="..\..\slaverun_dialog.fos" />
+    <None Include="..\..\slaverun_h.fos" />
+    <None Include="..\..\slaverun_init.fos" />
+    <None Include="..\..\slaverun_slaver.fos" />
+    <None Include="..\..\slaverun_slave_hostile.fos" />
+    <None Include="..\..\slaverun_slave_normal.fos" />
+    <None Include="..\..\sleepiness.fos" />
+    <None Include="..\..\spawner_container.fos" />
+    <None Include="..\..\spawner_container_h.fos" />
+    <None Include="..\..\special_map_objects.fos" />
+    <None Include="..\..\special_map_objects_floor.fos" />
+    <None Include="..\..\special_map_objects_forcefield.fos" />
+    <None Include="..\..\special_map_objects_steam.fos" />
+    <None Include="..\..\squads.fos" />
+    <None Include="..\..\strtoint.fos" />
+    <None Include="..\..\strtoint_h.fos" />
+    <None Include="..\..\talchem.fos" />
+    <None Include="..\..\tasks.fos" />
+    <None Include="..\..\tests_factions.fos" />
+    <None Include="..\..\tests_factions_bases.fos" />
+    <None Include="..\..\tests_production.fos" />
+    <None Include="..\..\throwing.fos" />
+    <None Include="..\..\time.fos" />
+    <None Include="..\..\town.fos" />
+    <None Include="..\..\towns.fos" />
+    <None Include="..\..\town_h.fos" />
+    <None Include="..\..\town_militia.fos" />
+    <None Include="..\..\tracking.fos" />
+    <None Include="..\..\trader.fos" />
+    <None Include="..\..\trader_container.fos" />
+    <None Include="..\..\trader_h.fos" />
+    <None Include="..\..\trader_mcgrew.fos" />
+    <None Include="..\..\trains.fos" />
+    <None Include="..\..\traps.fos" />
+    <None Include="..\..\traps_h.fos" />
+    <None Include="..\..\triggers.fos" />
+    <None Include="..\..\triggers_funcs.fos" />
+    <None Include="..\..\triggers_h.fos" />
+    <None Include="..\..\unit_tests.fos" />
+    <None Include="..\..\unsafe_client.fos" />
+    <None Include="..\..\utils.fos" />
+    <None Include="..\..\utils_for_array.fos" />
+    <None Include="..\..\utils_h.fos" />
+    <None Include="..\..\vaul_guard.fos" />
+    <None Include="..\..\wandering_ghoul.fos" />
+    <None Include="..\..\wanted.fos" />
+    <None Include="..\..\watcher.fos" />
+    <None Include="..\..\weap_anim_table.fos" />
+    <None Include="..\..\weap_anim_table_h.fos" />
+    <None Include="..\..\weather.fos" />
+    <None Include="..\..\weather_h.fos" />
+    <None Include="..\..\weather_radiation.fos" />
+    <None Include="..\..\weather_rain.fos" />
+    <None Include="..\..\weather_rain_table.fos" />
+    <None Include="..\..\workbench.fos" />
+    <None Include="..\..\worldmap.fos" />
+    <None Include="..\..\worldmap_data.fos" />
+    <None Include="..\..\worldmap_h.fos" />
+    <None Include="..\..\worldmap_players.fos" />
+    <None Include="..\..\world_common.fos" />
+    <None Include="..\..\world_common_h.fos" />
+    <None Include="..\..\xfire_h.fos" />
+    <None Include="..\..\zzz.fos" />
+    <None Include="..\..\_ai.fos" />
+    <None Include="..\..\_animation.fos" />
+    <None Include="..\..\_bags.fos" />
+    <None Include="..\..\_basetypes.fos" />
+    <None Include="..\..\_colors.fos" />
+    <None Include="..\..\_defines.fos" />
+    <None Include="..\..\_dialogs.fos" />
+    <None Include="..\..\_entires.fos" />
+    <None Include="..\..\_globalvars.fos" />
+    <None Include="..\..\_macros.fos" />
+    <None Include="..\..\_maps.fos" />
+    <None Include="..\..\_math.fos" />
+    <None Include="..\..\_npc_pids.fos" />
+    <None Include="..\..\_scripts.fos" />
+    <None Include="..\..\_time.fos" />
+    <None Include="..\..\_town.fos" />
+    <None Include="..\..\_vals.fos" />
+    <None Include="..\..\_vars.fos" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\itempid.h" />
+    <ClInclude Include="..\..\msgstr.h" />
+    <ClInclude Include="..\intellisense.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,1360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Modules">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Disabled">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{96825a1c-c8ef-4e84-be34-deefaddf9594}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\achievements.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\all_brahmin.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\all_brahmin_herdsman.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\all_farmer.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\antiblock.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\arena.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\arena_generator.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\backend.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\billboards.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\blueprints.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\bos_lh_guard.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\bounties.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\brahmin_pens.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\brahmin_trader.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\brahmin_traders.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\broadcast.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\buffer.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\buffer_lazy.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\car.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\car_seller.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\caravans.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\casino.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\cathedral_guard.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\cave.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\cavelog.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\cheats.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\chess.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\combat.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\companion.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\config.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\config_file.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\crippling.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\critter_age.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\critter_description.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\critter_item_movement.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\cutscene.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\debug.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\den_metzger_guard.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\dev_menu.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\dialog.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\dialog_altruist.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\drugs.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\duel.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\economy.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\economy_banker.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\effects.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\elevators.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\encounter_containers.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\encounter_guard.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\event_utils.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\event_warzone.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\eventboss.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\explode.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\factions.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\factions_bases.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\factions_generic.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\factions_generic_bartender.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\factions_player.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\factions_recognition.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\factions_terminal.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\factions_vc_q_scoutsf.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\fix_boy.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\floyd.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\foart.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\follower.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\follower_common.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\followers_menu.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\frisco_guard.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\frisco_trader.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\geiger.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\generator.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\generic_guard.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\globalmap_group.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\gmtools.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\golden_globes.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\grave.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\guard.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\hub_guard.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\item_attributes.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\item_bag_container.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\item_blueprint.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\item_brahmin_dung.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\item_dogtags.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\item_dynamic.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\item_flare.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\item_holodisk.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\item_lock.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\item_mapdoor.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\item_misc.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\item_perks.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\item_radio.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\item_spawner_container.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\item_stealth.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\item_tent.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\junktown_guard.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\la_ady_guard.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\lexems.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\linetracer.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\lockers.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\logging.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\logging_critter.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\main.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\main_planes.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_arena.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_ares.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_boneyard.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_bos_lh.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_bosbunker.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_broken.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_cathdead.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_cathedral.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_denbus.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_encounter.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_frisco_mine.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_gecko.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_ghostfarm.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_glow.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_golgotha.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_greet.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_hub.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_junktown.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_klam_tox.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_klamath.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_mariposa.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_modoc.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_navarro.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_navarro_sub1.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_ncr_army.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_ncr_downtown.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_ncr_prison.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_necropolis.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_newreno.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_npcmap.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_player_mine.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_playerfaction_hq.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_prospect.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_public_mines.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_raiders_cave.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_raiders_cave_entrance.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_raiders_farmhome.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_raiders_south.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_random_cave.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_redding.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_redding_lost.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_redding_mine.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_sad.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_se_truck.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_sf_bos.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_sf_china.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_sf_shi.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_sf_tanker.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_slaverun.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_starter.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_talchem.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_tent.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_trainyard.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_vault13.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_vcity.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\map_vcity_hq.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\media.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\merc_dialog.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\mercs.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\mine.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\minigames.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\mob.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\mob_wave.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\movable_container.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\mr_handy.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\multihex.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\name_colorizing.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\navarro_guard.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\ncr_guard.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\ncr_guard_prison.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\npc_barber.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\npc_common.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\npc_names.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\npc_planes.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\npc_schedule.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\npc_shouter.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\npc_unlootable.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\online_stats.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\parameters.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\patrolnodes.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\patrolroutes.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\perks.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\poison.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\polygon.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prod_barrel_junk.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prod_broc_flower.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prod_chemicals.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prod_computer.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prod_flint.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prod_generic.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prod_ingredients.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prod_machine.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prod_nukacola.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prod_plant_barley.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prod_plant_fiber.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prod_plant_fruit.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prod_plant_tobacco.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prod_rocks_minerals.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prod_rocks_ore.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prod_rocks_uranium.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prod_still_rotgut.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prod_table_brahmin.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prod_tree_firewood.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prod_veins.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prod_xander_root.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\production.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prospect_guard.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prospect_miner.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prospect_owner.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\prospects.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_antlair.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_bos_initiate.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_brahmin_run.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_caesar_train.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_caravan_box.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_cath_basement.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_corsican_brothers.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_courier_boxes.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_first_tent.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_frisco_subway.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_jt_power.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_jt_scorpion.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_la_dogs.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_la_gunr_caravan.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_la_warehouse.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_mb.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_ncr_brahmin.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_raiders.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_railgang.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_railraiders.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_sha_enin.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\quest_tanker.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\radiation.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\radio.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\raiders_attack.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\raiders_guard.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\recycler.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\reinforcements.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\repair.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\replication.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\reputations.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\reputations_modifiers.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\roomkeeper.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\rooms.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\rq_cave.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\rq_fetcher.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\scenery.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\se_door.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\show.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\shuffling_spawner.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\skills.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\slaverun.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\slaverun_dialog.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\slaverun_slave_hostile.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\slaverun_slave_normal.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\slaverun_slaver.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\sleepiness.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\spawner_container.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\special_map_objects.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\squads.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\strtoint.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\talchem.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\throwing.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\time.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\town.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\town_militia.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\towns.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\trader.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\trader_container.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\trader_mcgrew.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\trains.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\traps.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\triggers.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\unsafe_client.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\utils.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\vaul_guard.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\wandering_ghoul.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\wanted.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\watcher.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\weap_anim_table.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\weather.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\workbench.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\world_common.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\worldmap.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\worldmap_players.fos">
+      <Filter>Modules</Filter>
+    </None>
+    <None Include="..\cheats2.fos">
+      <Filter>Disabled</Filter>
+    </None>
+    <None Include="..\counters.fos">
+      <Filter>Disabled</Filter>
+    </None>
+    <None Include="..\item_skills.fos">
+      <Filter>Disabled</Filter>
+    </None>
+    <None Include="..\madness.fos">
+      <Filter>Disabled</Filter>
+    </None>
+    <None Include="..\npc_travel.fos">
+      <Filter>Disabled</Filter>
+    </None>
+    <None Include="..\unit_tests.fos">
+      <Filter>Disabled</Filter>
+    </None>
+    <None Include="..\zzz.fos">
+      <Filter>Disabled</Filter>
+    </None>
+    <None Include="..\_ai.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_animation.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_bags.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_basetypes.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_colors.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_defines.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_dialogs.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_entires.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_globalvars.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_macros.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_maps.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_math.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_npc_pids.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_scripts.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_time.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_town.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_vals.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\_vars.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\achievements_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\backend_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\bounties_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\brahmin_pen_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\brahmin_trader_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\broadcast_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\buffer_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\buffer_lazy_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\caravans_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\cave_critter_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\cave_critters.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\cave_groups.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\cave_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\cave_item_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\cave_items.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\cheats_core_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\chess_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\combat_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\combat_msg.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\companion_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\config_file_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\config_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\critical_failures.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\critical_table.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\critter_age_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\cutscene_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\debug_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\dialog_factions.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\dialog_reputations.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\drugs_data.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\economy_bank.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\economy_bankaccount.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\economy_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\elevators_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\entire.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\eventboss_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\faction_data.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\factions_bases_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\factions_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\factions_names.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\factions_news.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\factions_player_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\foart_2238.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\foart_addons.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\foart_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\foart_server.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\follower_capturing.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\follower_common_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\follower_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\gm.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\gmtools_csc.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\gmtools_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\groups_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\guard_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\item_dogtags_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\item_dynamic_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\item_misc_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\item_perks_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\junktown_skumpitt.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\lexems_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\linetracer_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\logging_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\map_tent_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\mapdata_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\mercs_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\messages_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\mine_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\minigames_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\mob_wave_data.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\mob_wave_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\multihex_data.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\multihex_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\npc_ai.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\npc_common_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\npc_junktown_tasks.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\npc_names_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\npc_planes_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\npc_roles_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\npc_schedule_action.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\npc_schedule_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\npc_schedule_instance.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\npc_schedules.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\online_stats_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\patrolling.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\patrolling_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\patrolnodes_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\perks_data.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\pids_groups.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\polygon_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\polygon_towns.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\prices_server_client.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\prod_ingredients_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\prod_plant_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\production_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\quest_killmobs_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\questpool.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\recycler_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\reinforcements_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\reputations_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\reputations_tables.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\serializator.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\slaverun_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\slaverun_init.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\spawner_container_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\special_map_objects_floor.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\special_map_objects_forcefield.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\special_map_objects_steam.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\strtoint_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\tasks.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\town_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\tracking.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\trader_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\traps_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\triggers_funcs.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\triggers_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\utils_for_array.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\utils_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\weap_anim_table_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\weather_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\weather_radiation.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\weather_rain.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\weather_rain_table.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\world_common_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\worldmap_data.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\worldmap_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\xfire_h.fos">
+      <Filter>Headers</Filter>
+    </None>
+    <None Include="..\tests_factions.fos">
+      <Filter>Tests</Filter>
+    </None>
+    <None Include="..\tests_factions_bases.fos">
+      <Filter>Tests</Filter>
+    </None>
+    <None Include="..\tests_production.fos">
+      <Filter>Tests</Filter>
+    </None>
+    <None Include="..\scripts.cfg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="intellisense.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\itempid.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\msgstr.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

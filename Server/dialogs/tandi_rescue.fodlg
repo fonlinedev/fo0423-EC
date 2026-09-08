@@ -24,11 +24,11 @@ lang=engl
 5 5000 None 0 @
 6 6000 None 0 @
 7 7000 None 0 #
-4 7010 D _var p q_tandi_rescue = 2 #
+4 7010 D _var p q_tandi_rescue = 2 R _script companion@r_BefriendCompanion 0  #
 4 7020 #
 0 7030 @
 8 8000 None 0 #
-4 8010 D _var p q_tandi_rescue = 1 #
+4 8010 D _var p q_tandi_rescue = 1 R _script companion@r_BefriendCompanion 0  #
 4 8020 #
 0 8030 &
 
